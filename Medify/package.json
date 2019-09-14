@@ -1,0 +1,21 @@
+{
+  "name": "medify",
+  "version": "1.0.0",
+  "description": "App Development Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-bootstrap": "sass scss/bootstrap.scss css/bootstrap.css",
+    "sass": "sass scss/style.scss css/style.css",
+    "ts": "tsc ts/index.ts --outDir js/"
+  },
+  "author": "Julian Herrera, Ali Villegas, Saul Neri",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
+    "sass": "^1.22.12",
+    "typescript": "^3.6.3"
+  }
+}

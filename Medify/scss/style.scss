@@ -1,0 +1,143 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+$MainColor: #fafafa;
+$SecondaryColor: #1e88e5;
+$SecondaryColorLight: #6ab7ff;
+
+/* ---------------------------------------------------
+    General STYLE
+----------------------------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif!important;
+    background: $MainColor;
+}
+.mainColor{
+    color: $MainColor!important;
+}
+.secondaryColor{
+    color: $SecondaryColor!important;
+}
+.secondaryColorBg{
+    background-color: $SecondaryColor!important;
+}
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: $MainColor;
+    color: black;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    -ms-overflow-style: none;  // IE 10+
+    scrollbar-width: none;  // Firefox
+}
+#sidebar::-webkit-scrollbar{
+    display: none;  // Safari and Chrome
+}
+#sidebar.active {
+    left: 0;
+}
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    text-decoration: none;
+}
+
+@mixin whiteColorBluebg{
+    color: $MainColor!important;
+    background: $SecondaryColor!important; 
+}
+
+#sidebar ul li a:hover {
+    @include whiteColorBluebg();
+}
+#sidebar ul li.active{
+    @include whiteColorBluebg();
+}
+#sidebar ul li.active a{
+    color: $MainColor!important;
+}
+.btnSideBar{
+    @include whiteColorBluebg();
+}
+.btnSideBar:hover{
+    background-color: $SecondaryColorLight!important;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: $MainColor;
+    color: $SecondaryColor;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ---------------------------------------------------
+    PAGE STYLE
+----------------------------------------------------- */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.list-unstyled li a{
+    text-decoration: none;
+    color: black;
+}
+
+/* ---------------------------------------------------
+    RESPONSIVE STYLE
+----------------------------------------------------- */
+@media screen and (max-width: 768px){
+    .display-4{
+        font-size: 2.0rem!important;
+    }
+}
