@@ -79,6 +79,10 @@ body {
 .btnSideBar:hover{
     background-color: $SecondaryColorLight!important;
 }
+button a{
+    color: $MainColor;
+    text-decoration: none;
+}
 
 #dismiss {
     width: 35px;
@@ -132,6 +136,8 @@ a:focus {
     text-decoration: none;
     color: black;
 }
+
+
 .lineDividerBlue{
     height: 1px;
     width: 90%;
