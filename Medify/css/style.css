@@ -232,12 +232,24 @@ a:focus {
   border-radius: 0px !important;
 }
 
+.fixedBottomRight {
+  position: fixed;
+  bottom: 50px;
+  right: 20%;
+}
+
 /* ---------------------------------------------------
     RESPONSIVE STYLE
 ----------------------------------------------------- */
 @media screen and (max-width: 768px) {
   .display-4 {
     font-size: 2rem !important;
+  }
+
+  .fixedBottomRight {
+    position: fixed;
+    bottom: 20px;
+    right: 5%;
   }
 }
 
