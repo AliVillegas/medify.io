@@ -215,6 +215,11 @@ a:focus {
   background-color: #eee;
 }
 
+/* Responsive QR*/
+.responsiveQRImg {
+  max-width: 400px;
+}
+
 /* On mouse-over, add a grey background color */
 .containerCheckboxes:hover input ~ .checkmark {
   background-color: #ccc;

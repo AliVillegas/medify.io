@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Medify</title>
+
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="icon" href="../img/icon.ico">
+
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss" onclick="dismiss()">
+                <i class=" fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3 class="secondaryColor">Medify</h3>
+            </div>
+
+            <ul class="list-unstyled">
+                <li class="">
+                    <a href="drPatientInfo.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="../html/about.html">Acerca</a>
+                </li>
+            </ul>
+
+
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar
+                Sesión </button>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
+                    <i class="fas fa-bars fa-2x secondaryColor"></i>
+                </button>
+                <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+                <ul class="nav navbar-nav ml-auto">
+                    <a href="../html/drDashboard.html"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                </ul>
+
+
+            </nav>
+            <div class="container p-3">
+                <h4 class="text-center ml-auto">Por favor escanee el código del paciente</h4>
+                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg" alt=" qr" width="80%">
+            </div>
+            <div>
+                <button title="Continuar nueva cita" class="btn btn-lg btn-primary mx-auto d-block">
+                            <a style="text-decoration:none" href="drCreateNewAppointment.html">
+                                    Continuar
+                            </a>
+                    </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="overlay" class="overlay" onclick="dismiss()"></div>
+
+
+
+
+
+    <script>
+        function dismiss(e) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function show(e) {
+            document.getElementById('sidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
