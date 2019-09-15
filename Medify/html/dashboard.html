@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Medify</title>
+
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss" onclick="dismiss()">
+                <i class=" fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3 class="secondaryColor">Medify</h3>
+            </div>
+
+            <ul class="list-unstyled">
+                <li class="">
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Citas</a>
+                </li>
+                <li class="active">
+                    <a href="../html/medHistory.html">Historial</a>
+                </li>
+                <li class="">
+                    <a href="../html/prescriptionsMain.html">Recetas</a>
+                </li>
+                <li>
+                    <a href="#">Acerca</a>
+                </li>
+            </ul>
+
+
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar
+                Sesión </button>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
+                    <i class="fas fa-bars fa-2x secondaryColor"></i>
+                </button>
+                <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+
+                <ul class="nav navbar-nav ml-auto">
+                </ul>
+            </nav>
+            <div class="container p-3">
+                <p class="font-weight-bold text-center secondaryColor mt-5 sectionTitle"> Agenda </p>
+                <div class="lineDividerBlue mt-3 mb-3"></div>
+                <!-- Card -->
+                <div class="row row-striped">
+                    <div class="d-none d-sm-none d-md-block col-2 text-right">
+                        <h1 class="display-4"><span class="badge badge-secondary">14</span></h1>
+                        <h2>SEP</h2>
+                    </div>
+                    <div class="col-10">
+                        <h3 class="text-uppercase"><strong>Julián Herrera</strong></h3>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM -
+                                2:00 PM</li>
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área
+                                terminal 1</li>
+                        </ul>
+                        <p>4ta revisión para dar seguimiento a cáncer</p>
+                    </div>
+                </div>
+                <div class="lineDividerBlue mt-3 mb-3"></div>
+                <!-- Card -->
+                <div class="row row-striped">
+                    <div class="d-none d-sm-none d-md-block col-2 text-right">
+                        <h1 class="display-4"><span class="badge badge-secondary">14</span></h1>
+                        <h2>SEP</h2>
+                    </div>
+                    <div class="col-10">
+                        <h3 class="text-uppercase"><strong>Ice Cream Social</strong></h3>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM -
+                                2:00 PM</li>
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área 1
+                            </li>
+                        </ul>
+                        <p>4ta revisión para dar seguimiento de diabetes</p>
+                    </div>
+                </div>
+                <div class="lineDividerBlue mt-3 mb-3"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="overlay" class="overlay" onclick="dismiss()"></div>
+
+
+
+
+
+    <script>
+        function dismiss(e) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function show(e) {
+            document.getElementById('sidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
