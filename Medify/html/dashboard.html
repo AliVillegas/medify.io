@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
-
+    <link rel="icon" href="../img/icon.ico">
 
 
     <!-- Font Awesome JS -->
@@ -34,13 +34,13 @@
             </div>
 
             <ul class="list-unstyled">
-                <li class="">
-                    <a href="#">Inicio</a>
+                <li class="active">
+                    <a href="dashboard.html">Inicio</a>
                 </li>
                 <li>
                     <a href="#">Citas</a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="../html/medHistory.html">Historial</a>
                 </li>
                 <li class="">
@@ -68,68 +68,216 @@
                 <ul class="nav navbar-nav ml-auto">
                 </ul>
             </nav>
+
             <div class="container p-3">
-                <p class="font-weight-bold text-center secondaryColor mt-5 sectionTitle"> Agenda </p>
-                <div class="lineDividerBlue mt-3 mb-3"></div>
-                <!-- Card -->
-                <div class="row row-striped">
-                    <div class="d-none d-sm-none d-md-block col-2 text-right">
-                        <h1 class="display-4"><span class="badge badge-secondary">14</span></h1>
-                        <h2>SEP</h2>
+                <h1 class="secondaryColor my-4"> Mis Citas Medicas</h1>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-header lead font-weight-bold">Dra. Torres - Consultorio
+                            Especializado
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Razón: Dolor De cabeza</h6>
+                            <ul class="list-unstyled card-text">
+                                <li> Horario: 4:00 pm</li>
+                                <li> Dirección: Av. Libertad 22 </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="secondaryColor ">23 septiembre 2019</h6>
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <h3 class="text-uppercase"><strong>Julián Herrera</strong></h3>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
-                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área terminal 1</li>
-                        </ul>
-                        <p>4ta revisión para dar seguimiento a cáncer</p>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Dr. López - Clinica Mexico
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Razón: Seguimiento Fractura</h6>
+                            <ul class="list-unstyled card-text">
+                                <li> Segunda cita</li>
+                                <li> Horario: 6:00 pm</li>
+                                <li> Dirección: Av. Calcio 16</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="secondaryColor ">03 octubre 2019</h6>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Dr. Gómez - Dentistas & CO.
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Razón: Limpieza Bucal</h6>
+                            <ul class="list-unstyled card-text">
+                                <li> Horario: 2:00 pm</li>
+                                <li> Dirección: Calle Quijada 78 </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-muted">16 agosto 2019</h6>
+                        </div>
                     </div>
                 </div>
+
                 <div class="lineDividerBlue mt-3 mb-3"></div>
-                <!-- Card -->
-                <div class="row row-striped">
-                    <div class="d-none d-sm-none d-md-block col-2 text-right">
-                        <h1 class="display-4"><span class="badge badge-secondary">14</span></h1>
-                        <h2>SEP</h2>
+
+                <h1 class="secondaryColor my-4"> Mi Historial Médico</h1>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Enfermedades
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text font-weight-bold">Afección</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> Gripa</li>
+                                        <li> Fractura </li>
+                                        <li> Migraña </li>
+                                        <li> Caries </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 ">
+                                    <p class="card-text font-weight-bold">Recuperación</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> 11/03/2019</li>
+                                        <li> 11/08/2019</li>
+                                        <li> En proceso</li>
+                                        <li> En proceso</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                    <div class="col-10">
-                        <h3 class="text-uppercase"><strong>Ice Cream Social</strong></h3>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
-                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área 1
-                            </li>
-                        </ul>
-                        <p>4ta revisión para dar seguimiento de diabetes</p>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Tratamientos
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text font-weight-bold">Medicación</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> Antiflus 100mg</li>
+                                        <li> Antianelgesico </li>
+                                        <li> Paracetamol </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 ">
+                                    <p class="card-text font-weight-bold">Afección</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> Gripa</li>
+                                        <li> Fractura</li>
+                                        <li> Migraña</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Familia
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text font-weight-bold">Familiar</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> Abuela paterno</li>
+                                        <li> Tio paterno </li>
+                                        <li> Madre </li>
+                                        <li> Abuelo materno </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 ">
+                                    <p class="card-text font-weight-bold">Afeccion</p>
+                                    <ul class="list-unstyled card-text">
+                                        <li> Diabetes</li>
+                                        <li> Vertigo</li>
+                                        <li> Cancer</li>
+                                        <li> Cardiaco</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
+
                 <div class="lineDividerBlue mt-3 mb-3"></div>
+
+                <h1 class="secondaryColor my-4"> Mis Recetas Medicas</h1>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Consultorio médico especialista Lor. Mónaco
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled card-text">
+                                <li> Dra. Monaco</li>
+                                <li> Revision Diabetes </li>
+                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                            </ul>
+                        </div>
+                        <div class=" card-footer">
+                            <h6 class="secondaryColor">10 septiembre 2019</h6>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Hospital Médica Nirvae
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled card-text">
+                                <li> Dr. Gómez</li>
+                                <li> Laceración en pecho </li>
+                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                            </ul>
+                        </div>
+                        <div class=" card-footer">
+                            <h6 class="secondaryColor">16 septiembre 2019</h6>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header  lead font-weight-bold">Hospital Médica Nirvae
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled card-text">
+                                <li> Dr. Perez</li>
+                                <li> Dolor de cabeza </li>
+                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                            </ul>
+                        </div>
+                        <div class=" card-footer">
+                            <h6 class="secondaryColor">16 septiembre 2019</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
 
         </div>
 
-    </div>
 
-
-    <div id="overlay" class="overlay" onclick="dismiss()"></div>
+        <div id="overlay" class="overlay" onclick="dismiss()"></div>
 
 
 
 
 
-    <script>
-        function dismiss(e) {
-            document.getElementById('sidebar').classList.remove('active');
-            document.getElementById('overlay').classList.remove('active');
-        }
+        <script>
+            function dismiss(e) {
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            }
 
-        function show(e) {
-            document.getElementById('sidebar').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        }
-    </script>
+            function show(e) {
+                document.getElementById('sidebar').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            }
+        </script>
 </body>
 
 </html>

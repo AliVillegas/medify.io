@@ -149,6 +149,30 @@ a:focus {
   border-top: solid 1.5px #1e88e5;
 }
 
+.img-carousel {
+  height: 100vh;
+  width: 100vw !important;
+  object-fit: cover;
+}
+
+.carousel-caption-right {
+  left: 0% !important;
+  top: 25% !important;
+  right: 55% !important;
+}
+
+.carousel-caption-left {
+  right: 0% !important;
+  top: 25% !important;
+  left: 55% !important;
+}
+
+.carousel-caption-center {
+  right: 15% !important;
+  top: 25% !important;
+  left: 15% !important;
+}
+
 .noAStyle a {
   color: inherit;
   text-decoration: none !important;
