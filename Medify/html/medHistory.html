@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Medify</title>
+
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss" onclick="dismiss()">
+                <i class=" fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3 class="secondaryColor">Medify</h3>
+            </div>
+
+            <ul class="list-unstyled">
+                <li class="">
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Citas</a>
+                </li>
+                <li class="active">
+                    <a href="../html/medHistory.html">Historial</a>
+                </li>
+                <li class="">
+                    <a href="../html/prescriptionsMain.html">Recetas</a>
+                </li>
+                <li>
+                    <a href="#">Acerca</a>
+                </li>
+            </ul>
+
+
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar Sesión </button>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
+                            <i class="fas fa-bars fa-2x secondaryColor"></i>
+                        </button>
+                <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+
+                <ul class="nav navbar-nav ml-auto">
+                </ul>
+            </nav>
+            <div class="container p-3">
+                <p class="font-weight-bold text-center secondaryColor mt-5 sectionTitle"> Historial Médico </p>
+                <!-- Card  -->
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Consulta</strong>
+                        <h6 class="mb-0">
+                            <a class="text-dark mt-2">Dignóstico: Sinusitis aguda</a>
+                        </h6>
+                        <div class="mb-1 text-muted small mt-2">18/ago/2019</div>
+                        <p class="card-text mb-3 mt-3">Dificultades para respirar, dolor intenso en de la cabeza al moverse. Bajo apetito</p>
+                        <a class="btn btn-outline-primary btn-sm" role="button" href="">Ver Receta</a>
+                    </div>
+                </div>
+                <!-- Card  -->
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Estudio</strong>
+                        <h6 class="mb-0">
+                            <a class="text-dark mt-2">Análisis de sangre</a>
+                        </h6>
+                        <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
+                        <p class="card-text mb-3 mt-3">Hematíes: De 3,8 a 6 mill/mm3 -Hemoglobina: De 11,8 A 15,3 g/dl -V.C.M.: De 82 a 98 fl</p>
+                        <a class="btn btn-outline-primary btn-sm" role="button" href="">PDF</a>
+                    </div>
+                </div>
+                <!-- Card  -->
+                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">Consulta</strong>
+                        <h6 class="mb-0">
+                            <a class="text-dark mt-2">Fractura en brazo derecho</a>
+                        </h6>
+                        <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
+                        <p class="card-text mb-3 mt-3">Hematíes: De 3,8 a 6 mill/mm3 -Hemoglobina: De 11,8 A 15,3 g/dl -V.C.M.: De 82 a 98 fl</p>
+                        <a class="btn btn-outline-primary btn-sm" role="button" href="">PDF</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="overlay" class="overlay" onclick="dismiss()"></div>
+
+
+
+
+
+    <script>
+        function dismiss(e) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function show(e) {
+            document.getElementById('sidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
