@@ -72,15 +72,15 @@
             </div>
             <div class="lineDividerBlue mt-3 mb-3"></div>
             <div class="w-75 mx-auto">
-                <form>
+                <form action="/html/drPatientInfo.html">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputTitlePrescription">Título</label>
-                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto">
+                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDesPrescription">Diagnóstico</label>
-                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;"></textarea>
+                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;" required></textarea>
                         </div>
                     </div>
                     <div class="form-row">
@@ -118,7 +118,7 @@
                                 </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mb-5">Continuar</button>
+                    <button type="submit" title="Confirmar Receta" class="btn btn-primary mb-5">Continuar</button>
                 </form>
             </div>
         </div>
