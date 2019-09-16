@@ -15,7 +15,6 @@
     <link rel="icon" href="../img/icon.ico">
 
 
-
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -39,8 +38,20 @@
             </div>
 
             <ul class="list-unstyled">
-                <li class="">
-                    <a href="drDashboard.html">Inicio</a>
+                <li>
+                    <a href="../html/dashboard.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="../html/appointmentDetail.html">Citas</a>
+                </li>
+                <li>
+                    <a href="../html/medHistory.html">Historial</a>
+                </li>
+                <li>
+                    <a href="../html/prescriptionsMain.html">Recetas</a>
+                </li>
+                <li class="active">
+                    <a href="#">Perfil</a>
                 </li>
             </ul>
 
@@ -57,25 +68,45 @@
                     <i class="fas fa-bars fa-2x secondaryColor"></i>
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drPatientInfo.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <a href="../html/profile.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
+                            class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
                 </ul>
-
-
             </nav>
             <div class="container p-3">
-                <h4 class="text-center ml-auto">Por favor escanee el código del paciente</h4>
-                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg" alt=" qr"
-                    width="80%">
+                <h1 class="secondaryColor my-4"> Mi perfil</h1>
+
+                <h3 class="secondaryColor mb-3">Mi información</h3>
+                <form action="../html/profile.html">
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
+                            placeholder="Nuevo correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Nueva imagen</label>
+                        <input type="file" class="form-control-file" id="imagen">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="plitica" required>
+                        <label class="form-check-label" for="politica">
+                            Acepto politica de privacidad
+                        </label>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary mx-auto d-block mb-2"> Actualizar Datos</button>
+                    <button class="btn btn-primary mx-auto d-block"> <a class="text-decoration-none"
+                            href="../html/profile.html">
+                            Cancelar</a></button>
+                </form>
+
+
+
+
             </div>
-            <div>
-                <button title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block">
-                    <a style="text-decoration:none" href="drCreatePrescription.html">
-                        Continuar
-                    </a>
-                </button>
-            </div>
+
         </div>
 
     </div>

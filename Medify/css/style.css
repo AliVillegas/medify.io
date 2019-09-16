@@ -173,6 +173,13 @@ a:focus {
   left: 15% !important;
 }
 
+.introBackground {
+  background-image: url(../img/intro.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 .noAStyle a {
   color: inherit;
   text-decoration: none !important;

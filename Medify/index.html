@@ -18,9 +18,15 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -42,22 +48,24 @@
                     <a>Inicio</a>
                 </li>
                 <li>
-                    <a href="html/login.html">Citas</a>
+                    <a href="index.html#citas">Citas</a>
                 </li>
                 <li>
-                    <a href="html/login.html">Historial</a>
+                    <a href="index.html#historial">Historial</a>
                 </li>
                 <li>
-                    <a href="html/login.html">Recetas</a>
+                    <a href="index.html#recetas">Recetas</a>
                 </li>
                 <li>
-                    <a href="#">Acerca</a>
+                    <a href="html/about.html">Acerca</a>
                 </li>
             </ul>
 
             <h5 class="text-center mt-3">Registrarte</h5>
-            <button class="btn btnSideBar mx-auto d-block mt-3"> <a  title="Crear cuenta de paciente" href="html/register.html">Soy Paciente</a> </button>
-            <button class="btn btnSideBar mx-auto d-block mt-3"> <a title="Crear cuenta de doctor" href="html/doctorRegister.html">Soy Doctor</a>
+            <button class="btn btnSideBar mx-auto d-block mt-3"> <a title="Crear cuenta de paciente"
+                    href="html/register.html">Soy Paciente</a> </button>
+            <button class="btn btnSideBar mx-auto d-block mt-3"> <a title="Crear cuenta de doctor"
+                    href="html/doctorRegister.html">Soy Doctor</a>
             </button>
 
         </nav>
@@ -72,10 +80,12 @@
 
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" title="Crear cuenta de paciente" href="html/register.html">Paciente</a>
+                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Paciente</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" title="Crear cuenta de doctor" href="html/doctorRegister.html">Doctor</a>
+                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Doctor</a>
                     </li>
                 </ul>
             </nav>
@@ -116,18 +126,18 @@
                     <span class="sr-only">Siguiente</span>
                 </a>
             </div>
-            <div class="container-fluid mt-5">
+            <div class="container-fluid mt-3 ">
                 <div class="row px-4">
-                    <div class="col-12 col-sm-6">
-                        <img src="img/intro.png" class="img-fluid mx-auto d-block" alt="Imagen de un medico y su paciente">
+                    <div class="d-none d-md-block col-sm-6 introBackground">
                     </div>
-                    <div class="col-12 col-sm-6 p-5">
+                    <div class="col-12 col-md-6 p-5">
                         <h1 class="text-left display-4 font-weight-bold">La respuesta a tus problemas</h1>
-                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu historial médico, citas y recetas en un solo lugar. </p>
+                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu
+                            historial médico, citas y recetas en un solo lugar. </p>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4 secondaryColorBg mainColor">
+            <div class="container-fluid py-4 secondaryColorBg mainColor" id="citas">
                 <h1 class="text-center mt-3">Organiza tus citas médicas</h1>
                 <div class="row py-5 px-3">
                     <div class="col-12 col-sm-4 my-2 my-sm-0">
@@ -144,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4">
+            <div class="container-fluid py-4" id="historial">
                 <h1 class="text-center mt-3">Administra tu historial médico</h1>
                 <div class="row py-5">
                     <div class="col-12 col-sm-3 my-2 my-sm-0">
@@ -169,14 +179,14 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4 secondaryColorBg mainColor">
+            <div class="container-fluid py-4 secondaryColorBg mainColor" id="recetas">
                 <h1 class="text-center mt-3">Recetas Médicas</h1>
                 <div class="row py-5 px-3">
                     <div class="col-12 col-sm-5 my-2 my-sm-0">
                         <i class="fas fa-user-md fa-5x mx-auto d-block mb-4"></i>
                         <h2 class=" text-center">Recibe recetas de tus médicos</h2>
                     </div>
-                    <div class="col-12 col-sm-2 my-2 my-sm-0">
+                    <div class="col-12 col-sm-2 my-2 my-sm-0 mx-auto d-block" style="max-width: 200px;">
                         <img src="img/drug.png" class="img-fluid" alt="Medicina">
                     </div>
                     <div class="col-12 col-sm-5 my-2 my-sm-0">
@@ -196,15 +206,15 @@
                         <h5>Servicios</h5>
                         <ul class="my-3 list-unstyled">
                             <li><a href="#"> Citas Médicas </a>
-                                <li><a href="html/login.html"> Historial Médico </a>
-                                    <li><a href="html/login.html"> Recetas Médicas </a>
-                                    </li>
+                            <li><a href="html/login.html"> Historial Médico </a>
+                            <li><a href="html/login.html"> Recetas Médicas </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-sm-4">
                         <h5 class="secondaryColor">Medify</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="html/about.html">Acerca de nosotros</a></li>
                             <li><a href="html/login.html">Iniciar Sesión</a></li>
                         </ul>
                     </div>
@@ -232,6 +242,9 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 

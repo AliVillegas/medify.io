@@ -17,6 +17,10 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -53,7 +57,8 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drDashboard.html"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <a href="../html/drDashboard.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
+                            class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
                 </ul>
             </nav>
             <div class="container p-4">
@@ -105,14 +110,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- Fixed ADD DATE BUTTON -->
-
-
-
-
-
         </div>
 
     </div>
@@ -134,6 +131,9 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 

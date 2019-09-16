@@ -18,6 +18,10 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -66,8 +70,8 @@
                         <h2>SEP</h2>
                     </div>
                     <div class="col-10">
-                        <h3 class="text-uppercase "><strong> <a href="drPatientInfo.html" title="Ver info del paciente"
-                                    class="patientName">Julián
+                        <h3 class="text-uppercase "><strong> <a href="drPatientInfo.html" data-toggle="tooltip"
+                                    title="Ver info del paciente" class="patientName">Julián
                                     Herrera</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
@@ -87,8 +91,8 @@
                         <h2>SEP</h2>
                     </div>
                     <div class="col-10">
-                        <h3 class="text-uppercase"><strong> <a href="drPatientInfo.html" title="Ver info del paciente"
-                                    class="patientName">Saúl
+                        <h3 class="text-uppercase"><strong> <a href="drPatientInfo.html" data-toggle="tooltip"
+                                    title="Ver info del paciente" class="patientName">Saúl
                                     Neri</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
@@ -109,8 +113,8 @@
                         <h2>SEP</h2>
                     </div>
                     <div class="col-10">
-                        <h3 class="text-uppercase"><strong> <a href="drPatientInfo.html" title="Ver info del paciente"
-                                    class="patientName">Ali
+                        <h3 class="text-uppercase"><strong> <a href="drPatientInfo.html" data-toggle="tooltip"
+                                    title="Ver info del paciente" class="patientName">Ali
                                     Villegas</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Martes</li>
@@ -163,6 +167,9 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 
