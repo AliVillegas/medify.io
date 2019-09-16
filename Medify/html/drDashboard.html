@@ -9,7 +9,10 @@
     <title>Medify</title>
 
 
-
+    <!-- Bootstrap js essentials -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="icon" href="../img/icon.ico">
@@ -18,9 +21,6 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -75,10 +75,8 @@
                                     Herrera</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
-                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM -
-                                2:00 PM</li>
-                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área
-                                terminal 1</li>
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área terminal 1</li>
                         </ul>
                         <p>4ta revisión para dar seguimiento a cáncer</p>
                     </div>
@@ -96,11 +94,9 @@
                                     Neri</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
-                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 3:00 PM - 4:30
-                                PM
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 3:00 PM - 4:30 PM
                             </li>
-                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área
-                                terminal 2</li>
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área terminal 2</li>
                         </ul>
                         <p>Depresión severa</p>
                     </div>
@@ -118,11 +114,9 @@
                                     Villegas</a></strong></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Martes</li>
-                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 7:00 AM - 9:30
-                                AM
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 7:00 AM - 9:30 AM
                             </li>
-                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>Edificio
-                                1
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i>Edificio 1
                             </li>
                         </ul>
                         <p>Revisión Migraña</p>
@@ -167,7 +161,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

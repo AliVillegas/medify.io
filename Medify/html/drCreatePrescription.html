@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Medify</title>
-
+    <!-- Bootstrap js essentials -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 
     <link rel="stylesheet" href="../css/style.css">
@@ -18,9 +21,6 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -58,8 +58,7 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drCreatePrescriptionQR.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <a href="../html/drCreatePrescriptionQR.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
                 </ul>
 
 
@@ -78,13 +77,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputTitlePrescription">Título</label>
-                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto"
-                                required>
+                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDesPrescription">Diagnóstico</label>
-                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3"
-                                style="resize: none;" required></textarea>
+                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;" required></textarea>
                         </div>
                     </div>
                     <div class="form-row">
@@ -99,8 +96,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="inputPrescriptionMed2"
-                                placeholder="Paracetamol">
+                            <input type="text" class="form-control" id="inputPrescriptionMed2" placeholder="Paracetamol">
                         </div>
                         <div class="form-group col-md-1">
                             <input type="text" class="form-control" id="inputPrescriptionMedQ2" placeholder="20ml">
@@ -108,8 +104,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="inputPrescriptionMed3"
-                                placeholder="Amoxicilina">
+                            <input type="text" class="form-control" id="inputPrescriptionMed3" placeholder="Amoxicilina">
                         </div>
                         <div class="form-group col-md-1">
                             <input type="text" class="form-control" id="inputPrescriptionMedQ3" placeholder="10ml">
@@ -148,7 +143,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

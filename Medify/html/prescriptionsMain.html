@@ -17,9 +17,10 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap js essentials -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -75,7 +76,7 @@
                 </ul>
             </nav>
             <div class="container p-3">
-                <h1 class="secondaryColor my-4"> Mis recetas medicas</h1>
+                <h1 class="secondaryColor my-4"> Mis recetas médicas</h1>
                 <div class="card text-center">
                     <div class="card-header font-weight-bold">
                         Hospital Médica Nirvae
@@ -144,8 +145,7 @@
 
                                 </div>
                                 <div class="col-6 col-sm-3 col-lg-2">
-                                    <a class="mt-3 btn btn-secondary text-light" role="button"
-                                        disabled="true">Compartir</a>
+                                    <a class="mt-3 btn btn-secondary text-light" role="button" disabled="true">Compartir</a>
                                 </div>
                             </div>
 
@@ -222,7 +222,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

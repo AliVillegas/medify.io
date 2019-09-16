@@ -5,28 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>Medify</title>
-
-
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="icon" href="img/icon.ico">
 
-
-
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap js essentials -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -80,12 +70,10 @@
 
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip"
-                            data-placement="bottom" title="Iniciar sesion">Paciente</a>
+                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Paciente</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip"
-                            data-placement="bottom" title="Iniciar sesion">Doctor</a>
+                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Doctor</a>
                     </li>
                 </ul>
             </nav>
@@ -132,8 +120,7 @@
                     </div>
                     <div class="col-12 col-md-6 p-5">
                         <h1 class="text-left display-4 font-weight-bold">La respuesta a tus problemas</h1>
-                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu
-                            historial médico, citas y recetas en un solo lugar. </p>
+                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu historial médico, citas y recetas en un solo lugar. </p>
                     </div>
                 </div>
             </div>
@@ -206,9 +193,9 @@
                         <h5>Servicios</h5>
                         <ul class="my-3 list-unstyled">
                             <li><a href="#"> Citas Médicas </a>
-                            <li><a href="html/login.html"> Historial Médico </a>
-                            <li><a href="html/login.html"> Recetas Médicas </a>
-                            </li>
+                                <li><a href="html/login.html"> Historial Médico </a>
+                                    <li><a href="html/login.html"> Recetas Médicas </a>
+                                    </li>
                         </ul>
                     </div>
                     <div class="col-sm-4">
@@ -242,7 +229,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
