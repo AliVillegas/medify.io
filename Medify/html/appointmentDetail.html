@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Medify</title>
+
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="icon" href="../img/icon.ico">
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss" onclick="dismiss()">
+                <i class=" fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3 class="secondaryColor">Medify</h3>
+            </div>
+
+            <ul class="list-unstyled">
+                <li class="">
+                    <a href="../html/dashboard.html">Inicio</a>
+                </li>
+                <li class="active">
+                    <a href="#">Citas</a>
+                </li>
+                <li>
+                    <a href="../html/medHistory.html">Historial</a>
+                </li>
+                <li class="">
+                    <a href="../html/prescriptionsMain.html">Recetas</a>
+                </li>
+            </ul>
+
+
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar
+                Sesión </button>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
+                    <i class="fas fa-bars fa-2x secondaryColor"></i>
+                </button>
+                <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <a href="../html/dashboard.html"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                </ul>
+            </nav>
+            <div class="container p-3">
+                <h1 class="secondaryColor my-4"> Mis citas medicas</h1>
+
+                <div class="card text-center">
+                    <div class="card-header font-weight-bold">
+                        Consultorio Especializado
+                    </div>
+                    <div class="row px-3 mt-2">
+                        <h5 class="text-left col-6">Consulta: Dolor de cabeza</h5>
+                        <h5 class="text-right col-6">Dra. Torres</h5>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="card-body col-10">
+                            <p class="card-text">
+                                <ul class="list-unstyled pl-3">
+                                    <li class="lead text-left">Horario: 4:00 pm </li>
+                                    <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                                    <li class="lead text-left">Direccion: Av. Libertad 22 </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/torres.jpg">
+                    </div>
+
+                </div>
+
+
+                <div class="lineDividerBlue mt-3 mb-3"></div>
+
+                <div class="card text-center">
+                    <div class="card-header font-weight-bold">
+                        Clinica Mexico
+                    </div>
+                    <div class="row px-3 mt-2">
+                        <h5 class="text-left col-6">Consulta: Seguimiento Fractura</h5>
+                        <h5 class="text-right col-6">Dr. López</h5>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="card-body col-10">
+                            <p class="card-text">
+                                <ul class="list-unstyled pl-3">
+                                    <li class="lead text-left">Horario: 6:00 pm</li>
+                                    <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                                    <li class="lead text-left">Direccion: Av. Calcio 16 </li>
+                                    <li class="lead text-left">Segunda Cita</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/lopez.jpg">
+                    </div>
+
+                </div>
+
+                <div class="lineDividerBlue mt-3 mb-3"></div>
+
+                <div class="card text-center">
+                    <div class="card-header font-weight-bold">
+                        Dentistas & CO.
+                    </div>
+                    <div class="row px-3 mt-3">
+                        <h5 class="text-left col-6">Consulta: Seguimiento Fractura</h5>
+                        <h5 class="text-right col-6">Dr. Gómez</h5>
+                    </div>
+
+                    <div class="row no-gutters">
+                        <div class="card-body col-10">
+                            <p class="card-text">
+                                <ul class="list-unstyled pl-3">
+                                    <li class="lead text-left">Horario: 2:00 pm</li>
+                                    <li class="lead text-left">Fecha: 16 septiembre 2019</li>
+                                    <li class="lead text-left">Dirección: Calle Quijada 78 </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/gomez.jpg">
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="overlay" class="overlay" onclick="dismiss()"></div>
+
+
+
+
+
+    <script>
+        function dismiss(e) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function show(e) {
+            document.getElementById('sidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

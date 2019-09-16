@@ -17,6 +17,9 @@
 
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -38,16 +41,13 @@
                     <a href="dashboard.html">Inicio</a>
                 </li>
                 <li>
-                    <a href="#">Citas</a>
+                    <a href="../html/appointmentDetail.html">Citas</a>
                 </li>
                 <li>
                     <a href="../html/medHistory.html">Historial</a>
                 </li>
                 <li class="">
                     <a href="../html/prescriptionsMain.html">Recetas</a>
-                </li>
-                <li>
-                    <a href="../html/about.html">Acerca</a>
                 </li>
             </ul>
 
@@ -70,7 +70,29 @@
             </nav>
 
             <div class="container p-3">
-                <h1 class="secondaryColor my-4"> Mis Citas Médicas</h1>
+
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false"
+                    style="position: absolute; top: 5px; right: 5px;">
+                    <div class=" toast-header">
+                        <strong class="mr-auto lead secondaryColor font-weight-bold">Medify</strong>
+                        <small>Hace unos segundos</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body font-weight-bold">
+                        ¡Felicidades! Has completado tu perfil. Ahora puedes usar Medify.
+                    </div>
+                </div>
+
+
+
+
+                <h1 class="secondaryColor my-4"> <a class="secondaryColor text-decoration-none"
+                        href="../html/appointmentDetail.html" data-toggle="tooltip" data-placement="right"
+                        data-original-title="Ver citas">Mis Citas Médicas
+                    </a>
+                </h1>
                 <div class="card-deck">
                     <div class="card">
                         <div class="card-header lead font-weight-bold">Dra. Torres - Consultorio Especializado
@@ -80,6 +102,9 @@
                             <ul class="list-unstyled card-text">
                                 <li> Horario: 4:00 pm</li>
                                 <li> Dirección: Av. Libertad 22 </li>
+                                <li> <a class="secondaryColor" href="../html/appointmentDetail.html"
+                                        data-toggle="tooltip" data-placement="right" data-original-title="Ver cita">Ver
+                                        más</a></li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -95,6 +120,9 @@
                                 <li> Segunda cita</li>
                                 <li> Horario: 6:00 pm</li>
                                 <li> Dirección: Av. Calcio 16</li>
+                                <li> <a class="secondaryColor" href="../html/appointmentDetail.html"
+                                        data-toggle="tooltip" data-placement="right" data-original-title="Ver cita">Ver
+                                        más</a></li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -109,6 +137,9 @@
                             <ul class="list-unstyled card-text">
                                 <li> Horario: 2:00 pm</li>
                                 <li> Dirección: Calle Quijada 78 </li>
+                                <li> <a class="secondaryColor" href="../html/appointmentDetail.html"
+                                        data-toggle="tooltip" data-placement="right" data-original-title="Ver cita">Ver
+                                        más</a></li>
                             </ul>
                         </div>
                         <div class="card-footer">
@@ -119,7 +150,9 @@
 
                 <div class="lineDividerBlue mt-3 mb-3"></div>
 
-                <h1 class="secondaryColor my-4"> Mi Historial Médico</h1>
+                <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="../html/medHistory.html"
+                        data-toggle="tooltip" data-placement="right" data-original-title="Ver historial"> Mi
+                        Historial Médico </a></h1>
                 <div class="card-deck">
                     <div class="card">
                         <div class="card-header  lead font-weight-bold">Enfermedades
@@ -207,7 +240,9 @@
 
                 <div class="lineDividerBlue mt-3 mb-3"></div>
 
-                <h1 class="secondaryColor my-4"> Mis Recetas Médicas</h1>
+                <h1 class="secondaryColor my-4"><a class="text-decoration-none" href="../html/prescriptionsMain.html"
+                        data-toggle="tooltip" data-placement="right" data-original-title="Ver recetas">Mis Recetas
+                        Médicas </a> </h1>
                 <div class="card-deck">
                     <div class="card">
                         <div class="card-header  lead font-weight-bold">Consultorio médico especialista Lor. Mónaco
@@ -216,7 +251,9 @@
                             <ul class="list-unstyled card-text">
                                 <li> Dra. Monaco</li>
                                 <li> Revision Diabetes </li>
-                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                                <li> <a class="secondaryColor" href="../html/prescriptionsMain.html"
+                                        data-toggle="tooltip" data-placement="right"
+                                        data-original-title="Ver receta">Ver más</a></li>
                             </ul>
                         </div>
                         <div class=" card-footer">
@@ -230,7 +267,9 @@
                             <ul class="list-unstyled card-text">
                                 <li> Dr. Gómez</li>
                                 <li> Laceración en pecho </li>
-                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                                <li> <a class="text-decoration-none secondaryColor"
+                                        href="../html/prescriptionsMain.html" data-toggle="tooltip"
+                                        data-placement="right" data-original-title="Ver receta">Ver más</a></li>
                             </ul>
                         </div>
                         <div class=" card-footer">
@@ -244,7 +283,9 @@
                             <ul class="list-unstyled card-text">
                                 <li> Dr. Perez</li>
                                 <li> Dolor de cabeza </li>
-                                <li> <a class="secondaryColor" href="prescriptionsMain.html">Ver más</a></li>
+                                <li> <a class="secondaryColor" href="../html/prescriptionsMain.html"
+                                        data-toggle="tooltip" data-placement="right"
+                                        data-original-title="Ver receta">Ver más</a></li>
                             </ul>
                         </div>
                         <div class=" card-footer">
@@ -276,6 +317,13 @@
                 document.getElementById('sidebar').classList.add('active');
                 document.getElementById('overlay').classList.add('active');
             }
+            $(document).ready(function () {
+                $('.toast').toast('show');
+
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
 </body>
 

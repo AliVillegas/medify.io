@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Medify</title>
+
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="icon" href="../img/icon.ico">
+
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/b64158c314.js"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss" onclick="dismiss()">
+                <i class=" fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3 class="secondaryColor">Medify</h3>
+            </div>
+
+            <ul class="list-unstyled">
+                <li class="active">
+                    <a href="dashboard.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Citas</a>
+                </li>
+                <li>
+                    <a href="#">Historial</a>
+                </li>
+                <li class="">
+                    <a href="#">Recetas</a>
+                </li>
+            </ul>
+
+
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar
+                Sesión </button>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
+                    <i class="fas fa-bars fa-2x secondaryColor"></i>
+                </button>
+                <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
+
+                <ul class="nav navbar-nav ml-auto">
+                </ul>
+            </nav>
+
+            <div class="container py-2">
+                <h3 class="secondaryColor my-4"> Antes de seguir: ¡llena tu historia clinica!</h3>
+
+                <form action="../html/dashboard.html">
+                    <p class="lead">Antecedentes Personales Patólogicos
+                        <small class="text-muted">Favor de especificar fecha de inicio o tiempo con el
+                            padecimiento</small>
+                    </p>
+                    <div class="form-group">
+                        <div class="row d-none d-md-flex">
+                            <h6 class=" text-left col-md-2">Padecimiento</h6>
+                            <h6 class=" text-left col-md-10">Fecha</h6>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check1">
+                                <label class="form-check-label" for="check1">
+                                    Cardiaco
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class=" form-control form-control-sm" id="check-text1"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check2">
+                                <label class="form-check-label" for="check2">
+                                    Hipertensivo
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text2"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check3">
+                                <label class="form-check-label" for="check3">
+                                    Diabetes
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text3"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check4">
+                                <label class="form-check-label" for="check4">
+                                    VIH/SIDA
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text4"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check5">
+                                <label class="form-check-label" for="check5">
+                                    Cáncer
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text5"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check6">
+                                <label class="form-check-label" for="check6">
+                                    Hepáticos
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text6"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check7">
+                                <label class="form-check-label" for="check7">
+                                    Convulsivos
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text7"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check8">
+                                <label class="form-check-label" for="check8">
+                                    Otros
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text8"
+                                    placeholder="p.ej. 2018; enero 2015">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lineDividerBlue my-3"></div>
+
+
+                    <p class="lead">Cirugias <small class="text-muted">Favor de especificar fecha de inicio o tiempo con
+                            la cirugia</small>
+                    </p>
+
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="si_cirugia"
+                                value="option1">
+                            <label class="form-check-label" for="si_cirugia">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_cirugia"
+                                value="option2">
+                            <label class="form-check-label" for="no_cirugia">No</label>
+                        </div>
+                        <input type="text" class="form-control form-control-sm col-11" placeholder="Describir">
+
+                    </div>
+
+                    <div class="lineDividerBlue my-3"></div>
+
+                    <p class="lead">Antecedentes Personales No Patólogicos
+                    </p>
+                    <div class="form-group">
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check9">
+                                <label class="form-check-label" for="check9">
+                                    ¿Fuma?
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text9"
+                                    placeholder="Cantidad">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-3">
+                                <input class="form-check-input" type="checkbox" id="check10">
+                                <label class="form-check-label" for="check10">
+                                    ¿Cosume bebidas alcohólicas?
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-9">
+                                <input type="text" class="form-control form-control-sm" id="check-text10"
+                                    placeholder="Especificar tipo y cantidad">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-4">
+                                <input class="form-check-input" type="checkbox" id="check11">
+                                <label class="form-check-label" for="check11">
+                                    ¿Consume o ha consumido drogas?
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-8">
+                                <input type="text" class="form-control form-control-sm" id="check-text11"
+                                    placeholder="Especificar tipo y cantidad">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-3">
+                                <input class="form-check-input" type="checkbox" id="check12">
+                                <label class="form-check-label" for="check12">
+                                    ¿Perdida no intencional de peso?
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-9">
+                                <input type="text" class="form-control form-control-sm" id="check-text12"
+                                    placeholder="Describir">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-check col-12 col-md-2">
+                                <input class="form-check-input" type="checkbox" id="check13">
+                                <label class="form-check-label" for="check13">
+                                    Otros
+                                </label>
+                            </div>
+                            <div class="form-group col-12 col-md-10">
+                                <input type="text" class="form-control form-control-sm" id="check-text13"
+                                    placeholder="Describir">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lineDividerBlue my-3"></div>
+
+                    <p class="lead">Medicamentos y Alergias
+                    </p>
+                    <div class="form-group">
+                        <p class="text-muted">¿Es alergico a algun medicamento o
+                            alimento?</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="si_cirugia"
+                                value="option1">
+                            <label class="form-check-label" for="si_cirugia">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_cirugia"
+                                value="option2">
+                            <label class="form-check-label" for="no_cirugia">No</label>
+                        </div>
+                        <input type="text" class="form-control form-control-sm col-11" placeholder="Describir">
+                        <p class="text-muted mt-2">¿Esta bajo medicación actualmente?</p>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="si_cirugia"
+                                value="option1">
+                            <label class="form-check-label" for="si_cirugia">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="no_cirugia"
+                                value="option2">
+                            <label class="form-check-label" for="no_cirugia">No</label>
+                        </div>
+                        <input type="text" class="form-control form-control-sm col-11" placeholder="Describir">
+
+                    </div>
+
+                    <div class="lineDividerBlue my-3"></div>
+
+                    <p class="lead">Antecedentes Familiares
+                    </p>
+                    <div class="form-group">
+                        <div class="form-row mx-2">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="familiar1">Paretensco</label>
+                                <input type="text" class="form-control form-control-sm" id="familiar1"
+                                    placeholder="Abuelo paterno">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="enfermedad1">Enfermedad</label>
+                                <input type="text" class="form-control form-control-sm" id="enfermedad1"
+                                    placeholder="Cancer">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="familiar2">Paretensco</label>
+                                <input type="text" class="form-control form-control-sm" id="familiar2"
+                                    placeholder="Abuelo paterno">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="enfermedad2">Enfermedad</label>
+                                <input type="text" class="form-control form-control-sm" id="enfermedad2"
+                                    placeholder="Tensión Alta">
+                            </div>
+                        </div>
+                        <div class="form-row mx-2">
+                            <div class="form-group col-12 col-md-6">
+                                <label for="familiar3">Paretensco</label>
+                                <input type="text" class="form-control form-control-sm" id="familiar3"
+                                    placeholder="Abuelo paterno">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label for="enfermedad3">Enfermedad</label>
+                                <input type="text" class="form-control form-control-sm" id="enfermedad3"
+                                    placeholder="Diabetes">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lineDividerBlue my-3"></div>
+
+                    <div class="form-group">
+                        <h5 class="secondaryColor">He contestado honestamente</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="final" required>
+                            <label class="form-check-label" for="final">
+                                Sí
+                            </label>
+                        </div>
+                        <h5 class="secondaryColor">Acepto las politicas de privacidad</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="privacy" required>
+                            <label class="form-check-label" for="privacy">
+                                Sí
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mx-auto d-block"> Enviar </button>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+        <div id="overlay" class="overlay" onclick="dismiss()"></div>
+
+
+
+
+
+        <script>
+            function dismiss(e) {
+                document.getElementById('sidebar').classList.remove('active');
+                document.getElementById('overlay').classList.remove('active');
+            }
+
+            function show(e) {
+                document.getElementById('sidebar').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            }
+        </script>
+</body>
+
+</html>
