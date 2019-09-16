@@ -206,10 +206,6 @@ a:focus {
     object-fit: cover;
 }
 
-#myCarousel img {
-    max-height: downsizeIfTooBig(1000px);
-}
-
 form {
     @include basicFormStyle();
 }
@@ -465,5 +461,14 @@ form {
         position: fixed;
         bottom: 20px;
         right: 5%;
+    }
+    #myCarousel img {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #myCarousel img {
+        max-height: downsizeIfTooBig(1000px);
     }
 }
