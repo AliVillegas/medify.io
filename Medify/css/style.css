@@ -1,5 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 /* ---------------------------------------------------
+    MIXINS AND FUNCTIONS
+----------------------------------------------------- */
+/* ---------------------------------------------------
     General STYLE
 ----------------------------------------------------- */
 body {
@@ -155,6 +158,13 @@ a:focus {
   object-fit: cover;
 }
 
+form button {
+  background-color: #1e88e5 !important;
+}
+form ::placeholder {
+  color: rgba(125, 156, 214, 0.712) !important;
+}
+
 .carousel-caption-right {
   left: 0% !important;
   top: 25% !important;
@@ -183,6 +193,12 @@ a:focus {
 .noAStyle a {
   color: inherit;
   text-decoration: none !important;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 575px) {
+  .imgResponsive {
+    display: none;
+  }
 }
 
 .sectionTitle {

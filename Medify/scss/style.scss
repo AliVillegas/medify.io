@@ -4,6 +4,54 @@ $SecondaryColor: #1e88e5;
 $SecondaryColorLight: #6ab7ff;
 
 /* ---------------------------------------------------
+    MIXINS AND FUNCTIONS
+----------------------------------------------------- */
+
+@mixin whiteColorBluebg {
+    color: $MainColor!important;
+    background: $SecondaryColor!important;
+}
+
+@mixin basicFormStyle {
+    button {
+        background-color: $SecondaryColor!important;
+    }
+     ::placeholder {
+        color: rgba(125, 156, 214, 0.712) !important;
+    }
+}
+
+@mixin hideElementInRange($breakpoint, $upperBreakpoint) {
+    @media screen and (max-width: $upperBreakpoint) and (min-width: $breakpoint) {
+        display: none;
+    }
+}
+
+@mixin linkStyles ($link, $visit, $hover, $active) {
+    a {
+        color: $link;
+        &:visited {
+            color: $visit;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+    }
+}
+
+@function downsizeIfTooBig($height) {
+    $result: $height;
+    @if $height - 400px>1200px {
+        @return height -400px;
+    }
+    @return $result;
+}
+
+
+/* ---------------------------------------------------
     General STYLE
 ----------------------------------------------------- */
 
@@ -62,11 +110,6 @@ body {
     font-size: 1.1em;
     display: block;
     text-decoration: none;
-}
-
-@mixin whiteColorBluebg {
-    color: $MainColor!important;
-    background: $SecondaryColor!important;
 }
 
 #sidebar ul li a:hover {
@@ -166,6 +209,10 @@ a:focus {
     object-fit: cover;
 }
 
+form {
+    @include basicFormStyle();
+}
+
 .carousel-caption-right {
     left: 0%!important;
     top: 25%!important;
@@ -184,25 +231,31 @@ a:focus {
     left: 15%!important;
 }
 
-.introBackground{
+.introBackground {
     background-image: url(../img/intro.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom;
 }
+
 .noAStyle a {
     color: inherit;
     text-decoration: none !important;
+}
+
+.imgResponsive {
+    @include hideElementInRange(575px, 1200px);
 }
 
 .sectionTitle {
     font-size: 24px;
 }
 
-.appointmentImg{
+.appointmentImg {
     max-width: 150px;
     object-fit: cover;
 }
+
 
 /* The container */
 
