@@ -43,10 +43,7 @@ $SecondaryColorLight: #6ab7ff;
 }
 
 @function downsizeIfTooBig($height) {
-    $result: $height;
-    @if $height - 400px>1200px {
-        @return height -400px;
-    }
+    $result: $height - 200px;
     @return $result;
 }
 
@@ -207,6 +204,10 @@ a:focus {
     height: 100vh;
     width: 100vw!important;
     object-fit: cover;
+}
+
+#myCarousel img {
+    max-height: downsizeIfTooBig(1000px);
 }
 
 form {
