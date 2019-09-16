@@ -8,9 +8,9 @@
 
     <title>Medify</title>
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 
     <link rel="stylesheet" href="../css/style.css">
@@ -152,11 +152,28 @@
                         </div>
                         <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/gomez.jpg">
                     </div>
-
                 </div>
-
-
-
+                <button class="btn btn-primary btn-lg" style="position:fixed;bottom:10px; right:10px;"
+                    data-toggle="modal" data-target="#exampleModalCenter">Ver QR</button>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title secondaryColor" id="exampleModalCenterTitle">Tu código QR</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/qr-code.png" class="img-fluid">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -180,7 +197,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

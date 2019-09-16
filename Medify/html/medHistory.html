@@ -16,9 +16,9 @@
 
 
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
 
@@ -90,7 +90,9 @@
                             <li> Dolor intenso en de la cabeza al moverse</li>
                             <li> Bajo apetito</li>
                         </ul>
-                        <a class="btn btn-outline-primary btn-sm" role="button" href="/html/prescriptionsMain.html">Ver Receta</a>
+                        <a class="btn btn-outline-primary btn-sm" role="button"
+                            href="../html/prescriptionsMain.html">Ver
+                            Receta</a>
                     </div>
                 </div>
                 <!-- Card  -->
@@ -106,7 +108,8 @@
                             <li> Hemoglobina: De 11,8 A 15,3 g/dl</li>
                             <li> V.C.M.: De 82 a 98 fl</li>
                         </ul>
-                        <a class="btn btn-outline-primary btn-sm" target="_blank" role="button" href="/media/analisis.pdf">PDF</a>
+                        <a class="btn btn-outline-primary btn-sm" target="_blank" role="button"
+                            href="../media/analisis.pdf">PDF</a>
                     </div>
                 </div>
                 <!-- Card  -->
@@ -120,10 +123,32 @@
                         <p class="card-text mb-3 mt-3">Fractura aguda en hueso perineo 1 sección b</p>
 
                     </div>
-                    <a href="/img/xray.jpg" target="_blank">
-                        <img class="card-img-right flex-auto d-none d-sm-block" alt="Thumbnail [200x250]" src="../img/xray.jpg" style="width: 200px; height: 250px;">
+                    <a href="../img/xray.jpg" target="_blank">
+                        <img class="card-img-right flex-auto d-none d-sm-block" alt="Thumbnail [200x250]"
+                            src="../img/xray.jpg" style="width: 200px; height: 250px;">
                     </a>
 
+                </div>
+                <button class="btn btn-primary btn-lg" style="position:fixed;bottom:10px; right:10px;"
+                    data-toggle="modal" data-target="#exampleModalCenter">Ver QR</button>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title secondaryColor" id="exampleModalCenterTitle">Tu código QR</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/qr-code.png" class="img-fluid">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -148,7 +173,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

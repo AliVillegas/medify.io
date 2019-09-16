@@ -18,9 +18,9 @@
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 
 </head>
@@ -82,7 +82,8 @@
                 <form action="../html/profile.html">
                     <div class="form-group">
                         <label for="correo">Correo</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Nuevo correo">
+                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
+                            placeholder="Nuevo correo">
                     </div>
                     <div class="form-group">
                         <label for="imagen">Nueva imagen</label>
@@ -97,9 +98,10 @@
 
 
                     <button type="submit" class="btn btn-primary mx-auto d-block mb-2"> Actualizar Datos</button>
-                    <button class="btn btn-primary mx-auto d-block"> <a class="text-decoration-none"
-                            href="../html/profile.html">
-                            Cancelar</a></button>
+                    <a class="text-decoration-none" href="../html/profile.html">
+                        <button class="btn btn-primary mx-auto d-block"> Cancelar</button>
+                    </a>
+
                 </form>
 
 
@@ -128,7 +130,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

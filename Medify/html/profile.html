@@ -18,9 +18,9 @@
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 
 </head>
@@ -78,7 +78,8 @@
             <div class="container p-3">
                 <h1 class="secondaryColor my-4"> Mi Perfil</h1>
 
-                <img src="../img/lopez.jpg" class="mx-auto d-block rounded" style="max-width:250px;">
+                <img src="../img/perfil.jpg" class="mx-auto d-block rounded" style="max-width:250px;"
+                    alt="Imagen de Perfil">
 
                 <h3 class="secondaryColor mb-3">Mi información</h3>
                 <p class="lead"> Nombre: Juan Perez</p>
@@ -88,7 +89,8 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Ver codigo QR
                 </button>
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -107,8 +109,10 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary mx-auto d-block mt-3"> <a class="text-decoration-none"
-                        href="../html/updateProfile.html"> Actualizar Datos</a></button>
+                <a class="text-decoration-none" href="../html/updateProfile.html">
+                    <button class="btn btn-primary mx-auto d-block mt-3"> Actualizar Datos</button>
+                </a>
+
             </div>
 
         </div>
@@ -132,7 +136,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
     </script>

@@ -14,9 +14,9 @@
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
 
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 
@@ -52,11 +52,17 @@
             </ul>
 
             <h5 class="text-center mt-3">Registrarte</h5>
-            <button class="btn btnSideBar mx-auto d-block mt-3"> <a title="Crear cuenta de paciente"
-                    href="html/register.html">Soy Paciente</a> </button>
-            <button class="btn btnSideBar mx-auto d-block mt-3"> <a title="Crear cuenta de doctor"
-                    href="html/doctorRegister.html">Soy Doctor</a>
-            </button>
+            <a data-toggle="tooltip" title="Crear cuenta de doctor" href="html/register.html"
+                class="text-decoration-none">
+                <button class="btn btnSideBar mx-auto d-block mt-3"> Soy Paciente
+                </button>
+            </a>
+
+            <a data-toggle="tooltip" title="Crear cuenta de doctor" href="html/doctorRegister.html"
+                class="text-decoration-none">
+                <button class="btn btnSideBar mx-auto d-block mt-3"> Soy Doctor
+                </button>
+            </a>
 
         </nav>
 
@@ -70,10 +76,12 @@
 
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Paciente</a>
+                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Paciente</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Doctor</a>
+                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Doctor</a>
                     </li>
                 </ul>
             </nav>
@@ -85,20 +93,20 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/doctor.jpg" class="d-block w-100 img-carousel" alt="...">
+                        <img src="img/doctor.jpg" class="d-block w-100 img-carousel" alt="Doctora">
                         <div class="carousel-caption carousel-caption-right">
                             <h1 class="display-4">Tus doctores en un solo lugar</h1>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="img/doctor2.jpg" class="d-block w-100 img-carousel" alt="...">
+                        <img src="img/doctor2.jpg" class="d-block w-100 img-carousel" alt="Rayos X">
                         <div class="carousel-caption carousel-caption-center ">
                             <h1 class="display-4 ">Estudios, enfermedades y recetas</h1>
 
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="img/doctor3.jpg" class="d-block w-100 img-carousel" alt="...">
+                        <img src="img/doctor3.jpg" class="d-block w-100 img-carousel" alt="Calendario">
                         <div class="carousel-caption carousel-caption-left ">
                             <h1 class="display-4 secondaryColor">Organiza citas médicas </h1>
 
@@ -120,7 +128,8 @@
                     </div>
                     <div class="col-12 col-md-6 p-5">
                         <h1 class="text-left display-4 font-weight-bold">La respuesta a tus problemas</h1>
-                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu historial médico, citas y recetas en un solo lugar. </p>
+                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu
+                            historial médico, citas y recetas en un solo lugar. </p>
                     </div>
                 </div>
             </div>
@@ -173,7 +182,7 @@
                         <i class="fas fa-user-md fa-5x mx-auto d-block mb-4"></i>
                         <h2 class=" text-center">Recibe recetas de tus médicos</h2>
                     </div>
-                    <div class="col-12 col-sm-2 my-2 my-sm-0 mx-auto d-block" style="max-width: 200px;">
+                    <div class="col-12 col-sm-2 my-3 my-sm-0 mx-auto d-block" style="max-width: 200px;">
                         <img src="img/drug.png" class="img-fluid imgResponsive" alt="Medicina">
                     </div>
                     <div class="col-12 col-sm-5 my-2 my-sm-0">
@@ -192,10 +201,10 @@
                     <div class="col-sm-4 secondaryColor">
                         <h5>Servicios</h5>
                         <ul class="my-3 list-unstyled">
-                            <li><a href="#"> Citas Médicas </a>
-                                <li><a href="html/login.html"> Historial Médico </a>
-                                    <li><a href="html/login.html"> Recetas Médicas </a>
-                                    </li>
+                            <li><a href="html/login.html"> Citas Médicas </a>
+                            <li><a href="html/login.html"> Historial Médico </a>
+                            <li><a href="html/login.html"> Recetas Médicas </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-sm-4">
@@ -229,7 +238,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
