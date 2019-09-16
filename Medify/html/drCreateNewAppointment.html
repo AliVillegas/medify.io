@@ -65,68 +65,93 @@
 
             </nav>
             <div class="container p-3">
+
                 <h4 class="text-center ml-auto">Nueva cita</h4>
                 <div class="card">
                     <div class="card-header">
                         Paciente: Julián Herrera
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Seguimiento Cáncer</h5>
-                        <!-- CALENDAR  -->
-                        <div class="my-3">
-                            <div class="month">
-                                <ul>
-                                    <li class="prev">&#10094;</li>
-                                    <li class="next">&#10095;</li>
-                                    <li>Sep<br><span style="font-size:18px">2019</span></li>
-                                </ul>
+                    <div class="w-75 mx-auto my-2">
+                        <form action="/html/drPatientInfo.html">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="inputTitlePrescription">Título</label>
+                                    <input type="text" class="form-control" id="inputTitlePrescription" placeholder="Revisión diabetes" required>
+                                </div>
                             </div>
 
-                            <ul class="weekdays">
-                                <li>Mo</li>
-                                <li>Tu</li>
-                                <li>We</li>
-                                <li>Th</li>
-                                <li>Fr</li>
-                                <li>Sa</li>
-                                <li>Su</li>
-                            </ul>
+                            <div class="card-body">
+                                <!-- CALENDAR  -->
+                                <div class="my-3">
+                                    <div class="month">
+                                        <ul>
+                                            <li class="prev">&#10094;</li>
+                                            <li class="next">&#10095;</li>
+                                            <li>Sep<br><span style="font-size:18px">2019</span></li>
+                                        </ul>
+                                    </div>
 
-                            <ul class="days">
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                                <li>6</li>
-                                <li>7</li>
-                                <li>8</li>
-                                <li>9</li>
-                                <li><span class="active">10</span></li>
-                                <li>11</li>
-                                <li>12</li>
-                                <li>13</li>
-                                <li>14</li>
-                                <li>15</li>
-                                <li>16</li>
-                                <li>17</li>
-                                <li>18</li>
-                                <li>19</li>
-                                <li>20</li>
-                                <li>21</li>
-                                <li>22</li>
-                                <li>23</li>
-                                <li>24</li>
-                                <li>25</li>
-                                <li>26</li>
-                                <li>27</li>
-                                <li>28</li>
-                                <li>29</li>
-                                <li>30</li>
+                                    <ul class="weekdays">
+                                        <li>Mo</li>
+                                        <li>Tu</li>
+                                        <li>We</li>
+                                        <li>Th</li>
+                                        <li>Fr</li>
+                                        <li>Sa</li>
+                                        <li>Su</li>
+                                    </ul>
 
-                            </ul>
-                        </div>
-                        <a href="../html/drDashboard.html" title="Guardar cita" class="btn btn-primary d-block m-auto w-75 px-2">Finalizar Cita</a>
+                                    <ul class="days">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li>6</li>
+                                        <li>7</li>
+                                        <li>8</li>
+                                        <li>9</li>
+                                        <li><span class="active">10</span></li>
+                                        <li>11</li>
+                                        <li>12</li>
+                                        <li>13</li>
+                                        <li>14</li>
+                                        <li>15</li>
+                                        <li>16</li>
+                                        <li>17</li>
+                                        <li>18</li>
+                                        <li>19</li>
+                                        <li>20</li>
+                                        <li>21</li>
+                                        <li>22</li>
+                                        <li>23</li>
+                                        <li>24</li>
+                                        <li>25</li>
+                                        <li>26</li>
+                                        <li>27</li>
+                                        <li>28</li>
+                                        <li>29</li>
+                                        <li>30</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputPrescriptionMed1">Hora</label>
+                                    <input type="text" class="form-control" id="inputPrescriptionMed1" placeholder="18:00">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                                Confirmo ser un médico autorizado
+                                            </label>
+                                </div>
+                            </div>
+                            <button type="submit" title="Confirmar Cita" class="btn btn-primary mb-5 m-auto w-100">Confirmar cita</button>
+                        </form>
                     </div>
                 </div>
             </div>
