@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -71,8 +71,11 @@
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
 
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/profile.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
-                            class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li>
+                        <a href="../html/profile.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
+                                class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    </li>
+
                 </ul>
             </nav>
             <div class="container p-3">
@@ -82,35 +85,24 @@
                 <form action="../html/profile.html">
                     <div class="form-group">
                         <label for="correo">Correo</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
-                            placeholder="Nuevo correo">
+                        <input type="email" class="form-control" id="correo" placeholder="Nuevo correo">
                     </div>
                     <div class="form-group">
                         <label for="imagen">Nueva imagen</label>
                         <input type="file" class="form-control-file" id="imagen">
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="plitica" required>
+                        <input class="form-check-input" type="checkbox" id="politica" required>
                         <label class="form-check-label" for="politica">
                             Acepto politica de privacidad
                         </label>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary mx-auto d-block mb-2"> Actualizar Datos</button>
-                    <a class="text-decoration-none" href="../html/profile.html">
-                        <button class="btn btn-primary mx-auto d-block"> Cancelar</button>
-                    </a>
-
+                    <button class="btn btn-primary mx-auto d-block"
+                        onclick="window.location.href='../html/profile.html'"> Cancelar</button>
                 </form>
-
-
-
-
             </div>
-
         </div>
-
     </div>
 
 

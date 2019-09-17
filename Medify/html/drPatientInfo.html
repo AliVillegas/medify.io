@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="icon" href="../img/icon.ico">
 
 
 
@@ -57,8 +58,11 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drDashboard.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
-                            class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li>
+                        <a href="../html/drDashboard.html" data-toggle="tooltip" data-placement="bottom"
+                            title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    </li>
+
                 </ul>
             </nav>
             <div class="container p-4">
@@ -101,10 +105,10 @@
                 </div>
                 <div class="row mt-5">
                     <div class="addDateDesktop mx-auto">
-                        <a href="drCreatePrescriptionQR.html" style="text-decoration: none;">
-                            <button class="btn btn-lg btn-primary d-block">Agregar
-                                Receta</button>
-                        </a>
+                        <button class="btn btn-lg btn-primary d-block"
+                            onclick="window.location.href='drCreatePrescriptionQR.html'">Agregar
+                            Receta</button>
+
                     </div>
                 </div>
             </div>

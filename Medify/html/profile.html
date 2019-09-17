@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -71,8 +71,11 @@
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
 
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/dashboard.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
-                            class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li>
+                        <a href="../html/dashboard.html" data-toggle="tooltip" data-placement="bottom"
+                            title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    </li>
+
                 </ul>
             </nav>
             <div class="container p-3">
@@ -100,7 +103,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <img src="../img/qr-code.png" class="img-fluid">
+                                <img src="../img/qr-code.png" class="img-fluid" alt="QR">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -108,10 +111,9 @@
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary mx-auto d-block mt-3"
+                    onclick="window.location.href='../html/updateProfile.html'"> Actualizar Datos</button>
 
-                <a class="text-decoration-none" href="../html/updateProfile.html">
-                    <button class="btn btn-primary mx-auto d-block mt-3"> Actualizar Datos</button>
-                </a>
 
             </div>
 
