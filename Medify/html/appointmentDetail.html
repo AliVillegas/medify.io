@@ -70,8 +70,8 @@
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li><a href="../html/dashboard.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i
-                        class="fas fa-arrow-left fa-2x secondaryColor"></i></a></li>
+                    <li><a href="../html/dashboard.html" data-toggle="tooltip" data-placement="bottom"
+                            title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a></li>
 
                 </ul>
             </nav>
@@ -89,15 +89,16 @@
 
                     <div class="row no-gutters">
                         <div class="card-body col-10">
-                            <p class="card-text">
-                                <ul class="list-unstyled pl-3">
-                                    <li class="lead text-left">Horario: 4:00 pm </li>
-                                    <li class="lead text-left">Fecha: 23 septiembre 2019</li>
-                                    <li class="lead text-left">Dirección: Av. Libertad 22 </li>
-                                </ul>
-                            </p>
+
+                            <ul class="list-unstyled pl-3 card-text">
+                                <li class="lead text-left">Horario: 4:00 pm </li>
+                                <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                                <li class="lead text-left">Dirección: Av. Libertad 22 </li>
+                            </ul>
+
                         </div>
-                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/torres.jpg">
+                        <img class="card-img col-2 appointmentImg d-none d-sm-block" alt="Doctor Photo"
+                            src="../img/torres.jpg">
                     </div>
 
                 </div>
@@ -116,16 +117,15 @@
 
                     <div class="row no-gutters">
                         <div class="card-body col-10">
-                            <p class="card-text">
-                                <ul class="list-unstyled pl-3">
-                                    <li class="lead text-left">Horario: 6:00 pm</li>
-                                    <li class="lead text-left">Fecha: 23 septiembre 2019</li>
-                                    <li class="lead text-left">Dirección: Av. Calcio 16 </li>
-                                    <li class="lead text-left">Segunda Cita</li>
-                                </ul>
-                            </p>
+                            <ul class="list-unstyled pl-3 card-text">
+                                <li class="lead text-left">Horario: 6:00 pm</li>
+                                <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                                <li class="lead text-left">Dirección: Av. Calcio 16 </li>
+                                <li class="lead text-left">Segunda Cita</li>
+                            </ul>
                         </div>
-                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/lopez.jpg">
+                        <img class="card-img col-2 appointmentImg d-none d-sm-block" alt="Doctor Photo"
+                            src="../img/lopez.jpg">
                     </div>
 
                 </div>
@@ -143,19 +143,20 @@
 
                     <div class="row no-gutters">
                         <div class="card-body col-10">
-                            <p class="card-text">
-                                <ul class="list-unstyled pl-3">
-                                    <li class="lead text-left">Horario: 2:00 pm</li>
-                                    <li class="lead text-left">Fecha: 16 septiembre 2019</li>
-                                    <li class="lead text-left">Dirección: Calle Quijada 78 </li>
-                                </ul>
-                            </p>
+                            <ul class="list-unstyled pl-3 card-text">
+                                <li class="lead text-left">Horario: 2:00 pm</li>
+                                <li class="lead text-left">Fecha: 16 septiembre 2019</li>
+                                <li class="lead text-left">Dirección: Calle Quijada 78 </li>
+                            </ul>
                         </div>
-                        <img class="card-img col-2 appointmentImg" alt="Doctor Photo" src="../img/gomez.jpg">
+                        <img class="card-img col-2 appointmentImg d-none d-sm-block" alt="Doctor Photo"
+                            src="../img/gomez.jpg">
                     </div>
                 </div>
-                <button class="btn btn-primary btn-lg" style="position:fixed;bottom:10px; right:10px;" data-toggle="modal" data-target="#exampleModalCenter">Ver QR</button>
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <button class="btn btn-primary btn-lg" style="position:fixed;bottom:10px; right:10px;"
+                    data-toggle="modal" data-target="#exampleModalCenter">Ver QR</button>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -196,7 +197,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
