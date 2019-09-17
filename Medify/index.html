@@ -14,9 +14,9 @@
     <script src="https://kit.fontawesome.com/b64158c314.js"></script>
 
     <!-- Bootstrap js essentials -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </head>
 
@@ -52,8 +52,10 @@
             </ul>
 
             <h5 class="text-center mt-3">Registrarte</h5>
-            <a title="Crear cuenta de paciente" href="html/register.html" class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Paciente</a>
-            <a title="Crear cuenta de paciente" href="html/doctorRegister.html" class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Doctor</a>
+            <a data-toggle="tooltip" title="Crear cuenta de paciente" href="html/register.html"
+                class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Paciente</a>
+            <a data-toggle="tooltip" title="Crear cuenta de paciente" href="html/doctorRegister.html"
+                class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Doctor</a>
 
 
         </nav>
@@ -68,10 +70,12 @@
 
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Paciente</a>
+                        <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Paciente</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesion">Doctor</a>
+                        <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesion">Doctor</a>
                     </li>
                 </ul>
             </nav>
@@ -112,22 +116,35 @@
                     <span class="sr-only">Siguiente</span>
                 </a>
             </div>
-            <div class="container-fluid mt-3 ">
+            <div class="container-fluid mt-3">
                 <div class="row px-4">
                     <div class="d-none d-md-block col-sm-6 introBackground">
                     </div>
-                    <div class="col-12 col-md-6 p-5">
+                    <div class="col-12 col-md-6 p-5 blockstack">
                         <h1 class="text-left display-4 font-weight-bold">La respuesta a tus problemas</h1>
-                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu historial médico, citas y recetas en un solo lugar. </p>
+                        <p class="text-left lead"> <b class="secondaryColor"> Medify </b> te ayuda a administrar tu
+                            historial médico, citas y recetas en un solo lugar. </p>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4 secondaryColorBg mainColor" id="citas">
+            <div class="container-fluid py-2 py-sm-3 py-xl-5 secondaryColorBg">
+                <div class="row px-3">
+                    <div class="col-12 col-md-6 p-5 mainColor">
+                        <h1 class="text-left display-4 font-weight-bold">Tus datos seguros</h1>
+                        <p class="text-left lead"> <b class="text-body"> Medify </b> mantiene tu información segura
+                            con tecnología de Blockchain. </p>
+                    </div>
+                    <div class="d-none d-md-block col-md-6">
+                        <img src="img/Blockstack-logo.png" class="img-fluid mx-auto d-block" alt="Blockstack logo">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid py-2 py-sm-3 py-xl-5" id="citas">
                 <h1 class="text-center mt-3">Organiza tus citas médicas</h1>
-                <div class="row py-5 px-3">
+                <div class="row py-3 px-3">
                     <div class="col-12 col-sm-4 my-2 my-sm-0">
                         <i class="fas fa-calendar-alt fa-5x mx-auto d-block mb-4"></i>
-                        <h4 class=" text-center"> Lleva una agenda de tus citas</h4>
+                        <h4 class="text-center"> Lleva una agenda de tus citas</h4>
                     </div>
                     <div class="col-12 col-sm-4 my-2 my-sm-0">
                         <i class="fas fa-undo-alt fa-5x mx-auto d-block mb-4"></i>
@@ -135,13 +152,13 @@
                     </div>
                     <div class="col-12 col-sm-4 my-2 my-sm-0">
                         <i class="fas fa-search fa-5x mx-auto d-block mb-4"></i>
-                        <h4 class=" text-center"> Consulta citas pasadas</h4>
+                        <h4 class="text-center"> Consulta citas pasadas</h4>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4" id="historial">
+            <div class="container-fluid py-2 py-sm-3 py-xl-5 secondaryColorBg mainColor" id="historial">
                 <h1 class="text-center mt-3">Administra tu historial médico</h1>
-                <div class="row py-5">
+                <div class="row py-3">
                     <div class="col-12 col-sm-3 my-2 my-sm-0">
                         <i class="fas fa-file-alt fa-5x mx-auto d-block mb-4"></i>
                         <h4 class=" text-center">Ingresa tus datos</h4>
@@ -164,9 +181,9 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-4 secondaryColorBg mainColor" id="recetas">
+            <div class="container-fluid py-2 py-sm-3 py-xl-5" id="recetas">
                 <h1 class="text-center mt-3">Recetas Médicas</h1>
-                <div class="row py-5 px-3">
+                <div class="row py-3 px-3">
                     <div class="col-12 col-sm-5 my-2 my-sm-0">
                         <i class="fas fa-user-md fa-5x mx-auto d-block mb-4"></i>
                         <h2 class=" text-center">Recibe recetas de tus médicos</h2>
@@ -182,22 +199,22 @@
             </div>
 
 
-            <div class="container-fluid">
+            <div class="container-fluid secondaryColorBg mainColor">
                 <div class="row mt-3">
-                    <div class="col-sm-4 secondaryColor">
+                    <div class="col-sm-4 mt-2">
                         <h1> MEDIFY </h1>
                     </div>
-                    <div class="col-sm-4 secondaryColor">
+                    <div class="col-sm-4 mt-2">
                         <h5>Servicios</h5>
                         <ul class="my-3 list-unstyled">
                             <li><a href="#"> Citas Médicas </a>
-                                <li><a href="html/login.html"> Historial Médico </a>
-                                    <li><a href="html/login.html"> Recetas Médicas </a>
-                                    </li>
+                            <li><a href="html/login.html"> Historial Médico </a>
+                            <li><a href="html/login.html"> Recetas Médicas </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
-                        <h5 class="secondaryColor">Medify</h5>
+                    <div class="col-sm-4 mt-2">
+                        <h5>Medify</h5>
                         <ul class="list-unstyled">
                             <li><a href="html/about.html">Acerca de nosotros</a></li>
                             <li><a href="html/login.html">Iniciar Sesión</a></li>
@@ -227,7 +244,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function() {
+        $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
