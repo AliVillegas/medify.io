@@ -2,6 +2,7 @@
 $MainColor: #fafafa;
 $SecondaryColor: #1e88e5;
 $SecondaryColorLight: #6ab7ff;
+$MainFont: 'Poppins', sans-serif!important;
 
 /* ---------------------------------------------------
     MIXINS AND FUNCTIONS
@@ -38,7 +39,7 @@ $SecondaryColorLight: #6ab7ff;
 ----------------------------------------------------- */
 
 body {
-    font-family: 'Poppins', sans-serif!important;
+    font-family: $MainFont;
     background: $MainColor;
 }
 
