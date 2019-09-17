@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -58,8 +58,8 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drNewAppointmentQR.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li><a href="../html/drNewAppointmentQR.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a></li>
+
                 </ul>
 
 
@@ -76,8 +76,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputTitlePrescription">Título</label>
-                                    <input type="text" class="form-control" id="inputTitlePrescription"
-                                        placeholder="Revisión diabetes" required>
+                                    <input type="text" class="form-control" id="inputTitlePrescription" placeholder="Revisión diabetes" required>
                                 </div>
                             </div>
 
@@ -140,8 +139,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputPrescriptionMed1">Hora</label>
-                                    <input type="text" class="form-control" id="inputPrescriptionMed1"
-                                        placeholder="18:00">
+                                    <input type="text" class="form-control" id="inputPrescriptionMed1" placeholder="18:00">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -152,8 +150,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" title="Confirmar Cita"
-                                class="btn btn-primary mb-5 m-auto w-100">Confirmar cita</button>
+                            <button type="submit" title="Confirmar Cita" class="btn btn-primary mb-5 m-auto w-100">Confirmar cita</button>
                         </form>
                     </div>
                 </div>
@@ -180,7 +177,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

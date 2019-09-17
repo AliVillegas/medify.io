@@ -387,6 +387,10 @@ form {
     max-width: 400px;
 }
 
+.bHref {
+    text-decoration: none;
+}
+
 
 /* On mouse-over, add a grey background color */
 
@@ -446,6 +450,10 @@ form {
 
 .patientName {
     color: $SecondaryColor !important;
+}
+
+.img80 {
+    width: 80% !important;
 }
 
 

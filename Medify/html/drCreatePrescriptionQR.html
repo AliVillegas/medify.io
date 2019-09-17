@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -58,22 +58,19 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drPatientInfo.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li> <a href="../html/drPatientInfo.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    </li>
                 </ul>
 
 
             </nav>
             <div class="container p-3">
                 <h4 class="text-center ml-auto">Por favor escanee el código del paciente</h4>
-                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg" alt=" qr"
-                    width="80%">
+                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg img80" alt=" qr">
             </div>
             <div>
 
-                <a href="drCreatePrescription.html">
-                    <button data-toggle="tooltip" title="Continuar nueva receta"
-                        class="btn btn-lg btn-primary mx-auto d-block">Continuar</button>
+                <a href="drCreatePrescription.html" data-toggle="tooltip" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50">Continuar
                 </a>
 
             </div>
@@ -98,8 +95,8 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+        $(function() {
+            $('[data-toggle="tooltip "]').tooltip()
         })
     </script>
 </body>

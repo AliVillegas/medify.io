@@ -320,6 +320,10 @@ form ::placeholder {
   max-width: 400px;
 }
 
+.bHref {
+  text-decoration: none;
+}
+
 /* On mouse-over, add a grey background color */
 .containerCheckboxes:hover input ~ .checkmark {
   background-color: #ccc;
@@ -369,6 +373,10 @@ form ::placeholder {
 
 .patientName {
   color: #1e88e5 !important;
+}
+
+.img80 {
+  width: 80% !important;
 }
 
 /* ---------------------------------------------------

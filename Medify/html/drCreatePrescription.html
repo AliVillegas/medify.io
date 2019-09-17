@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -58,8 +58,8 @@
                 </button>
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
-                    <a href="../html/drCreatePrescriptionQR.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    <li> <a href="../html/drCreatePrescriptionQR.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                    </li>
                 </ul>
 
 
@@ -78,13 +78,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputTitlePrescription">Título</label>
-                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto"
-                                required>
+                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputDesPrescription">Diagnóstico</label>
-                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3"
-                                style="resize: none;" required></textarea>
+                            <label for="inputDesPrescriptionTextArea">Diagnóstico</label>
+                            <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;" required></textarea>
                         </div>
                     </div>
                     <div class="form-row">
@@ -99,8 +97,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="inputPrescriptionMed2"
-                                placeholder="Paracetamol">
+                            <input type="text" class="form-control" id="inputPrescriptionMed2" placeholder="Paracetamol">
                         </div>
                         <div class="form-group col-md-1">
                             <input type="text" class="form-control" id="inputPrescriptionMedQ2" placeholder="20ml">
@@ -108,8 +105,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="inputPrescriptionMed3"
-                                placeholder="Amoxicilina">
+                            <input type="text" class="form-control" id="inputPrescriptionMed3" placeholder="Amoxicilina">
                         </div>
                         <div class="form-group col-md-1">
                             <input type="text" class="form-control" id="inputPrescriptionMedQ3" placeholder="10ml">
@@ -148,7 +144,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
