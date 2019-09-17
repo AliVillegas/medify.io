@@ -45,7 +45,7 @@
             </ul>
 
 
-            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='../index.html'"> Cerrar
+            <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'"> Cerrar
                 Sesión </button>
 
         </nav>
@@ -59,8 +59,7 @@
                 <h2 class="ml-auto d-block secondaryColor display-4 mr-5">Medify</h2>
                 <ul class="nav navbar-nav ml-auto">
                     <li>
-                        <a href="../html/drDashboard.html" data-toggle="tooltip" data-placement="bottom"
-                            title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
+                        <a href="../html/drDashboard.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a>
                     </li>
 
                 </ul>
@@ -69,12 +68,10 @@
             </nav>
             <div class="container p-3">
                 <h4 class="text-center ml-auto">Por favor escanee el código del paciente</h4>
-                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg" alt="qr"
-                    style="width: 80%">
+                <img src="../img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg" alt="qr" style="width: 80%">
             </div>
             <div>
-                <button class="btn btn-primary mx-auto d-block"
-                    onclick="window.location.href='drCreateNewAppointment.html'"> Confirmar</button>
+                <button class="btn btn-primary mx-auto d-block" onclick="window.location.href='drCreateNewAppointment.html'"> Confirmar</button>
             </div>
         </div>
 
@@ -97,7 +94,7 @@
             document.getElementById('sidebar').classList.add('active');
             document.getElementById('overlay').classList.add('active');
         }
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
