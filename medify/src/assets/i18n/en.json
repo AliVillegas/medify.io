@@ -1,0 +1,59 @@
+
+{
+    "navbar": {
+        "title": "Medify",
+        "loginPatient": "Patient",
+        "loginDoctor": "Doctor"
+    },
+    "sidebar": {
+        "title": "Medify",
+        "li1": "Appointments",
+        "li2": "History",
+        "li3": "Recipes",
+        "li4": "About",
+        "register": "Register",
+        "registerPatient": "Register Patient",
+        "registerDoctor": "Register Doctor"
+
+    },
+    "landingPage": {
+        "carousel": {
+            "img1-title": "Your doctors in one place",
+            "img2-title": "Studies, diseases and prescriptions",
+            "img3-title": "Organize medical appointments"
+        },
+        "section1": {
+            "title": "The answer to your problems",
+            "bold": "Medify",
+            "text": "helps you manage your medical history, appointments and prescriptions in one place."
+        },
+        "section2": {
+            "title": "Your secure data",
+            "bold": "Medify",
+            "text": "keep your information safe with Blockchain technology."
+        },
+        "section3": {
+            "title": "Organize your medical appointments",
+            "item1": "Keep an agenda of your appointments",
+            "item2": "Re-schedule medical appointments",
+            "item3": "Check past appointments",
+            "bold": "Medify"
+        },
+        "section4": {
+            "title": "Medical Prescriptions",
+            "item1": "Receive prescriptions from your doctors",
+            "item2": "Redeem in pharmacies",
+            "bold": "Medify"
+        },
+        "footer": {
+            "title": "MEDIFY",
+            "service1": "Medical Appointments",
+            "service2": "Medical History",
+            "service3": "Medical Prescriptions",
+            "medify": "Medify",
+            "about": "About us",
+            "login": "Login"
+        }
+
+    }
+}

@@ -1,0 +1,23 @@
+@import '../app.component.scss';
+.img-carousel {
+    height: 100vh;
+    width: 100vw!important;
+    object-fit: cover;
+}
+.carousel-caption-right {
+    left: 0%!important;
+    top: 25%!important;
+    right: 55%!important;
+}
+
+.carousel-caption-left {
+    right: 0%!important;
+    top: 25%!important;
+    left: 55%!important;
+}
+
+.carousel-caption-center {
+    right: 15%!important;
+    top: 25%!important;
+    left: 15%!important;
+}

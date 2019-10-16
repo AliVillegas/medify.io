@@ -1,0 +1,118 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+$MainColor: #fafafa;
+$SecondaryColor: #1e88e5;
+$SecondaryColorLight: #6ab7ff;
+
+/* ---------------------------------------------------
+    MIXINS AND FUNCTIONS
+----------------------------------------------------- */
+
+@mixin whiteColorBluebg {
+    color: $MainColor!important;
+    background: $SecondaryColor!important;
+}
+
+@mixin basicFormStyle {
+    button {
+        background-color: $SecondaryColor!important;
+    }
+     ::placeholder {
+        color: rgba(125, 156, 214, 0.712) !important;
+    }
+}
+
+@mixin hideElementInRange($breakpoint, $upperBreakpoint) {
+    @media screen and (max-width: $upperBreakpoint) and (min-width: $breakpoint) {
+        display: none;
+    }
+}
+
+@mixin linkStyles ($link, $visit, $hover, $active) {
+    a {
+        color: $link;
+        &:visited {
+            color: $visit;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+    }
+}
+
+@function downsizeIfTooBig($height) {
+    $result: $height - 200px;
+    @return $result;
+}
+
+
+/* ---------------------------------------------------
+    General STYLE
+----------------------------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif!important;
+    background: $MainColor;
+}
+
+.mainColor {
+    color: $MainColor!important;
+}
+
+.secondaryColor {
+    color: $SecondaryColor!important;
+}
+
+.secondaryColorBg {
+    background-color: $SecondaryColor!important;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .display-4 {
+        font-size: 2.0rem!important;
+    }
+    .fixedBottomRight {
+        position: fixed;
+        bottom: 20px;
+        right: 5%;
+    }
+    #myCarousel img {
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #myCarousel img {
+        max-height: downsizeIfTooBig(1000px);
+    }
+}
+
+
+
