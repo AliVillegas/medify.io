@@ -4,31 +4,31 @@
     </div>
 
     <div class="sidebar-header">
-        <h3 class="secondaryColor">Medify</h3>
+        <h3 class="secondaryColor">{{'sidebar.title' | translate}}</h3>
     </div>
 
     <ul class="list-unstyled">
         <li class="active">
-            <a>Inicio</a>
+            <a>{{'sidebar.title' | translate }}</a>
         </li>
         <li>
-            <a href="index.html#citas">Citas</a>
+            <a href="index.html#citas">{{ 'sidebar.li1' | translate }}</a>
         </li>
         <li>
-            <a href="index.html#historial">Historial</a>
+            <a href="index.html#historial">{{ 'sidebar.li2' | translate }}</a>
         </li>
         <li>
-            <a href="index.html#recetas">Recetas</a>
+            <a href="index.html#recetas">{{ 'sidebar.li3' | translate }}</a>
         </li>
         <li>
-            <a href="html/about.html">Acerca</a>
+            <a href="html/about.html">{{ 'sidebar.li4' | translate }}</a>
         </li>
     </ul>
 
-    <h5 class="text-center mt-3">Registrarte</h5>
+    <h5 class="text-center mt-3">{{ 'sidebar.register' | translate }}</h5>
     <a data-toggle="tooltip" title="Crear cuenta de paciente" href="html/register.html"
-        class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Paciente</a>
+        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerPatient' | translate }}</a>
     <a data-toggle="tooltip" title="Crear cuenta de paciente" href="html/doctorRegister.html"
-        class="btn btnSideBar mx-auto d-block mt-3 w-75">Soy Doctor</a>
+        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerDoctor' | translate }}</a>
 
 </nav>

@@ -1,5 +1,5 @@
 {
-    "navbar":{
+    "navbar": {
         "title": "Medify",
         "loginPatient": "Paciente",
         "loginDoctor": "Doctor"
@@ -11,9 +11,8 @@
         "li3": "Recetas",
         "li4": "Acerca De",
         "register": "Registrarte",
-        "registerPatient" : "Registrar Paciente",
-        "registerDoctor" : "Registrar Doctor"
-
+        "registerPatient": "Registrar Paciente",
+        "registerDoctor": "Registrar Doctor"
     },
     "landingPage": {
         "carousel": {
@@ -27,7 +26,7 @@
             "text": "te ayuda a administrar tu historial médico, citas y recetas en un solo lugar."
         },
         "section2": {
-            "title": "Tus datos seguros",
+            "title": "Tus datos, seguros",
             "bold": "Medify",
             "text": "mantiene tu información segura con tecnología de Blockchain."
         },
@@ -39,20 +38,27 @@
             "bold": "Medify"
         },
         "section4": {
+            "title": "Administra tu historial médico",
+            "item1": "Ingresa tus datos",
+            "item2": "Comparte con tu médico",
+            "item3": "Actualiza tu historial",
+            "bold": "Medify"
+        },
+        "section5": {
             "title": "Recetas Médicas",
             "item1": "Recibe recetas de tus médicos",
             "item2": "Canjea en farmacias",
-            "bold": "Medify"        
-        }, 
+            "bold": "Medify"
+        },
         "footer": {
             "title": "MEDIFY",
+            "subtitle": "Servicios",
             "service1": "Citas Médicas",
             "service2": "Historial Médico",
             "service3": "Recetas Médicas",
             "medify": "Medify",
-            "about": "Acerca de nosotros",  
-            "login": "Iniciar Sesión"  
-        }        
-
+            "about": "Acerca de nosotros",
+            "login": "Iniciar Sesión"
+        }
     }
 }

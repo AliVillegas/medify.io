@@ -2,16 +2,16 @@
     <button type="button" id="sidebarCollapse" class="btn" onclick="show()">
         <i class="fas fa-bars fa-2x secondaryColor"></i>
     </button>
-    <h2 class="ml-auto d-block secondaryColor display-4">Medify</h2>
+    <h2 class="ml-auto d-block secondaryColor display-4">{{ 'navbar.title' | translate }}</h2>
 
     <ul class="nav navbar-nav ml-auto d-none d-sm-block">
         <li class="nav-item active">
             <a class="nav-link secondaryColor" href="html/register.html" data-toggle="tooltip" data-placement="bottom"
-                title="Iniciar sesion">Paciente</a>
+                title="Iniciar sesion">{{ 'navbar.loginPatient' | translate }}</a>
         </li>
         <li class="nav-item active">
             <a class="nav-link secondaryColor" href="html/doctorRegister.html" data-toggle="tooltip"
-                data-placement="bottom" title="Iniciar sesion">Doctor</a>
+                data-placement="bottom" title="Iniciar sesion">{{ 'navbar.loginDoctor' | translate }}</a>
         </li>
     </ul>
 </nav>

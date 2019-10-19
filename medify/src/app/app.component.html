@@ -1,5 +1,5 @@
 <app-landing-page></app-landing-page>
-<button class="btn btn-primary" style="position:fixed;top:10px; right:10px; z-index: 10;" (click)="changeLanguage('es')"
-    [ngClass]="{'disabled btn-secondary': language == 'es'}">ES</button>
-<button class="btn btn-primary" style="position:fixed;top:50px; right:10px; z-index: 10;" (click)="changeLanguage('en')"
-    [ngClass]="{'disabled btn-secondary': language == 'en'}">EN </button>
+<button class="btn btn-primary rounded border-white" style="position:fixed;bottom:50px; left:10px; z-index: 10;"
+    (click)="changeLanguage('es')" [ngClass]="{'disabled btn-secondary': language == 'es'}">ES</button>
+<button class="btn btn-primary rounded border-white" style="position:fixed;bottom:10px; left:10px; z-index: 10;"
+    (click)="changeLanguage('en')" [ngClass]="{'disabled btn-secondary': language == 'en'}">EN </button>
