@@ -1,4 +1,6 @@
-<nav id="sidebar">
+<!-- LandingPage SideBar  -->
+
+<nav *ngIf="isLandingPage" id="sidebar">
     <div id="dismiss" onclick="dismiss()">
         <i class=" fas fa-arrow-left"></i>
     </div>
@@ -26,9 +28,61 @@
     </ul>
 
     <h5 class="text-center mt-3">{{ 'sidebar.register' | translate }}</h5>
-    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-patient"
-        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerPatient' | translate }}</a>
-    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-doctor"
-        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerDoctor' | translate }}</a>
+    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-patient" class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerPatient' | translate }}</a>
+    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-doctor" class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerDoctor' | translate }}</a>
+</nav>
+
+<!-- Doctor SideBar  -->
+<nav *ngIf="isDoctor" id="sidebar">
+    <div id="dismiss" onclick="dismiss()">
+        <i class=" fas fa-arrow-left"></i>
+    </div>
+
+    <div class="sidebar-header">
+        <h3 class="secondaryColor">Medify</h3>
+    </div>
+
+    <ul class="list-unstyled">
+        <li class="active">
+            <a href="#">Inicio</a>
+        </li>
+    </ul>
+
+    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'"> Cerrar
+        Sesión </button>
+
+</nav>
+
+<!-- Patient SideBar  -->
+<nav *ngIf="isPatient" id="sidebar">
+    <div id="dismiss" onclick="dismiss()">
+        <i class=" fas fa-arrow-left"></i>
+    </div>
+
+    <div class="sidebar-header">
+        <h3 class="secondaryColor">Medify</h3>
+    </div>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="../html/dashboard.html">Inicio</a>
+        </li>
+        <li>
+            <a href="../html/appointmentDetail.html">Citas</a>
+        </li>
+        <li>
+            <a href="../html/medHistory.html">Historial</a>
+        </li>
+        <li>
+            <a href="../html/prescriptionsMain.html">Recetas</a>
+        </li>
+        <li class="active">
+            <a href="#">Perfil</a>
+        </li>
+    </ul>
+
+
+    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'"> Cerrar
+        Sesión </button>
 
 </nav>
