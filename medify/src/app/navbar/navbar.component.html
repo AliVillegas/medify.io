@@ -18,7 +18,7 @@
     <ul *ngIf="isDashboardPage" class="nav navbar-nav ml-auto d-none d-sm-block">
     </ul>
     <!-- Return Arrow navbar  -->
-    <ul *ngIf="hasReturnArrow" class="nav navbar-nav ml-auto">
-        <li><a href="../html/drNewAppointmentQR.html" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a></li>
+    <ul *ngIf="hasReturnArrow" class="nav navbar-nav ml-auto returnArrow">
+        <li><a (click)="previousPage()" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fas fa-arrow-left fa-2x secondaryColor"></i></a></li>
     </ul>
 </nav>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
+import { SidebarDataService } from '../sidebar-data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dr-patient-info',
@@ -11,10 +13,11 @@ export class DrPatientInfoComponent implements OnInit {
   private bloodType:String
   private weight:String
   private height:String
-
-
-  constructor(private navData:NavbarDataService, private sidebarData:SidebarDataService) {
-    
+  constructor(
+    private navData:NavbarDataService, 
+    private sidebarData:SidebarDataService,
+    private _location: Location
+    ) { 
   }
   ngOnInit() {
     this.name = "Julián Herrera"
@@ -30,6 +33,7 @@ export class DrPatientInfoComponent implements OnInit {
     this.navData.changeIsLandingPage(false)
     this.navData.changeIsDashboardPage(false)
     this.navData.changeHasReturnArrow(true)
+    this.navData.changePageLocation(this._location)
   }
 
   initializeSidebarStatus(){
