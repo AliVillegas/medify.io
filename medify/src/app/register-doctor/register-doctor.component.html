@@ -1,0 +1,31 @@
+<div class="container p-3">
+    <p class="display-3 font-weight-bold text-center secondaryColor mb-5"> Medify </p>
+    <div class="card-header text-center secondaryColorBg text-white">Registro de Cuenta - Doctor</div>
+    <div class="card-body">
+        <form action="../html/drDashboard.html">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="input_email">Correo electrónico</label>
+                <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp"
+                    placeholder="Ingresa correo" required>
+                <small id="emailHelp" class="form-text text-muted">Tu correo no se compartirá a terceros</small>
+            </div>
+            <div class="form-group">
+                <label for="doctor_id">Cedula Profesional</label>
+                <input type="text" class="form-control" id="doctor_id" placeholder="Cedula" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" title="Crear cuenta de doctor" class="btn btn-primary mx-auto d-block">
+                Registrar</button>
+        </form>
+        <p class="lead text-center mt-3"> <a href="register.html"> Soy Paciente</a></p>
+        <p class="lead text-center mt-3"> <a href="loginDoctor.html"> Ya tengo Cuenta</a></p>
+    </div>
+</div>

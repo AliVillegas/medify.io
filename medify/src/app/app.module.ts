@@ -17,6 +17,10 @@ import { Section3LandingComponent } from './section3-landing/section3-landing.co
 import { Section4LandingComponent } from './section4-landing/section4-landing.component';
 import { Section5LandingComponent } from './section5-landing/section5-landing.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginPatientComponent } from './login-patient/login-patient.component';
+import { RegisterPatientComponent } from './register-patient/register-patient.component';
+import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
+import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { FooterComponent } from './footer/footer.component';
     Section3LandingComponent,
     Section4LandingComponent,
     Section5LandingComponent,
-    FooterComponent
+    FooterComponent,
+    LoginPatientComponent,
+    RegisterPatientComponent,
+    RegisterDoctorComponent,
+    LoginDoctorComponent
   ],
   imports: [
     BrowserModule,
