@@ -69,6 +69,11 @@ body {
     background-color: $SecondaryColor!important;
 }
 
+.sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .overlay {
     display: none;
     position: fixed;
@@ -83,6 +88,13 @@ body {
 .overlay.active {
     display: block;
     opacity: 1;
+}
+
+.lineDividerBlue {
+    height: 1px;
+    width: 90%;
+    margin: 0 auto;
+    border-top: solid 1.5px $SecondaryColor;
 }
 
 #content {
@@ -113,6 +125,3 @@ body {
         max-height: downsizeIfTooBig(1000px);
     }
 }
-
-
-
