@@ -16,6 +16,7 @@ export class DrDashboardComponent implements OnInit {
   ngOnInit() {
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
+    
   }
   initializeNavbarStatus(){
     this.navData.changeIsLandingPage(false)
