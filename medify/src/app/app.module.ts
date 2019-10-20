@@ -17,10 +17,9 @@ import { Section3LandingComponent } from './section3-landing/section3-landing.co
 import { Section4LandingComponent } from './section4-landing/section4-landing.component';
 import { Section5LandingComponent } from './section5-landing/section5-landing.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginPatientComponent } from './login-patient/login-patient.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterPatientComponent } from './register-patient/register-patient.component';
 import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
-import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { DrNewAppointmentComponent } from './dr-new-appointment/dr-new-appointment.component';
 import { DrDashboardComponent } from './dr-dashboard/dr-dashboard.component';
 import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.component';
@@ -38,10 +37,9 @@ import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.
     Section4LandingComponent,
     Section5LandingComponent,
     FooterComponent,
-    LoginPatientComponent,
+    LoginComponent,
     RegisterPatientComponent,
     RegisterDoctorComponent,
-    LoginDoctorComponent,
     DrNewAppointmentComponent,
     DrDashboardComponent,
     DrDashboardCardComponent

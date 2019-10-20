@@ -1,6 +1,9 @@
 <div class="container p-3">
     <p class="display-3 font-weight-bold text-center secondaryColor mb-5"> Medify </p>
-    <div class="card-header text-center secondaryColorBg text-white">Inicio de Sesión - Paciente</div>
+    <div class="card-header text-center secondaryColorBg text-white" *ngIf="name == 'patient'">Inicio de Sesión -
+        Paciente</div>
+    <div class="card-header text-center secondaryColorBg text-white" *ngIf="name == 'doctor'">Inicio de Sesión - Doctor
+    </div>
     <div class="card-body">
         <form action="../html/dashboard.html">
             <div class="form-group">
@@ -19,7 +22,14 @@
             </div>
             <button type="submit" class="btn btn-primary mx-auto d-block">Iniciar Sesión</button>
         </form>
-        <p class="lead text-center mt-3"> <a href="/register-patient"> ¿No tienes cuenta? </a></p>
-        <p class="lead text-center mt-3"> <a href="/login-doctor"> ¿Eres doctor? </a></p>
+        <div *ngIf="name == 'patient' ">
+            <p class="lead text-center mt-3"> <a href="/register-patient"> ¿No tienes cuenta? </a></p>
+            <p class="lead text-center mt-3"> <a href="/login/doctor"> ¿Eres doctor? </a></p>
+        </div>
+        <div *ngIf="name == 'doctor'">
+            <p class="lead text-center mt-3"> <a href="/register-doctor"> ¿No tienes cuenta? </a></p>
+            <p class="lead text-center mt-3"> <a href="/login/patient"> ¿Eres paciente? </a></p>
+        </div>
+
     </div>
 </div>
