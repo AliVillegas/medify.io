@@ -22,6 +22,8 @@ import { RegisterPatientComponent } from './register-patient/register-patient.co
 import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { DrNewAppointmentComponent } from './dr-new-appointment/dr-new-appointment.component';
+import { DrDashboardComponent } from './dr-dashboard/dr-dashboard.component';
+import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { DrNewAppointmentComponent } from './dr-new-appointment/dr-new-appointme
     RegisterPatientComponent,
     RegisterDoctorComponent,
     LoginDoctorComponent,
-    DrNewAppointmentComponent
+    DrNewAppointmentComponent,
+    DrDashboardComponent,
+    DrDashboardCardComponent
   ],
   imports: [
     BrowserModule,
