@@ -11,11 +11,11 @@ import { SidebarDataService } from '../sidebar-data.service';
 export class DrDashboardComponent implements OnInit {
 
   constructor(private navData:NavbarDataService, private sidebarData:SidebarDataService) { 
-    this.initializeNavbarStatus()
-    this.initializeSidebarStatus()
+    
   }
   ngOnInit() {
-
+    this.initializeNavbarStatus()
+    this.initializeSidebarStatus()
   }
   initializeNavbarStatus(){
     this.navData.changeIsLandingPage(false)
