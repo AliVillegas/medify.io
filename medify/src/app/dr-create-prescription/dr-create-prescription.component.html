@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="container p-3">
+    <h4 class="text-center ml-auto">Nueva Receta</h4>
+</div>
+<div class=" w-75 text-justified ml-5  mb-2 mt-0 text-secondary">
+    <p class="my-1">17/Sep/2019</p>
+    <p class="my-1">Dra. Mara Escalante</p>
+    <p class="my-1">Consultorio Buenvida 10</p>
+</div>
+<div class="lineDividerBlue mt-3 mb-3"></div>
+<div class="w-75 mx-auto">
+    <form action="../html/drPatientInfo.html">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputTitlePrescription">Título</label>
+                <input type="text" class="form-control" id="inputTitlePrescription" placeholder="texto" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputDesPrescriptionTextArea">Diagnóstico</label>
+                <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;" required></textarea>
+            </div>
+        </div>
+        <div class="row d-none d-md-flex">
+            <div class="form-group col-6">
+                <h4>Medicamento</h4>
+            </div>
+            <div class="form-group col-6">
+                <h4>Cantidad</h4>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="inputPrescriptionMed1" placeholder="Ritalina">
+            </div>
+            <div class="form-group col-md-1">
+                <input type="text" class="form-control" id="inputPrescriptionMedQ1" placeholder="50mg">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="inputPrescriptionMed2" placeholder="Paracetamol">
+            </div>
+            <div class="form-group col-md-1">
+                <input type="text" class="form-control" id="inputPrescriptionMedQ2" placeholder="20ml">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="inputPrescriptionMed3" placeholder="Amoxicilina">
+            </div>
+            <div class="form-group col-md-1">
+                <input type="text" class="form-control" id="inputPrescriptionMedQ3" placeholder="10ml">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                        Confirmo ser un médico autorizado
+                    </label>
+            </div>
+        </div>
+        <button type="submit" title="Confirmar Receta" class="btn btn-primary mb-5">Continuar</button>
+    </form>
+</div>

@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { DrNewAppointmentComponent } from './dr-new-appointment/dr-new-appointment.component';
 import { DrDashboardComponent } from './dr-dashboard/dr-dashboard.component';
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
+import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appointment-qr.component';
+import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
+import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 
 
 const routes: Routes = [
@@ -17,7 +20,11 @@ const routes: Routes = [
   { path: 'dr/new-appointment', component: DrNewAppointmentComponent },
   { path: 'login/:name', component: LoginComponent },
   { path: 'dr/dashboard', component: DrDashboardComponent },
-  { path: 'dr/patient-info', component: DrPatientInfoComponent }
+  { path: 'dr/patient-info', component: DrPatientInfoComponent },
+  { path: 'dr/appointment/patient-qr', component: DrNewAppointmentQRComponent },
+  { path: 'dr/prescription/patient-qr', component: DrNewPrescriptionQRComponent },
+  { path: 'dr/prescription/create', component: DrCreatePrescriptionComponent }
+
 
 ];
 
