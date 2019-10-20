@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="container p-4">
+    <p class="font-weight-bold text-center secondaryColor mt-1 sectionTitle"> Perfil del paciente</p>
+    <div class="lineDividerBlue mt-3 mb-3"></div>
+    <div class="row">
+        <div class="col">
+            <div class="box-part text-center">
+
+                <i class="fa fa-male fa-3x" aria-hidden="true"></i>
+
+                <div class="title">
+                    <h4>{{name}} </h4>
+                </div>
+
+                <div class="text">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="font-weight-bold mr-1"></span> {{bloodType}}
+                        </li>
+                        <li class="list-group-item"><span class="font-weight-bold mr-1">Peso:</span> {{weight}}
+                        </li>
+                        <li class="list-group-item"><span class="font-weight-bold mr-1">Altura:</span> {{height}}
+                        </li>
+                        <li class="list-group-item"><span class="font-weight-bold mr-1">Enfermedades
+                                    Crónicas:</span>Hypertiroidismo</li>
+                        <li class="list-group-item"><span class="font-weight-bold mr-1">Alergias:
+                                </span>Benzoamina, Tropifocil
+                        </li>
+                        <li class="list-group-item"><span class="font-weight-bold mr-1">Notas
+                                    Adicionales:</span>
+                            <p>
+                                Ha llevado el tratamiento para inmunodeficiencia por 4 meses, se han visto mejoras externas de clase A
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="addDateDesktop mx-auto">
+            <button class="btn btn-lg btn-primary d-block" onclick="window.location.href='drCreatePrescriptionQR.html'">Agregar
+                    Receta</button>
+
+        </div>
+    </div>
+</div>

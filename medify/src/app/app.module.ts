@@ -25,6 +25,7 @@ import { DrDashboardComponent } from './dr-dashboard/dr-dashboard.component';
 import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.component';
 import { DashboardToastComponent } from './dashboard-toast/dashboard-toast.component';
 import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appointment-qr.component';
+import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appo
     DrDashboardComponent,
     DrDashboardCardComponent,
     DashboardToastComponent,
-    DrNewAppointmentQRComponent
+    DrNewAppointmentQRComponent,
+    DrPatientInfoComponent
   ],
   imports: [
     BrowserModule,
