@@ -5,7 +5,7 @@
     <div class="card-header text-center secondaryColorBg text-white" *ngIf="name == 'doctor'">Inicio de Sesión - Doctor
     </div>
     <div class="card-body">
-        <form [[formGroup]="loginForm" ] action="../html/dashboard.html">
+        <form [formGroup]="loginForm" action="../html/dashboard.html">
             Value: {{ loginForm.value | json}}
             <mat-form-field>
                 <input matInput placeholder="Correo Eléctronico" formControlName="loginEmail">

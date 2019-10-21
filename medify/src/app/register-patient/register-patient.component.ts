@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register-patient',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-patient.component.scss']
 })
 export class RegisterPatientComponent implements OnInit {
-
-  constructor() { }
-
+  registerPatientForm: FormGroup
+  constructor(private fb:FormBuilder) {}
+  
   ngOnInit() {
+    this.registerPatientForm = this.fb.group({
+        email: '',
+        password: '',
+        name: '',
+    });
+    this.registerPatientForm.valueChanges.subscribe()
   }
 
 }

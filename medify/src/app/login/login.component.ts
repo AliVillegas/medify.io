@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isDoctor: Boolean;

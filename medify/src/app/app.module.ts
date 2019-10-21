@@ -42,6 +42,7 @@ import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import {ReactiveFormsModule} from '@angular/forms'
 
 
 const material = [
@@ -52,7 +53,8 @@ const material = [
   BrowserAnimationsModule,
   NgxMaterialTimepickerModule,
   NgxMatSelectSearchModule,
-  MatSelectModule
+  MatSelectModule,
+  ReactiveFormsModule
 ]
 
 @NgModule({

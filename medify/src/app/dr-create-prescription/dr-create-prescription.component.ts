@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ReplaySubject, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 import { MatSelect } from '@angular/material/select';
@@ -20,15 +20,16 @@ export class DrCreatePrescriptionComponent implements OnInit {
   public medControl: FormControl = new FormControl();
   public medFilter: FormControl = new FormControl();
   public filteredMeds: ReplaySubject<Medicine[]> = new ReplaySubject<Medicine[]>(1);
-
   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
+  createPrescriptionForm: FormGroup
 
   protected _onDestroy = new Subject<void>();
 
   constructor(
     private navData: NavbarDataService,
     private sidebarData: SidebarDataService,
-    private _location: Location
+    private _location: Location,
+    private fb:FormBuilder
   ) { }
 
   ngOnInit() {
@@ -42,6 +43,13 @@ export class DrCreatePrescriptionComponent implements OnInit {
       .subscribe(() => {
         this.filterMedsMulti();
       });
+
+    this.createPrescriptionForm = this.fb.group({
+        title: '',
+        diagnosis: ''
+    })
+  
+    this.createPrescriptionForm.valueChanges.subscribe()
   }
   ngAfterViewInit() {
     this.setInitialValue();

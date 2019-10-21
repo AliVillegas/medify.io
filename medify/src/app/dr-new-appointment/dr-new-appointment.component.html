@@ -8,7 +8,7 @@
                 Paciente: {{patientName}}
             </div>
             <div class=" m-auto my-3">
-                <form class="my-2">
+                <form [formGroup]="newAppointmentForm" class="my-2">
                     <div class="form-row">
                         <div class="form-group col-md-12 my-3">
                             <label for="inputTitlePrescription">Título</label>
