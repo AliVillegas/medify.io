@@ -28,7 +28,12 @@ import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appo
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
+import {MatDatepickerModule, MatNativeDateModule} from '@angular/material'
 
+const material = [
+  MatDatepickerModule,
+  MatNativeDateModule
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +63,7 @@ import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-pr
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    material,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -68,6 +74,7 @@ import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-pr
       }
     })
   ],
+  exports: [material],
   providers: [],
   bootstrap: [AppComponent]
 })

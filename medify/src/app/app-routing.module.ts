@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'dr/dashboard', component: DrDashboardComponent },
   { path: 'dr/patient-info', component: DrPatientInfoComponent },
   { path: 'dr/appointment/patient-qr', component: DrNewAppointmentQRComponent },
+  { path: 'dr/appointment/create', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr', component: DrNewPrescriptionQRComponent },
   { path: 'dr/prescription/create', component: DrCreatePrescriptionComponent }
 
