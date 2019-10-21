@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
-import { Location } from '@angular/common';
-
+import {Location} from '@angular/common'
 @Component({
-  selector: 'app-dr-new-appointment-qr',
-  templateUrl: './dr-new-appointment-qr.component.html',
-  styleUrls: ['./dr-new-appointment-qr.component.scss']
+  selector: 'app-dr-create-prescription',
+  templateUrl: './dr-create-prescription.component.html',
+  styleUrls: ['./dr-create-prescription.component.scss']
 })
-export class DrNewAppointmentQRComponent implements OnInit {
+export class DrCreatePrescriptionComponent implements OnInit {
 
   constructor(
     private navData:NavbarDataService, 

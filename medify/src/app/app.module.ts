@@ -26,13 +26,23 @@ import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.
 import { DashboardToastComponent } from './dashboard-toast/dashboard-toast.component';
 import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appointment-qr.component';
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
+<<<<<<< HEAD
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QrModalComponent } from './qr-modal/qr-modal.component';
 import { PrescriptionDashboardCardComponent } from './prescription-dashboard-card/prescription-dashboard-card.component';
 import { HistoryDashboardCardComponent } from './history-dashboard-card/history-dashboard-card.component';
 import { History2DashboardCardComponent } from './history2-dashboard-card/history2-dashboard-card.component';
 import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/appointment-dashboard-card.component';
+=======
+import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
+import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
+import {MatDatepickerModule, MatNativeDateModule} from '@angular/material'
+>>>>>>> 601a47bb9d5e5809a646b8a9aa0f1cfb8917065c
 
+const material = [
+  MatDatepickerModule,
+  MatNativeDateModule
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,17 +65,23 @@ import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/
     DashboardToastComponent,
     DrNewAppointmentQRComponent,
     DrPatientInfoComponent,
+<<<<<<< HEAD
     DashboardComponent,
     QrModalComponent,
     PrescriptionDashboardCardComponent,
     HistoryDashboardCardComponent,
     History2DashboardCardComponent,
     AppointmentDashboardCardComponent
+=======
+    DrCreatePrescriptionComponent,
+    DrNewPrescriptionQRComponent
+>>>>>>> 601a47bb9d5e5809a646b8a9aa0f1cfb8917065c
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    material,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -76,6 +92,7 @@ import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/
       }
     })
   ],
+  exports: [material],
   providers: [],
   bootstrap: [AppComponent]
 })

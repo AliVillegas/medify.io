@@ -8,10 +8,13 @@ import { SidebarDataService } from '../sidebar-data.service';
   styleUrls: ['./dr-new-appointment.component.scss']
 })
 export class DrNewAppointmentComponent implements OnInit {
+  private patientName:String
+
   constructor(private navData:NavbarDataService, private sidebarData:SidebarDataService) { 
     
   }
   ngOnInit() {
+    this.patientName = "Julián Herrera"
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
   }

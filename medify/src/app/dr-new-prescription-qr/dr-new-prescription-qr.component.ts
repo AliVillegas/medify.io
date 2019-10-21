@@ -4,12 +4,13 @@ import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-dr-new-appointment-qr',
-  templateUrl: './dr-new-appointment-qr.component.html',
-  styleUrls: ['./dr-new-appointment-qr.component.scss']
+  selector: 'app-dr-new-prescription-qr',
+  templateUrl: './dr-new-prescription-qr.component.html',
+  styleUrls: ['./dr-new-prescription-qr.component.scss']
 })
-export class DrNewAppointmentQRComponent implements OnInit {
+export class DrNewPrescriptionQRComponent implements OnInit {
 
+  
   constructor(
     private navData:NavbarDataService, 
     private sidebarData:SidebarDataService,
@@ -34,5 +35,4 @@ export class DrNewAppointmentQRComponent implements OnInit {
     this.sidebarData.changeIsDoctor(true)
     this.sidebarData.changeIsPatient(false)
   }
-
 }
