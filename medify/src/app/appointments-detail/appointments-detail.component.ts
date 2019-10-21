@@ -20,8 +20,8 @@ import {
       transition('* => *', [
         query('.card', style({ transform: 'translateX(-100%)' })),
         query('.card',
-          stagger('600ms', [
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(0)' }))
+          stagger('450ms', [
+            animate('450ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(0)' }))
           ]))
       ])
     ])

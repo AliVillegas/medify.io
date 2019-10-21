@@ -41,17 +41,17 @@
     </div>
 
     <div class="sidebar-header">
-        <h3 class="secondaryColor">Medify</h3>
+        <h3 class="secondaryColor">{{ 'sidebarDoctor.title' | translate }}</h3>
     </div>
 
     <ul class="list-unstyled">
         <li class="active">
-            <a href="#">Inicio</a>
+            <a href="#">{{ 'sidebarDoctor.li1' | translate }}</a>
         </li>
     </ul>
 
-    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'"> Cerrar
-        Sesión </button>
+    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'">
+        {{ 'sidebarDoctor.logout' | translate }} </button>
 
 </nav>
 
@@ -62,29 +62,29 @@
     </div>
 
     <div class="sidebar-header">
-        <h3 class="secondaryColor">Medify</h3>
+        <h3 class="secondaryColor">{{ 'sidebarPatient.title' | translate }}</h3>
     </div>
 
     <ul class="list-unstyled">
         <li class="active">
-            <a href="/patient/dashboard">{{ 'sidebar.li1' | translate }}</a>
+            <a href="/patient/dashboard">{{ 'sidebarPatient.li1' | translate }}</a>
         </li>
         <li>
-            <a href="/patient/appointments-detail">{{ 'sidebar.li2' | translate }}</a>
+            <a href="/patient/appointments-detail">{{ 'sidebarPatient.li2' | translate }}</a>
         </li>
         <li>
-            <a href="/patient/history-detail">{{ 'sidebar.li3' | translate }}</a>
+            <a href="/patient/history-detail">{{ 'sidebarPatient.li3' | translate }}</a>
         </li>
         <li>
-            <a href="/patient/prescriptions-detail">{{ 'sidebar.li4' | translate }}</a>
+            <a href="/patient/prescriptions-detail">{{ 'sidebarPatient.li4' | translate }}</a>
         </li>
         <li class="">
-            <a href="#">Perfil</a>
+            <a href="#">{{ 'sidebarPatient.li5' | translate }}</a>
         </li>
     </ul>
 
 
-    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'"> Cerrar
-        Sesión </button>
+    <button class="btn btnSideBar mx-auto d-block mt-3"
+        onclick="window.location.href='logout.html'">{{ 'sidebarPatient.logout' | translate }} </button>
 
 </nav>

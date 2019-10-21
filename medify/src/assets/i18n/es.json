@@ -21,7 +21,7 @@
         "li3": "Historial",
         "li4": "Recetas",
         "li5": "Perfil",
-        "logout": "Register"
+        "logout": "Cerrar Sesión"
     },
     "sidebarDoctor": {
         "title": "Medify",
@@ -74,5 +74,50 @@
             "about": "Acerca de nosotros",
             "login": "Iniciar Sesión"
         }
+    },
+    "dashboardPatient": {
+        "title1": "Mis Citas Médicas",
+        "title2": "Mi Historial Médico",
+        "title3": "Mis Recetas Médicas"
+    },
+    "modalQR": {
+        "view": "Ver QR"
+    },
+    "appointmentCard": {
+        "reason": "Razón: ",
+        "time": "Hora: ",
+        "address": "Dirección: ",
+        "more": "Ver Más"
+    },
+    "historyCard": {
+        "title": "Enfermedades",
+        "condition": "Afección",
+        "recovery": "Recuperación"
+    },
+    "historyCard2": {
+        "title": "Tratamientos",
+        "treatment": "Tratamiento",
+        "condition": "Afección"
+    },
+    "prescriptionCard": {
+        "doctorName": "Médico: ",
+        "reason": "Razón: ",
+        "more": "Ver Más"
+    },
+    "appointmentDetail": {
+        "title": "Mis citas médicas",
+        "appointment": "Consulta: ",
+        "time": "Hora: ",
+        "date": "Fecha: ",
+        "address": "Dirección: "
+    },
+    "historyDetail": {
+        "title": "Mi Historia Médica"
+    },
+    "prescriptionDetail": {
+        "title": "Mis recetas médicas",
+        "appointment": "Consulta: ",
+        "button": "Compartir",
+        "valid": "Válida hasta "
     }
 }

@@ -3,10 +3,11 @@
     </div>
     <div class="card-body">
         <ul class="list-unstyled card-text">
-            <li> {{doctorName}} </li>
-            <li> {{prescriptionReason}} </li>
+            <li> {{ 'prescriptionCard.doctorName' | translate }} {{doctorName}} </li>
+            <li> {{ 'prescriptionCard.reason' | translate }}{{prescriptionReason}} </li>
             <li> <a class="text-decoration-none secondaryColor" href="../html/prescriptionsMain.html"
-                    data-toggle="tooltip" data-placement="right" data-original-title="Ver receta">Ver más</a></li>
+                    data-toggle="tooltip" data-placement="right"
+                    data-original-title="Ver receta">{{ 'prescriptionCard.more' | translate }}</a></li>
         </ul>
     </div>
     <div class=" card-footer">

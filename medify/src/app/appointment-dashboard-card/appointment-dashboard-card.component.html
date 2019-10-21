@@ -2,13 +2,13 @@
     <div class="card-header lead font-weight-bold">{{doctorName}} - {{place}}
     </div>
     <div class="card-body">
-        <h6 class="card-title">Razón: {{appointmentReason}}</h6>
+        <h6 class="card-title">{{'appointmentCard.reason' | translate}} {{appointmentReason}}</h6>
         <ul class="list-unstyled card-text">
-            <li> Horario: {{time}}</li>
-            <li> Dirección: {{address}}</li>
+            <li> {{'appointmentCard.time' | translate}} {{time}}</li>
+            <li> {{'appointmentCard.address' | translate}} {{address}}</li>
             <li> <a class="secondaryColor" href="/patient/appointments-detail" data-toggle="tooltip"
-                    data-placement="right" data-original-title="Ver cita">Ver
-                    más</a></li>
+                    data-placement="right" data-original-title="Ver cita">{{'appointmentCard.more' | translate}}</a>
+            </li>
         </ul>
     </div>
     <div class="card-footer">

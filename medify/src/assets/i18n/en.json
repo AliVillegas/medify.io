@@ -74,5 +74,50 @@
             "about": "About us",
             "login": "Login"
         }
+    },
+    "dashboardPatient": {
+        "title1": "My Medical Appointments",
+        "title2": "My Medical History",
+        "title3": "My Medical Prescriptions"
+    },
+    "modalQR": {
+        "view": "View QR"
+    },
+    "appointmentCard": {
+        "reason": "Reason: ",
+        "time": "Time: ",
+        "address": "Address: ",
+        "more": "View More"
+    },
+    "historyCard": {
+        "title": "Diseases",
+        "condition": "Condition",
+        "recovery": "Recovery"
+    },
+    "historyCard2": {
+        "title": "Treatments",
+        "treatment": "Treatment",
+        "condition": "Condition"
+    },
+    "prescriptionCard": {
+        "doctorName": "Doctor: ",
+        "reason": "Reason: ",
+        "more": "View More"
+    },
+    "appointmentDetail": {
+        "title": "My Medical Appointments",
+        "appointment": "Appointment: ",
+        "time": "Time: ",
+        "date": "Date: ",
+        "address": "Address: "
+    },
+    "historyDetail": {
+        "title": "My Medical History"
+    },
+    "prescriptionDetail": {
+        "title": "My Medical Prescriptions",
+        "appointment": "Appointment: ",
+        "button": "Share",
+        "valid": "Valid until "
     }
 }

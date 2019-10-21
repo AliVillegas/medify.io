@@ -2,14 +2,14 @@
 <div id="content">
     <app-navbar></app-navbar>
     <div class="container p-3">
-        <h1 class="secondaryColor my-4"> Mis recetas médicas</h1>
+        <h1 class="secondaryColor my-4"> {{ 'prescriptionDetail.title' | translate }} </h1>
         <div class="card text-center">
-            <div class="card-header font-weight-bold">
-                Hospital Médica Nirvae
+            <div class="card-header font-weight-bold lead">
+                Hospital Médico Nirvae
             </div>
             <div class="card-body">
                 <div class="row">
-                    <h5 class="text-left col-6">Consulta: Dolor de cabeza</h5>
+                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} Dolor de cabeza</h5>
                     <h5 class="text-right col-6">Dr. Perez</h5>
                 </div>
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-6 col-sm-3 col-lg-2">
                             <a href="#" class="mt-3 btn btn-primary" data-toggle="modal"
-                                data-target="#compartir">Compartir</a>
+                                data-target="#compartir">{{ 'prescriptionDetail.button' | translate }}</a>
                         </div>
                         <div class="modal fade" id="compartir" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -63,18 +63,18 @@
 
             </div>
             <div class="card-footer text-muted">
-                Válida hasta el 16/Sep/2019
+                {{ 'prescriptionDetail.valid' | translate }} 16/Sep/2019
             </div>
         </div>
         <div class="lineDividerBlue mt-3 mb-3"></div>
 
         <div class="card text-center">
-            <div class="card-header font-weight-bold">
+            <div class="card-header font-weight-bold lead">
                 Consultorio médico especialista Lor. Mónaco
             </div>
             <div class="card-body">
                 <div class="row">
-                    <h5 class="text-left col-6">Consulta: Revision Diabetes</h5>
+                    <h5 class="text-left col-6">{{ 'appointmentDetail.appointment' | translate }} Revision Diabetes</h5>
                     <h5 class="text-right col-6">Dra. Monaco</h5>
                 </div>
 
@@ -92,25 +92,27 @@
                             <h5 class="mt-2 mb-0 secondaryColor text-left">Medicina Entregada</h5>
                         </div>
                         <div class="col-6 col-sm-3 col-lg-2">
-                            <a class="mt-3 btn btn-secondary  disabled text-light" role="button">Compartir</a>
+                            <a class="mt-3 btn btn-secondary  disabled text-light"
+                                role="button">{{ 'prescriptionDetail.button' | translate }}</a>
                         </div>
                     </div>
 
             </div>
             <div class="card-footer text-muted">
-                Válida hasta el 10/Sep/2019
+                {{ 'prescriptionDetail.valid' | translate }} 10/Sep/2019
             </div>
         </div>
 
         <div class="lineDividerBlue mt-3 mb-3"></div>
 
         <div class="card text-center">
-            <div class="card-header font-weight-bold">
+            <div class="card-header font-weight-bold lead">
                 Hospital Médica Nirvae
             </div>
             <div class="card-body">
                 <div class="row">
-                    <h5 class="text-left col-6">Consulta: Laceración en pecho</h5>
+                    <h5 class="text-left col-6">{{ 'appointmentDetail.appointment' | translate }} Laceración en pecho
+                    </h5>
                     <h5 class="text-right col-6">Dr. Gómez</h5>
                 </div>
 
@@ -133,7 +135,7 @@
                         </div>
                         <div class="col-6 col-sm-3 col-lg-2">
                             <a href="#" class="mt-3 btn btn-primary" data-toggle="modal"
-                                data-target="#compartir2">Compartir</a>
+                                data-target="#compartir2">{{ 'prescriptionDetail.button' | translate }}</a>
                         </div>
                         <div class="modal fade" id="compartir2" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -159,7 +161,7 @@
                     </div>
             </div>
             <div class="card-footer text-muted">
-                Válida hasta el 16/Sep/2019
+                {{ 'prescriptionDetail.valid' | translate }}16/Sep/2019
             </div>
         </div>
         <app-qr-modal></app-qr-modal>

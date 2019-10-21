@@ -20,7 +20,7 @@ export class AppointmentDashboardCardComponent implements OnInit {
     this.doctorName = "Dra. Torres";
     this.place = "Consultorio Especializado";
     this.appointmentReason = "Dolor De cabeza";
-    this.address = "Dirección: Av. Libertad 22";
+    this.address = "Av. Libertad 22";
     this.date = "28/10/2019"
     this.time = "16:30";
   }
