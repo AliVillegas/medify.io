@@ -34,21 +34,27 @@ import { History2DashboardCardComponent } from './history2-dashboard-card/histor
 import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/appointment-dashboard-card.component';
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
-import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
 
+import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+
+
 const material = [
   MatDatepickerModule,
   MatNativeDateModule,
-  MatFormFieldModule, 
+  MatFormFieldModule,
   MatInputModule,
   BrowserAnimationsModule,
-  NgxMaterialTimepickerModule 
+  NgxMaterialTimepickerModule,
+  NgxMatSelectSearchModule,
+  MatSelectModule
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
