@@ -37,6 +37,9 @@ import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-pr
 import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
+import { HistoryDetailComponent } from './history-detail/history-detail.component';
+import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
 const material = [
   MatDatepickerModule,
   MatNativeDateModule,
@@ -74,7 +77,10 @@ const material = [
     History2DashboardCardComponent,
     AppointmentDashboardCardComponent,
     DrCreatePrescriptionComponent,
-    DrNewPrescriptionQRComponent
+    DrNewPrescriptionQRComponent,
+    AppointmentsDetailComponent,
+    HistoryDetailComponent,
+    PrescriptionsDetailComponent
   ],
   imports: [
     BrowserModule,

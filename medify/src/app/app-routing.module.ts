@@ -11,21 +11,27 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appointment-qr.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
+import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
+import { HistoryDetailComponent } from './history-detail/history-detail.component';
+import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
   { path: 'register-patient', component: RegisterPatientComponent },
   { path: 'register-doctor', component: RegisterDoctorComponent },
-  { path: 'dr/new-appointment', component: DrNewAppointmentComponent },
   { path: 'login/:name', component: LoginComponent },
   { path: 'dr/dashboard', component: DrDashboardComponent },
+  { path: 'dr/new-appointment', component: DrNewAppointmentComponent },
   { path: 'dr/patient-info', component: DrPatientInfoComponent },
-  { path: 'dashboard', component: DashboardComponent },
   { path: 'dr/appointment/patient-qr', component: DrNewAppointmentQRComponent },
   { path: 'dr/appointment/create', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr', component: DrNewPrescriptionQRComponent },
-  { path: 'dr/prescription/create', component: DrCreatePrescriptionComponent }
+  { path: 'dr/prescription/create', component: DrCreatePrescriptionComponent },
+  { path: 'patient/dashboard', component: DashboardComponent },
+  { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
+  { path: 'patient/history-detail', component: HistoryDetailComponent },
+  { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
 
 
 ];

@@ -7,27 +7,26 @@ import { SidebarDataService } from '../sidebar-data.service';
   styleUrls: ['./dr-new-appointment.component.scss']
 })
 export class DrNewAppointmentComponent implements OnInit {
-  private patientName:String
+  private patientName: String
 
-  constructor(private navData:NavbarDataService, private sidebarData:SidebarDataService) { 
-    
+  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) {
+
   }
   ngOnInit() {
     this.patientName = "Julián Herrera"
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
   }
-  initializeNavbarStatus(){
+  initializeNavbarStatus() {
     this.navData.changeIsLandingPage(false)
     this.navData.changeIsDashboardPage(false)
     this.navData.changeHasReturnArrow(true)
   }
 
-  initializeSidebarStatus(){
+  initializeSidebarStatus() {
     this.sidebarData.changeIsLandingPage(false)
     this.sidebarData.changeIsDoctor(true)
     this.sidebarData.changeIsPatient(false)
-
   }
 
 }

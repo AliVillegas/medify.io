@@ -14,6 +14,20 @@
         "registerPatient": "Register Patient",
         "registerDoctor": "Register Doctor"
     },
+    "sidebarPatient": {
+        "title": "Medify",
+        "li1": "Home",
+        "li2": "Appointments",
+        "li3": "History",
+        "li4": "Prescriptions",
+        "li5": "Profile",
+        "logout": "Sign Out"
+    },
+    "sidebarDoctor": {
+        "title": "Medify",
+        "li1": "Home",
+        "logout": "Sign Out"
+    },
     "landingPage": {
         "carousel": {
             "img1-title": "Your doctors in one place",

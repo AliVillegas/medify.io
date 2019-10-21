@@ -1,0 +1,77 @@
+<app-sidebar></app-sidebar>
+<div id="content">
+    <app-navbar></app-navbar>
+    <div class="container p-3" [@pageAnimations]="true">
+        <h1 class="secondaryColor my-4"> Mis citas médicas</h1>
+
+        <div class="card text-center">
+            <div class="card-header font-weight-bold">
+                Consultorio Especializado
+            </div>
+            <div class="row px-3 mt-2">
+                <h5 class="text-left col-6">Consulta: Dolor de cabeza</h5>
+                <h5 class="text-right col-6">Dra. Torres</h5>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="card-body col-10">
+                    <ul class="list-unstyled pl-3 card-text">
+                        <li class="lead text-left">Horario: 4:00 pm </li>
+                        <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                        <li class="lead text-left">Dirección: Av. Libertad 22 </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+
+        <div class="card text-center">
+            <div class="card-header font-weight-bold">
+                Clínica México
+            </div>
+            <div class="row px-3 mt-2">
+                <h5 class="text-left col-6">Consulta: Seguimiento Fractura</h5>
+                <h5 class="text-right col-6">Dr. López</h5>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="card-body col-10">
+                    <ul class="list-unstyled pl-3 card-text">
+                        <li class="lead text-left">Horario: 6:00 pm</li>
+                        <li class="lead text-left">Fecha: 23 septiembre 2019</li>
+                        <li class="lead text-left">Dirección: Av. Calcio 16 </li>
+                        <li class="lead text-left">Segunda Cita</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+
+        <div class="card text-center">
+            <div class="card-header font-weight-bold">
+                Dentistas & CO.
+            </div>
+            <div class="row px-3 mt-3">
+                <h5 class="text-left col-6">Consulta: Seguimiento Fractura</h5>
+                <h5 class="text-right col-6">Dr. Gómez</h5>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="card-body col-10">
+                    <ul class="list-unstyled pl-3 card-text">
+                        <li class="lead text-left">Horario: 2:00 pm</li>
+                        <li class="lead text-left">Fecha: 16 septiembre 2019</li>
+                        <li class="lead text-left">Dirección: Calle Quijada 78 </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <app-qr-modal></app-qr-modal>
+    </div>
+</div>

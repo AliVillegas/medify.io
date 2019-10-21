@@ -1,0 +1,79 @@
+<app-sidebar></app-sidebar>
+<div id="content">
+    <app-navbar></app-navbar>
+    <div class="container p-3">
+        <h1 class="secondaryColor my-4"> Mi Historial Médico</h1>
+        <!-- Card  -->
+        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-primary text-center">Consulta - Dr. López</strong>
+                <h6 class="mb-0">
+                    <a class="text-dark mt-2">Dignóstico: Sinusitis aguda</a>
+                </h6>
+                <div class="mb-1 text-muted small mt-2">18/ago/2019</div>
+                <ul class="list-unstyled card-text">
+                    <li> Dificultades para respirar</li>
+                    <li> Dolor intenso en de la cabeza al moverse</li>
+                    <li> Bajo apetito</li>
+                </ul>
+                <a class="btn btn-outline-primary btn-sm" role="button" href="/patient/prescriptions-detail">Ver
+                    Receta</a>
+            </div>
+        </div>
+        <!-- Card  -->
+        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-primary">Estudio - Laboratorio CHOPO</strong>
+                <h6 class="mb-0">
+                    <a class="text-dark mt-2">Análisis de sangre</a>
+                </h6>
+                <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
+                <ul class="list-unstyled card-text">
+                    <li> Hematíes: De 3,8 a 6</li>
+                    <li> Hemoglobina: De 11,8 A 15,3 g/dl</li>
+                    <li> V.C.M.: De 82 a 98 fl</li>
+                </ul>
+                <a class="btn btn-outline-primary btn-sm" target="_blank" role="button"
+                    href="../media/analisis.pdf">PDF</a>
+            </div>
+        </div>
+        <!-- Card  -->
+        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-primary">Consulta - Dra. Jimenez</strong>
+                <h6 class="mb-0">
+                    <a class="text-dark mt-2">Fractura en brazo derecho</a>
+                </h6>
+                <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
+                <p class="card-text mb-3 mt-3">Fractura aguda en hueso perineo 1 sección b</p>
+
+            </div>
+            <a href="../img/xray.jpg" target="_blank">
+                <img class="card-img-right flex-auto d-none d-sm-block" alt="Thumbnail [200x250]"
+                    src="../../assets/img/xray.jpg" style="width: 200px; height: 250px;">
+            </a>
+
+        </div>
+        <button class="btn btn-primary btn-lg" style="position:fixed;bottom:10px; right:10px;" data-toggle="modal"
+            data-target="#exampleModalCenter">Ver QR</button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title secondaryColor" id="exampleModalCenterTitle">Tu código QR</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="../img/qr-code.png" class="img-fluid" alt="QR">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
