@@ -26,26 +26,17 @@ import { DrDashboardCardComponent } from './dr-dashboard-card/dr-dashboard-card.
 import { DashboardToastComponent } from './dashboard-toast/dashboard-toast.component';
 import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appointment-qr.component';
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
-<<<<<<< HEAD
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QrModalComponent } from './qr-modal/qr-modal.component';
 import { PrescriptionDashboardCardComponent } from './prescription-dashboard-card/prescription-dashboard-card.component';
 import { HistoryDashboardCardComponent } from './history-dashboard-card/history-dashboard-card.component';
 import { History2DashboardCardComponent } from './history2-dashboard-card/history2-dashboard-card.component';
 import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/appointment-dashboard-card.component';
-=======
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
-<<<<<<< HEAD
 import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-
-=======
-import {MatDatepickerModule, MatNativeDateModule} from '@angular/material'
->>>>>>> 601a47bb9d5e5809a646b8a9aa0f1cfb8917065c
->>>>>>> 477c7c746a3263ecfd8bb53a451f587d6bfff004
-
 const material = [
   MatDatepickerModule,
   MatNativeDateModule,
@@ -76,17 +67,14 @@ const material = [
     DashboardToastComponent,
     DrNewAppointmentQRComponent,
     DrPatientInfoComponent,
-<<<<<<< HEAD
     DashboardComponent,
     QrModalComponent,
     PrescriptionDashboardCardComponent,
     HistoryDashboardCardComponent,
     History2DashboardCardComponent,
-    AppointmentDashboardCardComponent
-=======
+    AppointmentDashboardCardComponent,
     DrCreatePrescriptionComponent,
     DrNewPrescriptionQRComponent
->>>>>>> 601a47bb9d5e5809a646b8a9aa0f1cfb8917065c
   ],
   imports: [
     BrowserModule,
