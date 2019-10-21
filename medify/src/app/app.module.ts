@@ -28,11 +28,18 @@ import { DrNewAppointmentQRComponent } from './dr-new-appointment-qr/dr-new-appo
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
-import {MatDatepickerModule, MatNativeDateModule} from '@angular/material'
+import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
 
 const material = [
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatFormFieldModule, 
+  MatInputModule,
+  BrowserAnimationsModule,
+  NgxMaterialTimepickerModule 
 ]
 @NgModule({
   declarations: [

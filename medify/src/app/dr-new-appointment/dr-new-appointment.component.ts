@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
-
 @Component({
   selector: 'app-dr-new-appointment',
   templateUrl: './dr-new-appointment.component.html',
