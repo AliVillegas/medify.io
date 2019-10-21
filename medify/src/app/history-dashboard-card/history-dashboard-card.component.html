@@ -1,0 +1,21 @@
+<div class="card mt-2">
+    <div class="card-header lead font-weight-bold text-center">Enfermedades
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <p class="card-text font-weight-bold">Afección</p>
+                <ul class="list-unstyled card-text">
+                    <li *ngFor="let disease of diseases" [value]="disease"> {{disease}}</li>
+                </ul>
+            </div>
+            <div class="col-6 ">
+                <p class="card-text font-weight-bold">Recuperación</p>
+                <ul class="list-unstyled card-text">
+                    <li *ngFor="let recovery of recoveries" [value]="recovery"> {{recovery}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

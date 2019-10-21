@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { DrNewAppointmentComponent } from './dr-new-appointment/dr-new-appointment.component';
 import { DrDashboardComponent } from './dr-dashboard/dr-dashboard.component';
 import { DrPatientInfoComponent } from './dr-patient-info/dr-patient-info.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'dr/new-appointment', component: DrNewAppointmentComponent },
   { path: 'login/:name', component: LoginComponent },
   { path: 'dr/dashboard', component: DrDashboardComponent },
-  { path: 'dr/patient-info', component: DrPatientInfoComponent }
+  { path: 'dr/patient-info', component: DrPatientInfoComponent },
+  { path: 'dashboard', component: DashboardComponent }
 
 ];
 

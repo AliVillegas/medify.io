@@ -1,0 +1,42 @@
+<app-sidebar></app-sidebar>
+<div id="content">
+    <app-navbar></app-navbar>
+    <div class="container p-2">
+        <app-dashboard-toast></app-dashboard-toast>
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="../html/medHistory.html"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial"> Mis Citas Médicas</a>
+        </h1>
+        <div class="card-columns">
+            <app-appointment-dashboard-card></app-appointment-dashboard-card>
+            <app-appointment-dashboard-card></app-appointment-dashboard-card>
+            <app-appointment-dashboard-card></app-appointment-dashboard-card>
+        </div>
+
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="../html/medHistory.html"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial"> Mi Historial
+                Médico</a>
+        </h1>
+        <div class="card-columns">
+            <app-history-dashboard-card></app-history-dashboard-card>
+            <app-history2-dashboard-card></app-history2-dashboard-card>
+        </div>
+
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="../html/medHistory.html"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial"> Mis Recetas
+                Médicas</a>
+        </h1>
+        <div class="card-columns">
+            <app-prescription-dashboard-card></app-prescription-dashboard-card>
+            <app-prescription-dashboard-card></app-prescription-dashboard-card>
+            <app-prescription-dashboard-card></app-prescription-dashboard-card>
+        </div>
+
+        <app-qr-modal></app-qr-modal>
+    </div>
+
+
+</div>
