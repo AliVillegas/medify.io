@@ -40,6 +40,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
+
 const material = [
   MatDatepickerModule,
   MatNativeDateModule,
