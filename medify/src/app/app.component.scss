@@ -93,7 +93,7 @@ body {
     height: 1px;
     width: 90%;
     margin: 0 auto;
-    border-top: solid 1.5px $SecondaryColor;
+    border-top: solid 1px $SecondaryColor;
 }
 
 #content {
@@ -104,6 +104,16 @@ body {
     top: 0;
     right: 0;
 }
+
+
+.card-header{
+    background-color: white !important;
+    border-bottom: 1px solid $SecondaryColor !important;
+}
+.card-footer{
+    background-color: white !important;
+}
+
 
 @media screen and (max-width: 768px) {
     .display-4 {

@@ -1,26 +1,33 @@
 <app-sidebar></app-sidebar>
 <div id="content" [@pageAnimations]="true">
     <app-navbar></app-navbar>
-    <app-dashboard-toast></app-dashboard-toast>
-    <p class="font-weight-bold text-center secondaryColor mt-1 sectionTitle ">{{ 'dashboardDoctor.title' | translate}}
-    </p>
-    <div class="lineDividerBlue mt-3 mb-3 "></div>
-    <app-dr-dashboard-card></app-dr-dashboard-card>
+    <div class="container p-1">
+        <app-dashboard-toast></app-dashboard-toast>
+        <h1 class="secondaryColor my-4">
+            {{ 'dashboardDoctor.title' | translate}}
+        </h1>
+
+        <app-dr-dashboard-card></app-dr-dashboard-card>
+
+        <app-dr-dashboard-card></app-dr-dashboard-card>
+        <app-dr-dashboard-card></app-dr-dashboard-card>
+
+        <!-- Fixed ADD DATE BUTTON -->
 
 
-    <!-- Fixed ADD DATE BUTTON -->
+        <div class="col-3 addDateDesktop d-none d-md-block text-center" style="position:fixed;bottom:60px; right:10px;">
+            <a href=" dr/appointment/patient-qr" title="Crear nueva cita" class="btn btn-primary mx-auto d-block">
+                {{ 'dashboardDoctor.button' | translate}}
+            </a>
+        </div>
 
 
-    <div class="col-3 addDateDesktop d-none d-md-block mx-auto text-center">
-        <a href="dr/appointment/patient-qr" title="Crear nueva cita"
-            class="btn btn-primary mx-auto d-block fixedBottomRight">{{ 'dashboardDoctor.button' | translate}}
-        </a>
+        <div class="addDateMobile d-block d-sm-block d-md-none">
+            <a href="dr/appointment/patient-qr" title="Crear nueva cita"
+                class="btn btn-lg btn-primary mx-auto d-block fixedBottomRight">+
+            </a>
+        </div>
     </div>
 
 
-    <div class="addDateMobile d-block d-sm-block d-md-none">
-        <a href="dr/appointment/patient-qr" title="Crear nueva cita"
-            class="btn btn-lg btn-primary mx-auto d-block fixedBottomRight">+
-        </a>
-    </div>
 </div>

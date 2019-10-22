@@ -2,7 +2,7 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Observable } from 'rxjs';
-import { trigger, style, animate, transition, query, state, keyframes } from '@angular/animations';
+import { trigger, style, animate, transition, query, state, keyframes, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-dr-dashboard',
@@ -11,11 +11,12 @@ import { trigger, style, animate, transition, query, state, keyframes } from '@a
   animations: [
     trigger('pageAnimations', [
       transition('* => *', [
-        query('.row-striped', style({ opacity: 0 })),
+        query('.row-striped', style({ transform: 'translateX(-150%)' })),
         query('.row-striped',
-          animate(2000, style({ opacity: 1 }))
-        )
-      ]),
+          stagger('450ms', [
+            animate('450ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'translateX(0)' }))
+          ]))
+      ])
     ]),
   ]
 })
