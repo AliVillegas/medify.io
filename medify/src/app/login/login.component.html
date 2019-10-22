@@ -4,13 +4,15 @@
     </div>
     <div class="card-header text-center secondaryColorBg text-white" *ngIf="name == 'doctor'">Inicio de Sesión - Doctor
     </div>
-    <div class="card-body">
+    <div class="card-body mx-auto">
         <form [formGroup]="loginForm" action="../html/dashboard.html">
-            Value: {{ loginForm.value | json}}
-            <mat-form-field>
+            <!--Value: {{ loginForm.value | json}}  -->
+            <br>
+            <mat-form-field class="m-auto">
                 <input matInput placeholder="Correo Eléctronico" formControlName="loginEmail">
             </mat-form-field>
-            <mat-form-field>
+            <br>
+            <mat-form-field class="mx-auto">
                 <input matInput type="password" placeholder="Contraseña" formControlName="loginPassword">
             </mat-form-field>
 
