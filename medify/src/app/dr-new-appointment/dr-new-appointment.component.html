@@ -1,27 +1,27 @@
-<app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
-<div id="content my-3">
+<div id="content">
+    <app-navbar></app-navbar>
     <div class="container p-3">
-        <h4 class="text-center ml-auto">Nueva cita</h4>
+        <h4 class="text-center ml-auto">{{ 'createAppointment.title' | translate}}</h4>
         <div class="card">
             <div class="card-header">
-                Paciente: {{patientName}}
+                {{ 'createAppointment.cardHeader' | translate}} {{patientName}}
             </div>
             <div class=" m-auto my-3">
                 <form [formGroup]="newAppointmentForm" class="my-2 p-2">
+                    <label for="title">{{ 'createAppointment.labelTitle' | translate}}</label>
                     <mat-form-field class="w-100">
-                        <label for="title">Titulo</label>
                         <input matInput value="">
                     </mat-form-field>
                     <br>
+                    <label for="inputTitlePrescription">{{ 'createAppointment.labelDate' | translate}}</label>
                     <mat-form-field class="my-2 w-100">
-                        <label for="inputTitlePrescription">Elegir Fecha</label>
                         <input matInput [matDatepicker]="appointmentDatepicker">
                         <mat-datepicker-toggle [for]="appointmentDatepicker" matSuffix></mat-datepicker-toggle>
                         <mat-datepicker touchUi="false" #appointmentDatepicker></mat-datepicker>
                     </mat-form-field>
 
-                    <label for="inputTimePrescription">Hora: </label>
+                    <label for="inputTimePrescription">{{ 'createAppointment.labelHour' | translate}}</label>
                     <div style="display: flex; border-bottom: 1px solid rgba(0,0,0,.42);" class="mb-4 w-100">
                         <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly
                             class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored">
@@ -31,8 +31,7 @@
 
 
                     <button type="submit" title="Confirmar Cita"
-                        class="btn btn-primary my-5 mx-auto w-75 d-block">Confirmar
-                        cita</button>
+                        class="btn btn-primary my-5 mx-auto w-75 d-block">{{ 'createAppointment.button' | translate}}</button>
 
                 </form>
             </div>

@@ -26,7 +26,7 @@
     "sidebarDoctor": {
         "title": "Medify",
         "li1": "Home",
-        "logout": "Cerrar Sesióm"
+        "logout": "Cerrar Sesión"
     },
     "landingPage": {
         "carousel": {
@@ -119,5 +119,54 @@
         "appointment": "Consulta: ",
         "button": "Compartir",
         "valid": "Válida hasta "
+    },
+    "profile": {
+        "title": "Mi Perfil",
+        "subtitle1": "Mi información",
+        "li1": "Nombre: ",
+        "li2": "Correo: ",
+        "li3": "Fecha de nacimiento: ",
+        "li4": "Tipo de Sangre: ",
+        "subtitle2": " Mis Estadísticas",
+        "stat1": "Citas Médicas y Recetas",
+        "stat2": "Citas con Mis Doctores"
+    },
+    "dashboardDoctor": {
+        "title": "Agenda",
+        "button": "Añadir Cita"
+    },
+    "patientInfo": {
+        "title": "Perfil del paciente",
+        "li1": "Tipo de Sangre: ",
+        "li2": "Peso: ",
+        "li3": "Altura: ",
+        "li4": "Enfermedades Crónicas: ",
+        "li5": "Alergias: ",
+        "li6": "Notas Adicionales: ",
+        "button": "Añadir Receta"
+    },
+    "addPrescriptionQR": {
+        "title": "Por favor escanee el código del paciente",
+        "button": "Continuar"
+    },
+    "createPrescription": {
+        "title": "Nueva Receta",
+        "labelTitle": "Título",
+        "labelDiagnosis": "Diagnostico",
+        "selectPlaceholder": "Por favor seleccione: ",
+        "selectListTitle": "Medicinas Seleccionadas: ",
+        "button": "Continuar"
+    },
+    "addAppointmentQR": {
+        "title": "Por favor escanee el código del paciente",
+        "button": "Continuar"
+    },
+    "createAppointment": {
+        "title": "Nueva cita",
+        "cardHeader": "Paciente: ",
+        "labelTitle": "Titulo",
+        "labelDate": "Elegir Fecha",
+        "labelHour": "Elegir Hora ",
+        "button": "Confirmar cita"
     }
 }

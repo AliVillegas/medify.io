@@ -2,21 +2,21 @@
 <div id="content">
     <app-navbar></app-navbar>
     <div class="container p-3">
-        <h1 class="secondaryColor my-4"> Mi Perfil</h1>
+        <h1 class="secondaryColor my-4">{{ 'profile.title' | translate}}</h1>
 
-        <h3 class="secondaryColor mb-3">Mi información</h3>
-        <p class="lead"> Nombre: {{name}} </p>
-        <p class="lead"> Correo: {{email}} </p>
-        <p class="lead"> Fecha de nacimiento: {{dateBorn}}</p>
-        <p class="lead"> Tipo de Sangre: {{bloodType}} </p>
+        <h3 class="secondaryColor mb-3">{{ 'profile.subtitle1' | translate}}</h3>
+        <p class="lead"> {{ 'profile.li1' | translate}} {{name}} </p>
+        <p class="lead"> {{ 'profile.li2' | translate}} {{email}} </p>
+        <p class="lead"> {{ 'profile.li3' | translate}} {{dateBorn}}</p>
+        <p class="lead"> {{ 'profile.li4' | translate}} {{bloodType}} </p>
         <app-qr-modal></app-qr-modal>
 
         <div class="lineDividerBlue mt-3 mb-3"></div>
 
-        <h2 class="secondaryColor my-4"> Mis Estadísticas</h2>
-        <p class="lead my-3"> Citas Médicas y Recetas</p>
+        <h2 class="secondaryColor my-4"> {{ 'profile.subtitle2' | translate}}</h2>
+        <p class="lead my-3"> {{ 'profile.stat1' | translate}}</p>
         <app-bar-chart></app-bar-chart>
-        <p class="lead my-3"> Citas con Mis Doctores</p>
+        <p class="lead my-3"> {{ 'profile.stat2' | translate}}</p>
         <app-pie-chart></app-pie-chart>
     </div>
 </div>

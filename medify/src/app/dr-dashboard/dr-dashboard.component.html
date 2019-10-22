@@ -2,7 +2,8 @@
 <div id="content" [@pageAnimations]="true">
     <app-navbar></app-navbar>
     <app-dashboard-toast></app-dashboard-toast>
-    <p class="font-weight-bold text-center secondaryColor mt-1 sectionTitle "> Agenda </p>
+    <p class="font-weight-bold text-center secondaryColor mt-1 sectionTitle ">{{ 'dashboardDoctor.title' | translate}}
+    </p>
     <div class="lineDividerBlue mt-3 mb-3 "></div>
     <app-dr-dashboard-card></app-dr-dashboard-card>
 
@@ -12,7 +13,7 @@
 
     <div class="col-3 addDateDesktop d-none d-md-block mx-auto text-center">
         <a href="dr/appointment/patient-qr" title="Crear nueva cita"
-            class="btn btn-primary mx-auto d-block fixedBottomRight">Añadir Cita
+            class="btn btn-primary mx-auto d-block fixedBottomRight">{{ 'dashboardDoctor.button' | translate}}
         </a>
     </div>
 

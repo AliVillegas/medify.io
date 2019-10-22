@@ -119,5 +119,54 @@
         "appointment": "Appointment: ",
         "button": "Share",
         "valid": "Valid until "
+    },
+    "profile": {
+        "title": "My Profile",
+        "subtitle1": "Mi Information",
+        "li1": "Name: ",
+        "li2": "e-mail: ",
+        "li3": "Date of Birth: ",
+        "li4": "Blood Type: ",
+        "subtitle2": " My Statistics",
+        "stat1": "Medical Appointments and Prescriptions",
+        "stat2": "Appointments with my doctors"
+    },
+    "dashboardDoctor": {
+        "title": "Schedule",
+        "button": "Add Appointment"
+    },
+    "patientInfo": {
+        "title": "Patient's Profile",
+        "li1": "Blood Type: ",
+        "li2": "Weight: ",
+        "li3": "Height: ",
+        "li4": "Chronic Diseases: ",
+        "li5": "Alergies: ",
+        "li6": "Additional Notes: ",
+        "button": "Add Prescription"
+    },
+    "addPrescriptionQR": {
+        "title": "Please scan the patient's code",
+        "button": "Continue"
+    },
+    "createPrescription": {
+        "title": "New Prescription",
+        "labelTitle": "Title",
+        "labelDiagnosis": "Diagnosis",
+        "selectPlaceholder": "Please Select: ",
+        "selectListTitle": "Medicines Selected: ",
+        "button": "Continue"
+    },
+    "addAppointmentQR": {
+        "title": "Please scan the patient's code",
+        "button": "Continue"
+    },
+    "createAppointment": {
+        "title": "New Appointment",
+        "cardHeader": "Patient: ",
+        "labelTitle": "Title",
+        "labelDate": "Choose Date",
+        "labelHour": "Choose Hour ",
+        "button": "Confirm Appointment"
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Observable } from 'rxjs';
-import { trigger, style, animate, transition, query } from '@angular/animations';
+import { trigger, style, animate, transition, query, state, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-dr-dashboard',
@@ -13,11 +13,10 @@ import { trigger, style, animate, transition, query } from '@angular/animations'
       transition('* => *', [
         query('.row-striped', style({ opacity: 0 })),
         query('.row-striped',
-          animate(1500, style({ opacity: 1 }))
+          animate(2000, style({ opacity: 1 }))
         )
-
-      ])
-    ])
+      ]),
+    ]),
   ]
 })
 
