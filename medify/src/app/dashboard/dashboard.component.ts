@@ -35,7 +35,6 @@ export class DashboardComponent implements OnInit {
     this.sidebarData.changeIsLandingPage(false)
     this.sidebarData.changeIsDoctor(false)
     this.sidebarData.changeIsPatient(true)
-
   }
 
 }

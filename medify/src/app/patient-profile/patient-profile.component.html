@@ -1,37 +1,22 @@
-<div class="container p-3">
-    <h1 class="secondaryColor my-4"> Mi Perfil</h1>
+<app-sidebar></app-sidebar>
+<div id="content">
+    <app-navbar></app-navbar>
+    <div class="container p-3">
+        <h1 class="secondaryColor my-4"> Mi Perfil</h1>
 
-    <img src="../img/perfil.jpg" class="mx-auto d-block rounded" style="max-width:250px;" alt="Imagen de Perfil">
+        <h3 class="secondaryColor mb-3">Mi información</h3>
+        <p class="lead"> Nombre: {{name}} </p>
+        <p class="lead"> Correo: {{email}} </p>
+        <p class="lead"> Fecha de nacimiento: {{dateBorn}}</p>
+        <p class="lead"> Tipo de Sangre: {{bloodType}} </p>
+        <app-qr-modal></app-qr-modal>
 
-    <h3 class="secondaryColor mb-3">Mi información</h3>
-    <p class="lead"> Nombre: {{name}} </p>
-    <p class="lead"> Correo: {{email}} </p>
-    <p class="lead"> Fecha de nacimiento: {{dateBorn}}</p>
-    <p class="lead"> Tipo de Sangre: {{bloodType}} </p>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Ver codigo QR
-    </button>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title secondaryColor" id="exampleModalCenterTitle">Tu codigo QR</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="../img/qr-code.png" class="img-fluid" alt="QR">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+
+        <h2 class="secondaryColor my-4"> Mis Estadísticas</h2>
+        <p class="lead my-3"> Citas Médicas y Recetas</p>
+        <app-bar-chart></app-bar-chart>
+        <p class="lead my-3"> Citas con Mis Doctores</p>
+        <app-pie-chart></app-pie-chart>
     </div>
-    <button class="btn btn-primary mx-auto d-block mt-3" onclick="window.location.href='../html/updateProfile.html'">
-        Actualizar Datos</button>
-
-
 </div>
