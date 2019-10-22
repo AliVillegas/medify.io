@@ -1,5 +1,5 @@
 <app-sidebar></app-sidebar>
-<div id="content">
+<div id="content" [@pageAnimations]="true">
     <app-navbar></app-navbar>
     <app-dashboard-toast></app-dashboard-toast>
     <p class="font-weight-bold text-center secondaryColor mt-1 sectionTitle "> Agenda </p>
@@ -11,13 +11,15 @@
 
 
     <div class="col-3 addDateDesktop d-none d-md-block mx-auto text-center">
-        <a href="dr/appointment/patient-qr" title="Crear nueva cita" class="btn btn-primary mx-auto d-block fixedBottomRight">Añadir Cita
+        <a href="dr/appointment/patient-qr" title="Crear nueva cita"
+            class="btn btn-primary mx-auto d-block fixedBottomRight">Añadir Cita
         </a>
     </div>
 
 
     <div class="addDateMobile d-block d-sm-block d-md-none">
-        <a href="dr/appointment/patient-qr" title="Crear nueva cita" class="btn btn-lg btn-primary mx-auto d-block fixedBottomRight">+
+        <a href="dr/appointment/patient-qr" title="Crear nueva cita"
+            class="btn btn-lg btn-primary mx-auto d-block fixedBottomRight">+
         </a>
     </div>
 </div>
