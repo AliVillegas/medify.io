@@ -14,6 +14,7 @@ import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-creat
 import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -32,6 +33,8 @@ const routes: Routes = [
   { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
   { path: 'patient/history-detail', component: HistoryDetailComponent },
   { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
+  { path: 'logout', component: LogoutComponent },
+
 
 
 ];

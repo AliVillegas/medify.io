@@ -1,0 +1,37 @@
+<div class="container p-3">
+    <h1 class="secondaryColor my-4"> Mi Perfil</h1>
+
+    <img src="../img/perfil.jpg" class="mx-auto d-block rounded" style="max-width:250px;" alt="Imagen de Perfil">
+
+    <h3 class="secondaryColor mb-3">Mi información</h3>
+    <p class="lead"> Nombre: {{name}} </p>
+    <p class="lead"> Correo: {{email}} </p>
+    <p class="lead"> Fecha de nacimiento: {{dateBorn}}</p>
+    <p class="lead"> Tipo de Sangre: {{bloodType}} </p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Ver codigo QR
+    </button>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title secondaryColor" id="exampleModalCenterTitle">Tu codigo QR</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="../img/qr-code.png" class="img-fluid" alt="QR">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary mx-auto d-block mt-3" onclick="window.location.href='../html/updateProfile.html'">
+        Actualizar Datos</button>
+
+
+</div>

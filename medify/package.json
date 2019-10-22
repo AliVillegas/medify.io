@@ -27,6 +27,7 @@
     "jquery": "^3.4.1",
     "ngx-mat-select-search": "^2.0.0",
     "ngx-material-timepicker": "^5.2.1",
+    "ngx-spinner": "^8.0.3",
     "rxjs": "^6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

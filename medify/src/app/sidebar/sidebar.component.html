@@ -52,10 +52,12 @@
 
     <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'">
         {{ 'sidebarDoctor.logout' | translate }} </button>
-    <button class="btn btn-primary btnSideBar rounded border-white mx-auto d-block mt-3" (click)="changeLanguage('es')"
-        [ngClass]="{'disabled btn-secondary': language == 'es'}">ES</button>
-    <button class="btn btn-primary btnSideBar rounded border-white mx-auto d-block mt-3" (click)="changeLanguage('en')"
-        [ngClass]="{'disabled btn-secondary': language == 'en'}">EN </button>
+    <div class="row p-3">
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+    </div>
 
 </nav>
 
@@ -90,9 +92,13 @@
 
     <button class="btn btnSideBar mx-auto d-block mt-3"
         onclick="window.location.href='logout.html'">{{ 'sidebarPatient.logout' | translate }} </button>
-    <button class="btn btn-primary btnSideBar rounded border-white mx-auto d-block mt-3" (click)="changeLanguage('es')"
-        [ngClass]="{'disabled btn-secondary': language == 'es'}">ES</button>
-    <button class="btn btn-primary btnSideBar rounded border-white mx-auto d-block mt-3" (click)="changeLanguage('en')"
-        [ngClass]="{'disabled btn-secondary': language == 'en'}">EN </button>
+    <hr>
+    <div class="row p-3">
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+    </div>
+
 
 </nav>

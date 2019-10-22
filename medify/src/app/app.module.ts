@@ -42,7 +42,10 @@ import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import {ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component'
+import { NgxSpinnerModule } from "ngx-spinner";
+import { LogoutComponent } from './logout/logout.component';
 
 
 const material = [
@@ -89,13 +92,16 @@ const material = [
     DrNewPrescriptionQRComponent,
     AppointmentsDetailComponent,
     HistoryDetailComponent,
-    PrescriptionsDetailComponent
+    PrescriptionsDetailComponent,
+    PatientProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     material,
+    NgxSpinnerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -7,7 +7,7 @@ declare var $;
   styleUrls: ['./dashboard-toast.component.scss']
 })
 export class DashboardToastComponent implements OnInit {
-  private toastTime: String = "¡Hace unos segundos!"
+  private toastTime: String = "Hace unos segundos"
   private toastMessage: String = "¡Felicidades! Has completado tu perfil. Ahora puedes usar Medify."
   constructor() { }
 

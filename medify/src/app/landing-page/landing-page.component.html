@@ -9,7 +9,7 @@
     <app-section5-landing></app-section5-landing>
     <app-footer></app-footer>
 </div>
-<button class="btn btn-primary rounded border-white" style="position:fixed;bottom:50px; left:10px; z-index: 10;"
-    (click)="changeLanguage('es')" [ngClass]="{'disabled btn-secondary': language == 'es'}">ES</button>
-<button class="btn btn-primary rounded border-white" style="position:fixed;bottom:10px; left:10px; z-index: 10;"
-    (click)="changeLanguage('en')" [ngClass]="{'disabled btn-secondary': language == 'en'}">EN </button>
+<button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:55px; left:10px; z-index: 10;"
+    (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">ES</button>
+<button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:10px; left:10px; z-index: 10;"
+    (click)="changeLanguage('en')" [ngClass]="{'secondaryColorBg': language == 'en'}">EN </button>
