@@ -1,6 +1,6 @@
 <div class="container p-3">
     <p class="display-3 font-weight-bold text-center secondaryColor mb-5"> Medify </p>
-    <div class="card-header text-center secondaryColorBg text-white">Registro de Cuenta - Doctor</div>
+    <div class="card-header text-center secondaryColor lead">Registro de Cuenta - Doctor</div>
     <div class="card-body">
         <form [formGroup]="registerDoctorForm" action="../html/drDashboard.html">
             <div class="form-group">
@@ -9,7 +9,8 @@
             </div>
             <div class="form-group">
                 <label for="input_email">Correo electrónico</label>
-                <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp" placeholder="Ingresa correo" required>
+                <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp"
+                    placeholder="Ingresa correo" required>
                 <small id="emailHelp" class="form-text text-muted">Tu correo no se compartirá a terceros</small>
             </div>
             <div class="form-group">
