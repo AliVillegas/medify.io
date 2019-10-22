@@ -1,12 +1,15 @@
-<app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
-<div class="container p-3">
-    <h4 class="text-center ml-auto">Por favor escanee el código del paciente</h4>
-    <img src="../../assets/img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg img80" alt=" qr">
-</div>
-<div>
+<div id="content">
+    <app-navbar></app-navbar>
+    <div class="container p-3">
+        <h4 class="text-center ml-auto">{{ 'addAppointmentQR.title' | translate}}</h4>
+        <img src="../../assets/img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg img80" alt=" qr">
+        <div>
 
-    <a href="dr/appointment/create" data-toggle="tooltip" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50">Continuar
-    </a>
+            <a href="dr/appointment/create" data-toggle="tooltip" title="Continuar nueva receta"
+                class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addAppointmentQR.button' | translate}}
+            </a>
 
+        </div>
+    </div>
 </div>

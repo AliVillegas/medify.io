@@ -14,6 +14,8 @@ import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-creat
 import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -29,9 +31,12 @@ const routes: Routes = [
   { path: 'dr/prescription/patient-qr', component: DrNewPrescriptionQRComponent },
   { path: 'dr/prescription/create', component: DrCreatePrescriptionComponent },
   { path: 'patient/dashboard', component: DashboardComponent },
+  { path: 'patient/profile', component: PatientProfileComponent },
   { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
   { path: 'patient/history-detail', component: HistoryDetailComponent },
   { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
+  { path: 'logout', component: LogoutComponent },
+
 
 
 ];

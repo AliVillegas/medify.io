@@ -16,7 +16,8 @@ import { Medicine, MEDICINES } from './meds-data';
 })
 export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  @Input() placeholderLabel = 'Buscar';
+  @Input() search = 'Buscar';
+  @Input() noneFound = 'No se encontraron opciones';
 
   protected medicines: Medicine[] = MEDICINES;
 

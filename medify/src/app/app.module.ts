@@ -37,12 +37,21 @@ import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-pr
 import { AppointmentsDetailComponent } from './appointments-detail/appointments-detail.component';
 import { HistoryDetailComponent } from './history-detail/history-detail.component';
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component'
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import {ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+
+
+
 
 
 const material = [
@@ -89,13 +98,19 @@ const material = [
     DrNewPrescriptionQRComponent,
     AppointmentsDetailComponent,
     HistoryDetailComponent,
-    PrescriptionsDetailComponent
+    PrescriptionsDetailComponent,
+    PatientProfileComponent,
+    LogoutComponent,
+    BarChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     material,
+    NgxSpinnerModule,
+    ChartsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

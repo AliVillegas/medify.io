@@ -2,7 +2,7 @@
 
 <nav *ngIf="isLandingPage" id="sidebar">
     <div id="dismiss" onclick="dismiss()">
-        <i class=" fas fa-arrow-left"></i>
+        <i class="fas fa-times"></i>
     </div>
 
     <div class="sidebar-header">
@@ -37,7 +37,7 @@
 <!-- Doctor SideBar  -->
 <nav *ngIf="isDoctor" id="sidebar">
     <div id="dismiss" onclick="dismiss()">
-        <i class=" fas fa-arrow-left"></i>
+        <i class="fas fa-times"></i>
     </div>
 
     <div class="sidebar-header">
@@ -52,13 +52,19 @@
 
     <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='logout.html'">
         {{ 'sidebarDoctor.logout' | translate }} </button>
+    <div class="row p-3">
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+    </div>
 
 </nav>
 
 <!-- Patient SideBar  -->
 <nav *ngIf="isPatient" id="sidebar">
     <div id="dismiss" onclick="dismiss()">
-        <i class=" fas fa-arrow-left"></i>
+        <i class="fas fa-times"></i>
     </div>
 
     <div class="sidebar-header">
@@ -79,12 +85,20 @@
             <a href="/patient/prescriptions-detail">{{ 'sidebarPatient.li4' | translate }}</a>
         </li>
         <li class="">
-            <a href="#">{{ 'sidebarPatient.li5' | translate }}</a>
+            <a href="/patient/profile">{{ 'sidebarPatient.li5' | translate }}</a>
         </li>
     </ul>
 
 
     <button class="btn btnSideBar mx-auto d-block mt-3"
         onclick="window.location.href='logout.html'">{{ 'sidebarPatient.logout' | translate }} </button>
+    <hr>
+    <div class="row p-3">
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+    </div>
+
 
 </nav>
