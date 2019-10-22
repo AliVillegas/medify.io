@@ -1,18 +1,19 @@
-<div class="row row-striped w-75 mx-auto">
-    <div class="d-none d-sm-none d-md-block col-2 text-right">
-        <h1 class="display-4"><span class="badge badge-secondary">14</span></h1>
-        <h2>SEP</h2>
+<div *ngIf="appointments.length > 0">
+    <div *ngFor=" let appointment of appointments" class="row row-striped w-75 mx-auto ">
+        <div class="d-none d-sm-none d-md-block col-2 text-right ">
+            <h1 class="display-4 "><span class="badge badge-secondary ">{{appointment.dayNumber}}</span></h1>
+            <h2>{{appointment.month}}</h2>
+        </div>
+        <div class="col-10 ">
+            <h3 class="text-uppercase "><strong> <a href="dr/patient-info " data-toggle="tooltip "
+                    title="Ver info del paciente " class="patientName ">{{appointment.patientName}}</a></strong></h3>
+            <ul class="list-inline ">
+                <li class="list-inline-item "><i class="fa fa-calendar-o " aria-hidden="true "></i> {{appointment.dayName}}</li>
+                <li class="list-inline-item "><i class="fa fa-clock-o " aria-hidden="true "></i> 12:30 PM - 2:00 PM</li>
+                <li class="list-inline-item "><i class="fa fa-location-arrow " aria-hidden="true "></i> área terminal 1</li>
+            </ul>
+            <p>{{appointment.concept}}</p>
+        </div>
+        <div class="lineDividerBlue mt-3 mb-3 "> </div>
     </div>
-    <div class="col-10">
-        <h3 class="text-uppercase "><strong> <a href="dr/patient-info" data-toggle="tooltip"
-                    title="Ver info del paciente" class="patientName">Julián
-                    Herrera</a></strong></h3>
-        <ul class="list-inline">
-            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Lunes</li>
-            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> área terminal 1</li>
-        </ul>
-        <p>4ta revisión para dar seguimiento a cáncer</p>
-    </div>
-    <div class="lineDividerBlue mt-3 mb-3 "> </div>
 </div>
