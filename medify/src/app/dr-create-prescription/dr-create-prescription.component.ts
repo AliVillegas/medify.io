@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
@@ -14,12 +14,17 @@ import { Medicine, MEDICINES } from './meds-data';
   templateUrl: './dr-create-prescription.component.html',
   styleUrls: ['./dr-create-prescription.component.scss']
 })
-export class DrCreatePrescriptionComponent implements OnInit {
+export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  @Input() placeholderLabel = 'Buscar';
 
   protected medicines: Medicine[] = MEDICINES;
+
   public medControl: FormControl = new FormControl();
   public medFilter: FormControl = new FormControl();
+
   public filteredMeds: ReplaySubject<Medicine[]> = new ReplaySubject<Medicine[]>(1);
+
   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
   createPrescriptionForm: FormGroup
 
@@ -29,12 +34,13 @@ export class DrCreatePrescriptionComponent implements OnInit {
     private navData: NavbarDataService,
     private sidebarData: SidebarDataService,
     private _location: Location,
-    private fb:FormBuilder
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
+
 
     this.filteredMeds.next(this.medicines.slice());
 
@@ -45,12 +51,13 @@ export class DrCreatePrescriptionComponent implements OnInit {
       });
 
     this.createPrescriptionForm = this.fb.group({
-        title: '',
-        diagnosis: ''
+      title: '',
+      diagnosis: ''
     })
-  
+
     this.createPrescriptionForm.valueChanges.subscribe()
   }
+
   ngAfterViewInit() {
     this.setInitialValue();
   }

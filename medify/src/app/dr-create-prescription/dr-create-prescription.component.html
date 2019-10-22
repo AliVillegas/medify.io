@@ -18,7 +18,8 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputDesPrescriptionTextArea">Diagnóstico</label>
-                <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;" required></textarea>
+                <textarea class="form-control" id="inputDesPrescriptionTextArea" rows="3" style="resize: none;"
+                    required></textarea>
             </div>
         </div>
         <div class="row d-none d-md-flex">
@@ -29,15 +30,16 @@
                 <h4>Cantidad</h4>
             </div>
         </div>
-        <mat-form-field>
-            <mat-select [formControl]="medControl" placeholder="Medicinas" [multiple]="true" #multiSelect>
-                <ngx-mat-select-search [formControl]="medFilter"></ngx-mat-select-search>
-                <mat-option *ngFor="let med of filteredMeds | async" [value]="medicine">
-                    {{medicine.name}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+
 
         <button type="submit" title="Confirmar Receta" class="btn btn-primary mb-5">Continuar</button>
     </form>
+    <mat-form-field>
+        <mat-select [formControl]="medControl" placeholder="Medicinas" [multiple]="true" #multiSelect>
+            <ngx-mat-select-search [formControl]="medFilter" placeholder="Buscar"></ngx-mat-select-search>
+            <mat-option *ngFor="let medicine of filteredMeds | async" [value]="medicine">
+                {{medicine.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
