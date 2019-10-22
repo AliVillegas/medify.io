@@ -14,13 +14,13 @@ export class SidebarDataService {
   currentIsPatient = this.isPatient.asObservable();
   constructor() { }
 
-  changeIsLandingPage(isLandingPage: Boolean){
+  changeIsLandingPage(isLandingPage: Boolean) {
     this.isLandingPage.next(isLandingPage)
   }
-  changeIsDoctor(isDoctor: Boolean){
+  changeIsDoctor(isDoctor: Boolean) {
     this.isDoctor.next(isDoctor)
   }
-  changeIsPatient(isPatient: Boolean){
+  changeIsPatient(isPatient: Boolean) {
     this.isPatient.next(isPatient)
   }
 

@@ -1,5 +1,18 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+$MainColor: #fafafa;
+$SecondaryColor: #1e88e5;
+$SecondaryColorLight: #6ab7ff;
 body {
     font-family: "Poppins", sans-serif !important;
+}
+
+.timepicker__header {
+background-color: $SecondaryColor !important;
+}
+
+ .clock-face__number > span.active {
+background-color: $SecondaryColor !important;
+}
+.timepicker-button {
+    color: $SecondaryColor !important;
 }

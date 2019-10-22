@@ -8,24 +8,31 @@
                 Paciente: {{patientName}}
             </div>
             <div class=" m-auto my-3">
-                <form [formGroup]="newAppointmentForm" class="my-2">
-                    <div class="form-row">
-                        <div class="form-group col-md-12 my-3">
-                            <label for="inputTitlePrescription">Título</label>
-                            <input type="text" class="form-control" id="inputTitlePrescription" placeholder="Revisión diabetes" required>
-                        </div>
-                    </div>
-                    <mat-form-field class="my-2 mx-auto">
+                <form [formGroup]="newAppointmentForm" class="my-2 p-2">
+                    <mat-form-field class="w-100">
+                        <label for="title">Titulo</label>
+                        <input matInput value="">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="my-2 w-100">
                         <label for="inputTitlePrescription">Elegir Fecha</label>
                         <input matInput [matDatepicker]="appointmentDatepicker">
                         <mat-datepicker-toggle [for]="appointmentDatepicker" matSuffix></mat-datepicker-toggle>
-                        <mat-datepicker touchUi="true" #appointmentDatepicker></mat-datepicker>
+                        <mat-datepicker touchUi="false" #appointmentDatepicker></mat-datepicker>
                     </mat-form-field>
-                    <br>
+
                     <label for="inputTimePrescription">Hora: </label>
-                    <input class="mx-3 my-3" [ngxTimepicker]="picker" placeholder="1:00 PM">
-                    <ngx-material-timepicker #picker></ngx-material-timepicker>
-                    <button type="submit" title="Confirmar Cita" class="btn btn-primary my-5 m-auto w-75">Confirmar cita</button>
+                    <div style="display: flex; border-bottom: 1px solid rgba(0,0,0,.42);" class="mb-4 w-100">
+                        <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly
+                            class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored">
+                        <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
+                    </div>
+
+
+                    <button type="submit" title="Confirmar Cita"
+                        class="btn btn-primary my-5 mx-auto w-75 d-block">Confirmar
+                        cita</button>
 
                 </form>
             </div>
