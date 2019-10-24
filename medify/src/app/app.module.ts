@@ -52,7 +52,9 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 
-
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 const material = [
   MatDatepickerModule,
@@ -114,9 +116,7 @@ const material = [
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => {
-          return new TranslateHttpLoader(http);
-        },
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     })

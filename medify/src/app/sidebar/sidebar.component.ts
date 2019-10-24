@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../sidebar-data.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,13 +19,21 @@ export class SidebarComponent implements OnInit {
     this.translate.setDefaultLang(this.language);
   }
   ngOnInit() {
-    this.data.currentIsLandingPage.subscribe(isLanding => this.isLandingPage = isLanding)
-    this.data.currentIsDoctor.subscribe(doctor => this.isDoctor = doctor)
-    this.data.currentIsPatient.subscribe(patient => this.isPatient = patient)
+    var l = localStorage.getItem("language");
+    this.changeLanguage(l);
+
+    this.data.currentIsLandingPage.subscribe(isLanding => this.isLandingPage = isLanding);
+    this.data.currentIsDoctor.subscribe(doctor => this.isDoctor = doctor);
+    this.data.currentIsPatient.subscribe(patient => this.isPatient = patient);
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      localStorage.setItem("language", this.translate.currentLang);
+    });
+
   }
   public changeLanguage(lang: string) {
     this.language = lang;
     this.translate.use(lang);
   }
+
 
 }
