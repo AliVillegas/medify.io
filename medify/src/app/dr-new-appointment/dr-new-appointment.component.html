@@ -3,11 +3,15 @@
     <app-navbar></app-navbar>
     <div class="container p-3">
         <h4 class="text-center ml-auto">{{ 'createAppointment.title' | translate}}</h4>
-        <div class="card">
-            <div class="card-header">
+        <div class=" w-75 text-justified ml-5  mb-2 mt-0 text-secondary">
+            <p>
                 {{ 'createAppointment.cardHeader' | translate}} {{patientName}}
-            </div>
-            <div class=" m-auto my-3">
+            </p>
+        </div>
+        <div class="lineDividerBlue mt-3 mb-3"></div>
+        <div class="w-75 mx-auto ">
+
+            <div class="m-auto my-3">
                 <form [formGroup]="newAppointmentForm" class="my-2 p-2">
                     <label for="title">{{ 'createAppointment.labelTitle' | translate}}</label>
                     <mat-form-field class="w-100">

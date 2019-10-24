@@ -16,7 +16,7 @@ export class LogoutComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 1500);
+    }, 1700);
 
     setTimeout(() => {
       window.location.href = "landing"
