@@ -1,0 +1,3 @@
+ appointmentUrl = 'https://api.jsonbin.io/b/5db4a78fade7b423ecad7968/1'
+ patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/4'
+  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/1'
