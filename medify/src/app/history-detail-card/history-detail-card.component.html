@@ -1,0 +1,17 @@
+<div class="card flex-md-row mb-4 shadow-sm h-md-250" [@EnterLeave]="flyIn">
+    <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary text-center">{{ 'historyDetail.cardTitle' | translate }}
+            Sinusitis aguda</strong>
+        <h6 class="mb-0">
+            <a class="text-dark mt-2">{{ 'historyDetail.reason' | translate }} - Dr. López</a>
+        </h6>
+        <div class="mb-1 text-muted small mt-2">18/ago/2019</div>
+        <ul class="list-unstyled card-text">
+            <li> Dificultades para respirar</li>
+            <li> Dolor intenso en de la cabeza al moverse</li>
+            <li> Bajo apetito</li>
+        </ul>
+        <a class="btn btn-outline-primary btn-sm" role="button"
+            href="/patient/prescriptions-detail">{{ 'historyDetail.button' | translate }}</a>
+    </div>
+</div>

@@ -1,15 +1,17 @@
-<div *ngIf="appointments.length > 0">
+<div *ngIf="appointments.length > 0" [@EnterLeave]="'flyIn'">
     <div *ngFor="let appointment of appointments" class="row row-striped w-80 mx-auto ">
         <div class="d-none d-sm-none d-md-block col-2 text-right ">
             <h1 class="display-4 "><span class="badge badge-secondary ">{{appointment.dayNumber}}</span></h1>
             <h2>{{appointment.month}}</h2>
         </div>
         <div class="col-10 ">
-            <h3 class="text-uppercase "><strong> <a href="dr/patient-info/{{appointment.patient.id}}" data-toggle="tooltip "
-                        title="Ver info del paciente " class="patientName ">{{appointment.patient.name}}</a></strong>
+            <h3 class="text-uppercase "><strong> <a href="dr/patient-info/{{appointment.patient.id}}"
+                        data-toggle="tooltip " title="Ver info del paciente "
+                        class="patientName ">{{appointment.patient.name}}</a></strong>
             </h3>
             <ul class="list-inline ">
-                <li class="list-inline-item "><i class="fa fa-calendar-o " aria-hidden="true "></i> {{appointment.dayName}}
+                <li class="list-inline-item "><i class="fa fa-calendar-o " aria-hidden="true "></i>
+                    {{appointment.dayName}}
                 </li>
                 <li class="list-inline-item "><i class="fa fa-clock-o " aria-hidden="true "></i> 12:30 PM - 2:00 PM</li>
                 <li class="list-inline-item "><i class="fa fa-location-arrow " aria-hidden="true "></i> área terminal 1

@@ -1,0 +1,32 @@
+<div class="card text-center" [@EnterLeave]="flyIn">
+    <div class="card-header font-weight-bold lead">
+        Hospital Médico Nirvae
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} Dolor de cabeza</h5>
+            <h5 class="text-right col-6">Dr. Perez</h5>
+        </div>
+
+        <p class="card-text">
+            <div class="row">
+                <ul class="list-group col-10">
+                    <li class="list-group-item text-left">Antiflus 100mg</li>
+                    <li class="list-group-item text-left">Paracetamol 10mg tabletas</li>
+                    <li class="list-group-item text-left ">Jarabe Omeatín-B 50ml</li>
+                </ul>
+                <ul class="list-group col-2">
+                    <li class="list-group-item secondaryColor"><i class="fas fa-check"></i></li>
+                    <li class="list-group-item"><i class="fas fa-times"></i></li>
+                    <li class="list-group-item secondaryColor"><i class="fas fa-check"></i></li>
+
+                </ul>
+            </div>
+            <div class="row text-center">
+                <h5 class="my-2 text-warning mx-auto">Parcialmente entregada</h5>
+            </div>
+    </div>
+    <div class="card-footer text-muted">
+        {{ 'prescriptionDetail.valid' | translate }} 16/Sep/2019
+    </div>
+</div>

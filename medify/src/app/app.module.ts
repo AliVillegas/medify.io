@@ -30,7 +30,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { QrModalComponent } from './qr-modal/qr-modal.component';
 import { PrescriptionDashboardCardComponent } from './prescription-dashboard-card/prescription-dashboard-card.component';
 import { HistoryDashboardCardComponent } from './history-dashboard-card/history-dashboard-card.component';
-import { History2DashboardCardComponent } from './history2-dashboard-card/history2-dashboard-card.component';
 import { AppointmentDashboardCardComponent } from './appointment-dashboard-card/appointment-dashboard-card.component';
 import { DrCreatePrescriptionComponent } from './dr-create-prescription/dr-create-prescription.component';
 import { DrNewPrescriptionQRComponent } from './dr-new-prescription-qr/dr-new-prescription-qr.component';
@@ -49,6 +48,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { AppointmentDetailCardComponent } from './appointment-detail-card/appointment-detail-card.component';
+import { HistoryDetailCardComponent } from './history-detail-card/history-detail-card.component';
+import { PrescriptionDetailCardComponent } from './prescription-detail-card/prescription-detail-card.component';
 
 
 
@@ -94,7 +96,6 @@ const material = [
     QrModalComponent,
     PrescriptionDashboardCardComponent,
     HistoryDashboardCardComponent,
-    History2DashboardCardComponent,
     AppointmentDashboardCardComponent,
     DrCreatePrescriptionComponent,
     DrNewPrescriptionQRComponent,
@@ -105,6 +106,9 @@ const material = [
     LogoutComponent,
     BarChartComponent,
     PieChartComponent,
+    AppointmentDetailCardComponent,
+    HistoryDetailCardComponent,
+    PrescriptionDetailCardComponent,
   ],
   imports: [
     BrowserModule,
