@@ -90,9 +90,10 @@
         "more": "View More"
     },
     "historyCard": {
-        "title": "Diseases",
-        "condition": "Condition",
-        "recovery": "Recovery"
+        "title": "Diagnosis",
+        "reason": "Appointment: ",
+        "date": "Date: ",
+        "prescription": "Prescribed"
     },
     "historyCard2": {
         "title": "Treatments",
@@ -112,7 +113,10 @@
         "address": "Address: "
     },
     "historyDetail": {
-        "title": "My Medical History"
+        "title": "My Medical History",
+        "cardTitle": "Diagnosis: ",
+        "reason": "Appointment",
+        "button": "View Prescription"
     },
     "prescriptionDetail": {
         "title": "My Medical Prescriptions",

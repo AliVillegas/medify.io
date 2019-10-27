@@ -90,9 +90,10 @@
         "more": "Ver Más"
     },
     "historyCard": {
-        "title": "Enfermedades",
-        "condition": "Afección",
-        "recovery": "Recuperación"
+        "title": "Diagnóstico",
+        "reason": "Cita Médica: ",
+        "date": "Fecha: ",
+        "prescription": "Recetado: "
     },
     "historyCard2": {
         "title": "Tratamientos",
@@ -112,7 +113,10 @@
         "address": "Dirección: "
     },
     "historyDetail": {
-        "title": "Mi Historia Médica"
+        "title": "Mi Historia Médica",
+        "cardTitle": "Diagnóstico: ",
+        "reason": "Cita Médica",
+        "button": "Ver Receta"
     },
     "prescriptionDetail": {
         "title": "Mis recetas médicas",

@@ -4,25 +4,25 @@
     <div class="container p-3" [@pageAnimations]="true">
         <h1 class="secondaryColor my-4"> {{ 'appointmentDetail.title' | translate }} </h1>
         <div *ngIf="appointments.length > 0">
-
-            <div *ngFor="let appointment of appointments" class="card text-center">
-
+            <div *ngFor="let appointment of appointments" class="card text-center my-2">
                 <div class="card-header font-weight-bold lead secondaryColor">
                     {{appointment.concept}}
                 </div>
                 <div class="row px-3 mt-2">
-                    <h5 class="text-left col-6">{{ 'appointmentDetail.address' | translate }} {{appointment.location}}</h5>
+                    <h5 class="text-left col-6">{{ 'appointmentDetail.address' | translate }} {{appointment.location}}
+                    </h5>
                     <h5 class="text-right col-6">{{appointment.doctor.name}}</h5>
                 </div>
                 <div class="row no-gutters">
                     <div class="card-body col-10">
                         <ul class="list-unstyled pl-3 card-text">
-                            <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} {{appointment.startTime}}</li>
-                            <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} {{appointment.dayName}} {{appointment.dayNumber}} {{appointment.month}}</li>
+                            <li class="lead text-left">{{ 'appointmentDetail.time' | translate }}
+                                {{appointment.startTime}}</li>
+                            <li class="lead text-left">{{ 'appointmentDetail.date' | translate }}
+                                {{appointment.dayName}} {{appointment.dayNumber}} {{appointment.month}}</li>
                         </ul>
                     </div>
                 </div>
-                <div class="lineDividerBlue mt-3 mb-3"></div>
             </div>
         </div>
 

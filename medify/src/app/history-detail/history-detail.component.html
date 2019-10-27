@@ -6,9 +6,10 @@
         <!-- Card  -->
         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-                <strong class="d-inline-block mb-2 text-primary text-center">Consulta - Dr. López</strong>
+                <strong class="d-inline-block mb-2 text-primary text-center">{{ 'historyDetail.cardTitle' | translate }}
+                    Sinusitis aguda</strong>
                 <h6 class="mb-0">
-                    <a class="text-dark mt-2">Dignóstico: Sinusitis aguda</a>
+                    <a class="text-dark mt-2">{{ 'historyDetail.reason' | translate }} - Dr. López</a>
                 </h6>
                 <div class="mb-1 text-muted small mt-2">18/ago/2019</div>
                 <ul class="list-unstyled card-text">
@@ -16,35 +17,22 @@
                     <li> Dolor intenso en de la cabeza al moverse</li>
                     <li> Bajo apetito</li>
                 </ul>
-                <a class="btn btn-outline-primary btn-sm" role="button" href="/patient/prescriptions-detail">Ver
-                    Receta</a>
+                <a class="btn btn-outline-primary btn-sm" role="button"
+                    href="/patient/prescriptions-detail">{{ 'historyDetail.button' | translate }}</a>
             </div>
         </div>
         <!-- Card  -->
         <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-                <strong class="d-inline-block mb-2 text-primary">Estudio - Laboratorio CHOPO</strong>
+                <strong class="d-inline-block mb-2 text-primary">{{ 'historyDetail.cardTitle' | translate }} Fractura en
+                    brazo derecho </strong>
                 <h6 class="mb-0">
-                    <a class="text-dark mt-2">Análisis de sangre</a>
-                </h6>
-                <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
-                <ul class="list-unstyled card-text">
-                    <li> Hematíes: De 3,8 a 6</li>
-                    <li> Hemoglobina: De 11,8 A 15,3 g/dl</li>
-                    <li> V.C.M.: De 82 a 98 fl</li>
-                </ul>
-                <a class="btn btn-outline-primary btn-sm" target="_blank" role="button" href="#">PDF</a>
-            </div>
-        </div>
-        <!-- Card  -->
-        <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-            <div class="card-body d-flex flex-column align-items-start">
-                <strong class="d-inline-block mb-2 text-primary">Consulta - Dra. Jimenez</strong>
-                <h6 class="mb-0">
-                    <a class="text-dark mt-2">Fractura en brazo derecho</a>
+                    <a class="text-dark mt-2">{{ 'historyDetail.reason' | translate }} - Dra. Jimenez</a>
                 </h6>
                 <div class="mb-1 text-muted small mt-2">10/ago/2019</div>
                 <p class="card-text mb-3 mt-3">Fractura aguda en hueso perineo 1 sección b</p>
+                <a class="btn btn-outline-primary btn-sm" role="button" href="/patient/prescriptions-detail">Ver
+                    Receta</a>
 
             </div>
             <a href="../img/xray.jpg" target="_blank">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../sidebar-data.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,7 +21,8 @@ export class SidebarComponent implements OnInit {
   }
   ngOnInit() {
     var l = localStorage.getItem("language");
-    this.changeLanguage(l);
+    if (l != null)
+      this.changeLanguage(l);
 
     this.data.currentIsLandingPage.subscribe(isLanding => this.isLandingPage = isLanding);
     this.data.currentIsDoctor.subscribe(doctor => this.isDoctor = doctor);

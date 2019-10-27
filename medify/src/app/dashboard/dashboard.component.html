@@ -3,32 +3,44 @@
     <app-navbar></app-navbar>
     <div class="container p-2">
         <app-dashboard-toast></app-dashboard-toast>
-        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/appointments-detail" data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/appointments-detail"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
                 {{ 'dashboardPatient.title1' | translate}}</a>
         </h1>
         <div class="card-columns">
-
             <app-appointment-dashboard-card></app-appointment-dashboard-card>
-
+        </div>
+        <div class="row">
+            <a class="secondaryColor" href="/patient/appointments-detail/" data-toggle="tooltip" data-placement="right"
+                data-original-title="Ver cita" class="ml-auto mr-5 lead">{{'appointmentCard.more' | translate}}</a>
         </div>
 
         <div class="lineDividerBlue mt-3 mb-3"></div>
 
-        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/history-detail" data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/history-detail"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
                 {{ 'dashboardPatient.title2' | translate}}</a>
         </h1>
         <div class="card-columns">
             <app-history-dashboard-card></app-history-dashboard-card>
-            <app-history2-dashboard-card></app-history2-dashboard-card>
+        </div>
+        <div class="row">
+            <a class="secondaryColor" href="/patient/history-detail" data-toggle="tooltip" data-placement="right"
+                data-original-title="Ver cita" class="ml-auto mr-5 lead">{{'appointmentCard.more' | translate}}</a>
         </div>
 
         <div class="lineDividerBlue mt-3 mb-3"></div>
 
-        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/prescriptions-detail" data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
+        <h1 class="secondaryColor my-4"> <a class="text-decoration-none" href="/patient/prescriptions-detail"
+                data-toggle="tooltip" data-placement="right" data-original-title="Ver historial">
                 {{ 'dashboardPatient.title3' | translate}}</a>
         </h1>
         <div class="card-columns">
             <app-prescription-dashboard-card></app-prescription-dashboard-card>
+        </div>
+        <div class="row">
+            <a class="secondaryColor" href="/patient/prescriptions-detail" data-toggle="tooltip" data-placement="right"
+                data-original-title="Ver cita" class="ml-auto mr-5 lead">{{'appointmentCard.more' | translate}}</a>
         </div>
 
         <app-qr-modal></app-qr-modal>
