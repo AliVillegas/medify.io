@@ -12,10 +12,10 @@ export class DrDashboardCardComponent implements OnInit {
   private appointments: Appointment[];
 
   constructor(private userData: UserdataService) {
-    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
-   }
-
+  }
+  
   ngOnInit() {
+    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
 
   }
 

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Appointment } from './Models/Appointment';
+import { HttpClient } from '@angular/common/http';
+import Patients from './storedData/Patients.json'
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +23,14 @@ export class UserdataService {
   currentServiceId = this.serviceId.asObservable();
   currentAppointments = this.appointments.asObservable();
 
-  constructor() { }
+  constructor(private http:HttpClient) { 
+    this.reloadData()
+  }
   
+  reloadData(){
+    
+
+  }
   changeAppointments(app:Appointment[]){
     this.appointments.next(app)
   }

@@ -20,24 +20,18 @@
                             <li class="list-group-item"><span class="font-weight-bold mr-1">
                                     {{ 'patientInfo.li1' | translate}}</span> {{bloodType}}
                             </li>
-                            <li class="list-group-item"><span
-                                    class="font-weight-bold mr-1">{{ 'patientInfo.li2' | translate}}</span> {{weight}}
+                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li2' | translate}}</span> {{weight}}
                             </li>
-                            <li class="list-group-item"><span
-                                    class="font-weight-bold mr-1">{{ 'patientInfo.li3' | translate}}</span> {{height}}
+                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li3' | translate}}</span> {{height}}
                             </li>
-                            <li class="list-group-item"><span
-                                    class="font-weight-bold mr-1">{{ 'patientInfo.li4' | translate}}</span>Hypertiroidismo
+                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li4' | translate}}</span>{{cronicDiseases}}
                             </li>
-                            <li class="list-group-item"><span
-                                    class="font-weight-bold mr-1">{{ 'patientInfo.li5' | translate}}
-                                </span>Benzoamina, Tropifocil
+                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li5' | translate}}
+                                </span>{{alergies}}
                             </li>
-                            <li class="list-group-item"><span
-                                    class="font-weight-bold mr-1">{{ 'patientInfo.li6' | translate}}</span>
+                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li6' | translate}}</span>
                                 <p>
-                                    Ha llevado el tratamiento para inmunodeficiencia por 4 meses, se han visto mejoras
-                                    externas de clase A
+                                    {{notes}}
                                 </p>
                             </li>
                         </ul>
@@ -47,8 +41,7 @@
         </div>
         <div class="row mt-5">
             <div class="addDateDesktop mx-auto">
-                <button class="btn btn-lg btn-primary d-block"
-                    onclick="window.location.href='dr/prescription/patient-qr'">{{ 'patientInfo.button' | translate}}</button>
+                <button class="btn btn-lg btn-primary d-block" onclick="window.location.href='dr/prescription/patient-qr'">{{ 'patientInfo.button' | translate}}</button>
 
             </div>
         </div>

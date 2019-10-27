@@ -14,5 +14,7 @@
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"
-  ]
+  ],
+  "resolveJsonModule": true,
+  "esModuleInterop": true
 }

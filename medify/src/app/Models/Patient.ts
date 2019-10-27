@@ -6,6 +6,12 @@ export class Patient{
     password:String
     appointments:Appointment[]
     id:String
+    weight:String
+    height:String
+    bloodType:String
+    alergies:String
+    cronicDiseases:String
+    notes:String
     constructor(name:String,email:String,password:String, id:String){
         this.name = name
         this.email = email
@@ -13,6 +19,24 @@ export class Patient{
         this.id = id 
     }
 
+    setWeight(s:String){
+        this.weight = s
+    }
+    setHeight(s:String){
+        this.height = s
+    }
+    setBloodType(s:String){
+        this.bloodType = s
+    }
+    setNotes(s:String){
+        this.notes = s
+    }
+    setAlergies(s:String){
+        this.alergies = s
+    }
+    setCronicDiseases(s:String){
+        this.cronicDiseases = s
+    }
     addAppointment(appointment:Appointment){
         this.appointments.push(appointment)
     }

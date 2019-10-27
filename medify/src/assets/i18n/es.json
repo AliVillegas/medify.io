@@ -166,7 +166,8 @@
         "cardHeader": "Paciente: ",
         "labelTitle": "Titulo",
         "labelDate": "Elegir Fecha",
-        "labelHour": "Elegir Hora ",
+        "labelHour": "Elegir Hora de Inicio ",
+        "labelHour2": "Elegir Hora de Final ",
         "button": "Confirmar cita"
     }
 }

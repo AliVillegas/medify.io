@@ -31,7 +31,13 @@
         "email": "saulneri@gmail.com",
         "name": "Saúl Neri",
         "password": "nerio27",
-        "id": "1"
+        "id": "1",
+        "weight": "69kg",
+        "bloodType" : "A+",
+        "height": "1.74m",
+        "cronicDiseases": "Hypertiroidismo",
+        "alergies": "Benzoamina, Tropifocil",
+        "Notes": "Ha llevado el tratamiento para inmunodeficiencia por 4 meses, se han visto mejoras externas de clase A"
       }
     },
     "2": {
@@ -65,7 +71,13 @@
         "email": "julianherrera88@gmail.com",
         "name": "Julian Herrera",
         "password": "blacksmith99",
-        "id": "2"
+        "id": "2",
+        "weight": "",
+        "bloodType": "A-",
+        "height": "1.75m",
+        "cronicDiseases": "Diabetes",
+        "alergies": "Tricadonalina",
+        "Notes": ""
       }
     }
   }

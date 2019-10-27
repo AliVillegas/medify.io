@@ -27,16 +27,17 @@
 
                     <label for="inputTimePrescription">{{ 'createAppointment.labelHour' | translate}}</label>
                     <div style="display: flex; border-bottom: 1px solid rgba(0,0,0,.42);" class="mb-4 w-100">
-                        <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly
-                            class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored">
+                        <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored">
                         <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
                         <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
                     </div>
-
-
-                    <button type="submit" title="Confirmar Cita"
-                        class="btn btn-primary my-5 mx-auto w-75 d-block">{{ 'createAppointment.button' | translate}}</button>
-
+                    <label for="inputTimePrescription2">{{ 'createAppointment.labelHour2' | translate}}</label>
+                    <div style="display: flex; border-bottom: 1px solid rgba(0,0,0,.42);" class="mb-4 w-100">
+                        <input [ngxTimepicker]="toggleTimepicker2" [disableClick]="true" readonly class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored">
+                        <ngx-material-timepicker-toggle [for]="toggleTimepicker2"></ngx-material-timepicker-toggle>
+                        <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
+                    </div>
+                    <button type="submit" title="Confirmar Cita" class="btn btn-primary my-5 mx-auto w-75 d-block">{{ 'createAppointment.button' | translate}}</button>
                 </form>
             </div>
         </div>

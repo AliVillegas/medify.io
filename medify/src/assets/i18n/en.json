@@ -166,7 +166,8 @@
         "cardHeader": "Patient: ",
         "labelTitle": "Title",
         "labelDate": "Choose Date",
-        "labelHour": "Choose Hour ",
+        "labelHour": "Choose Start Time ",
+        "labelHour2": "Choose End Time ",
         "button": "Confirm Appointment"
     }
 }

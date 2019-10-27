@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
 
   @Input() name;
   sub;
-  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/5'
-  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/2 '
+  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/8'
+  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/3'
 
   patients:Patient[]
   doctors:Doctor[]
@@ -70,6 +70,13 @@ export class LoginComponent implements OnInit {
         for(let element in data["patients"]){
             let patient =data["patients"][element]["data"]
             this.patients.push(new Patient(patient["name"],patient["email"],patient["password"], patient["id"]))
+            this.patients[this.patients.length-1].setWeight(patient["weight"])
+            this.patients[this.patients.length-1].setHeight(patient["height"])
+            this.patients[this.patients.length-1].setBloodType(patient["bloodType"])
+            this.patients[this.patients.length-1].setAlergies(patient["alergies"])
+            this.patients[this.patients.length-1].setNotes(patient["Notes"])
+            this.patients[this.patients.length-1].setCronicDiseases(patient["cronicDiseases"])
+
         }
       })
       //console.log(this.patients)
@@ -94,8 +101,7 @@ export class LoginComponent implements OnInit {
               appointment["dayNumber"],appointment["startTime"], appointment["endTime"],
               appointment["location"], appointment["month"],patient,doctor, appointment["id"]))
             }
-          })
-          this.patient = patient
+            this.patient = patient
           //UPDATE USER SERVICE
           this.userData.changeName(patient.name)
           this.userData.changeEmail(patient.email)
@@ -103,6 +109,13 @@ export class LoginComponent implements OnInit {
           this.userData.changeUserIsDoctor(false)
           this.userData.changeAppointments(this.appointments)
           this.router.navigateByUrl('patient/dashboard');
+          localStorage.setItem("userName", patient.name.toString())
+          localStorage.setItem("userEmail", patient.email.toString())
+          localStorage.setItem("userId", patient.id.toString())
+          localStorage.setItem("appointments", JSON.stringify(this.appointments))
+          localStorage.setItem("isDoctor", "false")
+          })
+          
         }
         else { 
           // show error (Email or password is incorrect)
@@ -132,6 +145,12 @@ export class LoginComponent implements OnInit {
                 this.userData.changeUserIsDoctor(true)
                 this.userData.changeAppointments(this.appointments)
                 this.userData.changeServiceId(doctor.serviceId)
+                localStorage.setItem("userName", doctor.name.toString())
+                localStorage.setItem("userEmail", doctor.email.toString())
+                localStorage.setItem("userId", doctor.id.toString())
+                localStorage.setItem("userServiceId", doctor.serviceId.toString())
+                localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                localStorage.setItem("isDoctor", "true")
               }
             })
             this.doctor = doctor
