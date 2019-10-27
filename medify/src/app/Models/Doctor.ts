@@ -12,6 +12,7 @@ export class Doctor{
         this.email = email
         this.password = password
         this.serviceId = serviceId
+        this.id = id 
     }
 
     addAppointment(appointment:Appointment){

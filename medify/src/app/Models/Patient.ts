@@ -10,6 +10,7 @@ export class Patient{
         this.name = name
         this.email = email
         this.password = password
+        this.id = id 
     }
 
     addAppointment(appointment:Appointment){

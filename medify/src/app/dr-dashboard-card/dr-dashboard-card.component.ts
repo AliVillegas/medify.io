@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Appointment} from './Appointment'
+import { UserdataService } from '../userdata.service';
+import { Appointment } from '../Models/Appointment';
 @Component({
   selector: 'app-dr-dashboard-card',
   templateUrl: './dr-dashboard-card.component.html',
@@ -10,14 +11,11 @@ import {Appointment} from './Appointment'
 export class DrDashboardCardComponent implements OnInit {
   private appointments: Appointment[];
 
-  constructor() { }
+  constructor(private userData: UserdataService) {
+    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
+   }
 
   ngOnInit() {
-    this.appointments = [
-      new Appointment("Julián Herrera", "Lunes", "15", "Sep", "Revisión Cáncer y Quimioterapia"),
-      new Appointment("Saúl Neri", "Martes", "16", "Sep", "Defícit de Atención en clases"),
-      new Appointment("Ali Villegas", "Viernes", "03", "Oct", "Cita Nutriología")
-    ]
 
   }
 

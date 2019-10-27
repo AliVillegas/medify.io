@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserdataService } from './userdata.service';
 
 
 @Component({
@@ -10,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
 
 
-  constructor(private http: HttpClient) {
-    
+  constructor(private http: HttpClient,private userData:UserdataService
+    ) {
+
 
   }
 

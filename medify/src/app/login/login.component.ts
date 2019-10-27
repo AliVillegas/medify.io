@@ -5,6 +5,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from '../Models/Patient';
 import { Doctor } from '../Models/Doctor';
+import { Appointment } from '../Models/Appointment';
+import { UserdataService } from '../userdata.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isDoctor: Boolean;
   isPatient: Boolean;
+  patient:Patient;
+  doctor:Doctor;
   incorrectUserOrPassword: Boolean = false
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -36,50 +40,68 @@ export class LoginComponent implements OnInit {
 
   @Input() name;
   sub;
-  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/4'
-  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/1'
+  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/5'
+  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/2 '
 
   patients:Patient[]
   doctors:Doctor[]
-
+  appointments:Appointment[]
   constructor(
     private activateRoute: ActivatedRoute,
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private userData: UserdataService
   ) {
     this.patients = []
     this.doctors = []
+    this.appointments = []
+    this.patient = new Patient("","","","")
+    this.doctor = new Doctor("","","","","")
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.name = params.get('name') });
-
-    if(this.name == 'doctor'){
       this.http.get(this.doctorsUrl).toPromise().then(data => {
         for(let element in data["doctors"]){
             let doctor =data["doctors"][element]["data"]
             this.doctors.push(new Doctor(doctor["name"],doctor["email"],doctor["password"],doctor["serviceId"], doctor["id"]))
         }
-        console.log(this.doctors)
       })
-    }
-    else if (this.name == 'patient'){
+      //console.log(this.doctors)
       this.http.get(this.patientsUrl).toPromise().then(data => {
         for(let element in data["patients"]){
             let patient =data["patients"][element]["data"]
             this.patients.push(new Patient(patient["name"],patient["email"],patient["password"], patient["id"]))
         }
-        console.log(this.patients)
       })
+      //console.log(this.patients)
     }
-
-    
-    
-  }
 
   onClickSubmit(email:String, password:String) {
     
       if(this.name == 'patient'){
         this.patients.forEach(patient => {
         if(patient.email == email && patient.password == password){
+          this.http.get(this.patientsUrl).toPromise().then(data => {
+            let fullData =data["patients"][patient.getId() ]["data"]
+            var doctor:Doctor;
+            for(let data in fullData["appointments"]){
+              let appointment = fullData["appointments"][data]
+              this.doctors.forEach(doc => {
+                if(doc.getId() == appointment["doctorId"] ){
+                    doctor = doc
+                }
+              })
+              this.appointments.push(new Appointment(appointment["concept"],appointment["dayName"],
+              appointment["dayNumber"],appointment["startTime"], appointment["endTime"],
+              appointment["location"], appointment["month"],patient,doctor, appointment["id"]))
+            }
+          })
+          this.patient = patient
+          //UPDATE USER SERVICE
+          this.userData.changeName(patient.name)
+          this.userData.changeEmail(patient.email)
+          this.userData.changeId(patient.id)
+          this.userData.changeUserIsDoctor(false)
+          this.userData.changeAppointments(this.appointments)
           this.router.navigateByUrl('patient/dashboard');
         }
         else { 
@@ -90,6 +112,31 @@ export class LoginComponent implements OnInit {
       else if (this.name == 'doctor'){
         this.doctors.forEach(doctor => {
           if(doctor.email == email && doctor.password == password){
+            this.http.get(this.doctorsUrl).toPromise().then(data => {
+              let fullData =data["doctors"][doctor.getId()]["data"]
+              var patient:Patient;
+              for(let data in fullData["appointments"]){
+                let appointment = fullData["appointments"][data]
+                this.patients.forEach(pat => {
+                  if(pat.getId() == appointment["patientId"] ){
+                      patient = pat
+                  }
+                })
+                this.appointments.push(new Appointment(appointment["concept"],appointment["dayName"],
+                appointment["dayNumber"],appointment["startTime"], appointment["endTime"],
+                appointment["location"], appointment["month"],patient,doctor, appointment["id"]))
+                //UPDATE USER SERVICE
+                this.userData.changeName(doctor.name)
+                this.userData.changeEmail(doctor.email)
+                this.userData.changeId(doctor.id)
+                this.userData.changeUserIsDoctor(true)
+                this.userData.changeAppointments(this.appointments)
+                this.userData.changeServiceId(doctor.serviceId)
+              }
+            })
+            this.doctor = doctor
+            
+
             this.router.navigateByUrl('dr/dashboard');
           }
           else { 

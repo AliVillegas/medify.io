@@ -11,11 +11,11 @@ export class Appointment{
     month:String
     patient:Patient
     doctor:Doctor
-    id:Number
+    id:String
 
     constructor(concept:String,dayName:String,dayNumber:String,
                 startTime:String,endTime:String,location:String,
-                month:String,patient:Patient,doctor:Doctor){
+                month:String,patient:Patient,doctor:Doctor, id:String){
         this.concept = concept
         this.dayName = dayName
         this.dayNumber = dayNumber
