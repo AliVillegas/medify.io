@@ -3,75 +3,29 @@
     <app-navbar></app-navbar>
     <div class="container p-3" [@pageAnimations]="true">
         <h1 class="secondaryColor my-4"> {{ 'appointmentDetail.title' | translate }} </h1>
+        <div *ngIf="appointments.length > 0">
 
-        <div class="card text-center">
-            <div class="card-header font-weight-bold lead secondaryColor">
-                Consultorio Especializado
-            </div>
-            <div class="row px-3 mt-2">
-                <h5 class="text-left col-6">{{ 'appointmentDetail.appointment' | translate }} Dolor de cabeza</h5>
-                <h5 class="text-right col-6">Dra. Torres</h5>
-            </div>
+            <div *ngFor="let appointment of appointments" class="card text-center">
 
-            <div class="row no-gutters">
-                <div class="card-body col-10">
-                    <ul class="list-unstyled pl-3 card-text">
-                        <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} 4:00 pm </li>
-                        <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} 23 septiembre 2019</li>
-                        <li class="lead text-left">{{ 'appointmentDetail.address' | translate }} Av. Libertad 22 </li>
-                    </ul>
-
+                <div class="card-header font-weight-bold lead secondaryColor">
+                    {{appointment.concept}}
                 </div>
+                <div class="row px-3 mt-2">
+                    <h5 class="text-left col-6">{{ 'appointmentDetail.address' | translate }} {{appointment.location}}</h5>
+                    <h5 class="text-right col-6">{{appointment.doctor.name}}</h5>
+                </div>
+                <div class="row no-gutters">
+                    <div class="card-body col-10">
+                        <ul class="list-unstyled pl-3 card-text">
+                            <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} {{appointment.startTime}}</li>
+                            <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} {{appointment.dayName}} {{appointment.dayNumber}} {{appointment.month}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lineDividerBlue mt-3 mb-3"></div>
             </div>
-
         </div>
 
-
-        <div class="lineDividerBlue mt-3 mb-3"></div>
-
-        <div class="card text-center">
-            <div class="card-header font-weight-bold lead secondaryColor">
-                Clínica México
-            </div>
-            <div class="row px-3 mt-2">
-                <h5 class="text-left col-6">{{ 'appointmentDetail.appointment' | translate }} Seguimiento Fractura</h5>
-                <h5 class="text-right col-6">Dr. López</h5>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="card-body col-10">
-                    <ul class="list-unstyled pl-3 card-text">
-                        <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} 6:00 pm</li>
-                        <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} 23 septiembre 2019</li>
-                        <li class="lead text-left">{{ 'appointmentDetail.address' | translate }} Av. Calcio 16 </li>
-                        <li class="lead text-left">Segunda Cita</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="lineDividerBlue mt-3 mb-3"></div>
-
-        <div class="card text-center">
-            <div class="card-header font-weight-bold lead secondaryColor">
-                Dentistas & CO.
-            </div>
-            <div class="row px-3 mt-3">
-                <h5 class="text-left col-6">{{ 'appointmentDetail.appointment' | translate }} Seguimiento Fractura</h5>
-                <h5 class="text-right col-6">Dr. Gómez</h5>
-            </div>
-
-            <div class="row no-gutters">
-                <div class="card-body col-10">
-                    <ul class="list-unstyled pl-3 card-text">
-                        <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} 2:00 pm</li>
-                        <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} 16 septiembre 2019</li>
-                        <li class="lead text-left">{{ 'appointmentDetail.address' | translate }} Calle Quijada 78 </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <app-qr-modal></app-qr-modal>
     </div>
 </div>

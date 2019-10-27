@@ -10,6 +10,8 @@ import {
   query,
   stagger
 } from '@angular/animations';
+import { UserdataService } from '../userdata.service';
+import { Appointment } from '../Models/Appointment';
 
 @Component({
   selector: 'app-appointments-detail',
@@ -28,13 +30,18 @@ import {
   ]
 })
 export class AppointmentsDetailComponent implements OnInit {
-
+  appointments:Appointment[]
   @HostBinding('@pageAnimations')
   public animatePage = true;
 
-  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) { }
+  constructor(private navData: NavbarDataService, 
+    private sidebarData: SidebarDataService,
+    private userData: UserdataService
+    ) { }
 
   ngOnInit() {
+    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
+    
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
   }
