@@ -9,7 +9,7 @@ import { Prescription } from '../Models/Prescription';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
-  monthsValue:{string,number}
+  monthsValue = {}
   appointments:Appointment[]
   prescriptions:Prescription[]
   constructor(

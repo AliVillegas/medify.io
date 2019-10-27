@@ -18,7 +18,7 @@ export class PieChartComponent implements OnInit {
     this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
     var labels:string[] = []
     var data:number[] = []
-    var graphData:{String:number} = {}
+    var graphData = {}
     this.appointments.forEach(app=>{
       if(labels.indexOf(app.doctor.name.toString()) == -1){
         graphData[app.doctor.name.toString()] = 0 
