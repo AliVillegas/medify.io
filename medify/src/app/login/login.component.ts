@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   @Input() name;
   sub;
   patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/11'
-  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/4'
+  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/5'
 
   patients:Patient[]
   doctors:Doctor[]
