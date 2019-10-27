@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   @Input() name;
   sub;
-  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/11'
+  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/12'
   doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/5'
 
   patients:Patient[]
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
             this.doctors.push(new Doctor(doctor["name"],doctor["email"],doctor["password"],doctor["serviceId"], doctor["institute"],doctor["id"]))
         }
       })
-      //console.log(this.doctors)
+      console.log(this.doctors)
       this.http.get(this.patientsUrl).toPromise().then(data => {
         for(let element in data["patients"]){
             let patient =data["patients"][element]["data"]
@@ -81,16 +81,18 @@ export class LoginComponent implements OnInit {
             this.patients[this.patients.length-1].setCronicDiseases(patient["cronicDiseases"])
             for(let data in patient["prescriptions"]){
               let prescription = patient["prescriptions"][data]
- 
               let prescriptionDoctor:Doctor
               this.doctors.forEach(doc => {
-                if(doc.getId() == prescription["doctorId"] ){
+                if(doc.id == prescription["doctorId"] ){
                     prescriptionDoctor = doc
                 }
               })
+             //S console.log(prescriptionDoctor)
+
               var p =  new Prescription(prescription["title"],prescription["dayNumber"],
               prescription["details"],prescription["month"],prescriptionDoctor,
               prescription["endDate"],prescription["id"])
+              console.log(p)
               for(let med in prescription["meds"]){
                   let m = new Med(prescription["meds"][med]["name"],(prescription["meds"][med]["delivered"] == 'true'));
                   p.addMed(m)

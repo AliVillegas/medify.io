@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
+import { UserdataService } from '../userdata.service';
 
 @Component({
   selector: 'app-patient-profile',
@@ -11,15 +12,13 @@ export class PatientProfileComponent implements OnInit {
 
   private name: String;
   private email: String;
-  private dateBorn: String;
-  private bloodType: String;
-  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) { }
+
+  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService,
+    private userData:UserdataService) { }
 
   ngOnInit() {
-    this.name = "Juan Perez";
-    this.email = "juanp12@gmail.com"
-    this.dateBorn = "25/08/1696";
-    this.bloodType = "O-";
+    this.userData.currentName.subscribe(name => this.name = name);
+    this.userData.currentEmail.subscribe(email => this.email = email);
     this.initializeNavbarStatus();
     this.initializeSidebarStatus();
   }
