@@ -1,4 +1,5 @@
 import { Appointment } from './Appointment'
+import { Prescription } from './Prescription'
 
 export class Patient{
     name:String
@@ -12,7 +13,10 @@ export class Patient{
     alergies:String
     cronicDiseases:String
     notes:String
+    prescriptions:Prescription[]
+
     constructor(name:String,email:String,password:String, id:String){
+        this.prescriptions = []
         this.name = name
         this.email = email
         this.password = password
@@ -39,6 +43,9 @@ export class Patient{
     }
     addAppointment(appointment:Appointment){
         this.appointments.push(appointment)
+    }
+    addPrescription(p:Prescription){
+        this.prescriptions.push(p)
     }
 
     getName(){

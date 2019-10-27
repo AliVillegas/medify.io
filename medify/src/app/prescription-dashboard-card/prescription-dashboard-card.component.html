@@ -1,14 +1,17 @@
-<div class="card mt-2">
-    <div class="card-header  lead font-weight-bold">{{place}}
-    </div>
-    <div class="card-body">
-        <ul class="list-unstyled card-text">
-            <li> {{ 'prescriptionCard.doctorName' | translate }} {{doctorName}} </li>
-            <li> {{ 'prescriptionCard.reason' | translate }}{{prescriptionReason}} </li>
-            <li> <a class="text-decoration-none secondaryColor" href="/patient/prescriptions-detail" data-toggle="tooltip" data-placement="right" data-original-title="Ver receta">{{ 'prescriptionCard.more' | translate }}</a></li>
-        </ul>
-    </div>
-    <div class=" card-footer">
-        <h6 class="secondaryColor">{{date}}</h6>
+<div *ngIf="prescriptions.length > 0">
+
+    <div *ngFor="let prescription of prescriptions" class="card mt-2">
+        <div class="card-header  lead font-weight-bold">{{prescription.doctor.institute}}
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled card-text">
+                <li> {{ 'prescriptionCard.doctorName' | translate }} {{prescription.doctor.name}} </li>
+                <li> {{ 'prescriptionCard.reason' | translate }}{{prescription.title}} </li>
+                <li> <a class="text-decoration-none secondaryColor" href="/patient/prescriptions-detail" data-toggle="tooltip" data-placement="right" data-original-title="Ver receta">{{ 'prescriptionCard.more' | translate }}</a></li>
+            </ul>
+        </div>
+        <div class=" card-footer">
+            <h6 class="secondaryColor">{{prescription.dayNumber}}{{prescription.month}}</h6>
+        </div>
     </div>
 </div>

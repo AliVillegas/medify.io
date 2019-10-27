@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Appointment } from './Models/Appointment';
 import { HttpClient } from '@angular/common/http';
 import Patients from './storedData/Patients.json'
+import { Prescription } from './Models/Prescription';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class UserdataService {
   private id = new BehaviorSubject<String>("");
   private serviceId = new BehaviorSubject<String>("");
   private appointments = new BehaviorSubject<Appointment[]>([]);
+  private prescriptions = new BehaviorSubject<Prescription[]>([]);
 
   currentUserIsDoctor = this.userIsDoctor.asObservable();
   currentName = this.name.asObservable();
@@ -22,6 +24,7 @@ export class UserdataService {
   currentId = this.id.asObservable();
   currentServiceId = this.serviceId.asObservable();
   currentAppointments = this.appointments.asObservable();
+  currentPrescriptions = this.prescriptions.asObservable();
 
   constructor(private http:HttpClient) { 
     this.reloadData()
@@ -34,6 +37,10 @@ export class UserdataService {
   changeAppointments(app:Appointment[]){
     this.appointments.next(app)
   }
+  changePrescriptions(p:Prescription[]){
+    this.prescriptions.next(p)
+  }
+
 
   changeName(name:String){
     this.name.next(name)

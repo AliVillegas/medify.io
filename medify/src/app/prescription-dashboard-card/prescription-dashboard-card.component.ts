@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Prescription } from '../Models/Prescription';
+import { UserdataService } from '../userdata.service';
 
 
 @Component({
@@ -7,20 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prescription-dashboard-card.component.scss']
 })
 export class PrescriptionDashboardCardComponent implements OnInit {
-
-  private doctorName: String
-  private place: String
-  private prescriptionReason: String
-  private date: String
+  prescriptions:Prescription[]
 
 
-  constructor() { }
+  constructor(
+    private userData:UserdataService
+  ) { }
 
   ngOnInit() {
-    this.doctorName = "Dr. Gómez";
-    this.place = "Hospital Médica Nirvae";
-    this.prescriptionReason = "Revisión Diabetes";
-    this.date = "29 Octubre 2019";
+    this.prescriptions = []
+    this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
+
 
   }
 

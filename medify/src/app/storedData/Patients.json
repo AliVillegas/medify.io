@@ -1,84 +1,153 @@
 {
-  "patients": {
-    "1": {
-      "data": {
-        "appointments": [
-          {
-            "concept": "Migrañas Agudas segunda revisión",
-            "dayName": "Lunes",
-            "dayNumber": "16",
-            "endTime": "1:30 PM",
-            "location": "Av. Libertad 22 Consultorio 123",
-            "month": "Sep",
-            "patientId": "1",
-            "doctorId": "1",
-            "startTime": "12:30 PM",
-            "id": "1"
-          },
-          {
-            "concept": "Cita Orientación Nutriología",
-            "dayName": "Miércoles",
-            "dayNumber": "18",
-            "endTime": "2:30 PM",
-            "location": "Av. Libertad 22 Oficina Nutriología",
-            "month": "Oct",
-            "patientId": "2",
-            "doctorId": "1",
-            "startTime": "1:30 PM",
-            "id": "2"
-          }
-        ],
-        "email": "saulneri@gmail.com",
-        "name": "Saúl Neri",
-        "password": "nerio27",
-        "id": "1",
-        "weight": "69kg",
-        "bloodType" : "A+",
-        "height": "1.74m",
-        "cronicDiseases": "Hypertiroidismo",
-        "alergies": "Benzoamina, Tropifocil",
-        "Notes": "Ha llevado el tratamiento para inmunodeficiencia por 4 meses, se han visto mejoras externas de clase A"
-      }
-    },
-    "2": {
-      "data": {
-        "appointments": [
-          {
-            "concept": "Defícit de Atención en clases",
-            "dayName": "Lunes",
-            "dayNumber": "16",
-            "endTime": "1:30 PM",
-            "location": "Consultorio Frederick, Icali 67",
-            "month": "Sep",
-            "patientId": "1",
-            "doctorId": "2",
-            "startTime": "12:30 PM",
-            "id": "3"
-          },
-          {
-            "concept": "Laceración craneal",
-            "dayName": "Lunes",
-            "dayNumber": "22",
-            "endTime": "2:30 PM",
-            "location": "Consultorio Frederick, Icali 67",
-            "month": "Sep",
-            "patientId": "2",
-            "doctorId": "2",
-            "startTime": "1:30 PM",
-            "id": "4"
-          }
-        ],
-        "email": "julianherrera88@gmail.com",
-        "name": "Julian Herrera",
-        "password": "blacksmith99",
-        "id": "2",
-        "weight": "",
-        "bloodType": "A-",
-        "height": "1.75m",
-        "cronicDiseases": "Diabetes",
-        "alergies": "Tricadonalina",
-        "Notes": ""
-      }
+    "patients": {
+        "1": {
+            "data": {
+                "appointments": [{
+                        "concept": "Migrañas Agudas segunda revisión",
+                        "dayName": "Lunes",
+                        "dayNumber": "16",
+                        "endTime": "1:30 PM",
+                        "location": "Av. Libertad 22 Consultorio 123",
+                        "month": "Sep",
+                        "patientId": "1",
+                        "doctorId": "1",
+                        "startTime": "12:30 PM",
+                        "id": "1"
+                    },
+                    {
+                        "concept": "Cita Orientación Nutriología",
+                        "dayName": "Miércoles",
+                        "dayNumber": "18",
+                        "endTime": "2:30 PM",
+                        "location": "Av. Libertad 22 Oficina Nutriología",
+                        "month": "Oct",
+                        "patientId": "2",
+                        "doctorId": "1",
+                        "startTime": "1:30 PM",
+                        "id": "2"
+                    }
+                ],
+                "prescriptions": [{
+                        "title": "Sinusitis Aguda",
+                        "dayNumber": "18",
+                        "details": "Dificultades para respirar. Dolor intenso en de la cabeza al moverse. Bajo apetito ",
+                        "status": "Parcialmente Entregada",
+                        "endDate": "27/Ago/2019",
+                        "month": "Ago",
+                        "patientId": "1",
+                        "doctorId": "1",
+                        "id": "1",
+                        "meds": [{
+                                "name": "antiflus 100mg",
+                                "delivered": "true"
+                            },
+                            {
+                                "name": "Paracetamol 10mg ",
+                                "delivered": "false"
+                            },
+                            {
+                                "name": "Jarabe Omeatín-B 50ml",
+                                "delivered": "true"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Revisión Diabetes",
+                        "dayNumber": "15",
+                        "endDate": "20/Ago/2019",
+                        "details": "Paciente Muestra niveles elevados de azúcar",
+                        "status": "Parcialmente Entregada",
+                        "month": "Ago",
+                        "patientId": "1",
+                        "doctorId": "2",
+                        "id": "2",
+                        "meds": [{
+                            "name": "insulina 10ml",
+                            "delivered": "true"
+                        }]
+                    }
+                ],
+                "email": "saulneri@gmail.com",
+                "name": "Saúl Neri",
+                "password": "nerio27",
+                "id": "1",
+                "weight": "69kg",
+                "bloodType": "A+",
+                "height": "1.74m",
+                "cronicDiseases": "Hypertiroidismo",
+                "alergies": "Benzoamina, Tropifocil",
+                "Notes": "Ha llevado el tratamiento para inmunodeficiencia por 4 meses, se han visto mejoras externas de clase A"
+            }
+        },
+        "2": {
+            "data": {
+                "appointments": [{
+                        "concept": "Defícit de Atención en clases",
+                        "dayName": "Lunes",
+                        "dayNumber": "16",
+                        "endTime": "1:30 PM",
+                        "location": "Consultorio Frederick, Icali 67",
+                        "month": "Sep",
+                        "patientId": "1",
+                        "doctorId": "2",
+                        "startTime": "12:30 PM",
+                        "id": "3"
+                    },
+                    {
+                        "concept": "Laceración craneal",
+                        "dayName": "Martes",
+                        "dayNumber": "22",
+                        "endTime": "2:30 PM",
+                        "location": "Consultorio Frederick, Icali 67",
+                        "month": "Sep",
+                        "patientId": "2",
+                        "doctorId": "2",
+                        "startTime": "1:30 PM",
+                        "id": "4"
+                    }
+                ],
+                "prescriptions": [{
+                        "title": "Migraña",
+                        "dayNumber": "20",
+                        "details": "Dolor intenso en de la cabeza al haber sonidos y luces brillantes",
+                        "status": "Parcialmente Entregada",
+                        "month": "Oct",
+                        "endDate": "27/Oct/2019",
+                        "patientId": "2",
+                        "doctorId": "2",
+                        "id": "3",
+                        "meds": [{
+                            "name": "Sedalmerk 100mg",
+                            "delivered": "true"
+                        }]
+                    },
+                    {
+                        "title": "Fractura en Brazo derecho",
+                        "dayNumber": "19",
+                        "details": "Paciente Muestra niveles elevados de azúcar",
+                        "status": "Parcialmente Entregada",
+                        "month": "Ago",
+                        "endDate": "24/Ago/2019",
+                        "patientId": "2",
+                        "doctorId": "2",
+                        "id": "4",
+                        "meds": [{
+                            "name": "Tetravarona 10mg",
+                            "delivered": "false"
+                        }]
+                    }
+                ],
+                "email": "julianherrera88@gmail.com",
+                "name": "Julian Herrera",
+                "password": "blacksmith99",
+                "id": "2",
+                "weight": "",
+                "bloodType": "A-",
+                "height": "1.75m",
+                "cronicDiseases": "Diabetes",
+                "alergies": "Tricadonalina",
+                "Notes": ""
+            }
+        }
     }
-  }
 }

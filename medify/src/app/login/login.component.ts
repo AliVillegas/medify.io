@@ -7,6 +7,8 @@ import { Patient } from '../Models/Patient';
 import { Doctor } from '../Models/Doctor';
 import { Appointment } from '../Models/Appointment';
 import { UserdataService } from '../userdata.service';
+import { Prescription } from '../Models/Prescription';
+import { Med } from '../Models/Med';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
   isPatient: Boolean;
   patient:Patient;
   doctor:Doctor;
+  reception:Prescription;
   incorrectUserOrPassword: Boolean = false
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -40,12 +43,13 @@ export class LoginComponent implements OnInit {
 
   @Input() name;
   sub;
-  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/8'
-  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/3'
+  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/11'
+  doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/4'
 
   patients:Patient[]
   doctors:Doctor[]
   appointments:Appointment[]
+  prescriptions:Prescription[]
   constructor(
     private activateRoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -56,13 +60,12 @@ export class LoginComponent implements OnInit {
     this.patients = []
     this.doctors = []
     this.appointments = []
-    this.patient = new Patient("","","","")
-    this.doctor = new Doctor("","","","","")
+    this.prescriptions =  []
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.name = params.get('name') });
       this.http.get(this.doctorsUrl).toPromise().then(data => {
         for(let element in data["doctors"]){
             let doctor =data["doctors"][element]["data"]
-            this.doctors.push(new Doctor(doctor["name"],doctor["email"],doctor["password"],doctor["serviceId"], doctor["id"]))
+            this.doctors.push(new Doctor(doctor["name"],doctor["email"],doctor["password"],doctor["serviceId"], doctor["institute"],doctor["id"]))
         }
       })
       //console.log(this.doctors)
@@ -76,8 +79,27 @@ export class LoginComponent implements OnInit {
             this.patients[this.patients.length-1].setAlergies(patient["alergies"])
             this.patients[this.patients.length-1].setNotes(patient["Notes"])
             this.patients[this.patients.length-1].setCronicDiseases(patient["cronicDiseases"])
-
+            for(let data in patient["prescriptions"]){
+              let prescription = patient["prescriptions"][data]
+ 
+              let prescriptionDoctor:Doctor
+              this.doctors.forEach(doc => {
+                if(doc.getId() == prescription["doctorId"] ){
+                    prescriptionDoctor = doc
+                }
+              })
+              var p =  new Prescription(prescription["title"],prescription["dayNumber"],
+              prescription["details"],prescription["month"],prescriptionDoctor,
+              prescription["endDate"],prescription["id"])
+              for(let med in prescription["meds"]){
+                  let m = new Med(prescription["meds"][med]["name"],(prescription["meds"][med]["delivered"] == 'true'));
+                  p.addMed(m)
+              }
+              this.patients[this.patients.length-1].addPrescription(p)
+                
+              }
         }
+
       })
       //console.log(this.patients)
     }
@@ -101,6 +123,7 @@ export class LoginComponent implements OnInit {
               appointment["dayNumber"],appointment["startTime"], appointment["endTime"],
               appointment["location"], appointment["month"],patient,doctor, appointment["id"]))
             }
+            
             this.patient = patient
           //UPDATE USER SERVICE
           this.userData.changeName(patient.name)
@@ -108,11 +131,13 @@ export class LoginComponent implements OnInit {
           this.userData.changeId(patient.id)
           this.userData.changeUserIsDoctor(false)
           this.userData.changeAppointments(this.appointments)
+           this.userData.changePrescriptions(patient.prescriptions)
           this.router.navigateByUrl('patient/dashboard');
           localStorage.setItem("userName", patient.name.toString())
           localStorage.setItem("userEmail", patient.email.toString())
           localStorage.setItem("userId", patient.id.toString())
           localStorage.setItem("appointments", JSON.stringify(this.appointments))
+          localStorage.setItem("prescriptions", JSON.stringify(patient.prescriptions))
           localStorage.setItem("isDoctor", "false")
           })
           

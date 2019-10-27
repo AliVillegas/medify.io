@@ -7,12 +7,14 @@ export class Doctor{
     serviceId:String
     appointments:Appointment[]
     id:String
-    constructor(name:String,email:String,password:String, serviceId:String, id:String){
+    institute:String
+    constructor(name:String,email:String,password:String, serviceId:String,institute:String, id:String){
         this.name = name
         this.email = email
         this.password = password
         this.serviceId = serviceId
         this.id = id 
+        this.institute = institute
     }
 
     addAppointment(appointment:Appointment){

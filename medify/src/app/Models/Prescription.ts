@@ -1,23 +1,36 @@
 import { Patient } from './Patient'
 import { Doctor } from './Doctor'
+import { Med } from './Med'
 
 export class Prescription{
-    concept:String
+    title:String
     dayNumber:String
     details:String
     location:String
     month:String
-    patient:Patient
     doctor:Doctor
     id:String
+    meds:Med[]
+    status:String
+    endDate:String
 
-    constructor(concept:String,dayNumber:String,
-                details:String,month:String,patient:Patient,doctor:Doctor, id:String){
-        this.concept = concept
+    constructor(title:String,dayNumber:String,
+                details:String,month:String,doctor:Doctor,endDate:String, id:String){
+        this.meds = []
+        this.title = title
         this.dayNumber = dayNumber
         this.details = details
         this.month = month
-        this.patient = patient
         this.doctor = doctor
+        this.endDate = endDate
+    }
+    setStatus(s:String){
+        this.status = s
+    }
+    addMed(m:Med){
+        this.meds.push(m)
+    }
+    setMeds(meds){
+        this.meds = meds
     }
 }
