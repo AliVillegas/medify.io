@@ -1,15 +1,18 @@
 <div class="container p-3">
     <p class="display-3 font-weight-bold text-center secondaryColor mb-5"> Medify </p>
-    <div class="card-header text-center secondaryColor text-white lead" *ngIf="name == 'patient'">Inicio de Sesión - Paciente
+    <div class="card-header text-center secondaryColor text-white lead" *ngIf="name == 'patient'">Inicio de Sesión -
+        Paciente
     </div>
-    <div class="card-header text-center secondaryColor text-white lead" *ngIf="name == 'doctor'">Inicio de Sesión - Doctor
+    <div class="card-header text-center secondaryColor text-white lead" *ngIf="name == 'doctor'">Inicio de Sesión -
+        Doctor
     </div>
     <div class="card-body mx-auto">
         <form [formGroup]="loginForm">
             <!--Value: {{ loginForm.value | json}}  -->
             <br>
             <mat-form-field class="w-100">
-                <input matInput placeholder="Correo Eléctronico" [formControl]="emailFormControl" formControlName="loginEmail" [errorStateMatcher]="matcher">
+                <input matInput placeholder="Correo Eléctronico" [formControl]="emailFormControl"
+                    formControlName="loginEmail" required>
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                     Ingrese un correo valido
                 </mat-error>
@@ -19,10 +22,12 @@
             </mat-form-field>
             <br>
             <mat-form-field class="w-100">
-                <input matInput type="password" placeholder="Contraseña" [formControl]="passwordFormControl" formControlName="loginPassword" [errorStateMatcher]="matcher">
+                <input matInput type="password" placeholder="Contraseña" [formControl]="passwordFormControl"
+                    formControlName="loginPassword" required>
             </mat-form-field>
 
-            <button type="submit" (click)="onClickSubmit(emailFormControl.value, passwordFormControl.value)" class="btn btn-primary mx-auto d-block text-decoration-none">
+            <button type="submit" (click)="onClickSubmit(emailFormControl.value, passwordFormControl.value)"
+                class="btn btn-primary mx-auto d-block text-decoration-none">
                 Iniciar Sesión
             </button>
         </form>
