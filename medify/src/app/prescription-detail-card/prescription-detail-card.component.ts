@@ -6,6 +6,8 @@ import {
   state,
   transition,
 } from '@angular/animations';
+import { Prescription } from '../Models/Prescription';
+import { UserdataService } from '../userdata.service';
 
 
 @Component({
@@ -26,10 +28,15 @@ import {
   ]
 })
 export class PrescriptionDetailCardComponent implements OnInit {
-
-  constructor() { }
+  private prescriptions:Prescription[]
+  constructor(
+    private userData:UserdataService
+  ) { }
 
   ngOnInit() {
+    this.userData.currentPrescriptions.subscribe(pres => this.prescriptions = pres);
+    
   }
+
 
 }

@@ -1,16 +1,16 @@
-<div class="card mt-2">
-    <div class="card-header lead font-weight-bold text-center">{{ 'historyCard.title' | translate }} - Sinusitis Aguda
-    </div>
-    <div class="card-body">
-        <h6 class="card-title">{{'historyCard.reason' | translate}} Dr. López</h6>
-        <ul class="list-unstyled card-text">
-            <li> {{'historyCard.date' | translate}} 18/ago/2019</li>
-            <li> {{'historyCard.prescription' | translate}} </li>
-            <ul>
-                <li> Dificultades para respirar</li>
-                <li> Dolor intenso en de la cabeza al moverse</li>
-                <li> Bajo apetito</li>
+<div *ngIf="prescriptions.length > 0">
+    <div *ngFor="let prescription of prescriptions" class="card mt-2">
+        <div class="card-header lead font-weight-bold text-center">{{ 'historyCard.title' | translate }} - {{prescription.title}}
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">{{'historyCard.reason' | translate}} {{prescription.doctor.name}}</h6>
+            <ul class="list-unstyled card-text">
+                <li> {{'historyCard.date' | translate}} {{prescription.dayNumber}}/{{prescription.month}}</li>
+                <li> {{'historyCard.title' | translate}}: </li>
+                <div class="text-centered mx-auto">
+                    {{prescription.details}}
+                </div>
             </ul>
-        </ul>
+        </div>
     </div>
 </div>

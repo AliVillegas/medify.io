@@ -1,32 +1,41 @@
-<div class="card text-center" [@EnterLeave]="flyIn">
-    <div class="card-header font-weight-bold lead">
-        Hospital Médico Nirvae
-    </div>
-    <div class="card-body">
-        <div class="row">
-            <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} Dolor de cabeza</h5>
-            <h5 class="text-right col-6">Dr. Perez</h5>
+<div *ngIf="prescriptions.length >0">
+    <div *ngFor="let prescription of prescriptions">
+        <div class="card text-center" [@EnterLeave]="flyIn">
+            <div class="card-header font-weight-bold lead">
+                {{prescription.doctor.institute}}
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} {{prescription.title}}</h5>
+                    <h5 class="text-right col-6">{{prescription.doctor.name}}</h5>
+                </div>
+
+                <p class="card-text">
+                    <div class="row">
+                        <ul class="list-group col-10">
+                            <li *ngFor="let med of prescription.meds" class="list-group-item text-left"> {{med.name}}</li>
+                        </ul>
+                        <ul class="list-group col-2">
+                            <div *ngFor="let med of prescription.meds">
+                                <div *ngIf="med.delivered; else notDelivered">
+                                    <li class="list-group-item secondaryColor"> <i class="fas fa-check"></i></li>
+                                </div>
+                                <ng-template #notDelivered>
+                                    <li class="list-group-item text-danger"> <i class="fas fa-times"></i></li>
+                                </ng-template>
+                            </div>
+
+                        </ul>
+                    </div>
+                    <div class="row text-center">
+                        <h5 class="my-2 secondaryColor mx-auto">{{prescription.status}}</h5>
+                    </div>
+            </div>
+            <div class="card-footer text-muted">
+                {{ 'prescriptionDetail.valid' | translate }} {{prescription.endDate}}
+            </div>
+            <br>
         </div>
-
-        <p class="card-text">
-            <div class="row">
-                <ul class="list-group col-10">
-                    <li class="list-group-item text-left">Antiflus 100mg</li>
-                    <li class="list-group-item text-left">Paracetamol 10mg tabletas</li>
-                    <li class="list-group-item text-left ">Jarabe Omeatín-B 50ml</li>
-                </ul>
-                <ul class="list-group col-2">
-                    <li class="list-group-item secondaryColor"><i class="fas fa-check"></i></li>
-                    <li class="list-group-item"><i class="fas fa-times"></i></li>
-                    <li class="list-group-item secondaryColor"><i class="fas fa-check"></i></li>
-
-                </ul>
-            </div>
-            <div class="row text-center">
-                <h5 class="my-2 text-warning mx-auto">Parcialmente entregada</h5>
-            </div>
     </div>
-    <div class="card-footer text-muted">
-        {{ 'prescriptionDetail.valid' | translate }} 16/Sep/2019
-    </div>
+
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserdataService } from '../userdata.service';
+import { Prescription } from '../Models/Prescription';
 
 @Component({
   selector: 'app-history-dashboard-card',
@@ -6,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history-dashboard-card.component.scss']
 })
 export class HistoryDashboardCardComponent implements OnInit {
+  private prescriptions:Prescription[]
 
-
-  constructor() { }
+  constructor(
+    private userData:UserdataService
+  ) { 
+    this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
+    
+  }
 
   ngOnInit() {
   }

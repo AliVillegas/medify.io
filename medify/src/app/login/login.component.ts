@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.name = params.get('name') });
       this.http.get(this.doctorsUrl).toPromise().then(data => {
         for(let element in data["doctors"]){
-            let doctor =data["doctors"][element]["data"]
+            let doctor = data["doctors"][element]["data"]
             this.doctors.push(new Doctor(doctor["name"],doctor["email"],doctor["password"],doctor["serviceId"], doctor["institute"],doctor["id"]))
         }
       })
@@ -81,9 +81,9 @@ export class LoginComponent implements OnInit {
             this.patients[this.patients.length-1].setCronicDiseases(patient["cronicDiseases"])
             for(let data in patient["prescriptions"]){
               let prescription = patient["prescriptions"][data]
-              let prescriptionDoctor:Doctor
+              var prescriptionDoctor:Doctor;
               this.doctors.forEach(doc => {
-                if(doc.id == prescription["doctorId"] ){
+                if(doc.id  == prescription["doctorId"] ){
                     prescriptionDoctor = doc
                 }
               })
@@ -97,6 +97,7 @@ export class LoginComponent implements OnInit {
                   let m = new Med(prescription["meds"][med]["name"],(prescription["meds"][med]["delivered"] == 'true'));
                   p.addMed(m)
               }
+              p.setStatus(prescription["status"])
               this.patients[this.patients.length-1].addPrescription(p)
                 
               }
