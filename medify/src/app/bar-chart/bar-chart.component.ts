@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserdataService } from '../userdata.service';
+import { Appointment } from '../Models/Appointment';
+import { Prescription } from '../Models/Prescription';
 
 @Component({
   selector: 'app-bar-chart',
@@ -6,8 +9,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
+  monthsValue:{string,number}
+  appointments:Appointment[]
+  prescriptions:Prescription[]
+  constructor(
+    private userData:UserdataService
+  ) {
+    this.monthsValue = {}
+    this.monthsValue['Ene'] = 0
+    this.monthsValue['Feb'] = 1
+    this.monthsValue['Mar'] = 2
+    this.monthsValue['Abr'] = 3
+    this.monthsValue['May'] = 4
+    this.monthsValue['Jun'] = 5
+    this.monthsValue['Jul'] = 6
+    this.monthsValue['Ago'] = 7
+    this.monthsValue['Sep'] = 8
+    this.monthsValue['Oct'] = 9
+    this.monthsValue['Nov'] = 10
+    this.monthsValue['Dic'] = 11
+   }
 
-  constructor() { }
+   ngOnInit() {
+     var prescriptionsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
+     var appointmentsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
+    this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
+    this.appointments.forEach(app=>{
+      appointmentsData[this.monthsValue[app.month.toString()]] += 1
+    })
+    this.prescriptions.forEach(pre=>{
+      prescriptionsData[this.monthsValue[pre.month.toString()]] += 1
+    })
+    this.barChartData = [
+      {data:appointmentsData, label: 'Citas Médicas'},
+      {data:prescriptionsData, label: 'Recetas'}
+    ]
+    }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -15,7 +53,7 @@ export class BarChartComponent implements OnInit {
     responsive: true
   };
 
-  public barChartLabels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Àgosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  public barChartLabels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   public barChartType = 'bar';
   public barChartLegend = true;
   public chartColors: any[] = [
@@ -31,7 +69,5 @@ export class BarChartComponent implements OnInit {
     console.log(event, active);
   }
 
-  ngOnInit() {
-  }
 
 }
