@@ -12,60 +12,12 @@ export interface MedicineGroup {
 
 /** list of medicines */
 export const MEDICINES: Medicine[] = [
-    { name: 'Ritalina', id: 'A' },
-    { name: 'Paracetamol', id: 'B' },
-    { name: 'Analagesico', id: 'C' },
-    { name: 'Medicamento D', id: 'D' },
-    { name: 'Medicamento E', id: 'E' },
-    { name: 'Medicamento F', id: 'F' },
-    { name: 'Medicamento G', id: 'G' }
+    { name: 'Sedalmerk 100mg', id: 'A' },
+    { name: 'Tetravarona 10mg', id: 'B' },
+    { name: 'Paracetamol 50mg', id: 'C' },
+    { name: 'Ibuprofeno 100mg', id: 'D' },
+    { name: 'Terfamex 30mg', id: 'E' },
+    { name: 'Zypred 6ml F', id: 'F' },
+    { name: 'Tamiflu 75mg', id: 'G' }
 ];
 
-/** list of bank groups */
-/*export const BANKGROUPS: MedicineGroup[] = [
-    {
-        name: 'Analgesicos',
-        medicines: [
-            { name: 'Bank A', id: 'A' },
-            { name: 'Bank B', id: 'B' },
-            { name: 'Bank B', id: 'B' },
-        ]
-    },
-    {
-        name: 'Antiácidos ',
-        medicines: [
-            { name: 'Bank C', id: 'C' },
-            { name: 'Bank D', id: 'D' },
-            { name: 'Bank E', id: 'E' },
-        ]
-    },
-    {
-        name: 'Antiinflamatorios',
-        medicines: [
-            { name: 'Bank F', id: 'F' },
-            { name: 'Bank G', id: 'G' },
-            { name: 'Bank H', id: 'H' },
-            { name: 'Bank I', id: 'I' },
-            { name: 'Bank J', id: 'J' },
-        ]
-    },
-    {
-        name: 'Antitusivos',
-        medicines: [
-            { name: 'Bank Kolombia', id: 'K' },
-        ]
-    },
-    {
-        name: 'Antidiarreicos ',
-        medicines: [
-            { name: 'Bank L', id: 'L' },
-            { name: 'Bank M', id: 'M' },
-            { name: 'Bank N', id: 'N' },
-            { name: 'Bank O', id: 'O' },
-            { name: 'Bank P', id: 'P' },
-            { name: 'Bank Q', id: 'Q' },
-            { name: 'Bank R', id: 'R' }
-        ]
-    }
-];
-*/

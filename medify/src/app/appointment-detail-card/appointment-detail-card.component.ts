@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../Models/Appointment';
 import { UserdataService } from '../userdata.service';
 import {
@@ -28,8 +28,6 @@ import {
 })
 export class AppointmentDetailCardComponent implements OnInit {
 
-  @HostBinding('@pageAnimations')
-  public animatePage = true;
 
   appointments: Appointment[]
 

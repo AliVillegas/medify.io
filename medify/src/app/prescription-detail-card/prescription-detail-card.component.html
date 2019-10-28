@@ -1,19 +1,21 @@
 <div *ngIf="prescriptions.length >0">
     <div *ngFor="let prescription of prescriptions">
-        <div class="card text-center" [@EnterLeave]="flyIn">
+        <div class="card text-center my-2" [@EnterLeave]="flyIn">
             <div class="card-header font-weight-bold lead">
                 {{prescription.doctor.institute}}
             </div>
             <div class="card-body">
                 <div class="row">
-                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} {{prescription.title}}</h5>
+                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }}
+                        {{prescription.title}}</h5>
                     <h5 class="text-right col-6">{{prescription.doctor.name}}</h5>
                 </div>
 
                 <p class="card-text">
                     <div class="row">
                         <ul class="list-group col-10">
-                            <li *ngFor="let med of prescription.meds" class="list-group-item text-left"> {{med.name}}</li>
+                            <li *ngFor="let med of prescription.meds" class="list-group-item text-left"> {{med.name}}
+                            </li>
                         </ul>
                         <ul class="list-group col-2">
                             <div *ngFor="let med of prescription.meds">
@@ -36,6 +38,7 @@
             </div>
             <br>
         </div>
+        <div class="lineDividerBlue mt-3 mb-3"></div>
     </div>
 
 </div>
