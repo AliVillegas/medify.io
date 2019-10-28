@@ -7,6 +7,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Prescription } from '../Models/Prescription';
 
 @Component({
   selector: 'app-history-detail-card',
@@ -26,10 +27,15 @@ import {
   ]
 })
 export class HistoryDetailCardComponent implements OnInit {
-
-  constructor() { }
+  private prescriptions:Prescription[]
+  constructor(
+    private userData:UserdataService
+  ) { }
 
   ngOnInit() {
+    
+    this.userData.currentPrescriptions.subscribe(pres => this.prescriptions = pres);
+
   }
 
 }
