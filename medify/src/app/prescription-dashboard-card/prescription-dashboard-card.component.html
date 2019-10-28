@@ -1,6 +1,6 @@
 <div *ngIf="prescriptions.length > 0">
 
-    <div *ngFor="let prescription of prescriptions" class="card mt-2">
+    <div *ngFor="let prescription of prescriptions | slice:0:3" class="card mt-2">
         <div class="card-header  lead font-weight-bold">{{prescription.doctor.institute}}
         </div>
         <div class="card-body">

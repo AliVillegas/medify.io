@@ -147,6 +147,13 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
       var endDate = (expireDay.getMonth()+1)+'/'+(expireDay.getDate()) + '/' + expireDay.getFullYear();
       /*Make Month map to value */
       var prescriptions = JSONData["patients"][this.patientId]["data"]["prescriptions"]
+      var realMeds = []
+      this.selectedMeds.forEach(m => {
+          realMeds.push({
+            "name": m,
+            "delivered": "false"
+          })
+      });
       var prescription = {
         "title": title,
         "details": diagnosis,
@@ -154,7 +161,7 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
         "date": fullDate,
         "doctorId": this.userId,
         "endDate": endDate,
-        "meds": this.selectedMeds,
+        "meds": realMeds,
         "month": "Oct",
         "patientId": this.patientId,
         "status": "Sin Entregar"

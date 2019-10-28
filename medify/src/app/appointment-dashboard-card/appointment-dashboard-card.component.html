@@ -1,5 +1,5 @@
 <div *ngIf="appointments.length > 0">
-    <div *ngFor="let appointment of appointments" class="card mt-2">
+    <div *ngFor="let appointment of appointments | slice:0:3" class="card mt-2">
         <div class="card-header lead font-weight-bold">{{appointment.doctor.name}} - {{appointment.doctor.institute}}
         </div>
         <div class="card-body">
