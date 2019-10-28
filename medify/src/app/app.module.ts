@@ -51,6 +51,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { AppointmentDetailCardComponent } from './appointment-detail-card/appointment-detail-card.component';
 import { HistoryDetailCardComponent } from './history-detail-card/history-detail-card.component';
 import { PrescriptionDetailCardComponent } from './prescription-detail-card/prescription-detail-card.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -109,6 +110,7 @@ const material = [
     AppointmentDetailCardComponent,
     HistoryDetailCardComponent,
     PrescriptionDetailCardComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

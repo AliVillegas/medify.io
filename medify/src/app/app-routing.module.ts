@@ -16,6 +16,7 @@ import { HistoryDetailComponent } from './history-detail/history-detail.componen
 import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptions-detail.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'patient/history-detail', component: HistoryDetailComponent },
   { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'about', component: AboutComponent }
 
 
 
