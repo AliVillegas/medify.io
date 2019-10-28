@@ -69,42 +69,45 @@ export class LoginComponent implements OnInit {
         let doctor = data["doctors"][element]["data"]
         this.doctors.push(new Doctor(doctor["name"], doctor["email"], doctor["password"], doctor["serviceId"], doctor["institute"], doctor["id"]))
       }
+
+      this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
+        for (let element in data["patients"]) {
+          let patient = data["patients"][element]["data"]
+          this.patients.push(new Patient(patient["name"], patient["email"], patient["password"], patient["id"]))
+          this.patients[this.patients.length - 1].setWeight(patient["weight"])
+          this.patients[this.patients.length - 1].setHeight(patient["height"])
+          this.patients[this.patients.length - 1].setBloodType(patient["bloodType"])
+          this.patients[this.patients.length - 1].setAlergies(patient["alergies"])
+          this.patients[this.patients.length - 1].setNotes(patient["Notes"])
+          this.patients[this.patients.length - 1].setCronicDiseases(patient["cronicDiseases"])
+          for (let data in patient["prescriptions"]) {
+            let prescription = patient["prescriptions"][data]
+            var prescriptionDoctor: Doctor;
+            this.doctors.forEach(doc => {
+              if (doc.id == prescription["doctorId"]) {
+                prescriptionDoctor = doc
+              }
+            })
+            //console.log(prescriptionDoctor)
+  
+            var p = new Prescription(prescription["title"], prescription["dayNumber"],
+              prescription["details"], prescription["month"], prescriptionDoctor,
+              prescription["date"],prescription["endDate"], prescription["id"])
+              p.setStatus(prescription["status"])
+              for (let med in prescription["meds"]) {
+              let m = new Med(prescription["meds"][med]["name"], (prescription["meds"][med]["delivered"] == 'true'));
+              p.addMed(m)
+            }
+            this.patients[this.patients.length - 1].addPrescription(p)
+  
+          }
+        }
+  
+      })
+      
     })
     //console.log(this.doctors)
-    this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
-      for (let element in data["patients"]) {
-        let patient = data["patients"][element]["data"]
-        this.patients.push(new Patient(patient["name"], patient["email"], patient["password"], patient["id"]))
-        this.patients[this.patients.length - 1].setWeight(patient["weight"])
-        this.patients[this.patients.length - 1].setHeight(patient["height"])
-        this.patients[this.patients.length - 1].setBloodType(patient["bloodType"])
-        this.patients[this.patients.length - 1].setAlergies(patient["alergies"])
-        this.patients[this.patients.length - 1].setNotes(patient["Notes"])
-        this.patients[this.patients.length - 1].setCronicDiseases(patient["cronicDiseases"])
-        for (let data in patient["prescriptions"]) {
-          let prescription = patient["prescriptions"][data]
-          var prescriptionDoctor: Doctor;
-          this.doctors.forEach(doc => {
-            if (doc.id == prescription["doctorId"]) {
-              prescriptionDoctor = doc
-            }
-          })
-          //console.log(prescriptionDoctor)
-
-          var p = new Prescription(prescription["title"], prescription["dayNumber"],
-            prescription["details"], prescription["month"], prescriptionDoctor,
-            prescription["date"],prescription["endDate"], prescription["id"])
-            p.setStatus(prescription["status"])
-            for (let med in prescription["meds"]) {
-            let m = new Med(prescription["meds"][med]["name"], (prescription["meds"][med]["delivered"] == 'true'));
-            p.addMed(m)
-          }
-          this.patients[this.patients.length - 1].addPrescription(p)
-
-        }
-      }
-
-    })
+    
     //console.log(this.patients)
   }
 
