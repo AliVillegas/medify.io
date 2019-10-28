@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dr-new-prescription-qr',
@@ -9,15 +10,19 @@ import { Location } from '@angular/common';
   styleUrls: ['./dr-new-prescription-qr.component.scss']
 })
 export class DrNewPrescriptionQRComponent implements OnInit {
-
-  
+  @Input() patientId;
+  sub;
   constructor(
     private navData:NavbarDataService, 
     private sidebarData:SidebarDataService,
-    private _location: Location
+    private _location: Location,
+    private activateRoute: ActivatedRoute,
+
   ) { }
 
   ngOnInit() {
+    this.sub = this.activateRoute.paramMap.subscribe(params => { this.patientId = params.get('patientId') });
+
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 

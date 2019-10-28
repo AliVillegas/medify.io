@@ -41,7 +41,9 @@
         </div>
         <div class="row mt-5">
             <div class="addDateDesktop mx-auto">
-                <button class="btn btn-lg btn-primary d-block" onclick="window.location.href='dr/prescription/patient-qr'">{{ 'patientInfo.button' | translate}}</button>
+                <a class="btn btn-lg btn-primary d-block" href="dr/prescription/patient-qr/{{patientId}}">
+                    {{ 'patientInfo.button' | translate}}
+                </a>
 
             </div>
         </div>

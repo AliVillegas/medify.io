@@ -5,8 +5,7 @@
         <h4 class="text-center ml-auto">{{ 'addPrescriptionQR.title' | translate}}</h4>
         <img src="../../assets/img/qr-code.png" class=" d-block m-auto img-responsive responsiveQRImg img80" alt=" qr">
         <div>
-            <a href="dr/prescription/create" data-toggle="tooltip" title="Continuar nueva receta"
-                class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addPrescriptionQR.button' | translate}}
+            <a href="dr/prescription/create/{{patientId}}" data-toggle="tooltip" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addPrescriptionQR.button' | translate}}
             </a>
         </div>
     </div>

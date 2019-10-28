@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patient } from '../Models/Patient';
 import { Doctor } from '../Models/Doctor';
 import { Appointment } from '../Models/Appointment';
@@ -40,7 +40,8 @@ export class LoginComponent implements OnInit {
   sub;
   patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/13'
   doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/5'
-
+  privatePatientsUrl = 'https://api.jsonbin.io/b/5db648c2fe2f084c49258cb1'
+  privateDoctorsUrl = 'https://api.jsonbin.io/b/5db65fdbf4eddb4e0807d9c3'
   patients: Patient[]
   doctors: Doctor[]
   appointments: Appointment[]
@@ -56,15 +57,21 @@ export class LoginComponent implements OnInit {
     this.doctors = []
     this.appointments = []
     this.prescriptions = []
+    let headers = new HttpHeaders()
+    headers = headers.set("Content-Type", "application/json");
+    headers = headers.set("versioning", "false");
+    headers = headers.set("secret-key", "$2b$10$b3F3emDew3JC/JjHy/0Kgulzg1lNfKkhZ1kSrv3Owm58PhkgEOHQm")
+
+
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.name = params.get('name') });
-    this.http.get(this.doctorsUrl).toPromise().then(data => {
+    this.http.get(this.privateDoctorsUrl,{headers}).toPromise().then(data => {
       for (let element in data["doctors"]) {
         let doctor = data["doctors"][element]["data"]
         this.doctors.push(new Doctor(doctor["name"], doctor["email"], doctor["password"], doctor["serviceId"], doctor["institute"], doctor["id"]))
       }
     })
-    console.log(this.doctors)
-    this.http.get(this.patientsUrl).toPromise().then(data => {
+    //console.log(this.doctors)
+    this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
       for (let element in data["patients"]) {
         let patient = data["patients"][element]["data"]
         this.patients.push(new Patient(patient["name"], patient["email"], patient["password"], patient["id"]))
@@ -82,7 +89,7 @@ export class LoginComponent implements OnInit {
               prescriptionDoctor = doc
             }
           })
-          //S console.log(prescriptionDoctor)
+          //console.log(prescriptionDoctor)
 
           var p = new Prescription(prescription["title"], prescription["dayNumber"],
             prescription["details"], prescription["month"], prescriptionDoctor,

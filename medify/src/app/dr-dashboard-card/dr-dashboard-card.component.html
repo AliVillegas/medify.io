@@ -10,11 +10,10 @@
                         class="patientName ">{{appointment.patient.name}}</a></strong>
             </h3>
             <ul class="list-inline ">
-                <li class="list-inline-item "><i class="fa fa-calendar-o " aria-hidden="true "></i>
-                    {{appointment.dayName}}
+                <li class="list-inline-item "><i class="fa fa-calendar-o " aria-hidden="true "></i> {{appointment.dayName}}
                 </li>
-                <li class="list-inline-item "><i class="fa fa-clock-o " aria-hidden="true "></i> 12:30 PM - 2:00 PM</li>
-                <li class="list-inline-item "><i class="fa fa-location-arrow " aria-hidden="true "></i> área terminal 1
+                <li class="list-inline-item "><i class="fa fa-clock-o " aria-hidden="true "></i> {{appointment.startTime}} - {{appointment.endTime}}</li>
+                <li class="list-inline-item "><i class="fa fa-location-arrow " aria-hidden="true "></i> {{appointment.location}}
                 </li>
             </ul>
             <p>{{appointment.concept}}</p>

@@ -156,7 +156,7 @@
     "createPrescription": {
         "title": "Nueva Receta",
         "labelTitle": "Título",
-        "labelDiagnosis": "Diagnostico",
+        "labelDiagnosis": "Diagnóstico",
         "selectPlaceholder": "Por favor seleccione: ",
         "selectListTitle": "Medicinas Seleccionadas: ",
         "button": "Continuar"
