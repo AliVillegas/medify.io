@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/13'
   doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/5'
   privatePatientsUrl = 'https://api.jsonbin.io/b/5db648c2fe2f084c49258cb1'
-  privateDoctorsUrl = 'https://api.jsonbin.io/b/5db65fdbf4eddb4e0807d9c3'
+  privateDoctorsUrl = 'https://api.jsonbin.io/b/5db64a818c3b0a4aac6920d9'
   patients: Patient[]
   doctors: Doctor[]
   appointments: Appointment[]
@@ -136,7 +136,9 @@ export class LoginComponent implements OnInit {
             this.userData.changeUserIsDoctor(false)
             this.userData.changeAppointments(this.appointments)
             this.userData.changePrescriptions(patient.prescriptions)
+            this.userData.changePatient(patient)
             this.router.navigateByUrl('patient/dashboard');
+            localStorage.setItem("patient", JSON.stringify(patient))
             localStorage.setItem("userName", patient.name.toString())
             localStorage.setItem("userEmail", patient.email.toString())
             localStorage.setItem("userId", patient.id.toString())
@@ -174,12 +176,14 @@ export class LoginComponent implements OnInit {
               this.userData.changeUserIsDoctor(true)
               this.userData.changeAppointments(this.appointments)
               this.userData.changeServiceId(doctor.serviceId)
+              this.userData.changeDoctor(doctor)
               localStorage.setItem("userName", doctor.name.toString())
               localStorage.setItem("userEmail", doctor.email.toString())
               localStorage.setItem("userId", doctor.id.toString())
               localStorage.setItem("userServiceId", doctor.serviceId.toString())
               localStorage.setItem("appointments", JSON.stringify(this.appointments))
               localStorage.setItem("isDoctor", "true")
+              localStorage.setItem("doctor", JSON.stringify(doctor))
             }
           })
           this.doctor = doctor

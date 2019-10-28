@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { UserdataService } from './userdata.service';
 import { Appointment } from './Models/Appointment';
 import { Prescription } from './Models/Prescription';
+import { Patient } from './Models/Patient';
+import { Doctor } from './Models/Doctor';
 
 
 @Component({
@@ -13,6 +15,8 @@ import { Prescription } from './Models/Prescription';
 export class AppComponent {
   appointments:Appointment[]
   prescriptions:Prescription[]
+  patient:Patient
+  doctor:Doctor
   constructor(private http: HttpClient,private userData:UserdataService
     ) {
       this.appointments = []
@@ -32,6 +36,14 @@ export class AppComponent {
       if(localStorage.getItem("prescriptions")){
         this.prescriptions = JSON.parse(localStorage.getItem("prescriptions"))
         userData.changePrescriptions(this.prescriptions)
+      }
+      if(localStorage.getItem("patient")){
+        this.patient = JSON.parse(localStorage.getItem("patient"))
+        this.userData.changePatient(this.patient)
+      }
+      if(localStorage.getItem("doctor")){
+        this.doctor = JSON.parse(localStorage.getItem("doctor"))
+        this.userData.changeDoctor(this.doctor)
       }
   }
 
