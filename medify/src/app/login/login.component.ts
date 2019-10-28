@@ -109,11 +109,15 @@ export class LoginComponent implements OnInit {
   }
 
   onClickSubmit(email: String, password: String) {
+    let headers = new HttpHeaders()
+    headers = headers.set("Content-Type", "application/json");
+    headers = headers.set("versioning", "false");
+    headers = headers.set("secret-key", "$2b$10$b3F3emDew3JC/JjHy/0Kgulzg1lNfKkhZ1kSrv3Owm58PhkgEOHQm")
 
     if (this.name == 'patient') {
       this.patients.forEach(patient => {
         if (patient.email == email && patient.password == password) {
-          this.http.get(this.patientsUrl).toPromise().then(data => {
+          this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
             let fullData = data["patients"][patient.getId()]["data"]
             var doctor: Doctor;
             for (let data in fullData["appointments"]) {
@@ -156,7 +160,7 @@ export class LoginComponent implements OnInit {
     else if (this.name == 'doctor') {
       this.doctors.forEach(doctor => {
         if (doctor.email == email && doctor.password == password) {
-          this.http.get(this.doctorsUrl).toPromise().then(data => {
+          this.http.get(this.privateDoctorsUrl, {headers}).toPromise().then(data => {
             let fullData = data["doctors"][doctor.getId()]["data"]
             var patient: Patient;
             for (let data in fullData["appointments"]) {
