@@ -10,15 +10,17 @@ export class Prescription{
     month:String
     doctor:Doctor
     id:String
+    date:String
     meds:Med[]
     status:String
     endDate:String
 
     constructor(title:String,dayNumber:String,
-                details:String,month:String,doctor:Doctor,endDate:String, id:String){
+                details:String,month:String,doctor:Doctor, date:String, endDate:String, id:String){
         this.meds = []
         this.title = title
         this.dayNumber = dayNumber
+        this.date = date
         this.details = details
         this.month = month
         this.doctor = doctor

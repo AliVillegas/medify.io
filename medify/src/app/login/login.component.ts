@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   @Input() name;
   sub;
-  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/12'
+  patientsUrl = 'https://api.jsonbin.io/b/5db4a7a8f55f242a12ab2a47/13'
   doctorsUrl = 'https://api.jsonbin.io/b/5db4a7c25366d12a248eccc7/5'
 
   patients: Patient[]
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
 
           var p = new Prescription(prescription["title"], prescription["dayNumber"],
             prescription["details"], prescription["month"], prescriptionDoctor,
-            prescription["endDate"], prescription["id"])
+            prescription["date"],prescription["endDate"], prescription["id"])
             p.setStatus(prescription["status"])
             for (let med in prescription["meds"]) {
             let m = new Med(prescription["meds"][med]["name"], (prescription["meds"][med]["delivered"] == 'true'));
