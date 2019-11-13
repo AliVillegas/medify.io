@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../sidebar-data.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { isNullOrUndefined } from 'util';
-
+declare var $;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -20,6 +20,13 @@ export class SidebarComponent implements OnInit {
     this.translate.setDefaultLang(this.language);
   }
   ngOnInit() {
+    $(document).ready(function () {
+      $("#sidebar .list-unstyled a").each(function () {
+        if ((window.location.pathname.indexOf($(this).attr('href'))) > -1) {
+          $(this).parent().addClass('active');
+        }
+      });
+    });
     var l = localStorage.getItem("language");
     if (l != null)
       this.changeLanguage(l);
@@ -30,6 +37,8 @@ export class SidebarComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       localStorage.setItem("language", this.translate.currentLang);
     });
+
+
 
   }
   public changeLanguage(lang: string) {

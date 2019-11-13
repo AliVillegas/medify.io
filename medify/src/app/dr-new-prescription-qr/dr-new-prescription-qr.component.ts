@@ -3,6 +3,7 @@ import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-dr-new-prescription-qr',
@@ -12,10 +13,14 @@ import { ActivatedRoute } from '@angular/router';
 export class DrNewPrescriptionQRComponent implements OnInit {
   @Input() patientId;
   sub;
+  codeFormGroup: FormGroup;
+  codeFormControl = new FormControl('');
+
   constructor(
-    private navData:NavbarDataService, 
-    private sidebarData:SidebarDataService,
+    private navData: NavbarDataService,
+    private sidebarData: SidebarDataService,
     private _location: Location,
+    private fb: FormBuilder,
     private activateRoute: ActivatedRoute,
 
   ) { }
@@ -26,16 +31,20 @@ export class DrNewPrescriptionQRComponent implements OnInit {
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 
+    this.codeFormGroup = this.fb.group({
+      code: ''
+    })
+
   }
 
-  initializeNavbarStatus(){
+  initializeNavbarStatus() {
     this.navData.changeIsLandingPage(false)
     this.navData.changeIsDashboardPage(false)
     this.navData.changeHasReturnArrow(true)
     this.navData.changePageLocation(this._location)
   }
 
-  initializeSidebarStatus(){
+  initializeSidebarStatus() {
     this.sidebarData.changeIsLandingPage(false)
     this.sidebarData.changeIsDoctor(true)
     this.sidebarData.changeIsPatient(false)

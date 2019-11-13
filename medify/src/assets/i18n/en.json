@@ -81,7 +81,7 @@
         "title3": "My Medical Prescriptions"
     },
     "modalQR": {
-        "view": "View QR"
+        "view": "View Code"
     },
     "appointmentCard": {
         "reason": "Reason: ",
@@ -150,7 +150,8 @@
         "button": "Add Prescription"
     },
     "addPrescriptionQR": {
-        "title": "Please scan the patient's code",
+        "title": "Please enter the patient's code",
+        "placeHolder": "Patient's code",
         "button": "Continue"
     },
     "createPrescription": {
@@ -162,7 +163,8 @@
         "button": "Continue"
     },
     "addAppointmentQR": {
-        "title": "Please scan the patient's code",
+        "title": "Please enter the patient's code",
+        "placeHolder": "Patient's code",
         "button": "Continue"
     },
     "createAppointment": {

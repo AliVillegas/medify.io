@@ -81,7 +81,7 @@
         "title3": "Mis Recetas Médicas"
     },
     "modalQR": {
-        "view": "Ver QR"
+        "view": "Ver Código"
     },
     "appointmentCard": {
         "reason": "Razón: ",
@@ -150,7 +150,8 @@
         "button": "Añadir Receta"
     },
     "addPrescriptionQR": {
-        "title": "Por favor escanee el código del paciente",
+        "title": "Por favor ingrese el código del pacientee",
+        "placeHolder": "Código del paciente",
         "button": "Continuar"
     },
     "createPrescription": {
@@ -162,7 +163,8 @@
         "button": "Continuar"
     },
     "addAppointmentQR": {
-        "title": "Por favor escanee el código del paciente",
+        "title": "Por favor ingrese el código del paciente",
+        "placeHolder": "Código del paciente",
         "button": "Continuar"
     },
     "createAppointment": {

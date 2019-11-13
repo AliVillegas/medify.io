@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qr-modal.component.scss']
 })
 export class QrModalComponent implements OnInit {
-  private modalTitle: String = "Tu código QR";
+  private modalTitle: String = "Mi código";
   private modalFooter: String = "Cerrar";
 
 

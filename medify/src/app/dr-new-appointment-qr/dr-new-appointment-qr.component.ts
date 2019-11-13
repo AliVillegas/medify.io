@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-dr-new-appointment-qr',
@@ -10,9 +11,13 @@ import { Location } from '@angular/common';
 })
 export class DrNewAppointmentQRComponent implements OnInit {
 
+  codeFormGroup: FormGroup;
+  codeFormControl = new FormControl('');
+
   constructor(
-    private navData:NavbarDataService, 
-    private sidebarData:SidebarDataService,
+    private navData: NavbarDataService,
+    private sidebarData: SidebarDataService,
+    private fb: FormBuilder,
     private _location: Location
   ) { }
 
@@ -20,16 +25,20 @@ export class DrNewAppointmentQRComponent implements OnInit {
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 
+    this.codeFormGroup = this.fb.group({
+      code: ''
+    })
+
   }
 
-  initializeNavbarStatus(){
+  initializeNavbarStatus() {
     this.navData.changeIsLandingPage(false)
     this.navData.changeIsDashboardPage(false)
     this.navData.changeHasReturnArrow(true)
     this.navData.changePageLocation(this._location)
   }
 
-  initializeSidebarStatus(){
+  initializeSidebarStatus() {
     this.sidebarData.changeIsLandingPage(false)
     this.sidebarData.changeIsDoctor(true)
     this.sidebarData.changeIsPatient(false)

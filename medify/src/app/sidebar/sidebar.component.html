@@ -10,8 +10,8 @@
     </div>
 
     <ul class="list-unstyled">
-        <li class="active">
-            <a>{{'sidebar.title' | translate }}</a>
+        <li>
+            <a href="/landing">{{'sidebar.title' | translate }}</a>
         </li>
         <li>
             <a href="/landing#citas">{{ 'sidebar.li1' | translate }}</a>
@@ -72,19 +72,19 @@
     </div>
 
     <ul class="list-unstyled">
-        <li class="active">
+        <li id="dash">
             <a href="/patient/dashboard">{{ 'sidebarPatient.li1' | translate }}</a>
         </li>
-        <li>
+        <li id="appointments">
             <a href="/patient/appointments-detail">{{ 'sidebarPatient.li2' | translate }}</a>
         </li>
-        <li>
+        <li id="history">
             <a href="/patient/history-detail">{{ 'sidebarPatient.li3' | translate }}</a>
         </li>
-        <li>
+        <li id="prescriptions">
             <a href="/patient/prescriptions-detail">{{ 'sidebarPatient.li4' | translate }}</a>
         </li>
-        <li class="">
+        <li id="profile">
             <a href="/patient/profile">{{ 'sidebarPatient.li5' | translate }}</a>
         </li>
     </ul>
