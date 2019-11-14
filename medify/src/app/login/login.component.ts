@@ -10,6 +10,7 @@ import { UserdataService } from '../userdata.service';
 import { Prescription } from '../Models/Prescription';
 import { Med } from '../Models/Med';
 import { AmplifyService } from 'aws-amplify-angular';
+import { Auth } from 'aws-amplify';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -93,11 +94,24 @@ export class LoginComponent implements OnInit {
     this.amplifyService.authStateChange$.subscribe(authState =>
       {
         if (authState.state === "signedIn"){
+          Auth.currentSession()
+          .then(data => {
+            var user = data.getIdToken().decodePayload();
+            this.userData.changeName(user['custom:name']);
+            this.userData.changeEmail(user['email']);
+            localStorage.setItem("userName", user['custom:name'].toString())
+            localStorage.setItem("userEmail", user['email'].toString())
+            console.log(user)
+          }
+            
+          )
+          .catch(err => console.log(err));
           if (this.name == 'patient') {
             this.router.navigateByUrl('patient/dashboard');
           }
           else{
-            //this.router.navigateByUrl('dr/dashboard');
+            
+            this.router.navigateByUrl('dr/dashboard');
           }
 
         }

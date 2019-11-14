@@ -48,7 +48,7 @@
         </li>
     </ul>
 
-    <button class="btn btnSideBar mx-auto d-block mt-3" onclick="window.location.href='/logout'">
+    <button class="btn btnSideBar mx-auto d-block mt-3" (click)="logout()" onclick="window.location.href='/logout'">
         {{ 'sidebarDoctor.logout' | translate }} </button>
     <div class="row p-3">
         <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
