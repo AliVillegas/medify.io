@@ -1,0 +1,19 @@
+{
+    "medify": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-medify-medify-121737-authRole",
+            "UnauthRoleArn": "arn:aws:iam::710934346727:role/amplify-medify-medify-121737-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::710934346727:role/amplify-medify-medify-121737-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-medify-medify-121737-deployment",
+            "UnauthRoleName": "amplify-medify-medify-121737-unauthRole",
+            "StackName": "amplify-medify-medify-121737",
+            "StackId": "arn:aws:cloudformation:us-east-1:710934346727:stack/amplify-medify-medify-121737/b51fdc80-0578-11ea-8740-12e727a79a85"
+        },
+        "categories": {
+            "auth": {
+                "medifyd2c5d221": {}
+            }
+        }
+    }
+}
