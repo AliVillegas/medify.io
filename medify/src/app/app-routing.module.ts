@@ -17,6 +17,7 @@ import { PrescriptionsDetailComponent } from './prescriptions-detail/prescriptio
 import { LogoutComponent } from './logout/logout.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AboutComponent } from './about/about.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -31,7 +32,7 @@ const routes: Routes = [
   { path: 'dr/appointment/create', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr/:patientId', component: DrNewPrescriptionQRComponent },
   { path: 'dr/prescription/create/:patientId', component: DrCreatePrescriptionComponent },
-  { path: 'patient/dashboard', component: DashboardComponent },
+  { path: 'patient/dashboard', component: DashboardComponent,canActivate: [AuthGuardService] },
   { path: 'patient/profile', component: PatientProfileComponent },
   { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
   { path: 'patient/history-detail', component: HistoryDetailComponent },

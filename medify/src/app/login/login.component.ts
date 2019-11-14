@@ -9,9 +9,7 @@ import { Appointment } from '../Models/Appointment';
 import { UserdataService } from '../userdata.service';
 import { Prescription } from '../Models/Prescription';
 import { Med } from '../Models/Med';
-
-
-
+import { AmplifyService } from 'aws-amplify-angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,6 +19,43 @@ import { Med } from '../Models/Med';
 
 
 export class LoginComponent implements OnInit {
+  signUpConfig = {
+    header: 'Crear Cuenta',
+    hideAllDefaults: true,
+    defaultCountryCode: '1',
+    signUpFields: [
+      {
+        label: 'Email',
+        key: 'username',
+        required: true,
+        displayOrder: 2,
+        type: 'string',
+      },
+      {
+        label: 'Confirmar Email',
+        key: 'email',
+        required: true,
+        displayOrder: 3,
+        type: 'string',
+      },
+      {
+        label: 'Contraseña',
+        key: 'password',
+        required: true,
+        displayOrder: 4,
+        type: 'password'
+      },
+      {
+        label: 'Nombre',
+        key: 'custom:name',
+        required: true,
+        displayOrder: 1,
+        type: 'string',
+        custom: true
+      }
+    ]
+  }
+
   loginForm: FormGroup;
   isDoctor: Boolean;
   isPatient: Boolean;
@@ -51,8 +86,22 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private userData: UserdataService
+    private userData: UserdataService,
+    private amplifyService: AmplifyService
   ) {
+    this.amplifyService = amplifyService;
+    this.amplifyService.authStateChange$.subscribe(authState =>
+      {
+        if (authState.state === "signedIn"){
+          if (this.name == 'patient') {
+            this.router.navigateByUrl('patient/dashboard');
+          }
+          else{
+            //this.router.navigateByUrl('dr/dashboard');
+          }
+
+        }
+      })
     this.patients = []
     this.doctors = []
     this.appointments = []
@@ -211,6 +260,19 @@ export class LoginComponent implements OnInit {
       loginEmail: '',
       loginPassword: ''
     })
+
+    if(this.name == 'doctor'){
+      this.signUpConfig.signUpFields.push(
+        {
+            label: 'Cédula',
+            key: 'custom:serviceId',
+            required: true,
+            displayOrder: 5,
+            type: 'string',
+            custom: true
+          }
+      )
+    }
   }
 
 }

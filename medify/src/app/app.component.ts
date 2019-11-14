@@ -13,6 +13,8 @@ import { Doctor } from './Models/Doctor';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
+
   appointments:Appointment[]
   prescriptions:Prescription[]
   patient:Patient
@@ -46,5 +48,6 @@ export class AppComponent {
         this.userData.changeDoctor(this.doctor)
       }
   }
+
 
 }

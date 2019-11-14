@@ -53,7 +53,8 @@ import { HistoryDetailCardComponent } from './history-detail-card/history-detail
 import { PrescriptionDetailCardComponent } from './prescription-detail-card/prescription-detail-card.component';
 import { AboutComponent } from './about/about.component';
 
-
+import {AmplifyAngularModule, AmplifyService} from 'aws-amplify-angular'
+import { AuthGuardService } from './auth-guard.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -116,6 +117,7 @@ const material = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AmplifyAngularModule,
     material,
     NgxSpinnerModule,
     ChartsModule,
@@ -128,7 +130,7 @@ const material = [
     })
   ],
   exports: [material],
-  providers: [],
+  providers: [AmplifyService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

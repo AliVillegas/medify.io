@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarDataService } from '../sidebar-data.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { isNullOrUndefined } from 'util';
+import { AmplifyService } from 'aws-amplify-angular';
+import { Router } from '@angular/router';
 declare var $;
 @Component({
   selector: 'app-sidebar',
@@ -16,7 +18,10 @@ export class SidebarComponent implements OnInit {
   isDoctor: Boolean;
   isPatient: Boolean;
 
-  constructor(private data: SidebarDataService, private translate: TranslateService) {
+  constructor(private data: SidebarDataService, private translate: TranslateService,
+    private amplifyService: AmplifyService,
+    private _router: Router) {
+      this.amplifyService = amplifyService;
     this.translate.setDefaultLang(this.language);
   }
   ngOnInit() {
@@ -45,6 +50,16 @@ export class SidebarComponent implements OnInit {
     this.language = lang;
     this.translate.use(lang);
   }
-
+  logout() {
+    this.amplifyService
+      .auth()
+      .signOut()
+      .then(() => {
+        //this._router.navigateByUrl("");
+      })
+      .catch(err => {
+        return false;
+      });
+  }
 
 }
