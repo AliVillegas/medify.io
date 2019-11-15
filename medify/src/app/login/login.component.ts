@@ -99,20 +99,89 @@ export class LoginComponent implements OnInit {
             var user = data.getIdToken().decodePayload();
             this.userData.changeName(user['custom:name']);
             this.userData.changeEmail(user['email']);
+            var userHasServiceId = user['custom:serviceId']
+            var cognitoUserIsDoctor = false; 
+            if(userHasServiceId != undefined){
+              cognitoUserIsDoctor = true;
+            }
+
+            
+            var loopbackDoctorsUrl = 'http://localhost:3000/doctors/'
+            var loopbackPatientsUrl = 'http://localhost:3000/patients/'
+            var found = false; 
+              this.http.get(loopbackDoctorsUrl.concat(user['sub'])).subscribe(
+                data => {
+                  console.log('success', data)
+                  found = true;
+                  
+                } ,
+                error => {
+                  var err = error.HttpErrorResponse
+                  console.log(err)
+                  console.log('oops', error)
+                  this.http.get(loopbackPatientsUrl.concat(user['sub'])).subscribe(
+                    data => {
+                      found = true;
+                      console.log('success', data)
+                    } ,
+                    error => {
+                      var err = error.HttpErrorResponse
+                      console.log(err)
+                      console.log('oops', error)
+                      if(found == false){
+                        if(cognitoUserIsDoctor){
+                          var institute = 'consultorio ' + user['custom:name']
+                          this.http.post(loopbackDoctorsUrl,
+                            new Object({
+                              name : user['custom:name'],
+                              id : user['sub'],
+                              email: user['email'],
+                              institute: institute,
+                              serviceId: user['custom:serviceId']
+                            })  
+                          ).subscribe(
+                            data => {
+                              console.log('success', data)                              
+                            } ,
+                            error => {
+                              console.log('oops', error)
+                            });
+                        }
+                        else{
+                          this.http.post(loopbackPatientsUrl,
+                            new Object({
+                              name : user['custom:name'],
+                              id : user['sub'],
+                              email: user['email'],
+                            })
+                          ).subscribe(
+                            data => {
+                              console.log('success', data)                              
+                            } ,
+                            error => {
+                              console.log('oops', error)
+                            });
+                        }
+                      }
+                    } 
+                  );
+                } 
+              );
+            
+          
             localStorage.setItem("userName", user['custom:name'].toString())
             localStorage.setItem("userEmail", user['email'].toString())
-            console.log(user)
+            if (!cognitoUserIsDoctor) {
+              this.router.navigateByUrl('patient/dashboard');
+            }
+            else{
+              this.router.navigateByUrl('dr/dashboard');
+            }
           }
             
           )
           .catch(err => console.log(err));
-          if (this.name == 'patient') {
-            this.router.navigateByUrl('patient/dashboard');
-          }
-          else{
-            
-            this.router.navigateByUrl('dr/dashboard');
-          }
+         
 
         }
       })
