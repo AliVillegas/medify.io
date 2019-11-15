@@ -27,7 +27,7 @@ import { Prescription } from '../Models/Prescription';
   ]
 })
 export class HistoryDetailCardComponent implements OnInit {
-  private prescriptions:Prescription[]
+  public prescriptions:Prescription[]
   constructor(
     private userData:UserdataService
   ) { }

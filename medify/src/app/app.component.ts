@@ -19,7 +19,7 @@ export class AppComponent {
   prescriptions:Prescription[]
   patient:Patient
   doctor:Doctor
-  constructor(private http: HttpClient,private userData:UserdataService
+  constructor(public http: HttpClient,public userData:UserdataService
     ) {
       this.appointments = []
       this.prescriptions = []

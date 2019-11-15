@@ -10,8 +10,8 @@ import { UserdataService } from '../userdata.service';
 })
 export class PatientProfileComponent implements OnInit {
 
-  private name: String;
-  private email: String;
+  public name: String;
+  public email: String;
 
   constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService,
     private userData:UserdataService) { }

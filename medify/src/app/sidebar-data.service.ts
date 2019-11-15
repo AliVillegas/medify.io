@@ -6,9 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SidebarDataService {
 
-  private isDoctor = new BehaviorSubject<Boolean>(false);
-  private isPatient = new BehaviorSubject<Boolean>(false);
-  private isLandingPage = new BehaviorSubject<Boolean>(false);
+  public isDoctor = new BehaviorSubject<Boolean>(false);
+  public isPatient = new BehaviorSubject<Boolean>(false);
+  public isLandingPage = new BehaviorSubject<Boolean>(false);
   currentIsLandingPage = this.isLandingPage.asObservable();
   currentIsDoctor = this.isDoctor.asObservable();
   currentIsPatient = this.isPatient.asObservable();

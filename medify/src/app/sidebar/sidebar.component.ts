@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   isPatient: Boolean;
 
   constructor(private data: SidebarDataService, private translate: TranslateService,
-    private amplifyService: AmplifyService,
+    public amplifyService: AmplifyService,
     private _router: Router) {
       this.amplifyService = amplifyService;
     this.translate.setDefaultLang(this.language);
@@ -50,7 +50,7 @@ export class SidebarComponent implements OnInit {
     this.language = lang;
     this.translate.use(lang);
   }
-  logout() {
+  public logout() {
     this.amplifyService
       .auth()
       .signOut()

@@ -12,14 +12,14 @@ import { Appointment } from '../Models/Appointment';
   styleUrls: ['./dr-patient-info.component.scss']
 })
 export class DrPatientInfoComponent implements OnInit {
-  private name:String
-  private bloodType:String
-  private weight:String
-  private height:String
-  private alergies:String
-  private cronicDiseases:String
-  private notes:String
-  private appointments:Appointment[]
+  public name:String
+  public bloodType:String
+  public weight:String
+  public height:String
+  public alergies:String
+  public cronicDiseases:String
+  public notes:String
+  public appointments:Appointment[]
   @Input() patientId;
 
   sub;

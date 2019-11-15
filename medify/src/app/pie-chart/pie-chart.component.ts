@@ -9,7 +9,7 @@ import { UserdataService } from '../userdata.service';
   styleUrls: ['./pie-chart.component.scss']
 })
 export class PieChartComponent implements OnInit {
-  private appointments:Appointment[]
+  public appointments:Appointment[]
   constructor(
     private userData:UserdataService
   ) { }

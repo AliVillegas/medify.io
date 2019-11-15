@@ -20,7 +20,7 @@ import { Auth } from 'aws-amplify';
 
 
 export class LoginComponent implements OnInit {
-  signUpConfig = {
+ public signUpConfig = {
     header: 'Crear Cuenta',
     hideAllDefaults: true,
     defaultCountryCode: '1',
@@ -82,13 +82,13 @@ export class LoginComponent implements OnInit {
   doctors: Doctor[]
   appointments: Appointment[]
   prescriptions: Prescription[]
-  constructor(
+  public constructor(
     private activateRoute: ActivatedRoute,
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
     private userData: UserdataService,
-    private amplifyService: AmplifyService
+    public amplifyService: AmplifyService
   ) {
     this.amplifyService = amplifyService;
     this.amplifyService.authStateChange$.subscribe(authState =>

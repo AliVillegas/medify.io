@@ -14,11 +14,11 @@ import { Doctor } from '../Models/Doctor';
   styleUrls: ['./dr-new-appointment.component.scss']
 })
 export class DrNewAppointmentComponent implements OnInit {
-  private patientName: String
-  private userId:String
-  private appointments:Appointment[]
-  private location:String
-  private patient:Patient
+  public patientName: String
+  public userId:String
+  public appointments:Appointment[]
+  public location:String
+  public patient:Patient
   privatePatientsUrl = 'https://api.jsonbin.io/b/5db648c2fe2f084c49258cb1'
   privateDoctorsUrl = 'https://api.jsonbin.io/b/5db64a818c3b0a4aac6920d9'
   newAppointmentForm: FormGroup

@@ -31,7 +31,7 @@ export class AppointmentDetailCardComponent implements OnInit {
 
   appointments: Appointment[]
 
-  constructor(private userData: UserdataService) { }
+  constructor(public userData: UserdataService) { }
 
   ngOnInit() {
     this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);

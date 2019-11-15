@@ -30,11 +30,11 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
   privateDoctorsUrl = 'https://api.jsonbin.io/b/5db64a818c3b0a4aac6920d9'
   public medControl: FormControl = new FormControl();
   public medFilter: FormControl = new FormControl();
-  private location:String
-  private userId:String
-  private drName:String
+  public location:String
+  public userId:String
+  public drName:String
   public filteredMeds: ReplaySubject<Medicine[]> = new ReplaySubject<Medicine[]>(1);
-  private jsonData;
+  public jsonData;
   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
   createPrescriptionForm: FormGroup
   prescriptionTitleControl = new FormControl('');

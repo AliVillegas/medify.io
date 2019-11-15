@@ -8,7 +8,7 @@ import { Prescription } from '../Models/Prescription';
   styleUrls: ['./history-dashboard-card.component.scss']
 })
 export class HistoryDashboardCardComponent implements OnInit {
-  private prescriptions:Prescription[]
+  public prescriptions:Prescription[]
 
   constructor(
     private userData:UserdataService

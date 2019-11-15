@@ -53,8 +53,9 @@ import { HistoryDetailCardComponent } from './history-detail-card/history-detail
 import { PrescriptionDetailCardComponent } from './prescription-detail-card/prescription-detail-card.component';
 import { AboutComponent } from './about/about.component';
 
-import {AmplifyAngularModule, AmplifyService} from 'aws-amplify-angular'
+import {AmplifyAngularModule, AmplifyService, AmplifyModules} from 'aws-amplify-angular'
 import { AuthGuardService } from './auth-guard.service';
+import { Auth } from 'aws-amplify';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -111,8 +112,7 @@ const material = [
     AppointmentDetailCardComponent,
     HistoryDetailCardComponent,
     PrescriptionDetailCardComponent,
-    AboutComponent,
-  ],
+    AboutComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -130,7 +130,14 @@ const material = [
     })
   ],
   exports: [material],
-  providers: [AmplifyService,AuthGuardService],
+  providers: [AmplifyService,AuthGuardService,{
+    provide: AmplifyService,
+    useFactory:  () => {
+      return AmplifyModules({
+        Auth
+      });
+    }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

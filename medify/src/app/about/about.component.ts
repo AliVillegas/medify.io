@@ -9,7 +9,7 @@ import { SidebarDataService } from '../sidebar-data.service';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) { }
+  constructor(public navData: NavbarDataService, public sidebarData: SidebarDataService) { }
 
   ngOnInit() {
     this.initializeNavbarStatus()

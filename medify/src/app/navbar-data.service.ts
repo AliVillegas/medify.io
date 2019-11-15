@@ -6,10 +6,10 @@ import { Location } from '@angular/common';
   providedIn: 'root'
 })
 export class NavbarDataService {
-  private isLandingPage = new BehaviorSubject<Boolean>(false);
-  private isDashboardPage = new BehaviorSubject<Boolean>(false);
-  private hasReturnArrow = new BehaviorSubject<Boolean>(false);
-  private pageLocation: BehaviorSubject<Location>
+  public isLandingPage = new BehaviorSubject<Boolean>(false);
+  public isDashboardPage = new BehaviorSubject<Boolean>(false);
+  public hasReturnArrow = new BehaviorSubject<Boolean>(false);
+  public pageLocation: BehaviorSubject<Location>
   currentPageLocation:Observable<Location>
   currentIsLanding = this.isLandingPage.asObservable();
   currentDashboard = this.isDashboardPage.asObservable();

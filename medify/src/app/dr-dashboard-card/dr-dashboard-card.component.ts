@@ -22,7 +22,7 @@ import { trigger, style, animate, transition, query, state, keyframes, stagger }
 
 
 export class DrDashboardCardComponent implements OnInit {
-  private appointments: Appointment[];
+  public appointments: Appointment[];
 
   constructor(private userData: UserdataService) {
   }

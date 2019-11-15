@@ -5,12 +5,13 @@ import { AmplifyService } from "aws-amplify-angular";
 @Injectable()
 export class AuthGuardService implements CanActivate {
   constructor(
-    private amplifyService: AmplifyService,
+    public amplifyService: AmplifyService,
     private _router: Router
   ) {}
 
-  canActivate() {
+  public canActivate() {
     console.log("AuthGuard#canActivate called");
+    this.amplifyService = this.amplifyService
     return this.amplifyService
       .auth()
       .currentAuthenticatedUser()

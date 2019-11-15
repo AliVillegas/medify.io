@@ -9,9 +9,9 @@ import { Appointment } from '../Models/Appointment';
 })
 export class AppointmentDashboardCardComponent implements OnInit {
 
-  private appointments: Appointment[];
+  public appointments: Appointment[];
 
-  constructor(private userData: UserdataService) {
+  constructor(public userData: UserdataService) {
   }
   
   ngOnInit() {

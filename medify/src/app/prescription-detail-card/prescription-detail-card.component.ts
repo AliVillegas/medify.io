@@ -28,7 +28,7 @@ import { UserdataService } from '../userdata.service';
   ]
 })
 export class PrescriptionDetailCardComponent implements OnInit {
-  private prescriptions:Prescription[]
+  public prescriptions:Prescription[]
   constructor(
     private userData:UserdataService
   ) { }
