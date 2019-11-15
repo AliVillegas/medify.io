@@ -1,0 +1,180 @@
+{
+    "navbar": {
+        "title": "Medify",
+        "loginPatient": "Patient",
+        "loginDoctor": "Doctor"
+    },
+    "sidebar": {
+        "title": "Medify",
+        "li1": "Appointments",
+        "li2": "History",
+        "li3": "Prescriptions",
+        "li4": "About",
+        "register": "Register",
+        "registerPatient": "Register Patient",
+        "registerDoctor": "Register Doctor"
+    },
+    "sidebarPatient": {
+        "title": "Medify",
+        "li1": "Home",
+        "li2": "Appointments",
+        "li3": "History",
+        "li4": "Prescriptions",
+        "li5": "Profile",
+        "logout": "Sign Out"
+    },
+    "sidebarDoctor": {
+        "title": "Medify",
+        "li1": "Home",
+        "logout": "Sign Out"
+    },
+    "landingPage": {
+        "carousel": {
+            "img1-title": "Your doctors in one place",
+            "img2-title": "Studies, diseases and prescriptions",
+            "img3-title": "Organize medical appointments"
+        },
+        "section1": {
+            "title": "The answer to your problems",
+            "bold": "Medify",
+            "text": "helps you manage your medical history, appointments and prescriptions in one place."
+        },
+        "section2": {
+            "title": "Your data, secure",
+            "bold": "Medify",
+            "text": "keeps your information safe with Blockchain technology."
+        },
+        "section3": {
+            "title": "Organize your medical appointments",
+            "item1": "Keep an agenda of your appointments",
+            "item2": "Re-schedule medical appointments",
+            "item3": "Check past appointments",
+            "bold": "Medify"
+        },
+        "section4": {
+            "title": "Manage you medical history",
+            "item1": "Enter your information",
+            "item2": "Share with your doctor",
+            "item3": "Update your history",
+            "bold": "Medify"
+        },
+        "section5": {
+            "title": "Medical Prescriptions",
+            "item1": "Receive prescriptions from your doctors",
+            "item2": "Redeem in pharmacies",
+            "bold": "Medify"
+        },
+        "footer": {
+            "title": "MEDIFY",
+            "subtitle": "Services",
+            "service1": "Medical Appointments",
+            "service2": "Medical History",
+            "service3": "Medical Prescriptions",
+            "medify": "Medify",
+            "about": "About us",
+            "login": "Login"
+        }
+    },
+    "dashboardPatient": {
+        "title1": "My Medical Appointments",
+        "title2": "My Medical History",
+        "title3": "My Medical Prescriptions"
+    },
+    "modalQR": {
+        "view": "View Code"
+    },
+    "appointmentCard": {
+        "reason": "Reason: ",
+        "time": "Time: ",
+        "address": "Address: ",
+        "more": "View More"
+    },
+    "historyCard": {
+        "title": "Diagnosis",
+        "reason": "Appointment: ",
+        "date": "Date: ",
+        "prescription": "Prescribed"
+    },
+    "historyCard2": {
+        "title": "Treatments",
+        "treatment": "Treatment",
+        "condition": "Condition"
+    },
+    "prescriptionCard": {
+        "doctorName": "Doctor: ",
+        "reason": "Reason: ",
+        "more": "View More"
+    },
+    "appointmentDetail": {
+        "title": "My Medical Appointments",
+        "appointment": "Appointment: ",
+        "time": "Time: ",
+        "date": "Date: ",
+        "address": "Address: "
+    },
+    "historyDetail": {
+        "title": "My Medical History",
+        "cardTitle": "Diagnosis: ",
+        "reason": "Appointment",
+        "button": "View Prescription"
+    },
+    "prescriptionDetail": {
+        "title": "My Medical Prescriptions",
+        "appointment": "Appointment: ",
+        "button": "Share",
+        "valid": "Valid until "
+    },
+    "profile": {
+        "title": "My Profile",
+        "subtitle1": "Mi Information",
+        "li1": "Name: ",
+        "li2": "e-mail: ",
+        "li3": "Date of Birth: ",
+        "li4": "Blood Type: ",
+        "subtitle2": " My Statistics",
+        "stat1": "Medical Appointments and Prescriptions",
+        "stat2": "Appointments with my doctors"
+    },
+    "dashboardDoctor": {
+        "title": "Schedule",
+        "button": "Add Appointment"
+    },
+    "patientInfo": {
+        "title": "Patient's Profile",
+        "li1": "Blood Type: ",
+        "li2": "Weight: ",
+        "li3": "Height: ",
+        "li4": "Chronic Diseases: ",
+        "li5": "Alergies: ",
+        "li6": "Additional Notes: ",
+        "button": "Add Prescription"
+    },
+    "addPrescriptionQR": {
+        "title": "Please enter the patient's code",
+        "placeHolder": "Patient's code",
+        "button": "Continue"
+    },
+    "createPrescription": {
+        "title": "New Prescription",
+        "labelTitle": "Title",
+        "labelDiagnosis": "Diagnosis",
+        "selectPlaceholder": "Please Select: ",
+        "selectListTitle": "Medicines Selected: ",
+        "button": "Continue"
+    },
+    "addAppointmentQR": {
+        "title": "Please enter the patient's code",
+        "placeHolder": "Patient's code",
+        "button": "Continue"
+    },
+    "createAppointment": {
+        "title": "New Appointment",
+        "cardHeader": "Patient: ",
+        "labelTitle": "Title",
+        "labelLocation": "Address",
+        "labelDate": "Choose Date",
+        "labelHour": "Choose Start Time ",
+        "labelHour2": "Choose End Time ",
+        "button": "Confirm Appointment"
+    }
+}
