@@ -6,6 +6,8 @@ import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
 import { UserdataService } from '../userdata.service';
 import { Appointment } from '../Models/Appointment';
+import { HttpClient } from '@angular/common/http';
+import { Doctor } from '../Models/Doctor';
 @Component({
   selector: 'app-dr-patient-info',
   templateUrl: './dr-patient-info.component.html',
@@ -29,22 +31,34 @@ export class DrPatientInfoComponent implements OnInit {
     private _location: Location,
     private userData: UserdataService,
     private activateRoute: ActivatedRoute,
+    private http: HttpClient
     ) { 
   }
   ngOnInit() {
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.patientId = params.get('patientId') });
-    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
-    this.appointments.forEach(app =>{
-      if(app.patient.id == this.patientId){
-        this.name = app.patient.name
-        this.bloodType = app.patient.bloodType
-        this.weight = app.patient.weight
-        this.height = app.patient.height
-        this.cronicDiseases = app.patient.cronicDiseases
-        this.alergies = app.patient.alergies
-        this.notes = app.patient.notes
+
+    var loopbackPatientsUrl = 'http://localhost:3000/patients/'
+    this.http.get(loopbackPatientsUrl.concat(this.patientId)).subscribe(
+      data => {
+        console.log('success', data)
+        if(data['weight'] != undefined)
+          this.weight = data['weight']
+
+        if(data['height'] != undefined)
+          this.height = data['height']
+        if(data['bloodType'] != undefined)
+          this.bloodType = data['bloodType']
+        if(data['notes'] != undefined)
+          this.notes = data['notes']
+        if(data['alergies'] != undefined)
+          this.alergies = data['alergies']
+        if(data['cronicDiseases'] != undefined)
+          this.cronicDiseases = data['cronicDiseases']
+      },
+      error => {
+
       }
-    })
+    )
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 

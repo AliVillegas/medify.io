@@ -171,6 +171,7 @@
         "title": "New Appointment",
         "cardHeader": "Patient: ",
         "labelTitle": "Title",
+        "labelLocation": "Address",
         "labelDate": "Choose Date",
         "labelHour": "Choose Start Time ",
         "labelHour2": "Choose End Time ",

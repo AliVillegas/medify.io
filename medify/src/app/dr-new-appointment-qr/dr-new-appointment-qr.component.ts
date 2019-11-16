@@ -3,6 +3,10 @@ import { NavbarDataService } from '../navbar-data.service';
 import { SidebarDataService } from '../sidebar-data.service';
 import { Location } from '@angular/common';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { loopbackConnPatientsUrl } from '../loopbackConnectors';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dr-new-appointment-qr',
@@ -13,12 +17,16 @@ export class DrNewAppointmentQRComponent implements OnInit {
 
   codeFormGroup: FormGroup;
   codeFormControl = new FormControl('');
-
+  loopbackPatientsUrl = loopbackConnPatientsUrl
+  errorMessage = ""
   constructor(
     private navData: NavbarDataService,
     private sidebarData: SidebarDataService,
     private fb: FormBuilder,
-    private _location: Location
+    private http:HttpClient,
+    private _location: Location,
+    private router: Router,
+    private translationService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -28,6 +36,47 @@ export class DrNewAppointmentQRComponent implements OnInit {
     this.codeFormGroup = this.fb.group({
       code: ''
     })
+
+  }
+
+
+  onClickSubmit( code:string){
+    console.log("TRANS" + this.translationService.getLangs())
+    var msgMap = {
+      "UserIncorrect" : "Usuario incorrecto",
+      "EmptyField": "Favor de Llenar Campo",
+    }
+    if(this.translationService.currentLang == 'es'){
+      msgMap = {
+      "UserIncorrect" : "Usuario incorrecto",
+      "EmptyField": "Favor de Llenar Campo",
+      }
+    }
+    else if(this.translationService.currentLang == 'en'){
+      msgMap = {
+      "UserIncorrect" : "Incorrect User",
+      "EmptyField": "Please fill the input box"
+      }
+    }
+    if(code != "" && code != undefined){
+      console.log("Entered CODE")
+      this.http.get(this.loopbackPatientsUrl.concat(code)).subscribe(
+        data => {
+          var redirectString = "dr/appointment/"
+          redirectString += code
+          this.router.navigateByUrl(redirectString);
+        },
+        error =>{
+          this.errorMessage = msgMap.UserIncorrect
+          console.clear()
+        }
+      );
+    }
+    else{
+      this.errorMessage = msgMap.EmptyField
+    }
+    
+    //href="dr/appointment/create"
 
   }
 

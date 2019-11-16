@@ -5,16 +5,16 @@
         <h4 class="text-center ml-auto">{{ 'addAppointmentQR.title' | translate}}</h4>
         <div class="w-75 mx-auto my-5">
             <form [formGroup]="codeFormGroup">
+                <div class="text-danger text-centered mx-auto">{{errorMessage}}</div>
                 <label class="lead text-muted">{{'addAppointmentQR.placeHolder' | translate}}</label>
                 <mat-form-field class="w-100">
-                    <input matInput formControlName="code" required>
+                    <input matInput [formControl]="codeFormControl" formControlName="code" required>
                 </mat-form-field>
             </form>
         </div>
 
         <div>
-            <a href="dr/appointment/create" data-toggle="tooltip" title="Continuar nueva receta"
-                class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addAppointmentQR.button' | translate}}
+            <a data-toggle="tooltip" (click)="onClickSubmit(codeFormControl.value)" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addAppointmentQR.button' | translate}}
             </a>
         </div>
 

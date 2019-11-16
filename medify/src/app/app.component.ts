@@ -5,6 +5,8 @@ import { Appointment } from './Models/Appointment';
 import { Prescription } from './Models/Prescription';
 import { Patient } from './Models/Patient';
 import { Doctor } from './Models/Doctor';
+import { Auth } from 'aws-amplify';
+import { loopbackConnPatientsUrl, loopbackConnDoctorsUrl } from './loopbackConnectors';
 
 
 @Component({
@@ -14,15 +16,19 @@ import { Doctor } from './Models/Doctor';
 })
 export class AppComponent {
   
-
+  dataIsLoaded:Boolean = false
   appointments:Appointment[]
   prescriptions:Prescription[]
   patient:Patient
   doctor:Doctor
+  loopbackPatientsUrl = loopbackConnPatientsUrl
+  loopbackDoctorsUrl = loopbackConnDoctorsUrl
   constructor(public http: HttpClient,public userData:UserdataService
     ) {
       this.appointments = []
       this.prescriptions = []
+      
+      /*
       if(localStorage.getItem("userName")){
         userData.changeName(localStorage.getItem("userName"))
         userData.changeEmail(localStorage.getItem("userEmail"))
@@ -47,6 +53,46 @@ export class AppComponent {
         this.doctor = JSON.parse(localStorage.getItem("doctor"))
         this.userData.changeDoctor(this.doctor)
       }
+      */
+  }
+
+  ngOnInit(){
+    Auth.currentSession()
+        .then(data => {
+          var user = data.getIdToken().decodePayload();
+          var userId = user['email']
+          if(localStorage.getItem("isDoctor") == "false"){
+            //console.log("isPatient")
+            this.http.get(this.loopbackPatientsUrl.concat(userId)).subscribe(
+              data => {
+                this.appointments = data['appointments']
+                this.prescriptions = data['prescriptions']
+                this.userData.changeName(data['name'])
+                this.userData.changeEmail(data['id'])
+                this.userData.changeAppointments(this.appointments)
+                this.userData.changePrescriptions(this.prescriptions)
+                this.dataIsLoaded = true
+              }
+            )
+          }
+    
+          else{
+           // console.log("isDoctor")
+           this.http.get(this.loopbackDoctorsUrl.concat(userId)).subscribe(
+              data=>{
+                this.appointments = data['appointments']
+                this.userData.changeName(data['name'])
+                this.userData.changeEmail(data['id'])
+                this.userData.changeServiceId(data['serviceId'])
+                this.userData.changeAppointments(this.appointments)
+                this.userData.changePrescriptions(this.prescriptions)
+                this.dataIsLoaded = true;
+
+              }
+            )
+          }
+        });
+      
   }
 
 

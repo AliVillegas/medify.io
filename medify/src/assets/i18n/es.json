@@ -171,6 +171,7 @@
         "title": "Nueva cita",
         "cardHeader": "Paciente: ",
         "labelTitle": "Titulo",
+        "labelLocation": "Dirección",
         "labelDate": "Elegir Fecha",
         "labelHour": "Elegir Hora de Inicio ",
         "labelHour2": "Elegir Hora de Final ",

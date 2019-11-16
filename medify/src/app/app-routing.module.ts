@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'dr/new-appointment', component: DrNewAppointmentComponent },
   { path: 'dr/patient-info/:patientId', component: DrPatientInfoComponent },
   { path: 'dr/appointment/patient-qr', component: DrNewAppointmentQRComponent },
-  { path: 'dr/appointment/create', component: DrNewAppointmentComponent },
+  { path: 'dr/appointment/:patientId', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr/:patientId', component: DrNewPrescriptionQRComponent },
   { path: 'dr/prescription/create/:patientId', component: DrCreatePrescriptionComponent },
   { path: 'patient/dashboard', component: DashboardComponent,canActivate: [AuthGuardService] },

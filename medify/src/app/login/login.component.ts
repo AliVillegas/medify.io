@@ -11,6 +11,7 @@ import { Prescription } from '../Models/Prescription';
 import { Med } from '../Models/Med';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Auth } from 'aws-amplify';
+import {loopbackConnDoctorsUrl, loopbackConnPatientsUrl} from '../loopbackConnectors'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -106,23 +107,45 @@ export class LoginComponent implements OnInit {
             }
 
             
-            var loopbackDoctorsUrl = 'http://localhost:3000/doctors/'
-            var loopbackPatientsUrl = 'http://localhost:3000/patients/'
+            var loopbackDoctorsUrl = loopbackConnDoctorsUrl
+            var loopbackPatientsUrl =  loopbackConnPatientsUrl
             var found = false; 
-              this.http.get(loopbackDoctorsUrl.concat(user['sub'])).subscribe(
+              this.http.get(loopbackDoctorsUrl.concat(user['email'])).subscribe(
                 data => {
                   console.log('success', data)
                   found = true;
+                  this.userData.changeName(user['custom:name'])
+                  this.userData.changeEmail(user['email'])
+                  this.userData.changeId(user['email'])
+                  this.userData.changeUserIsDoctor(true)
+                  if (data['appointments'] != undefined){
+                    this.appointments = data['appointments']
+                    console.log(this.appointments)
+                    this.userData.changeAppointments(this.appointments)
+                    localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                    var  doctor = data as Doctor
+                    this.userData.changeDoctor(doctor)
+                  }
                   
                 } ,
                 error => {
                   var err = error.HttpErrorResponse
                   console.log(err)
                   console.log('oops', error)
-                  this.http.get(loopbackPatientsUrl.concat(user['sub'])).subscribe(
+                  this.http.get(loopbackPatientsUrl.concat(user['email'])).subscribe(
                     data => {
                       found = true;
                       console.log('success', data)
+                      this.userData.changeName(user['custom:name'])
+                      this.userData.changeEmail(user['email'])
+                      this.userData.changeId(user['email'])
+                      this.userData.changeUserIsDoctor(false)
+                      if (data['appointments'] != undefined){
+                        this.appointments = data['appointments']
+                        console.log(this.appointments)
+                        this.userData.changeAppointments(this.appointments)
+                        localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                      }
                     } ,
                     error => {
                       var err = error.HttpErrorResponse
@@ -134,10 +157,11 @@ export class LoginComponent implements OnInit {
                           this.http.post(loopbackDoctorsUrl,
                             new Object({
                               name : user['custom:name'],
-                              id : user['sub'],
-                              email: user['email'],
+                              id : user['email'],
+                              cognitoId: user['sub'],
                               institute: institute,
-                              serviceId: user['custom:serviceId']
+                              serviceId: user['custom:serviceId'],
+                              appointments : []
                             })  
                           ).subscribe(
                             data => {
@@ -151,8 +175,10 @@ export class LoginComponent implements OnInit {
                           this.http.post(loopbackPatientsUrl,
                             new Object({
                               name : user['custom:name'],
-                              id : user['sub'],
-                              email: user['email'],
+                              id : user['email'],
+                              cognitoId: user['sub'],
+                              appointments : [],
+                              prescriptions: []
                             })
                           ).subscribe(
                             data => {
@@ -173,9 +199,12 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("userEmail", user['email'].toString())
             if (!cognitoUserIsDoctor) {
               this.router.navigateByUrl('patient/dashboard');
+              localStorage.setItem("isDoctor", "false")
             }
             else{
               this.router.navigateByUrl('dr/dashboard');
+              localStorage.setItem("isDoctor", "true")
+
             }
           }
             
@@ -199,7 +228,7 @@ export class LoginComponent implements OnInit {
     this.http.get(this.privateDoctorsUrl,{headers}).toPromise().then(data => {
       for (let element in data["doctors"]) {
         let doctor = data["doctors"][element]["data"]
-        this.doctors.push(new Doctor(doctor["name"], doctor["email"], doctor["password"], doctor["serviceId"], doctor["institute"], doctor["id"]))
+        this.doctors.push(new Doctor(doctor["name"], doctor["serviceId"], doctor["institute"], doctor["id"]))
       }
 
       this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
@@ -264,7 +293,7 @@ export class LoginComponent implements OnInit {
               })
               this.appointments.push(new Appointment(appointment["concept"], appointment["dayName"],
                 appointment["dayNumber"], appointment["startTime"], appointment["endTime"],
-                appointment["location"], appointment["month"], patient, doctor, appointment["id"]))
+                appointment["location"], appointment["month"], patient, doctor))
             }
 
             this.patient = patient
@@ -294,7 +323,7 @@ export class LoginComponent implements OnInit {
     }
     else if (this.name == 'doctor') {
       this.doctors.forEach(doctor => {
-        if (doctor.email == email && doctor.password == password) {
+        if (email == email) {
           this.http.get(this.privateDoctorsUrl, {headers}).toPromise().then(data => {
             let fullData = data["doctors"][doctor.getId()]["data"]
             var patient: Patient;
@@ -307,17 +336,15 @@ export class LoginComponent implements OnInit {
               })
               this.appointments.push(new Appointment(appointment["concept"], appointment["dayName"],
                 appointment["dayNumber"], appointment["startTime"], appointment["endTime"],
-                appointment["location"], appointment["month"], patient, doctor, appointment["id"]))
+                appointment["location"], appointment["month"], patient, doctor))
               //UPDATE USER SERVICE
               this.userData.changeName(doctor.name)
-              this.userData.changeEmail(doctor.email)
               this.userData.changeId(doctor.id)
               this.userData.changeUserIsDoctor(true)
               this.userData.changeAppointments(this.appointments)
               this.userData.changeServiceId(doctor.serviceId)
               this.userData.changeDoctor(doctor)
               localStorage.setItem("userName", doctor.name.toString())
-              localStorage.setItem("userEmail", doctor.email.toString())
               localStorage.setItem("userId", doctor.id.toString())
               localStorage.setItem("userServiceId", doctor.serviceId.toString())
               localStorage.setItem("appointments", JSON.stringify(this.appointments))

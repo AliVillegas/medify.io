@@ -15,7 +15,7 @@ export class UserdataService {
   private name = new BehaviorSubject<String>("");
   private email = new BehaviorSubject<String>("");
   //private password = new BehaviorSubject<String>("");
-  private doctor = new BehaviorSubject<Doctor>(new Doctor("","","","","",""))
+  private doctor = new BehaviorSubject<Doctor>(new Doctor("","","",""))
   private patient = new BehaviorSubject<Patient>(new Patient("","","",""))
   private id = new BehaviorSubject<String>("");
   private serviceId = new BehaviorSubject<String>("");

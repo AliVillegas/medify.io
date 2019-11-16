@@ -28,8 +28,10 @@ export class DrDashboardCardComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
-
+    console.log("APPOINTMENTS")
+    console.log(this.appointments)
   }
 
 }

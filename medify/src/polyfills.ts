@@ -1,3 +1,7 @@
+import * as buffer from 'buffer';
+
+(window as any).Buffer = buffer;
+
 (window as any).global = window;
 (window as any).process = {
   env: { DEBUG: undefined },
