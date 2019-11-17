@@ -35,7 +35,8 @@ export class PrescriptionDetailCardComponent implements OnInit {
 
   ngOnInit() {
     this.userData.currentPrescriptions.subscribe(pres => this.prescriptions = pres);
-    
+    console.log(this.userData.currentPrescriptions)
+
   }
 
 

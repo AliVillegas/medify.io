@@ -8,6 +8,7 @@ import { UserdataService } from '../userdata.service';
 import { Appointment } from '../Models/Appointment';
 import { HttpClient } from '@angular/common/http';
 import { Doctor } from '../Models/Doctor';
+import { loopbackConnPatientsUrl } from '../loopbackConnectors';
 @Component({
   selector: 'app-dr-patient-info',
   templateUrl: './dr-patient-info.component.html',
@@ -37,23 +38,44 @@ export class DrPatientInfoComponent implements OnInit {
   ngOnInit() {
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.patientId = params.get('patientId') });
 
-    var loopbackPatientsUrl = 'http://localhost:3000/patients/'
+    var loopbackPatientsUrl = loopbackConnPatientsUrl
     this.http.get(loopbackPatientsUrl.concat(this.patientId)).subscribe(
       data => {
         console.log('success', data)
         if(data['weight'] != undefined)
           this.weight = data['weight']
+        if(data['weight'] == "" || data['weight'] == undefined){
+          this.weight = "-"
+        }
+        if(data['name'] != undefined)
+          this.name = data['name']
 
         if(data['height'] != undefined)
           this.height = data['height']
+        if(data['height'] == "" || data['height'] == undefined){
+          this.height = "-"
+        }
+
         if(data['bloodType'] != undefined)
           this.bloodType = data['bloodType']
+        if(data['bloodType'] == "" || data['weight'] == undefined){
+            this.bloodType = "-"
+        }
         if(data['notes'] != undefined)
           this.notes = data['notes']
+        if(data['bloodType'] == ""){
+            this.bloodType = "-"
+        }
         if(data['alergies'] != undefined)
           this.alergies = data['alergies']
+        if(data['alergies'] == "" || data['weight'] == undefined){
+            this.alergies = "-"
+        }
         if(data['cronicDiseases'] != undefined)
           this.cronicDiseases = data['cronicDiseases']
+        if(data['cronicDiseases'] == "" || data['weight'] == undefined){
+            this.cronicDiseases = "-"
+        }
       },
       error => {
 

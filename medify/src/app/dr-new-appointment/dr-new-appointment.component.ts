@@ -13,6 +13,7 @@ import { Auth } from 'aws-amplify';
 import { getMatTooltipInvalidPositionError } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastServiceService } from '../toast-service.service';
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-dr-new-appointment',
   templateUrl: './dr-new-appointment.component.html',
@@ -103,7 +104,7 @@ export class DrNewAppointmentComponent implements OnInit {
         var user = data.getIdToken().decodePayload();
         var doctorId = user['email']
         var doctorName = user['custom:name']
-        var doctorInstitute = 'consultorio' + user['custom:name']
+        var doctorInstitute = 'Consultorio' + user['custom:name']
         this.http.get(this.loopbackDoctorsUrl.concat(doctorId)).subscribe(
           data => {
             var doctorData = data
@@ -166,9 +167,9 @@ export class DrNewAppointmentComponent implements OnInit {
                 }
               }
               var dayName = msgMap[dayOfTheWeek]
-              var dayNumber = dateType.getDate()
-              if(dayNumber < 10){
-                dayNumber = parseInt("0" + dayNumber.toString());
+              var dayNumber = dateType.getDate().toString()
+              if(parseInt(dayNumber) < 10){
+                dayNumber = "0" + dayNumber.toString();
               }
               var monthOfYear = dateType.getMonth()
               var month = msgMapMonth[monthOfYear]
@@ -243,78 +244,5 @@ export class DrNewAppointmentComponent implements OnInit {
         );
     });
 
-  }
-  onClickSubmitz(title: String, date, start, end) {
-    console.log(title)
-    var concept = title
-    var month = date.toString().substring(4, 7)
-    var dayName = "Lunes"
-    var dayNumber = date.toString().substring(9, 10)
-    var startTime = start
-    var endTime = end
-    var patientId = "2"
-    var doctorId = this.userId
-    var location = "San Ángel #27 Alta Vira"
-    let headers = new HttpHeaders()
-    headers = headers.set("Content-Type", "application/json");
-    headers = headers.set("versioning", "false");
-    headers = headers.set("secret-key", "$2b$10$b3F3emDew3JC/JjHy/0Kgulzg1lNfKkhZ1kSrv3Owm58PhkgEOHQm")
-    this.http.get(this.privatePatientsUrl, { headers }).toPromise().then(data => {
-      for (let element in data["patients"]) {
-        if (element == patientId) {
-          let patient = data["patients"][element]["data"]
-          this.patient = new Patient(patient["name"], patient["email"], patient["password"], patient["id"])
-          this.patient.setWeight(patient["weight"])
-          this.patient.setHeight(patient["height"])
-          this.patient.setBloodType(patient["bloodType"])
-          this.patient.setAlergies(patient["alergies"])
-          this.patient.setNotes(patient["Notes"])
-          this.patient.setCronicDiseases(patient["cronicDiseases"])
-        }
-      }
-      var JSONData = data
-
-      var appointments = JSONData["patients"][patientId]["data"]["appointments"]
-      var appointment = {
-        "concept": concept,
-        "month": month,
-        "dayName": dayName,
-        "dayNumber": dayNumber,
-        "startTime": startTime,
-        "endtime": endTime,
-        "patientId": patientId,
-        "doctorId": doctorId,
-        "location": location
-      }
-      appointments[appointments.length] = appointment
-      console.log(JSONData)
-      this.http.put(this.privatePatientsUrl, JSON.stringify(JSONData), { headers }).toPromise().then(data => {
-        this.http.get(this.privateDoctorsUrl, { headers }).toPromise().then(data => {
-          var JSONData = data
-          var appointments = JSONData["doctors"][this.userId]["data"]["appointments"]
-          var appointment = {
-            "concept": concept,
-            "month": month,
-            "dayName": dayName,
-            "dayNumber": dayNumber,
-            "startTime": startTime,
-            "endtime": endTime,
-            "patientId": patientId,
-            "doctorId": doctorId,
-            "location": location
-          }
-          appointments[appointments.length] = appointment
-          this.http.put(this.privateDoctorsUrl, JSON.stringify(JSONData), { headers }).toPromise().then(data => {
-            if (localStorage.getItem("appointments")) {
-              var doctor: Doctor = JSON.parse(localStorage.getItem("doctor"))
-              this.appointments = JSON.parse(localStorage.getItem("appointments"))
-              //this.appointments.push(new Appointment(concept, dayName, dayNumber, startTime, endTime, location, month, this.patient, doctor, appointments.length))
-              this.userData.changeAppointments(this.appointments)
-            }
-          })
-          this.router.navigateByUrl('dr/dashboard');
-        })
-      })
-    })
   }
 }

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserdataService } from './userdata.service';
+
 import { Appointment } from './Models/Appointment';
 import { Prescription } from './Models/Prescription';
 import { Patient } from './Models/Patient';
 import { Doctor } from './Models/Doctor';
 import { Auth } from 'aws-amplify';
 import { loopbackConnPatientsUrl, loopbackConnDoctorsUrl } from './loopbackConnectors';
+import { AmplifyService } from 'aws-amplify-angular';
 
 
 @Component({
@@ -23,8 +25,11 @@ export class AppComponent {
   doctor:Doctor
   loopbackPatientsUrl = loopbackConnPatientsUrl
   loopbackDoctorsUrl = loopbackConnDoctorsUrl
-  constructor(public http: HttpClient,public userData:UserdataService
+  constructor(public http: HttpClient,public userData:UserdataService,
+    public amplifyService: AmplifyService
+
     ) {
+      this.amplifyService = amplifyService
       this.appointments = []
       this.prescriptions = []
       
@@ -57,13 +62,16 @@ export class AppComponent {
   }
 
   ngOnInit(){
+    this.amplifyService.authStateChange$.subscribe(authState =>
+      {
+    if (authState.state === "signedIn"){
     Auth.currentSession()
         .then(data => {
           var user = data.getIdToken().decodePayload();
           var userId = user['email']
           if(localStorage.getItem("isDoctor") == "false"){
-            //console.log("isPatient")
-            this.http.get(this.loopbackPatientsUrl.concat(userId)).subscribe(
+            console.log("isPatient")
+            this.http.get(this.loopbackPatientsUrl.concat(userId)).toPromise().then(
               data => {
                 this.appointments = data['appointments']
                 this.prescriptions = data['prescriptions']
@@ -77,8 +85,8 @@ export class AppComponent {
           }
     
           else{
-           // console.log("isDoctor")
-           this.http.get(this.loopbackDoctorsUrl.concat(userId)).subscribe(
+            console.log("isDoctor")
+           this.http.get(this.loopbackDoctorsUrl.concat(userId)).toPromise().then(
               data=>{
                 this.appointments = data['appointments']
                 this.userData.changeName(data['name'])
@@ -92,8 +100,10 @@ export class AppComponent {
             )
           }
         });
-      
-  }
+    }
+  })
+}
+
 
 
 }

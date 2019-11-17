@@ -13,6 +13,11 @@ import { MatOption } from '@angular/material/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Prescription } from '../Models/Prescription';
+import { Auth } from 'aws-amplify';
+import { ToastServiceService } from '../toast-service.service';
+import { loopbackConnMedsUrl, loopbackConnPatientsUrl } from '../loopbackConnectors';
+import { TranslateService } from '@ngx-translate/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-dr-create-prescription',
@@ -33,6 +38,12 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
   public location:String
   public userId:String
   public drName:String
+  public drEmail:String
+  public todaysDate:String
+  public institute:String
+  public loopbackMedsUrl = loopbackConnMedsUrl;
+  public loopbackPatientsUrl = loopbackConnPatientsUrl
+
   public filteredMeds: ReplaySubject<Medicine[]> = new ReplaySubject<Medicine[]>(1);
   public jsonData;
   @ViewChild('multiSelect', { static: true }) multiSelect: MatSelect;
@@ -49,26 +60,43 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
     private userData:UserdataService,
     private http:HttpClient,
     private activatedRoute:ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private toastService:ToastServiceService,
+    private translationService:TranslateService
   ) { }
 
   ngOnInit() {
     this.sub = this.activatedRoute.paramMap.subscribe(params => { this.patientId = params.get('patientId') });
-
-    this.userData.currentName.subscribe(name => this.drName = name); 
+    var today = new Date()
+    var month = today.getMonth()
+    var day = today.getDate()
+    var year= today.getFullYear()
+    this.todaysDate = ""
+    this.todaysDate +=  day + "/" + month + "/" + year;
+    Auth.currentSession()
+      .then(data => {
+        var user = data.getIdToken().decodePayload();
+          this.drName = user['custom:name']
+          this.institute = "Consultorio " + this.drName
+          this.drEmail = user['email']
+          this.http.get(this.loopbackMedsUrl).subscribe(
+            data=> {
+              this.medicines = data as Medicine[]
+              this.filteredMeds.next(this.medicines.slice());
+              this.medFilter.valueChanges
+              .pipe(takeUntil(this._onDestroy))
+              .subscribe(() => {
+                this.filterMedsMulti();
+              });
+            }
+          )
+      });
     this.userData.currentId.subscribe(id => this.userId = id); 
 
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 
 
-    this.filteredMeds.next(this.medicines.slice());
-
-    this.medFilter.valueChanges
-      .pipe(takeUntil(this._onDestroy))
-      .subscribe(() => {
-        this.filterMedsMulti();
-      });
 
     this.createPrescriptionForm = this.fb.group({
       title: '',
@@ -131,7 +159,124 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
     );
   }
 
-  onClickSubmit(title: String, diagnosis: String) {
+  onClickSubmit(title:string, diagnosis:string){
+    if(title == "" || title == undefined){
+      return
+    }
+    if(diagnosis == "" || diagnosis == undefined){
+      return
+    }
+    console.log(title)
+    console.log(diagnosis)
+    this.http.get(this.loopbackPatientsUrl.concat(this.patientId)).subscribe(
+      data => {
+        var patientData = data
+        var presTitle = title;
+        var presDiagnosis = diagnosis;
+        var date = new Date()
+        var presDate = ""
+        var month = date.getMonth()
+        var day = date.getDate()
+        var year= date.getFullYear()
+        presDate +=  day + "/" + month + "/" + year;
+        var endDate = new Date(new Date().getTime()+(5*24*60*60*1000));
+        var endMonth = endDate.getMonth()
+        var endDay = endDate.getDate()
+        var endYear = endDate.getFullYear()
+        var presEndDate = ""
+        presEndDate +=  endDay + "/" + endMonth + "/" + endYear;
+        var realMeds = []
+        if(this.selectedMeds != undefined && this.selectedMeds.length > 0 ){
+          this.selectedMeds.forEach(m => {
+            realMeds.push({
+              "name": m,
+              "delivered": "false"
+            })
+        });
+        }
+        
+        var msgMapMonth = {
+          0: "Ene",
+          1 : "Feb",
+          2: "Mar",
+          3: "Abr",
+          4: "May",
+          5: "Jun",
+          6: "Jul",
+          7: "Ago",
+          8: "Sep",
+          9: "Oct",
+          10: "Nov",
+          11: "Dic"
+        }
+        if(this.translationService.currentLang == 'en'){
+          msgMapMonth = {
+            0: "Jan",
+            1 : "Feb",
+            2: "Mar",
+            3: "Apr",
+            4: "May",
+            5: "Jun",
+            6: "Jul",
+            7: "Aug",
+            8: "Sep",
+            9: "Oct",
+            10: "Nov",
+            11: "Dec"
+          }
+        }
+
+        var presMonth = msgMapMonth[month]
+        var newPrescription = {
+          title: presTitle,
+          dayNumber: day,
+          details: presDiagnosis,
+          status : "-",
+          date: presDate,
+          endDate: presEndDate,
+          month: presMonth,
+          meds: realMeds,
+          doctor: {
+            name: this.drName,
+            institute: this.institute,
+            id: this.drEmail
+          }
+        }
+        console.log(newPrescription)
+        patientData['prescriptions'].push(newPrescription)
+        this.http.put(this.loopbackPatientsUrl.concat(this.patientId),patientData).subscribe(
+          data =>{
+            
+            this.toastService.changeIsVisible(true)
+            var patientName = patientData['name']
+            var toastMsg = {
+              "msg": "Nueva receta se ha enviado a "
+
+            }
+            if(this.translationService.currentLang == 'en'){
+              toastMsg = {
+                "msg": "New Prescription has been sent to "
+              }
+            }
+
+            toastMsg.msg += patientName
+            this.toastService.changeMessage(toastMsg["msg"].toString())
+            var redirectString = "dr/dashboard"
+            this.router.navigateByUrl(redirectString);
+            window.scroll(0,0);            
+            
+          }
+        )
+
+        
+
+      },
+      error =>{
+        console.clear()
+      }
+    );
+  }
+  onClickSubmitz(title: String, diagnosis: String) {
     if(title != "" && diagnosis != ""){
       let headers = new HttpHeaders()
       headers = headers.set("Content-Type", "application/json");

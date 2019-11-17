@@ -14,10 +14,10 @@ export class HistoryDashboardCardComponent implements OnInit {
     private userData:UserdataService
   ) { 
     this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
-    
   }
 
   ngOnInit() {
+    console.log(this.prescriptions)
   }
 
 }

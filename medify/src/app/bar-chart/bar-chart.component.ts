@@ -33,20 +33,25 @@ export class BarChartComponent implements OnInit {
    ngOnInit() {
      var prescriptionsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
      var appointmentsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
-    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
-    this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
-    this.appointments.forEach(app=>{
-      appointmentsData[this.monthsValue[app.month.toString()]] += 1
-    })
-    this.prescriptions.forEach(pre=>{
-      prescriptionsData[this.monthsValue[pre.month.toString()]] += 1
-    })
-    this.barChartData = [
-      {data:appointmentsData, label: 'Citas Médicas'},
-      {data:prescriptionsData, label: 'Recetas'}
-    ]
-    }
-
+    this.userData.currentAppointments.subscribe(appointments =>{  
+      this.appointments = appointments
+      this.userData.currentPrescriptions.subscribe(prescriptions => { 
+        this.prescriptions = prescriptions
+        this.appointments.forEach(app=>{
+          appointmentsData[this.monthsValue[app.month.toString()]] += 1
+        })
+        this.prescriptions.forEach(pre=>{
+          prescriptionsData[this.monthsValue[pre.month.toString()]] += 1
+        })
+        this.barChartData = [
+          {data:appointmentsData, label: 'Citas Médicas'},
+          {data:prescriptionsData, label: 'Recetas'}
+        ]
+      });
+    
+    });
+  }
+    
   public barChartOptions = {
     scaleShowVerticalLines: false,
     scaleShowHorizontalLines: false,

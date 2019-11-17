@@ -10,13 +10,13 @@
                 <mat-form-field class="w-100">
                     <input matInput [formControl]="codeFormControl" formControlName="code" required>
                 </mat-form-field>
+                <div>
+                    <input data-toggle="tooltip" (click)="onClickSubmit(codeFormControl.value)" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3" type="submit" value="{{ 'addAppointmentQR.button' | translate}}">
+                </div>
             </form>
         </div>
 
-        <div>
-            <a data-toggle="tooltip" (click)="onClickSubmit(codeFormControl.value)" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3">{{ 'addAppointmentQR.button' | translate}}
-            </a>
-        </div>
+
 
 
     </div>

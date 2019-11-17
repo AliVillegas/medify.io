@@ -29,11 +29,6 @@
                             <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li5' | translate}}
                                 </span>{{alergies}}
                             </li>
-                            <li class="list-group-item"><span class="font-weight-bold mr-1">{{ 'patientInfo.li6' | translate}}</span>
-                                <p>
-                                    {{notes}}
-                                </p>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -41,7 +36,7 @@
         </div>
         <div class="row mt-5">
             <div class="addDateDesktop mx-auto">
-                <a class="btn btn-lg btn-primary d-block" href="dr/prescription/patient-qr/{{patientId}}">
+                <a class="btn btn-lg btn-primary d-block" href="dr/prescription/{{patientId}}">
                     {{ 'patientInfo.button' | translate}}
                 </a>
 

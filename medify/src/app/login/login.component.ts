@@ -145,6 +145,10 @@ export class LoginComponent implements OnInit {
                         console.log(this.appointments)
                         this.userData.changeAppointments(this.appointments)
                         localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                        this.prescriptions = data['prescriptions']
+                      console.log(this.prescriptions)
+                      this.userData.changePrescriptions(this.prescriptions)
+                      localStorage.setItem("prescriptions", JSON.stringify(this.prescriptions))
                       }
                     } ,
                     error => {

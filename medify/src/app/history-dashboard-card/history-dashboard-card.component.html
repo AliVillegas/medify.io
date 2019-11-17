@@ -3,11 +3,12 @@
         <div class="card-header lead font-weight-bold text-center">{{ 'historyCard.title' | translate }} - {{prescription.title}}
         </div>
         <div class="card-body">
-            <h6 class="card-title">{{'historyCard.reason' | translate}} {{prescription.doctor.name}}</h6>
+            <h6 class="card-title"><span class="font-weight-bold">{{'historyCard.reason' | translate}} </span>{{prescription.doctor.name}}</h6>
             <ul class="list-unstyled card-text">
-                <li> {{'historyCard.date' | translate}} {{prescription.date}}</li>
-                <li> {{'historyCard.title' | translate}}: </li>
+                <li> <span class="font-weight-bold">{{'historyCard.date' | translate}}  </span>{{prescription.date}}</li>
+                <li> <span class="font-weight-bold">{{'historyCard.title' | translate}}: </span></li>
                 <div class="text-centered mx-auto">
+
                     {{prescription.details}}
                 </div>
             </ul>

@@ -6,8 +6,8 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }}
-                        {{prescription.title}}</h5>
+                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} {{prescription.title}}
+                    </h5>
                     <h5 class="text-right col-6">{{prescription.doctor.name}}</h5>
                 </div>
 
@@ -19,7 +19,7 @@
                         </ul>
                         <ul class="list-group col-2">
                             <div *ngFor="let med of prescription.meds">
-                                <div *ngIf="med.delivered; else notDelivered">
+                                <div *ngIf="med.delivered == 'true'; else notDelivered">
                                     <li class="list-group-item secondaryColor"> <i class="fas fa-check"></i></li>
                                 </div>
                                 <ng-template #notDelivered>

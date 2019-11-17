@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'dr/appointment/patient-qr', component: DrNewAppointmentQRComponent },
   { path: 'dr/appointment/:patientId', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr/:patientId', component: DrNewPrescriptionQRComponent },
-  { path: 'dr/prescription/create/:patientId', component: DrCreatePrescriptionComponent },
+  { path: 'dr/prescription/:patientId', component: DrCreatePrescriptionComponent },
   { path: 'patient/dashboard', component: DashboardComponent,canActivate: [AuthGuardService] },
   { path: 'patient/profile', component: PatientProfileComponent },
   { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
