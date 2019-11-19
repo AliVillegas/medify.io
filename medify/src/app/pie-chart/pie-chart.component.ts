@@ -15,8 +15,9 @@ export class PieChartComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
-    var labels:string[] = []
+    this.userData.currentAppointments.subscribe(appointments => {
+      this.appointments = appointments
+      var labels:string[] = []
     var data:number[] = []
     var graphData = {}
     this.appointments.forEach(app=>{
@@ -33,6 +34,8 @@ export class PieChartComponent implements OnInit {
       this.pieChartData.push(graphData[element])
     });
     this.pieChartLabels = labels
+    });
+    
   }
 
   public pieChartOptions = {
@@ -40,7 +43,12 @@ export class PieChartComponent implements OnInit {
   };
   public pieChartLabels = ['Dra. Pérez', 'Dr. Torres', 'Dentista Gomez', 'Dr. Lopez'];
   public pieChartType = 'pie';
-
+  public chartColors: any[] = [
+    { backgroundColor: "#edaaaa" },
+    { backgroundColor: "#eceba7" },
+    { backgroundColor: "#9cf196" },
+    { backgroundColor: "#ebce95" },
+  ];
   public pieChartData = [];
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {

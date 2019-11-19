@@ -51,5 +51,43 @@ export class DrNewAppointmentQRComponent implements OnInit {
     this.sidebarData.changeIsDoctor(true)
     this.sidebarData.changeIsPatient(false)
   }
+  onClickSubmit( code:string){
+    console.log("TRANS" + this.translationService.getLangs())
+    var msgMap = {
+      "UserIncorrect" : "Usuario no existe",
+      "EmptyField": "Favor de Llenar Campo",
+    }
+    if(this.translationService.currentLang == 'es'){
+      msgMap = {
+      "UserIncorrect" : "Usuario no existe",
+      "EmptyField": "Favor de Llenar Campo",
+      }
+    }
+    else if(this.translationService.currentLang == 'en'){
+      msgMap = {
+      "UserIncorrect" : "User not found",
+      "EmptyField": "Please fill the input box"
+      }
+    }
+    if(code != "" && code != undefined){
+      console.log("Entered CODE")
+      this.http.get(this.loopbackPatientsUrl.concat(code)).subscribe(
+        data => {
+          var redirectString = "dr/appointment/"
+          redirectString += code
+          this.router.navigateByUrl(redirectString);
+        },
+        error =>{
+          this.errorMessage = msgMap.UserIncorrect
+          console.clear()
+        }
+      );
+    }
+    else{
+      this.errorMessage = msgMap.EmptyField
+    }
+    
+    //href="dr/appointment/create"
 
+  }
 }

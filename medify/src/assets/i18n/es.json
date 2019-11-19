@@ -25,7 +25,7 @@
     },
     "sidebarDoctor": {
         "title": "Medify",
-        "li1": "Home",
+        "li1": "Inicio",
         "logout": "Cerrar Sesión"
     },
     "landingPage": {
@@ -137,7 +137,9 @@
     },
     "dashboardDoctor": {
         "title": "Agenda",
-        "button": "Añadir Cita"
+        "button": "Añadir Cita",
+        "emptySchedule": "Aún no se han creado citas, dar clic  en 'Añadir Cita' para agendar una nueva"
+
     },
     "patientInfo": {
         "title": "Perfil del paciente",

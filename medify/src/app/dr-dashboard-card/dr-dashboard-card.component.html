@@ -21,3 +21,8 @@
         <div class="lineDividerBlue mt-3 mb-3 "> </div>
     </div>
 </div>
+
+<div *ngIf="appointments.length==0">
+    <div class="secondarycolor h3 text-centered">{{ 'dashboardDoctor.emptySchedule' | translate}}
+    </div>
+</div>

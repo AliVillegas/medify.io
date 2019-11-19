@@ -8,7 +8,6 @@ import awsconfig from './aws-exports';
 
 
 Amplify.configure(awsconfig);
-
 if (environment.production) {
   enableProdMode();
 }

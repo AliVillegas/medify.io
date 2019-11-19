@@ -137,7 +137,8 @@
     },
     "dashboardDoctor": {
         "title": "Schedule",
-        "button": "Add Appointment"
+        "button": "Add Appointment",
+        "emptySchedule": "You have not created any appointments click 'add appointment' to create one"
     },
     "patientInfo": {
         "title": "Patient's Profile",
