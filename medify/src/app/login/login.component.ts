@@ -24,7 +24,7 @@ import { $ } from 'protractor';
 
 export class LoginComponent implements OnInit {
   public signUpConfig = {
-    header: 'Crear Cuenta',
+    header: 'Sign Up',
     hideAllDefaults: true,
     defaultCountryCode: '1',
     signUpFields: [
@@ -36,21 +36,21 @@ export class LoginComponent implements OnInit {
         type: 'string',
       },
       {
-        label: 'Confirmar Email',
+        label: 'Confirm Email',
         key: 'email',
         required: true,
         displayOrder: 3,
         type: 'string',
       },
       {
-        label: 'Contraseña',
+        label: 'Password',
         key: 'password',
         required: true,
         displayOrder: 4,
         type: 'password'
       },
       {
-        label: 'Nombre',
+        label: 'Name',
         key: 'custom:name',
         required: true,
         displayOrder: 1,

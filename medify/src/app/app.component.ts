@@ -64,6 +64,7 @@ export class AppComponent {
   ngOnInit(){
     this.amplifyService.authStateChange$.subscribe(authState =>
       {
+        console.log("Called APP COMPONENT")
     if (authState.state === "signedIn"){
     Auth.currentSession()
         .then(data => {

@@ -10,6 +10,9 @@ import {
   query,
   stagger
 } from '@angular/animations';
+import { UserdataService } from '../userdata.service';
+import { Prescription } from '../Models/Prescription';
+import { Appointment } from '../Models/Appointment';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,8 +20,14 @@ import {
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  public prescriptions:Prescription[]
+  public appointments:Appointment[]
+  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService,
+    private userData:UserdataService) { 
+      this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
+      this.userData.currentAppointments.subscribe(app => this.appointments = app);
 
-  constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) { }
+    }
 
   ngOnInit() {
     this.initializeNavbarStatus()

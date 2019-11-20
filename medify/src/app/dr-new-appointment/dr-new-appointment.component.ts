@@ -208,22 +208,25 @@ export class DrNewAppointmentComponent implements OnInit {
                   console.log("success")
                   this.http.put(this.loopbackPatientsUrl.concat(patientId),patientData).subscribe(
                     data =>{
-                      
+                      this.userData.changeAppointments(doctorData['appointments'])
                       this.toastService.changeIsVisible(true)
+                      var msgToSendEs ="Nueva cita se ha creado y enviado a "
+                      msgToSendEs += patientData['name']
+                      var msgToSendEn = "New Appointment has been Created and sent to"
+                      msgToSendEn += patientData['name']
                       var toastMsg = {
-                        "msg": "Nueva cita se ha creado"
+                        "msg": msgToSendEs
 
                       }
                       if(this.translationService.currentLang == 'en'){
                         toastMsg = {
-                          "msg": "New Appointment has been Created"
+                          "msg": msgToSendEn
                         }
                       }
                       this.toastService.changeMessage(toastMsg["msg"].toString())
                       var redirectString = "dr/dashboard"
                       this.router.navigateByUrl(redirectString);
                       window.scroll(0,0);
-                      
                     }
                   )
 

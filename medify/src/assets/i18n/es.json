@@ -11,8 +11,8 @@
         "li3": "Recetas",
         "li4": "Acerca De",
         "register": "Inicio de Sesión",
-        "registerPatient": "Inicio Sesión Paciente",
-        "registerDoctor": "Inicio Sesión Doctor"
+        "registerPatient": "Paciente",
+        "registerDoctor": "Doctor"
     },
     "sidebarPatient": {
         "title": "Medify",
@@ -78,7 +78,10 @@
     "dashboardPatient": {
         "title1": "Mis Citas Médicas",
         "title2": "Mi Historial Médico",
-        "title3": "Mis Recetas Médicas"
+        "title3": "Mis Recetas Médicas",
+        "emptyAppointments": "Aún no tienes citas médicas",
+        "emptyHistory": "Tu historia médica se encuentra vacía",
+        "emptyPrescriptions": "Aún no tienes recetas médicas"
     },
     "modalQR": {
         "view": "Ver Código"
