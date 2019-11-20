@@ -10,9 +10,9 @@
         "li2": "Historial",
         "li3": "Recetas",
         "li4": "Acerca De",
-        "register": "Registrarte",
-        "registerPatient": "Registrar Paciente",
-        "registerDoctor": "Registrar Doctor"
+        "register": "Inicio de Sesión",
+        "registerPatient": "Inicio Sesión Paciente",
+        "registerDoctor": "Inicio Sesión Doctor"
     },
     "sidebarPatient": {
         "title": "Medify",
@@ -139,7 +139,6 @@
         "title": "Agenda",
         "button": "Añadir Cita",
         "emptySchedule": "Aún no se han creado citas, dar clic  en 'Añadir Cita' para agendar una nueva"
-
     },
     "patientInfo": {
         "title": "Perfil del paciente",

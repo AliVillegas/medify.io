@@ -11,7 +11,9 @@ import { Prescription } from '../Models/Prescription';
 import { Med } from '../Models/Med';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Auth } from 'aws-amplify';
-import {loopbackConnDoctorsUrl, loopbackConnPatientsUrl} from '../loopbackConnectors'
+import { loopbackConnDoctorsUrl, loopbackConnPatientsUrl } from '../loopbackConnectors'
+import { $ } from 'protractor';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +23,7 @@ import {loopbackConnDoctorsUrl, loopbackConnPatientsUrl} from '../loopbackConnec
 
 
 export class LoginComponent implements OnInit {
- public signUpConfig = {
+  public signUpConfig = {
     header: 'Crear Cuenta',
     hideAllDefaults: true,
     defaultCountryCode: '1',
@@ -92,132 +94,131 @@ export class LoginComponent implements OnInit {
     public amplifyService: AmplifyService
   ) {
     this.amplifyService = amplifyService;
-    this.amplifyService.authStateChange$.subscribe(authState =>
-      {
-        if (authState.state === "signedIn"){
-          Auth.currentSession()
+    this.amplifyService.authStateChange$.subscribe(authState => {
+      if (authState.state === "signedIn") {
+        Auth.currentSession()
           .then(data => {
             var user = data.getIdToken().decodePayload();
             this.userData.changeName(user['custom:name']);
             this.userData.changeEmail(user['email']);
             var userHasServiceId = user['custom:serviceId']
-            var cognitoUserIsDoctor = false; 
-            if(userHasServiceId != undefined){
+            var cognitoUserIsDoctor = false;
+            if (userHasServiceId != undefined) {
               cognitoUserIsDoctor = true;
             }
 
-            
+
             var loopbackDoctorsUrl = loopbackConnDoctorsUrl
-            var loopbackPatientsUrl =  loopbackConnPatientsUrl
-            var found = false; 
-              this.http.get(loopbackDoctorsUrl.concat(user['email'])).subscribe(
-                data => {
-                  console.log('success', data)
-                  found = true;
-                  this.userData.changeName(user['custom:name'])
-                  this.userData.changeEmail(user['email'])
-                  this.userData.changeId(user['email'])
-                  this.userData.changeUserIsDoctor(true)
-                  if (data['appointments'] != undefined){
-                    this.appointments = data['appointments']
-                    console.log(this.appointments)
-                    this.userData.changeAppointments(this.appointments)
-                    localStorage.setItem("appointments", JSON.stringify(this.appointments))
-                    var  doctor = data as Doctor
-                    this.userData.changeDoctor(doctor)
-                  }
-                  
-                } ,
-                error => {
-                  var err = error.HttpErrorResponse
-                  console.log(err)
-                  console.log('oops', error)
-                  this.http.get(loopbackPatientsUrl.concat(user['email'])).subscribe(
-                    data => {
-                      found = true;
-                      console.log('success', data)
-                      this.userData.changeName(user['custom:name'])
-                      this.userData.changeEmail(user['email'])
-                      this.userData.changeId(user['email'])
-                      this.userData.changeUserIsDoctor(false)
-                      if (data['appointments'] != undefined){
-                        this.appointments = data['appointments']
-                        console.log(this.appointments)
-                        this.userData.changeAppointments(this.appointments)
-                        localStorage.setItem("appointments", JSON.stringify(this.appointments))
-                        this.prescriptions = data['prescriptions']
+            var loopbackPatientsUrl = loopbackConnPatientsUrl
+            var found = false;
+            this.http.get(loopbackDoctorsUrl.concat(user['email'])).subscribe(
+              data => {
+                console.log('success', data)
+                found = true;
+                this.userData.changeName(user['custom:name'])
+                this.userData.changeEmail(user['email'])
+                this.userData.changeId(user['email'])
+                this.userData.changeUserIsDoctor(true)
+                if (data['appointments'] != undefined) {
+                  this.appointments = data['appointments']
+                  console.log(this.appointments)
+                  this.userData.changeAppointments(this.appointments)
+                  localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                  var doctor = data as Doctor
+                  this.userData.changeDoctor(doctor)
+                }
+
+              },
+              error => {
+                var err = error.HttpErrorResponse
+                console.log(err)
+                console.log('oops', error)
+                this.http.get(loopbackPatientsUrl.concat(user['email'])).subscribe(
+                  data => {
+                    found = true;
+                    console.log('success', data)
+                    this.userData.changeName(user['custom:name'])
+                    this.userData.changeEmail(user['email'])
+                    this.userData.changeId(user['email'])
+                    this.userData.changeUserIsDoctor(false)
+                    if (data['appointments'] != undefined) {
+                      this.appointments = data['appointments']
+                      console.log(this.appointments)
+                      this.userData.changeAppointments(this.appointments)
+                      localStorage.setItem("appointments", JSON.stringify(this.appointments))
+                      this.prescriptions = data['prescriptions']
                       console.log(this.prescriptions)
                       this.userData.changePrescriptions(this.prescriptions)
                       localStorage.setItem("prescriptions", JSON.stringify(this.prescriptions))
+                    }
+                  },
+                  error => {
+                    var err = error.HttpErrorResponse
+                    console.log(err)
+                    console.log('oops', error)
+                    if (found == false) {
+                      if (cognitoUserIsDoctor) {
+                        var institute = 'consultorio ' + user['custom:name']
+                        this.http.post(loopbackDoctorsUrl,
+                          new Object({
+                            name: user['custom:name'],
+                            id: user['email'],
+                            cognitoId: user['sub'],
+                            institute: institute,
+                            serviceId: user['custom:serviceId'],
+                            appointments: []
+                          })
+                        ).subscribe(
+                          data => {
+                            console.log('success', data)
+                          },
+                          error => {
+                            console.log('oops', error)
+                          });
                       }
-                    } ,
-                    error => {
-                      var err = error.HttpErrorResponse
-                      console.log(err)
-                      console.log('oops', error)
-                      if(found == false){
-                        if(cognitoUserIsDoctor){
-                          var institute = 'consultorio ' + user['custom:name']
-                          this.http.post(loopbackDoctorsUrl,
-                            new Object({
-                              name : user['custom:name'],
-                              id : user['email'],
-                              cognitoId: user['sub'],
-                              institute: institute,
-                              serviceId: user['custom:serviceId'],
-                              appointments : []
-                            })  
-                          ).subscribe(
-                            data => {
-                              console.log('success', data)                              
-                            } ,
-                            error => {
-                              console.log('oops', error)
-                            });
-                        }
-                        else{
-                          this.http.post(loopbackPatientsUrl,
-                            new Object({
-                              name : user['custom:name'],
-                              id : user['email'],
-                              cognitoId: user['sub'],
-                              appointments : [],
-                              prescriptions: []
-                            })
-                          ).subscribe(
-                            data => {
-                              console.log('success', data)                              
-                            } ,
-                            error => {
-                              console.log('oops', error)
-                            });
-                        }
+                      else {
+                        this.http.post(loopbackPatientsUrl,
+                          new Object({
+                            name: user['custom:name'],
+                            id: user['email'],
+                            cognitoId: user['sub'],
+                            appointments: [],
+                            prescriptions: []
+                          })
+                        ).subscribe(
+                          data => {
+                            console.log('success', data)
+                          },
+                          error => {
+                            console.log('oops', error)
+                          });
                       }
-                    } 
-                  );
-                } 
-              );
-            
-          
+                    }
+                  }
+                );
+              }
+            );
+
+
             localStorage.setItem("userName", user['custom:name'].toString())
             localStorage.setItem("userEmail", user['email'].toString())
             if (!cognitoUserIsDoctor) {
               this.router.navigateByUrl('patient/dashboard');
               localStorage.setItem("isDoctor", "false")
             }
-            else{
+            else {
               this.router.navigateByUrl('dr/dashboard');
               localStorage.setItem("isDoctor", "true")
 
             }
           }
-            
+
           )
           .catch(err => console.log(err));
-         
 
-        }
-      })
+
+      }
+    })
     this.patients = []
     this.doctors = []
     this.appointments = []
@@ -229,13 +230,13 @@ export class LoginComponent implements OnInit {
 
 
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.name = params.get('name') });
-    this.http.get(this.privateDoctorsUrl,{headers}).toPromise().then(data => {
+    this.http.get(this.privateDoctorsUrl, { headers }).toPromise().then(data => {
       for (let element in data["doctors"]) {
         let doctor = data["doctors"][element]["data"]
         this.doctors.push(new Doctor(doctor["name"], doctor["serviceId"], doctor["institute"], doctor["id"]))
       }
 
-      this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
+      this.http.get(this.privatePatientsUrl, { headers }).toPromise().then(data => {
         for (let element in data["patients"]) {
           let patient = data["patients"][element]["data"]
           this.patients.push(new Patient(patient["name"], patient["email"], patient["password"], patient["id"]))
@@ -254,25 +255,25 @@ export class LoginComponent implements OnInit {
               }
             })
             //console.log(prescriptionDoctor)
-  
+
             var p = new Prescription(prescription["title"], prescription["dayNumber"],
               prescription["details"], prescription["month"], prescriptionDoctor,
-              prescription["date"],prescription["endDate"], prescription["id"])
-              p.setStatus(prescription["status"])
-              for (let med in prescription["meds"]) {
+              prescription["date"], prescription["endDate"], prescription["id"])
+            p.setStatus(prescription["status"])
+            for (let med in prescription["meds"]) {
               let m = new Med(prescription["meds"][med]["name"], (prescription["meds"][med]["delivered"] == 'true'));
               p.addMed(m)
             }
             this.patients[this.patients.length - 1].addPrescription(p)
-  
+
           }
         }
-  
+
       })
-      
+
     })
     //console.log(this.doctors)
-    
+
     //console.log(this.patients)
   }
 
@@ -285,7 +286,7 @@ export class LoginComponent implements OnInit {
     if (this.name == 'patient') {
       this.patients.forEach(patient => {
         if (patient.email == email && patient.password == password) {
-          this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
+          this.http.get(this.privatePatientsUrl, { headers }).toPromise().then(data => {
             let fullData = data["patients"][patient.getId()]["data"]
             var doctor: Doctor;
             for (let data in fullData["appointments"]) {
@@ -328,7 +329,7 @@ export class LoginComponent implements OnInit {
     else if (this.name == 'doctor') {
       this.doctors.forEach(doctor => {
         if (email == email) {
-          this.http.get(this.privateDoctorsUrl, {headers}).toPromise().then(data => {
+          this.http.get(this.privateDoctorsUrl, { headers }).toPromise().then(data => {
             let fullData = data["doctors"][doctor.getId()]["data"]
             var patient: Patient;
             for (let data in fullData["appointments"]) {
@@ -375,16 +376,17 @@ export class LoginComponent implements OnInit {
       loginPassword: ''
     })
 
-    if(this.name == 'doctor'){
+
+    if (this.name == 'doctor') {
       this.signUpConfig.signUpFields.push(
         {
-            label: 'Cédula',
-            key: 'custom:serviceId',
-            required: true,
-            displayOrder: 5,
-            type: 'string',
-            custom: true
-          }
+          label: 'Cédula',
+          key: 'custom:serviceId',
+          required: true,
+          displayOrder: 5,
+          type: 'string',
+          custom: true
+        }
       )
     }
   }

@@ -28,8 +28,10 @@
     </ul>
 
     <h5 class="text-center mt-3">{{ 'sidebar.register' | translate }}</h5>
-    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-patient" class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerPatient' | translate }}</a>
-    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/register-doctor" class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerDoctor' | translate }}</a>
+    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/login/patient"
+        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerPatient' | translate }}</a>
+    <a data-toggle="tooltip" title="Crear cuenta de paciente" href="/login/doctor"
+        class="btn btnSideBar mx-auto d-block mt-3 w-75">{{ 'sidebar.registerDoctor' | translate }}</a>
 </nav>
 
 <!-- Doctor SideBar  -->
@@ -51,8 +53,10 @@
     <button class="btn btnSideBar mx-auto d-block mt-3" (click)="logout()" onclick="window.location.href='/logout'">
         {{ 'sidebarDoctor.logout' | translate }} </button>
     <div class="row p-3">
-        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
-        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')" [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
     </div>
 
 </nav>
@@ -86,11 +90,14 @@
     </ul>
 
 
-    <button class="btn btnSideBar mx-auto d-block mt-3" (click)="logout()" onclick="window.location.href='/logout'">{{ 'sidebarPatient.logout' | translate }} </button>
+    <button class="btn btnSideBar mx-auto d-block mt-3" (click)="logout()"
+        onclick="window.location.href='/logout'">{{ 'sidebarPatient.logout' | translate }} </button>
     <hr>
     <div class="row p-3">
-        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
-        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')" [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('es')"
+            [ngClass]="{'secondaryColorBg': language == 'es'}">Español</button>
+        <button class="btn btn-secondary  rounded border-white col-6 " (click)="changeLanguage('en')"
+            [ngClass]="{'secondaryColorBg': language == 'en'}">English</button>
     </div>
 
 

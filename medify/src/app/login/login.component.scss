@@ -1,6 +1,28 @@
 @import '../app.component.scss';
 
 /* You can add global styles to this file, and also import other style files */
+::ng-deep {
+  @import '~@aws-amplify/ui/src/Theme';
+  @import '~@aws-amplify/ui/src/Angular';
+  @import '~@aws-amplify/ui/dist/style';
+  .amplify-form-button{
+      @include whiteColorBluebg();
+      margin: 0 auto!important;
+      display: block !important;
+  }
+  .amplify-form-cell-right{
+      display: block !important;
+      float: none !important;
+      width: 100% !important;
+  }
+  .amplify-form-signup{
+      text-align: center!important;
+  }
+  .amplify-input-label{
+    width: 100%!important;
+  }
+}
+
 
 .container {
     display: flex;

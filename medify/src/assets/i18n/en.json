@@ -10,9 +10,9 @@
         "li2": "History",
         "li3": "Prescriptions",
         "li4": "About",
-        "register": "Register",
-        "registerPatient": "Register Patient",
-        "registerDoctor": "Register Doctor"
+        "register": "Log in",
+        "registerPatient": "Login Patient",
+        "registerDoctor": "Login Doctor"
     },
     "sidebarPatient": {
         "title": "Medify",
