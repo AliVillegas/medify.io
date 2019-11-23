@@ -11,8 +11,8 @@
         "li3": "Prescriptions",
         "li4": "About",
         "register": "Log in",
-        "registerPatient": "Login Patient",
-        "registerDoctor": "Login Doctor"
+        "registerPatient": "Patient",
+        "registerDoctor": "Doctor"
     },
     "sidebarPatient": {
         "title": "Medify",
@@ -78,7 +78,10 @@
     "dashboardPatient": {
         "title1": "My Medical Appointments",
         "title2": "My Medical History",
-        "title3": "My Medical Prescriptions"
+        "title3": "My Medical Prescriptions",
+        "emptyAppointments": "You have no appointments",
+        "emptyHistory": "Your medical history is empty",
+        "emptyPrescriptions": "You have no prescriptions"
     },
     "modalQR": {
         "view": "View Code"

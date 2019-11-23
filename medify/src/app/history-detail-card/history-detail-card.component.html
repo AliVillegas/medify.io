@@ -8,9 +8,7 @@
             </h6>
             <div class="mb-1 text-muted small mt-2">{{prescription.date}}</div>
             <ul class="list-unstyled card-text">
-                <li> Dificultades para respirar</li>
-                <li> Dolor intenso en de la cabeza al moverse</li>
-                <li> Bajo apetito</li>
+                <li> {{prescription.details}}</li>
             </ul>
             <a class="btn btn-outline-primary btn-sm" role="button" href="/patient/prescriptions-detail">{{ 'historyDetail.button' | translate }}</a>
         </div>

@@ -23,15 +23,22 @@ import { trigger, style, animate, transition, query, state, keyframes, stagger }
 
 export class DrDashboardCardComponent implements OnInit {
   public appointments: Appointment[];
-
+  public sliceNum:number;
   constructor(private userData: UserdataService) {
   }
 
   ngOnInit() {
-    
+    this.sliceNum = 5;
     this.userData.currentAppointments.subscribe(appointments => this.appointments = appointments);
     console.log("APPOINTMENTS")
     console.log(this.appointments)
+  }
+
+  extendSlice(){
+    if(this.sliceNum + 1 < this.appointments.length){
+      this.sliceNum += 1
+    }
+    
   }
 
 }

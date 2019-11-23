@@ -40,5 +40,8 @@
         </div>
         <div class="lineDividerBlue mt-3 mb-3"></div>
     </div>
-
+</div>
+<div *ngIf="prescriptions.length == 0">
+    <div class="secondarycolor mx-auto h3 text-centered">{{ 'dashboardPatient.emptyPrescriptions' | translate}}
+    </div>
 </div>
