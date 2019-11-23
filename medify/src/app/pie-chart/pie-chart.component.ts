@@ -9,33 +9,33 @@ import { UserdataService } from '../userdata.service';
   styleUrls: ['./pie-chart.component.scss']
 })
 export class PieChartComponent implements OnInit {
-  public appointments:Appointment[]
+  public appointments: Appointment[]
   constructor(
-    private userData:UserdataService
+    private userData: UserdataService
   ) { }
 
   ngOnInit() {
     this.userData.currentAppointments.subscribe(appointments => {
       this.appointments = appointments
-      var labels:string[] = []
-    var data:number[] = []
-    var graphData = {}
-    this.appointments.forEach(app=>{
-      if(labels.indexOf(app.doctor.name.toString()) == -1){
-        graphData[app.doctor.name.toString()] = 0 
-        labels.push(app.doctor.name.toString())
-      }
-    })
-    this.appointments.forEach(app=>{
-      graphData[app.doctor.name.toString()] += 1
-    })
+      var labels: string[] = []
+      var data: number[] = []
+      var graphData = {}
+      this.appointments.forEach(app => {
+        if (labels.indexOf(app.doctor.name.toString()) == -1) {
+          graphData[app.doctor.name.toString()] = 0
+          labels.push(app.doctor.name.toString())
+        }
+      })
+      this.appointments.forEach(app => {
+        graphData[app.doctor.name.toString()] += 1
+      })
 
-    labels.forEach(element => {
-      this.pieChartData.push(graphData[element])
+      labels.forEach(element => {
+        this.pieChartData.push(graphData[element])
+      });
+      this.pieChartLabels = labels
     });
-    this.pieChartLabels = labels
-    });
-    
+
   }
 
   public pieChartOptions = {
@@ -44,10 +44,9 @@ export class PieChartComponent implements OnInit {
   public pieChartLabels = ['Dra. Pérez', 'Dr. Torres', 'Dentista Gomez', 'Dr. Lopez'];
   public pieChartType = 'pie';
   public chartColors: any[] = [
-    { backgroundColor: "#edaaaa" },
-    { backgroundColor: "#eceba7" },
-    { backgroundColor: "#9cf196" },
-    { backgroundColor: "#ebce95" },
+    {
+      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
+    },
   ];
   public pieChartData = [];
 

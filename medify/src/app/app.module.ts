@@ -45,7 +45,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxSpinnerModule } from "ngx-spinner";
 import { ChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { AppointmentDetailCardComponent } from './appointment-detail-card/appointment-detail-card.component';
@@ -53,7 +52,7 @@ import { HistoryDetailCardComponent } from './history-detail-card/history-detail
 import { PrescriptionDetailCardComponent } from './prescription-detail-card/prescription-detail-card.component';
 import { AboutComponent } from './about/about.component';
 
-import {AmplifyAngularModule, AmplifyService, AmplifyModules} from 'aws-amplify-angular'
+import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplify-angular'
 import { AuthGuardService } from './auth-guard.service';
 import { Auth } from 'aws-amplify';
 
@@ -112,14 +111,13 @@ const material = [
     AppointmentDetailCardComponent,
     HistoryDetailCardComponent,
     PrescriptionDetailCardComponent,
-    AboutComponent  ],
+    AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AmplifyAngularModule,
     material,
-    NgxSpinnerModule,
     ChartsModule,
     TranslateModule.forRoot({
       loader: {
@@ -130,9 +128,9 @@ const material = [
     })
   ],
   exports: [material],
-  providers: [AmplifyService,AuthGuardService,{
+  providers: [AmplifyService, AuthGuardService, {
     provide: AmplifyService,
-    useFactory:  () => {
+    useFactory: () => {
       return AmplifyModules({
         Auth
       });
