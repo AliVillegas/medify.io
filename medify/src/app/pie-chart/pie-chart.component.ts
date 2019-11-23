@@ -45,7 +45,12 @@ export class PieChartComponent implements OnInit {
   public pieChartType = 'pie';
   public chartColors: any[] = [
     {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
+      backgroundColor: [
+        'rgba(255,0,0,0.3)',
+        'rgba(0,255,0,0.3)',
+        'rgba(0,0,255,0.3)',
+        'rgba(255, 150, 0, 0.3)',
+        'rgba(255, 255, 0, 0.3)'],
     },
   ];
   public pieChartData = [];
