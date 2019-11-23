@@ -40,9 +40,9 @@
             "text": "te ayuda a administrar tu historial médico, citas y recetas en un solo lugar."
         },
         "section2": {
-            "title": "Tus datos, seguros",
+            "title": "Tu tiempo, a salvo",
             "bold": "Medify",
-            "text": "mantiene tu información segura con tecnología de Blockchain."
+            "text": "se asegura de que nunca no pierdas una cita."
         },
         "section3": {
             "title": "Organiza tus citas médicas",
@@ -61,7 +61,7 @@
         "section5": {
             "title": "Recetas Médicas",
             "item1": "Recibe recetas de tus médicos",
-            "item2": "Canjea en farmacias",
+            "item2": "Administra tus recetas",
             "bold": "Medify"
         },
         "footer": {

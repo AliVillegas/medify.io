@@ -40,9 +40,9 @@
             "text": "helps you manage your medical history, appointments and prescriptions in one place."
         },
         "section2": {
-            "title": "Your data, secure",
+            "title": "Your time, safe",
             "bold": "Medify",
-            "text": "keeps your information safe with Blockchain technology."
+            "text": "makes sure you never miss an appointment."
         },
         "section3": {
             "title": "Organize your medical appointments",
@@ -61,7 +61,7 @@
         "section5": {
             "title": "Medical Prescriptions",
             "item1": "Receive prescriptions from your doctors",
-            "item2": "Redeem in pharmacies",
+            "item2": "Manage your prescriptions",
             "bold": "Medify"
         },
         "footer": {
