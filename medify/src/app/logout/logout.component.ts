@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSpinnerService } from "ngx-spinner";
+
 
 @Component({
   selector: 'app-logout',
@@ -8,19 +8,14 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.spinner.show();
-
     setTimeout(() => {
       /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 1700);
-
-    setTimeout(() => {
-      window.location.href = "landing"
+      window.location.href = "landing";
     }, 1500);
+
   }
 
 }
