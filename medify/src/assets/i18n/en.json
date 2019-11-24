@@ -180,5 +180,14 @@
         "labelHour": "Choose Start Time ",
         "labelHour2": "Choose End Time ",
         "button": "Confirm Appointment"
+    },
+    "newPatientForm": {
+        "title": "Before you can use the application, please complete this form",
+        "blood": "Blood Type",
+        "weight": "Weight (kg)",
+        "height": "Height (m)",
+        "chronicDiseases": "Chronic Diseases (separated by commas)",
+        "alergies": "Alergies (separated by commas)",
+        "button": "Submit"
     }
 }

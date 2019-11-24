@@ -180,5 +180,14 @@
         "labelHour": "Elegir Hora de Inicio ",
         "labelHour2": "Elegir Hora de Final ",
         "button": "Confirmar cita"
+    },
+    "newPatientForm": {
+        "title": "Antes de usar la aplicación, por favor llena este formulario",
+        "blood": "Tipo de Sangre",
+        "weight": "Peso (kg)",
+        "height": "Estatura (m)",
+        "chronicDiseases": "Enfermedades Crónicas (separadas por comas)",
+        "alergies": "Alergias (separadas por comas)",
+        "button": "Enviar"
     }
 }

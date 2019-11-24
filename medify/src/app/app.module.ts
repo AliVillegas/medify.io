@@ -55,6 +55,7 @@ import { AboutComponent } from './about/about.component';
 import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplify-angular'
 import { AuthGuardService } from './auth-guard.service';
 import { Auth } from 'aws-amplify';
+import { NewPatientFormComponent } from './new-patient-form/new-patient-form.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -111,7 +112,8 @@ const material = [
     AppointmentDetailCardComponent,
     HistoryDetailCardComponent,
     PrescriptionDetailCardComponent,
-    AboutComponent],
+    AboutComponent,
+    NewPatientFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

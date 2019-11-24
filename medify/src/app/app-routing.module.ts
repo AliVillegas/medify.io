@@ -18,6 +18,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { AboutComponent } from './about/about.component';
 import { AuthGuardService } from './auth-guard.service';
+import { NewPatientFormComponent } from './new-patient-form/new-patient-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -32,16 +33,14 @@ const routes: Routes = [
   { path: 'dr/appointment/:patientId', component: DrNewAppointmentComponent },
   { path: 'dr/prescription/patient-qr/:patientId', component: DrNewPrescriptionQRComponent },
   { path: 'dr/prescription/:patientId', component: DrCreatePrescriptionComponent },
-  { path: 'patient/dashboard', component: DashboardComponent,canActivate: [AuthGuardService] },
+  { path: 'patient/dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: 'patient/profile', component: PatientProfileComponent },
   { path: 'patient/appointments-detail', component: AppointmentsDetailComponent },
   { path: 'patient/history-detail', component: HistoryDetailComponent },
   { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'about', component: AboutComponent }
-
-
-
+  { path: 'about', component: AboutComponent },
+  { path: 'patient/new', component: NewPatientFormComponent },
 ];
 
 @NgModule({
