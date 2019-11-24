@@ -50,7 +50,7 @@ export class NewPatientFormComponent implements OnInit {
         err.innerHTML = ""
         var diseasesList = chronicDiseases.split(",")
         var alergiesList = alergies.split(",")
-        this.newPatientData(bloodType, weight, diseasesList, alergiesList)
+        this.newPatientData(bloodType, weight, height, diseasesList, alergiesList)
       }
       else {
         if (l != null) {

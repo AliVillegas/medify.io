@@ -56,6 +56,7 @@ import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplif
 import { AuthGuardService } from './auth-guard.service';
 import { Auth } from 'aws-amplify';
 import { NewPatientFormComponent } from './new-patient-form/new-patient-form.component';
+import { GoogleCalendarComponent } from './google-calendar/google-calendar.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -113,7 +114,8 @@ const material = [
     HistoryDetailCardComponent,
     PrescriptionDetailCardComponent,
     AboutComponent,
-    NewPatientFormComponent],
+    NewPatientFormComponent,
+    GoogleCalendarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
