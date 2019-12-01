@@ -108,7 +108,6 @@ export class DrNewAppointmentComponent implements OnInit {
         this.http.get(this.loopbackDoctorsUrl.concat(doctorId)).subscribe(
           data => {
             var doctorData = data
-
             this.http.get(this.loopbackPatientsUrl.concat(this.patientId)).subscribe(
             data =>{
               var patientData = data
