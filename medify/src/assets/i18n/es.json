@@ -197,7 +197,7 @@
     },
     "googleCalendar": {
         "addAppointment": "Agregar mis citas",
-        "logout": "Autorizar Calendario Google",
-        "login": "Cerrar Sesión Calendario Google"
+        "logout": "Cerrar Sesión Calendario Google",
+        "login": "Autorizar Calendario Google"
     }
 }
