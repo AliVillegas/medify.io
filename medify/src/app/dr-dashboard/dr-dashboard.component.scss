@@ -1,1 +1,8 @@
-@import '../app.component.scss'
+@import '../app.component.scss';
+
+.google-calendar-container{
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    max-width: 200px;
+}

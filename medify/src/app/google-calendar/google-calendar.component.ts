@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserdataService } from '../userdata.service';
 import { Appointment } from '../Models/Appointment';
+import { ToastServiceService } from '../toast-service.service';
 
 declare var gapi: any;
 
@@ -12,7 +13,7 @@ declare var gapi: any;
 export class GoogleCalendarComponent implements OnInit {
   public appointments: Appointment[]
   public events = []
-  constructor(private userData: UserdataService) {
+  constructor(private userData: UserdataService, private toastService: ToastServiceService) {
     this.initClient();
   }
 
@@ -34,20 +35,38 @@ export class GoogleCalendarComponent implements OnInit {
         let startTimeGoogle = date.getFullYear() + "-" + monthNumber + "-" + day + "T" + startTime;
         let endTimeGoogle = date.getFullYear() + "-" + monthNumber + "-" + day + "T" + endTime;
 
-        let event = {
-          'summary': this.appointments[i].concept,
-          'description': 'Cita médica con: ' + this.appointments[i].doctor.name,
-          'start': {
-            'dateTime': startTimeGoogle,
-            'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
-          },
-          'end': {
-            'dateTime': endTimeGoogle,
-            'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
-          }
-        }
+        let isDoctor = localStorage.getItem("isDoctor")
 
-        this.events.push(event)
+        if (isDoctor === 'true') {
+          let event = {
+            'summary': this.appointments[i].concept,
+            'description': 'Cita médica con: ' + this.appointments[i].patient.name,
+            'start': {
+              'dateTime': startTimeGoogle,
+              'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+            },
+            'end': {
+              'dateTime': endTimeGoogle,
+              'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+            }
+          }
+          this.events.push(event)
+        }
+        else {
+          let event = {
+            'summary': this.appointments[i].concept,
+            'description': 'Cita médica con: ' + this.appointments[i].doctor.name,
+            'start': {
+              'dateTime': startTimeGoogle,
+              'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+            },
+            'end': {
+              'dateTime': endTimeGoogle,
+              'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+            }
+          }
+          this.events.push(event)
+        }
 
         //this.insertEvent(event);
         //console.log(startTimeGoogle)
@@ -145,7 +164,20 @@ export class GoogleCalendarComponent implements OnInit {
         'resource': this.events[i]
       })
     }
-    alert("Citas añadidas exitosamente");
+
+    this.toastService.changeIsVisible(true)
+    let message = {
+      "msg": "Citas añadidas éxitosamente "
+    }
+    if (localStorage.getItem('language') == 'en') {
+      message = {
+        "msg": "Appointments succesfully added"
+      }
+    }
+    this.toastService.changeMessage(message["msg"].toString())
+
+
+
 
   }
 
