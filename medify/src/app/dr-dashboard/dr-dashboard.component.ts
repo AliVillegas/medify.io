@@ -11,9 +11,7 @@ import { Observable } from 'rxjs';
 })
 
 export class DrDashboardComponent implements OnInit {
-
-
-
+  
   constructor(private navData: NavbarDataService, private sidebarData: SidebarDataService) {
 
   }
