@@ -4,6 +4,7 @@ import { Appointment } from '../Models/Appointment';
 import { ToastServiceService } from '../toast-service.service';
 
 declare var gapi: any;
+declare var $;
 
 @Component({
   selector: 'app-google-calendar',
@@ -167,17 +168,16 @@ export class GoogleCalendarComponent implements OnInit {
 
     this.toastService.changeIsVisible(true)
     let message = {
-      "msg": "Citas añadidas éxitosamente "
+      "msg": "Citas añadidas éxitosamente a google calendar "
     }
     if (localStorage.getItem('language') == 'en') {
       message = {
-        "msg": "Appointments succesfully added"
+        "msg": "Appointments succesfully added to google calendar"
       }
     }
     this.toastService.changeMessage(message["msg"].toString())
-
-
-
+    $('.toast').toast('show');
+    //this.toastService.changeIsVisible(false)
 
   }
 
