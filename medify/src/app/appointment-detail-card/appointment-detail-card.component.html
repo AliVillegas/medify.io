@@ -14,7 +14,8 @@
                     <ul class="list-unstyled pl-3 card-text">
                         <li class="lead text-left">{{ 'appointmentDetail.time' | translate }} {{appointment.startTime}}
                         </li>
-                        <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} {{appointment.dayName}} {{appointment.dayNumber}} {{appointment.month}}</li>
+                        <li class="lead text-left">{{ 'appointmentDetail.date' | translate }} {{appointment.dayName}}
+                            {{appointment.dayNumber}} {{appointment.month}}</li>
                     </ul>
                 </div>
             </div>
@@ -24,7 +25,7 @@
 </div>
 
 <div *ngIf="appointments.length == 0">
-    <div class="secondarycolor h3 text-centered">{{ 'dashboard.emptyAppointments' | translate}}
+    <div class="secondarycolor h3 text-centered">{{ 'dashboardPatient.emptyAppointments' | translate}}
     </div>
 
 </div>

@@ -190,5 +190,14 @@
         "chronicDiseases": "Enfermedades Crónicas (separadas por comas)",
         "alergies": "Alergias (separadas por comas)",
         "button": "Enviar"
+    },
+    "searchComponent": {
+        "label": "Busca tus citas",
+        "button": "Buscar"
+    },
+    "googleCalendar": {
+        "addAppointment": "Agregar mis citas",
+        "logout": "Autorizar Calendario Google",
+        "login": "Cerrar Sesión Calendario Google"
     }
 }

@@ -190,5 +190,14 @@
         "chronicDiseases": "Chronic Diseases (separated by commas)",
         "alergies": "Alergies (separated by commas)",
         "button": "Submit"
+    },
+    "searchComponent": {
+        "label": "Search your appointments",
+        "button": "Search"
+    },
+    "googleCalendar": {
+        "addAppointment": "Add my appointments",
+        "logout": "Logout Google Calendar",
+        "login": "Authorize Google Calendar"
     }
 }
