@@ -11,12 +11,50 @@ declare var gapi: any;
 })
 export class GoogleCalendarComponent implements OnInit {
   public appointments: Appointment[]
+  public events = []
   constructor(private userData: UserdataService) {
     this.initClient();
   }
 
   ngOnInit() {
-    this.userData.currentAppointments.subscribe(pres => this.appointments = pres);
+    this.userData.currentAppointments.subscribe(apps => {
+
+      this.appointments = apps
+      for (var i = 0; i < this.appointments.length; i++) {
+        console.log(this.appointments[i])
+        let date = new Date();
+
+        const startTime = this.convertTime12to24(this.appointments[i].startTime);
+        const endTime = this.convertTime12to24(this.appointments[i].endTime);
+
+        const monthName = this.appointments[i].month;
+        const monthNumber = this.getMonthFromString(monthName)
+        const day = this.appointments[i].dayNumber;
+
+        let startTimeGoogle = date.getFullYear() + "-" + monthNumber + "-" + day + "T" + startTime;
+        let endTimeGoogle = date.getFullYear() + "-" + monthNumber + "-" + day + "T" + endTime;
+
+        let event = {
+          'summary': this.appointments[i].concept,
+          'description': 'Cita médica con: ' + this.appointments[i].doctor.name,
+          'start': {
+            'dateTime': startTimeGoogle,
+            'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+          },
+          'end': {
+            'dateTime': endTimeGoogle,
+            'timeZone': Intl.DateTimeFormat().resolvedOptions().timeZone
+          }
+        }
+
+        this.events.push(event)
+
+        //this.insertEvent(event);
+        //console.log(startTimeGoogle)
+
+      }
+
+    });
   }
 
   initClient() {
@@ -38,6 +76,8 @@ export class GoogleCalendarComponent implements OnInit {
         authorizeButton.onclick = this.login;
         var logoutButton = document.getElementById('signout_button');
         logoutButton.onclick = this.logout;
+        //var insertButton = document.getElementById('insert_button');
+        console.log(this.events)
       })
 
       gapi.client.load('calendar', 'v3', () => console.log('loaded calendar'));
@@ -48,6 +88,7 @@ export class GoogleCalendarComponent implements OnInit {
   updateSigninStatus(isSignedIn) {
     var authorizeButton = document.getElementById('authorize_button');
     var logoutButton = document.getElementById('signout_button');
+    var insertButton = document.getElementById('insert_button');
     if (isSignedIn) {
       console.log("signed in: " + isSignedIn)
       //Get Google User name 
@@ -58,11 +99,13 @@ export class GoogleCalendarComponent implements OnInit {
       //Update buttons if user is signed in
       authorizeButton.style.display = 'none';
       logoutButton.style.display = 'block';
+      insertButton.style.display = 'block';
     }
     else {
       console.log("signed in: " + isSignedIn)
       authorizeButton.style.display = 'block';
       logoutButton.style.display = 'none';
+      insertButton.style.display = 'none';
     }
 
   }
@@ -73,6 +116,37 @@ export class GoogleCalendarComponent implements OnInit {
 
   logout(event) {
     gapi.auth2.getAuthInstance().signOut();
+  }
+
+  getMonthFromString(mon) {
+    return new Date(Date.parse(mon + " 1, 2012")).getMonth() + 1;
+  }
+
+  convertTime12to24(time12h) {
+    const [time, modifier] = time12h.split(' ');
+
+    let [hours, minutes] = time.split(':');
+
+    if (hours === '12') {
+      hours = '00';
+    }
+
+    if (modifier === 'PM') {
+      hours = parseInt(hours, 10) + 12;
+    }
+
+    return `${hours}:${minutes}:00`;
+  }
+
+  async insertEvents() {
+    for (let i = 0; i < this.events.length; i++) {
+      const insert = await gapi.client.calendar.events.insert({
+        'calendarId': 'primary',
+        'resource': this.events[i]
+      })
+    }
+    alert("Citas añadidas exitosamente");
+
   }
 
   async getCalendar() {
