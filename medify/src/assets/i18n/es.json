@@ -186,6 +186,7 @@
         "blood": "Tipo de Sangre",
         "weight": "Peso (kg)",
         "height": "Estatura (m)",
+        "gender": "Género",
         "chronicDiseases": "Enfermedades Crónicas (separadas por comas)",
         "alergies": "Alergias (separadas por comas)",
         "button": "Enviar"

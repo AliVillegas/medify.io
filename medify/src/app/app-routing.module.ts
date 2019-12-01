@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'patient/prescriptions-detail', component: PrescriptionsDetailComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'patient/new', component: NewPatientFormComponent },
+  { path: 'patient/new/:patientId', component: NewPatientFormComponent },
 ];
 
 @NgModule({

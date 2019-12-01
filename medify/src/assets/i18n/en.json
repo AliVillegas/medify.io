@@ -184,6 +184,7 @@
     "newPatientForm": {
         "title": "Before you can use the application, please complete this form",
         "blood": "Blood Type",
+        "gender": "Gender",
         "weight": "Weight (kg)",
         "height": "Height (m)",
         "chronicDiseases": "Chronic Diseases (separated by commas)",

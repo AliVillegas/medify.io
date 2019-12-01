@@ -4,6 +4,14 @@
         <h3 class="text-left">{{ 'newPatientForm.title' | translate}}</h3>
         <form [formGroup]="newPatientForm" class="my-2 p-3">
             <mat-form-field class="w-100">
+                <mat-label>{{ 'newPatientForm.gender' | translate}}</mat-label>
+                <mat-select [formControl]="bloodType">
+                    <div *ngFor="let gender of genders" class="row row-striped w-80 mx-auto ">
+                        <mat-option value="{{gender}}">{{gender}}</mat-option>
+                    </div>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="w-100">
                 <mat-label>{{ 'newPatientForm.blood' | translate}}</mat-label>
                 <mat-select [formControl]="bloodType">
                     <mat-option value="A+">A+</mat-option>
@@ -26,21 +34,17 @@
             </mat-form-field>
             <mat-form-field class="w-100">
                 <mat-label>{{ 'newPatientForm.chronicDiseases' | translate}}</mat-label>
-                <textarea matInput [formControl]="chronicDiseases" required></textarea>
+                <textarea matInput [formControl]="chronicDiseases"></textarea>
             </mat-form-field>
             <mat-form-field class="w-100">
                 <mat-label>{{ 'newPatientForm.alergies' | translate}}</mat-label>
-                <textarea matInput [formControl]="alergies" required></textarea>
+                <textarea matInput [formControl]="alergies"></textarea>
             </mat-form-field>
             <p class="text-danger text-center" id="error"></p>
-            <button type="submit"
-                (click)="onClickSubmit(bloodType.value, weight.value, height.value, chronicDiseases.value,alergies.value)"
-                class="btn btn-primary my-5 mx-auto w-75 d-block">{{ 'newPatientForm.button' | translate}}</button>
+            <button type="submit" (click)="onClickSubmit(bloodType.value, weight.value, height.value, chronicDiseases.value,alergies.value)" class="btn btn-primary my-5 mx-auto w-75 d-block">{{ 'newPatientForm.button' | translate}}</button>
         </form>
 
     </div>
-    <button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:55px; left:10px; z-index: 10;"
-        (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">ES</button>
-    <button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:10px; left:10px; z-index: 10;"
-        (click)="changeLanguage('en')" [ngClass]="{'secondaryColorBg': language == 'en'}">EN </button>
+    <button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:55px; left:10px; z-index: 10;" (click)="changeLanguage('es')" [ngClass]="{'secondaryColorBg': language == 'es'}">ES</button>
+    <button class="btn btn-secondary rounded border-white" style="position:fixed;bottom:10px; left:10px; z-index: 10;" (click)="changeLanguage('en')" [ngClass]="{'secondaryColorBg': language == 'en'}">EN </button>
 </div>
