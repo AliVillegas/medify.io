@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { loopbackConnDoctorsUrl } from '../loopbackConnectors';
 
 @Component({
   selector: 'app-search-appointments-bar',
@@ -7,12 +9,13 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
   styleUrls: ['./search-appointments-bar.component.scss']
 })
 export class SearchAppointmentsBarComponent implements OnInit {
-
+  loopbackDoctorsUrl = loopbackConnDoctorsUrl
   searchForm: FormGroup
   searchField = new FormControl('');
 
-  constructor(private fb: FormBuilder) { }
-
+  constructor(private fb: FormBuilder,
+    private http:HttpClient) { }
+  
   ngOnInit() {
     this.searchForm = this.fb.group({
       title: ''
@@ -34,6 +37,13 @@ export class SearchAppointmentsBarComponent implements OnInit {
     }
     else {
       err.innerHTML = ""
+      localStorage.setItem("hasAppointmentQuery","true")
+      this.http.get(this.loopbackDoctorsUrl.concat(localStorage.getItem('userEmail'))).subscribe(
+        data => {
+
+        }
+      )
+
     }
   }
 

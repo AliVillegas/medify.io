@@ -6,10 +6,8 @@
             <small class="text-danger" id="error"></small>
         </mat-form-field>
         <div class="col-2 col-sm-3">
-            <span class="secondaryColor d-block d-sm-none py-3"> <i class="fas fa-search"></i></span>
-            <button type="submit" class="btn btn-primary d-none d-sm-block my-3"
-                (click)="searchAppointment(searchField.value)">{{ 'searchComponent.button' | translate}}</button>
+            <span (click)="searchAppointment(searchField.value)" class="secondaryColor d-block d-sm-none py-3"> <i class="fas fa-search"></i></span>
+            <button type="submit" class="btn btn-primary d-none d-sm-block my-3" (click)="searchAppointment(searchField.value)">{{ 'searchComponent.button' | translate}}</button>
         </div>
     </div>
-
 </form>

@@ -1,4 +1,17 @@
 <br>
+<form [formGroup]="searchForm">
+    <div class="row px-0 px-sm-2">
+        <mat-form-field appearance="outline" class=" col-10 col-sm-9">
+            <mat-label>{{ 'searchComponent.label' | translate}}</mat-label>
+            <input matInput [formControl]="searchField">
+            <small class="text-danger" id="error"></small>
+        </mat-form-field>
+        <div class="col-2 col-sm-3">
+            <span (click)="searchAppointment(searchField.value)" class="secondaryColor d-block d-sm-none py-3"> <i class="fas fa-search"></i></span>
+            <button type="submit" class="btn btn-primary d-none d-sm-block my-3" (click)="searchAppointment(searchField.value)">{{ 'searchComponent.button' | translate}}</button>
+        </div>
+    </div>
+</form><br>
 <div *ngIf="appointments.length > 0" [@EnterLeave]="'flyIn'">
     <div *ngFor="let appointment of appointments" class="row row-striped w-80 mx-auto ">
         <div class="d-none d-sm-none d-md-block col-2 text-right ">
@@ -24,7 +37,11 @@
 
 </div>
 
-<div *ngIf="appointments.length==0">
+<div *ngIf="appointments.length==0 && searched == false">
     <div class="secondarycolor h3 text-centered">{{ 'dashboardDoctor.emptySchedule' | translate}}
+    </div>
+</div>
+<div *ngIf="appointments.length==0 && searched == true">
+    <div class="secondarycolor h3 text-centered">{{ 'dashboardDoctor.emptyScheduleQuery' | translate}}
     </div>
 </div>

@@ -141,7 +141,9 @@
     "dashboardDoctor": {
         "title": "Agenda",
         "button": "Añadir Cita",
-        "emptySchedule": "Aún no se han creado citas, dar clic  en 'Añadir Cita' para agendar una nueva"
+        "emptySchedule": "Aún no se han creado citas, dar clic  en 'Añadir Cita' para agendar una nueva",
+        "emptyScheduleQuery": "No se encontró cita"
+
     },
     "patientInfo": {
         "title": "Perfil del paciente",
@@ -197,7 +199,7 @@
     },
     "googleCalendar": {
         "addAppointment": "Agregar mis citas",
-        "logout": "Cerrar Sesión Calendario Google",
-        "login": "Autorizar Calendario Google"
+        "logout": "Cerrar Sesión Google",
+        "login": "Google Calendar"
     }
 }

@@ -96,7 +96,6 @@ export class AppComponent {
                 this.userData.changeAppointments(this.appointments)
                 this.userData.changePrescriptions(this.prescriptions)
                 this.dataIsLoaded = true;
-
               }
             )
           }
