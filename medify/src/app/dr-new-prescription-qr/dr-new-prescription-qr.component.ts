@@ -19,22 +19,22 @@ export class DrNewPrescriptionQRComponent implements OnInit {
   codeFormGroup: FormGroup;
   codeFormControl = new FormControl('');
   loopbackPatientsUrl = loopbackConnPatientsUrl
-  errorMessage:string
+  errorMessage: string
   constructor(
     private navData: NavbarDataService,
     private sidebarData: SidebarDataService,
     private _location: Location,
     private fb: FormBuilder,
-    private http:HttpClient,
+    private http: HttpClient,
     private activateRoute: ActivatedRoute,
     private translationService: TranslateService,
-    private router:Router
+    private router: Router
 
   ) { }
 
   ngOnInit() {
     this.sub = this.activateRoute.paramMap.subscribe(params => { this.patientId = params.get('patientId') });
- 
+
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
 
@@ -45,25 +45,25 @@ export class DrNewPrescriptionQRComponent implements OnInit {
   }
 
 
-  onClickSubmit( code:string){
+  onClickSubmit(code: string) {
     console.log("TRANS" + this.translationService.getLangs())
     var msgMap = {
-      "UserIncorrect" : "Usuario no existe",
+      "UserIncorrect": "Usuario no existe",
       "EmptyField": "Favor de Llenar Campo",
     }
-    if(this.translationService.currentLang == 'es'){
+    if (this.translationService.currentLang == 'es') {
       msgMap = {
-      "UserIncorrect" : "Usuario no existe",
-      "EmptyField": "Favor de Llenar Campo",
+        "UserIncorrect": "Usuario no existe",
+        "EmptyField": "Favor de llenar el campo",
       }
     }
-    else if(this.translationService.currentLang == 'en'){
+    else if (this.translationService.currentLang == 'en') {
       msgMap = {
-      "UserIncorrect" : "User not found",
-      "EmptyField": "Please fill the input box"
+        "UserIncorrect": "User not found",
+        "EmptyField": "Please fill the input box"
       }
     }
-    if(code != "" && code != undefined){
+    if (code != "" && code != undefined) {
       console.log("Entered CODE")
       this.http.get(this.loopbackPatientsUrl.concat(code)).subscribe(
         data => {
@@ -71,16 +71,16 @@ export class DrNewPrescriptionQRComponent implements OnInit {
           redirectString += code
           this.router.navigateByUrl(redirectString);
         },
-        error =>{
+        error => {
           this.errorMessage = msgMap.UserIncorrect
           console.clear()
         }
       );
     }
-    else{
+    else {
       this.errorMessage = msgMap.EmptyField
     }
-    
+
     //href="dr/appointment/create"
 
   }

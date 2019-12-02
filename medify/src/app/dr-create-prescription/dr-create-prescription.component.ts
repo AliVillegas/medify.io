@@ -35,12 +35,12 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
   privateDoctorsUrl = 'https://api.jsonbin.io/b/5db64a818c3b0a4aac6920d9'
   public medControl: FormControl = new FormControl();
   public medFilter: FormControl = new FormControl();
-  public location:String
-  public userId:String
-  public drName:String
-  public drEmail:String
-  public todaysDate:String
-  public institute:String
+  public location: String
+  public userId: String
+  public drName: String
+  public drEmail: String
+  public todaysDate: String
+  public institute: String
   public loopbackMedsUrl = loopbackConnMedsUrl;
   public loopbackPatientsUrl = loopbackConnPatientsUrl
 
@@ -51,18 +51,18 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
   prescriptionTitleControl = new FormControl('');
   prescriptionDiagnosisControl = new FormControl('');
   protected _onDestroy = new Subject<void>();
-  private selectedMeds:String[]
+  private selectedMeds: String[]
   constructor(
     private navData: NavbarDataService,
     private sidebarData: SidebarDataService,
     private _location: Location,
     private fb: FormBuilder,
-    private userData:UserdataService,
-    private http:HttpClient,
-    private activatedRoute:ActivatedRoute,
-    private router:Router,
-    private toastService:ToastServiceService,
-    private translationService:TranslateService
+    private userData: UserdataService,
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private toastService: ToastServiceService,
+    private translationService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -70,28 +70,28 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
     var today = new Date()
     var month = today.getMonth()
     var day = today.getDate()
-    var year= today.getFullYear()
+    var year = today.getFullYear()
     this.todaysDate = ""
-    this.todaysDate +=  day + "/" + (month +1) + "/" + year;
+    this.todaysDate += day + "/" + (month + 1) + "/" + year;
     Auth.currentSession()
       .then(data => {
         var user = data.getIdToken().decodePayload();
-          this.drName = user['custom:name']
-          this.institute = "Consultorio " + this.drName
-          this.drEmail = user['email']
-          this.http.get(this.loopbackMedsUrl).subscribe(
-            data=> {
-              this.medicines = data as Medicine[]
-              this.filteredMeds.next(this.medicines.slice());
-              this.medFilter.valueChanges
+        this.drName = user['custom:name']
+        this.institute = "Consultorio " + this.drName
+        this.drEmail = user['email']
+        this.http.get(this.loopbackMedsUrl).subscribe(
+          data => {
+            this.medicines = data as Medicine[]
+            this.filteredMeds.next(this.medicines.slice());
+            this.medFilter.valueChanges
               .pipe(takeUntil(this._onDestroy))
               .subscribe(() => {
                 this.filterMedsMulti();
               });
-            }
-          )
+          }
+        )
       });
-    this.userData.currentId.subscribe(id => this.userId = id); 
+    this.userData.currentId.subscribe(id => this.userId = id);
 
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
@@ -159,11 +159,11 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
     );
   }
 
-  onClickSubmit(title:string, diagnosis:string){
-    if(title == "" || title == undefined){
+  onClickSubmit(title: string, diagnosis: string) {
+    if (title == "" || title == undefined) {
       return
     }
-    if(diagnosis == "" || diagnosis == undefined){
+    if (diagnosis == "" || diagnosis == undefined) {
       return
     }
     console.log(title)
@@ -177,27 +177,27 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
         var presDate = ""
         var month = date.getMonth()
         var day = date.getDate()
-        var year= date.getFullYear()
-        presDate +=  day + "/" + month + "/" + year;
-        var endDate = new Date(new Date().getTime()+(5*24*60*60*1000));
+        var year = date.getFullYear()
+        presDate += day + "/" + month + "/" + year;
+        var endDate = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
         var endMonth = endDate.getMonth()
         var endDay = endDate.getDate()
         var endYear = endDate.getFullYear()
         var presEndDate = ""
-        presEndDate +=  endDay + "/" + endMonth + "/" + endYear;
+        presEndDate += endDay + "/" + endMonth + "/" + endYear;
         var realMeds = []
-        if(this.selectedMeds != undefined && this.selectedMeds.length > 0 ){
+        if (this.selectedMeds != undefined && this.selectedMeds.length > 0) {
           this.selectedMeds.forEach(m => {
             realMeds.push({
               "name": m,
               "delivered": "false"
             })
-        });
+          });
         }
-        
+
         var msgMapMonth = {
           0: "Ene",
-          1 : "Feb",
+          1: "Feb",
           2: "Mar",
           3: "Abr",
           4: "May",
@@ -209,29 +209,14 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
           10: "Nov",
           11: "Dic"
         }
-        if(this.translationService.currentLang == 'en'){
-          msgMapMonth = {
-            0: "Jan",
-            1 : "Feb",
-            2: "Mar",
-            3: "Apr",
-            4: "May",
-            5: "Jun",
-            6: "Jul",
-            7: "Aug",
-            8: "Sep",
-            9: "Oct",
-            10: "Nov",
-            11: "Dec"
-          }
-        }
+
 
         var presMonth = msgMapMonth[month]
         var newPrescription = {
           title: presTitle,
           dayNumber: day,
           details: presDiagnosis,
-          status : "-",
+          status: "-",
           date: presDate,
           endDate: presEndDate,
           month: presMonth,
@@ -244,18 +229,18 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
         }
         console.log(newPrescription)
         patientData['prescriptions'].push(newPrescription)
-        this.http.put(this.loopbackPatientsUrl.concat(this.patientId),patientData).subscribe(
-          data =>{
-            
+        this.http.put(this.loopbackPatientsUrl.concat(this.patientId), patientData).subscribe(
+          data => {
+
             this.toastService.changeIsVisible(true)
             var patientName = patientData['name']
             var toastMsg = {
               "msg": "Nueva receta se ha enviado a "
 
             }
-            if(this.translationService.currentLang == 'en'){
+            if (this.translationService.currentLang == 'en') {
               toastMsg = {
-                "msg": "New Prescription has been sent to "
+                "msg": "New prescription has been sent to "
               }
             }
 
@@ -263,76 +248,76 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
             this.toastService.changeMessage(toastMsg["msg"].toString())
             var redirectString = "dr/dashboard"
             this.router.navigateByUrl(redirectString);
-            window.scroll(0,0);            
-            
+            window.scroll(0, 0);
+
           }
         )
 
-        
+
 
       },
-      error =>{
+      error => {
         console.clear()
       }
     );
   }
   onClickSubmitz(title: String, diagnosis: String) {
-    if(title != "" && diagnosis != ""){
+    if (title != "" && diagnosis != "") {
       let headers = new HttpHeaders()
       headers = headers.set("Content-Type", "application/json");
       headers = headers.set("versioning", "false");
       headers = headers.set("secret-key", "$2b$10$b3F3emDew3JC/JjHy/0Kgulzg1lNfKkhZ1kSrv3Owm58PhkgEOHQm")
-      this.http.get(this.privatePatientsUrl,{headers}).toPromise().then(data => {
+      this.http.get(this.privatePatientsUrl, { headers }).toPromise().then(data => {
 
-      var JSONData = data
-      var today = new Date();
-      var date = today.getDate()
-      var fullDate = (today.getMonth()+1)+'/'+today.getDate() + '/' + today.getFullYear();
-      var expireDay = new Date(new Date().getTime()+(5*24*60*60*1000));
-      var endDate = (expireDay.getMonth()+1)+'/'+(expireDay.getDate()) + '/' + expireDay.getFullYear();
-      /*Make Month map to value */
-      var prescriptions = JSONData["patients"][this.patientId]["data"]["prescriptions"]
-      var realMeds = []
-      this.selectedMeds.forEach(m => {
+        var JSONData = data
+        var today = new Date();
+        var date = today.getDate()
+        var fullDate = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+        var expireDay = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
+        var endDate = (expireDay.getMonth() + 1) + '/' + (expireDay.getDate()) + '/' + expireDay.getFullYear();
+        /*Make Month map to value */
+        var prescriptions = JSONData["patients"][this.patientId]["data"]["prescriptions"]
+        var realMeds = []
+        this.selectedMeds.forEach(m => {
           realMeds.push({
             "name": m,
             "delivered": "false"
           })
-      });
-      var prescription = {
-        "title": title,
-        "details": diagnosis,
-        "dayNumber": date,
-        "date": fullDate,
-        "doctorId": this.userId,
-        "endDate": endDate,
-        "meds": realMeds,
-        "month": "Oct",
-        "patientId": this.patientId,
-        "status": "Sin Entregar"
-      } 
-      prescriptions[prescriptions.length] = prescription
-      this.jsonData = JSONData
-      console.log(JSONData)
-      this.http.put(this.privatePatientsUrl,JSON.stringify(JSONData),{headers}).toPromise().then(data => {
-        
+        });
+        var prescription = {
+          "title": title,
+          "details": diagnosis,
+          "dayNumber": date,
+          "date": fullDate,
+          "doctorId": this.userId,
+          "endDate": endDate,
+          "meds": realMeds,
+          "month": "Oct",
+          "patientId": this.patientId,
+          "status": "Sin Entregar"
+        }
+        prescriptions[prescriptions.length] = prescription
+        this.jsonData = JSONData
+        console.log(JSONData)
+        this.http.put(this.privatePatientsUrl, JSON.stringify(JSONData), { headers }).toPromise().then(data => {
+
+        })
+        this.router.navigateByUrl('dr/dashboard');
       })
-      this.router.navigateByUrl('dr/dashboard');
-    })
-      
+
     }
 
   }
 
   selected(event: MatSelectChange) {
     const selectedData = {
-        text: (event.source.selected as MatOption).viewValue,
-        value: event.source.value
+      text: (event.source.selected as MatOption).viewValue,
+      value: event.source.value
     }
     this.selectedMeds = []
-    for(let med in selectedData.value){
+    for (let med in selectedData.value) {
       this.selectedMeds.push(selectedData.value[med].name)
     }
-}
+  }
 
 }

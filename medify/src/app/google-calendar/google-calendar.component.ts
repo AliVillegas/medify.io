@@ -103,8 +103,9 @@ export class GoogleCalendarComponent implements OnInit {
     var authorizeButton = document.getElementById('authorize_button');
     var logoutButton = document.getElementById('signout_button');
     var insertButton = document.getElementById('insert_button');
+    var insertButton2 = document.getElementById('insert_button2');
     if (isSignedIn) {
-      //console.log("signed in: " + isSignedIn)
+      console.log("signed in: " + isSignedIn)
       //Get Google User name 
       var authInstance = gapi.auth2.getAuthInstance()
       var userProfile = authInstance.currentUser.get().getBasicProfile()
@@ -114,12 +115,14 @@ export class GoogleCalendarComponent implements OnInit {
       authorizeButton.style.display = 'none';
       logoutButton.style.display = 'block';
       insertButton.style.display = 'block';
+      insertButton2.style.display = 'block';
     }
     else {
-      //console.log("signed in: " + isSignedIn)
+      console.log("signed in: " + isSignedIn)
       authorizeButton.style.display = 'block';
       logoutButton.style.display = 'none';
       insertButton.style.display = 'none';
+      insertButton2.style.display = 'none';
     }
 
   }

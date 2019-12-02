@@ -2,16 +2,22 @@
     <div class="d-none d-sm-block col-sm-4">
         <p id="name" class="secondaryColor"></p>
     </div>
-    <div class="col-12 col-sm-4 mb-2">
+    <div class="d-block d-sm-none col-4">
+        <button id="insert_button2" style="display: none;" class="btn btn-primary mx-auto" (click)="insertEvents()"> <i
+                class="fas fa-calendar-plus"></i></button>
+    </div>
+    <div class="d-none d-sm-block col-4 mb-2">
         <button id="insert_button" style="display: none;" class="btn btn-primary mx-auto" (click)="insertEvents()"> <i
                 class="fas fa-calendar-plus"></i> {{ 'googleCalendar.addAppointment' | translate}}</button>
     </div>
-    <div class="col-12 col-sm-4">
+
+    <div class="col-8 col-sm-4">
         <button id="authorize_button" style="display: none;" class="btn btn-primary mx-auto">
             {{ 'googleCalendar.login' | translate}}</button>
         <button id="signout_button" style="display: none;" class="btn btn-primary mx-auto">
             {{ 'googleCalendar.logout' | translate}}</button>
     </div>
+
     <br>
 
 </div>
