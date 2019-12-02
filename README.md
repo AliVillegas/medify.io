@@ -1,9 +1,5 @@
 
 ![N|Solid](https://gdurl.com/PtR2)
-## Proyecto final de la materia de Desarrollo Web, ITESM CCM
-  - Ali Villegas
-  - Julián Herrera
-  - Saul Neri
 
 **Medify** es un aplicacion web que te conecta con tus médicos y te ayuda a administrar tus citas, recetas e historial médico.
   - Registra a tus doctores
@@ -21,7 +17,6 @@
   - Recetas médicas desde la aplicación
 
 ## Es muy fácil usar **Medify**
-
   - Ingresa a: link y crea una cuenta
   - Si eres paciente debes esperar a que tu doctor agende uan cita
   - Si eres doctor, usa el código de tu paciente para agendar una nueva cita
@@ -65,6 +60,11 @@ Esto abrirá *localhost:4200* en tu navegador. **Ahora puedes usar la aplicació
 
 ### Licencia
 MIT
+
+## Proyecto final de la materia de Desarrollo Web, ITESM CCM
+  - Ali Villegas
+  - Julián Herrera
+  - Saul Neri
 
 
 [//]: # 
