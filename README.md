@@ -37,6 +37,8 @@
 ### Diagrama de clases
 ![N|Solid](https://gdurl.com/LMuM)
 
+#### API en *[Swagger Hub]*
+
 ### Instalación
 
 **Medify** necesita [Node.js](https://nodejs.org/) para correr.
@@ -74,5 +76,6 @@ MIT
    [AWS Cognito]: <https://aws.amazon.com/cognito/>
    [AngularJS]: <http://angularjs.org>
    [Angular Material]: <https://material.angular.io/>
+   [Swagger Hub]: <https://app.swaggerhub.com/apis/AliVillegas/loop-back_application/1.0.0>
 
 
