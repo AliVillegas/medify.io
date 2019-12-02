@@ -9,7 +9,7 @@ import {
 import { Prescription } from '../Models/Prescription';
 import { UserdataService } from '../userdata.service';
 
-
+declare var $;
 @Component({
   selector: 'app-prescription-detail-card',
   templateUrl: './prescription-detail-card.component.html',
@@ -28,15 +28,32 @@ import { UserdataService } from '../userdata.service';
   ]
 })
 export class PrescriptionDetailCardComponent implements OnInit {
-  public prescriptions:Prescription[]
+  public prescriptions: Prescription[]
   constructor(
-    private userData:UserdataService
+    private userData: UserdataService
   ) { }
 
   ngOnInit() {
     this.userData.currentPrescriptions.subscribe(pres => this.prescriptions = pres);
     console.log(this.userData.currentPrescriptions)
 
+  }
+
+  changeDeliveryStatus(presIndex, medInPresIndex) {
+    let pres = this.prescriptions[presIndex];
+    let med = pres.meds[medInPresIndex];
+    if (med.delivered) {
+      this.prescriptions[presIndex].meds[medInPresIndex].delivered = false;
+    }
+    else {
+      this.prescriptions[presIndex].meds[medInPresIndex].delivered = true;
+    }
+
+    console.log(pres);
+    console.log(med);
+
+
+    //location.reload();
   }
 
 
