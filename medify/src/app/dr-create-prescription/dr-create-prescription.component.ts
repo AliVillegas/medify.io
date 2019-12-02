@@ -72,7 +72,7 @@ export class DrCreatePrescriptionComponent implements OnInit, AfterViewInit, OnD
     var day = today.getDate()
     var year= today.getFullYear()
     this.todaysDate = ""
-    this.todaysDate +=  day + "/" + month + "/" + year;
+    this.todaysDate +=  day + "/" + (month +1) + "/" + year;
     Auth.currentSession()
       .then(data => {
         var user = data.getIdToken().decodePayload();
