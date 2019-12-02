@@ -23,7 +23,6 @@ export class GoogleCalendarComponent implements OnInit {
 
       this.appointments = apps
       for (var i = 0; i < this.appointments.length; i++) {
-        console.log(this.appointments[i])
         let date = new Date();
 
         const startTime = this.convertTime12to24(this.appointments[i].startTime);
@@ -69,9 +68,6 @@ export class GoogleCalendarComponent implements OnInit {
           this.events.push(event)
         }
 
-        //this.insertEvent(event);
-        //console.log(startTimeGoogle)
-
       }
 
     });
@@ -79,7 +75,6 @@ export class GoogleCalendarComponent implements OnInit {
 
   initClient() {
     gapi.load('client:auth2', () => {
-      console.log('loaded client')
       // It's OK to expose these credentials, they are client safe.
       gapi.client.init({
         apiKey: 'AIzaSyBHnCuI4unuStxbOZqO--pX2lbb6n0AaW4',
@@ -97,7 +92,6 @@ export class GoogleCalendarComponent implements OnInit {
         var logoutButton = document.getElementById('signout_button');
         logoutButton.onclick = this.logout;
         //var insertButton = document.getElementById('insert_button');
-        console.log(this.events)
       })
 
       gapi.client.load('calendar', 'v3', () => console.log('loaded calendar'));
@@ -110,7 +104,7 @@ export class GoogleCalendarComponent implements OnInit {
     var logoutButton = document.getElementById('signout_button');
     var insertButton = document.getElementById('insert_button');
     if (isSignedIn) {
-      console.log("signed in: " + isSignedIn)
+      //console.log("signed in: " + isSignedIn)
       //Get Google User name 
       var authInstance = gapi.auth2.getAuthInstance()
       var userProfile = authInstance.currentUser.get().getBasicProfile()
@@ -122,7 +116,7 @@ export class GoogleCalendarComponent implements OnInit {
       insertButton.style.display = 'block';
     }
     else {
-      console.log("signed in: " + isSignedIn)
+      //console.log("signed in: " + isSignedIn)
       authorizeButton.style.display = 'block';
       logoutButton.style.display = 'none';
       insertButton.style.display = 'none';

@@ -10,10 +10,13 @@ import { Prescription } from '../Models/Prescription';
 })
 export class BarChartComponent implements OnInit {
   monthsValue = {}
-  appointments:Appointment[]
-  prescriptions:Prescription[]
+  appointments: Appointment[]
+  prescriptions: Prescription[]
+  prescriptionsData: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  appointmentsData: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
   constructor(
-    private userData:UserdataService
+    private userData: UserdataService
   ) {
     this.monthsValue = {}
     this.monthsValue['Ene'] = 0
@@ -28,30 +31,39 @@ export class BarChartComponent implements OnInit {
     this.monthsValue['Oct'] = 9
     this.monthsValue['Nov'] = 10
     this.monthsValue['Dic'] = 11
-   }
-
-   ngOnInit() {
-     var prescriptionsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
-     var appointmentsData:number[] = [0,0,0,0,0,0,0,0,0,0,0,0]
-    this.userData.currentAppointments.subscribe(appointments =>{  
-      this.appointments = appointments
-      this.userData.currentPrescriptions.subscribe(prescriptions => { 
-        this.prescriptions = prescriptions
-        this.appointments.forEach(app=>{
-          appointmentsData[this.monthsValue[app.month.toString()]] += 1
-        })
-        this.prescriptions.forEach(pre=>{
-          prescriptionsData[this.monthsValue[pre.month.toString()]] += 1
-        })
-        this.barChartData = [
-          {data:appointmentsData, label: 'Citas Médicas'},
-          {data:prescriptionsData, label: 'Recetas'}
-        ]
-      });
-    
-    });
   }
-    
+
+  ngOnInit() {
+
+    this.userData.currentAppointments.subscribe(appointments => {
+      this.appointments = appointments
+
+      this.appointments.forEach(app => {
+        this.appointmentsData[this.monthsValue[app.month.toString()]] += 1
+      })
+      this.barChartData = [
+        { data: this.appointmentsData, label: 'Citas Médicas' },
+        { data: this.prescriptionsData, label: 'Recetas' }
+      ]
+    });
+
+
+    this.userData.currentPrescriptions.subscribe(prescriptions => {
+      this.prescriptions = prescriptions
+
+      this.prescriptions.forEach(pre => {
+        this.prescriptionsData[this.monthsValue[pre.month.toString()]] += 1
+      })
+      this.barChartData = [
+        { data: this.appointmentsData, label: 'Citas Médicas' },
+        { data: this.prescriptionsData, label: 'Recetas' }
+      ]
+    });
+
+
+
+  }
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     scaleShowHorizontalLines: false,

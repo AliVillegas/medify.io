@@ -5,10 +5,17 @@
                 {{prescription.doctor.institute}}
             </div>
             <div class="card-body">
-                <div class="row">
-                    <h5 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }} {{prescription.title}}
-                    </h5>
-                    <h5 class="text-right col-6">{{prescription.doctor.name}}</h5>
+                <div class="row d-flex d-sm-none">
+                    <h6 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }}
+                        {{prescription.title}}
+                    </h6>
+                    <h6 class="text-right col-6">{{prescription.doctor.name}}</h6>
+                </div>
+                <div class="row d-none d-sm-flex">
+                    <h4 class="text-left col-6">{{ 'prescriptionDetail.appointment' | translate }}
+                        {{prescription.title}}
+                    </h4>
+                    <h4 class="text-right col-6">{{prescription.doctor.name}}</h4>
                 </div>
 
                 <p class="card-text">
@@ -21,11 +28,13 @@
                         <ul class="list-group col-2">
                             <div *ngFor="let med of prescription.meds; index as j">
                                 <div *ngIf="med.delivered == 'true'; else notDelivered">
-                                    <li style="cursor: pointer;" class="list-group-item secondaryColor" (click)="changeDeliveryStatus(i,j)"> <i class="fas fa-check"></i></li>
+                                    <li style="cursor: pointer;" class="list-group-item secondaryColor"
+                                        (click)="changeDeliveryStatus(i,j)"> <i class="fas fa-check"></i></li>
 
                                 </div>
                                 <ng-template #notDelivered>
-                                    <li style="cursor: pointer;" class="list-group-item text-danger" (click)="changeDeliveryStatus(i,j)">
+                                    <li style="cursor: pointer;" class="list-group-item text-danger"
+                                        (click)="changeDeliveryStatus(i,j)">
                                         <i class="fas fa-times"></i> </li>
                                 </ng-template>
                             </div>

@@ -11,7 +11,9 @@
                     <input matInput [formControl]="codeFormControl" formControlName="code" required>
                 </mat-form-field>
                 <div>
-                    <input data-toggle="tooltip" (click)="onClickSubmit(codeFormControl.value)" title="Continuar nueva receta" class="btn btn-lg btn-primary mx-auto d-block w-50 mt-3" type="submit" value="{{ 'addAppointmentQR.button' | translate}}">
+                    <input data-toggle="tooltip" (click)="onClickSubmit(codeFormControl.value)"
+                        title="Continuar nueva receta" class="btn btn-primary btn-lg mx-auto d-block w-75 mt-3"
+                        type="submit" value="{{ 'addAppointmentQR.button' | translate}}">
                 </div>
             </form>
         </div>
