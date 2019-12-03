@@ -205,6 +205,7 @@ export class LoginComponent implements OnInit {
             if (!cognitoUserIsDoctor) {
               this.router.navigateByUrl('patient/dashboard');
               localStorage.setItem("isDoctor", "false")
+              
             }
             else {
               this.router.navigateByUrl('dr/dashboard');

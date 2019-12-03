@@ -32,29 +32,30 @@ export class DashboardComponent implements OnInit {
     private router:Router,) { 
       this.userData.currentPrescriptions.subscribe(prescriptions => this.prescriptions = prescriptions);
       this.userData.currentAppointments.subscribe(app => this.appointments = app);
-
+      this.userData.currentEmail.subscribe(email => {
+        if (email.toString() != "" && email != undefined){
+          this.http.get(this.loopbackPatientsUrl.concat(email.toString())).subscribe(
+            data => {
+              console.log('success', data)
+              if(data['weight'] == "" || data['weight'] == undefined){
+                var redirectString = "patient/new/"
+                redirectString += email.toString()
+                this.router.navigateByUrl(redirectString);
+              }
+           
+            },
+            error => {
+      
+            }
+          )
+        }
+        
+      });
     }
 
   ngOnInit() {
-    this.userData.currentEmail.subscribe(email => {
-      if (email.toString() != "" && email != undefined){
-        this.http.get(this.loopbackPatientsUrl.concat(email.toString())).subscribe(
-          data => {
-            console.log('success', data)
-            if(data['weight'] == "" || data['weight'] == undefined){
-              var redirectString = "patient/new/"
-              redirectString += email.toString()
-              this.router.navigateByUrl(redirectString);
-            }
-         
-          },
-          error => {
     
-          }
-        )
-      }
-      
-    });
+
     
     this.initializeNavbarStatus()
     this.initializeSidebarStatus()
