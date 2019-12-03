@@ -380,7 +380,7 @@ export class LoginComponent implements OnInit {
     if (this.name == 'doctor') {
       this.signUpConfig.signUpFields.push(
         {
-          label: 'Cédula',
+          label: 'Professional ID',
           key: 'custom:serviceId',
           required: true,
           displayOrder: 5,
